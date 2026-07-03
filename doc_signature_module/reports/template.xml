@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_signature_document_template">
+        <t t-call="web.basic_layout">
+            <!-- ✅ التصحيح الجذري: تكرار القائمة وتعيين المتغير 'doc' -->
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="position: relative; width: 210mm; min-height: 297mm; padding: 20mm; font-family: Arial, sans-serif;">
+                    
+                    <!-- محتوى المستند -->
+                    <t t-raw="doc.content"/>
+                    
+                    <!-- التوقيع positioned absolutely -->
+                    <img t-if="doc.signature"
+                         t-att-src="image_data_uri(doc.signature)"
+                         style="position: absolute;
+                                top: {{ doc.signature_top }}mm;
+                                left: {{ doc.signature_left }}mm;
+                                width: 40mm;
+                                height: auto;
+                                border: 1px dashed #ccc;"/>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

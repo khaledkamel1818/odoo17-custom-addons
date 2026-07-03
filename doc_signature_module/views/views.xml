@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_signature_document_form" model="ir.ui.view">
+        <field name="name">signature.document.form</field>
+        <field name="model">signature.document</field>
+        <field name="arch" type="xml">
+            <form string="Signature Document">
+                <header>
+                    <button name="action_mark_signed" string="Mark Signed" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_mark_done" string="Mark Done" type="object" invisible="state != 'signed'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,signed,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Document Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="signature" widget="image" class="oe_avatar"/>
+                        </group>
+                        <group>
+                            <field name="signature_left"/>
+                            <field name="signature_top"/>
+                        </group>
+                    </group>
+                    <separator string="Document Content"/>
+                    <field name="content" widget="html" nolabel="1"/>
+                    <div class="alert alert-info mt-2" role="alert">
+                        <small>💡 Tip: Use Left/Top in millimeters (mm). Page A4 = 210×297 mm. Margins ~20mm.</small>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_signature_document_tree" model="ir.ui.view">
+        <field name="name">signature.document.tree</field>
+        <field name="model">signature.document</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_signature_document" model="ir.actions.act_window">
+        <field name="name">Signature Documents</field>
+        <field name="res_model">signature.document</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_signature_root" name="Document Signature" sequence="10"/>
+    <menuitem id="menu_signature_docs" name="Documents" parent="menu_signature_root" action="action_signature_document" sequence="10"/>
+</odoo>

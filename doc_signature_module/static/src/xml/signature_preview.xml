@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="doc_signature_module.SignaturePreviewWidget" owl="1">
+        <div class="signature-preview-container" t-ref="previewBox">
+            <!-- محتوى المستند (للعرض فقط) -->
+            <div class="preview-content" t-raw="props.record.data.content"/>
+            
+            <!-- صورة التوقيع القابلة للسحب -->
+            <img t-if="props.record.data.signature"
+                 t-ref="signatureImg"
+                 t-att-src="props.record.data.signature_url"
+                 class="signature-draggable"
+                 t-att-style="'top:' + signatureTop + 'mm; left:' + signatureLeft + 'mm;'"
+                 t-on-mousedown="onDragStart"/>
+            
+            <!-- مؤشر الإحداثيات الحي -->
+            <div class="coord-indicator" t-if="props.record.data.signature">
+                L: {{ signatureLeft }}mm | T: {{ signatureTop }}mm
+            </div>
+        </div>
+    </t>
+</templates>
