@@ -6,26 +6,71 @@
             <field name="code">permission</field>
             <field name="company_id" ref="base.main_company"/>
             <field name="sequence">10</field>
+            <field name="requires_dates">True</field>
+            <field name="requires_permission_validation">True</field>
+            <field name="monthly_limit_hours">12.0</field>
+            <field name="yearly_limit_hours">120.0</field>
         </record>
-        <record id="service_type_salary_certificate" model="dm.hr.service.request.type">
-            <field name="name">تعريف الراتب</field>
-            <field name="code">salary_certificate</field>
+        <record id="service_type_remote_work" model="dm.hr.service.request.type">
+            <field name="name">عمل عن بعد</field>
+            <field name="code">remote_work</field>
             <field name="company_id" ref="base.main_company"/>
             <field name="sequence">20</field>
+            <field name="requires_dates">True</field>
+        </record>
+        <record id="service_type_salary_certificate" model="dm.hr.service.request.type">
+            <field name="name">خطاب تعريف بالراتب</field>
+            <field name="code">salary_certificate</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">30</field>
             <field name="report_action_xmlid">dm_hr_core.action_report_dm_hr_salary_certificate</field>
         </record>
         <record id="service_type_salary_transfer" model="dm.hr.service.request.type">
             <field name="name">تثبيت/تحويل الراتب للبنك</field>
             <field name="code">salary_transfer_certificate</field>
             <field name="company_id" ref="base.main_company"/>
-            <field name="sequence">30</field>
+            <field name="sequence">40</field>
+            <field name="requires_bank_details">True</field>
             <field name="report_action_xmlid">dm_hr_core.action_report_dm_hr_salary_transfer</field>
         </record>
+        <record id="service_type_experience_certificate" model="dm.hr.service.request.type">
+            <field name="name">شهادة خبرة</field>
+            <field name="code">experience_certificate</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="service_type_document_update" model="dm.hr.service.request.type">
+            <field name="name">تحديث بيانات أو مستندات</field>
+            <field name="code">document_update</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="service_type_overtime" model="dm.hr.service.request.type">
+            <field name="name">طلب ساعات إضافية</field>
+            <field name="code">overtime</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">70</field>
+            <field name="requires_dates">True</field>
+        </record>
         <record id="service_type_business_trip" model="dm.hr.service.request.type">
-            <field name="name">انتداب</field>
+            <field name="name">انتداب / مهمة عمل</field>
             <field name="code">business_trip</field>
             <field name="company_id" ref="base.main_company"/>
-            <field name="sequence">40</field>
+            <field name="sequence">80</field>
+            <field name="requires_dates">True</field>
+            <field name="requires_trip_details">True</field>
+        </record>
+        <record id="service_type_equipment" model="dm.hr.service.request.type">
+            <field name="name">أدوات أو عهدة</field>
+            <field name="code">equipment</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="service_type_other" model="dm.hr.service.request.type">
+            <field name="name">طلب آخر</field>
+            <field name="code">other</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sequence">100</field>
         </record>
     </data>
 </odoo>

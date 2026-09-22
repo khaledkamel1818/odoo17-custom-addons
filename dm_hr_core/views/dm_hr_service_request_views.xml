@@ -11,7 +11,7 @@
                 <field name="employee_id"/>
                 <field name="branch_id"/>
                 <field name="department_id"/>
-                <field name="request_type"/>
+                <field name="request_type_id"/>
                 <filter name="my_requests" string="طلباتي" domain="[('employee_id.user_id', '=', uid)]"/>
                 <filter name="to_approve" string="بانتظار الاعتماد" domain="[('state', 'in', ['submitted', 'manager_approved'])]"/>
                 <filter name="approved" string="معتمدة" domain="[('state', '=', 'approved')]"/>
@@ -70,7 +70,7 @@
                 <field name="employee_id"/>
                 <field name="branch_id"/>
                 <field name="department_id"/>
-                <field name="request_type"/>
+                <field name="request_type_id"/>
                 <field name="date_from"/>
                 <field name="duration_hours"/>
                 <field name="priority"/>
@@ -146,7 +146,8 @@
                     <group>
                         <group string="بيانات الطلب">
                             <field name="name" readonly="1"/>
-                            <field name="request_type"/>
+                            <field name="request_type_id"/>
+                        <field name="request_type" invisible="1"/>
                             <field name="priority" widget="priority"/>
                             <field name="employee_id"/>
                             <field name="company_id" groups="base.group_multi_company"/>
@@ -308,7 +309,7 @@
         <field name="model">dm.hr.service.request</field>
         <field name="arch" type="xml">
             <graph string="طلبات خدمات الموظفين" type="bar">
-                <field name="request_type"/>
+                <field name="request_type_id"/>
                 <field name="duration_hours" type="measure"/>
             </graph>
         </field>
@@ -365,7 +366,7 @@
         <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
         <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
         <field name="domain">[('request_type', '=', 'permission')]</field>
-        <field name="context">{'default_request_type': 'permission', 'search_default_permission': 1}</field>
+        <field name="context">{'default_request_type_id': ref('dm_hr_core.service_type_permission'), 'search_default_permission': 1}</field>
     </record>
 
     <record id="dm_hr_service_request_action_other" model="ir.actions.act_window">
@@ -374,7 +375,7 @@
         <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
         <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
         <field name="domain">[('request_type', 'not in', ['permission'])]</field>
-        <field name="context">{'default_request_type': 'other'}</field>
+        <field name="context">{'default_request_type_id': ref('dm_hr_core.service_type_other'), 'search_default_other': 1}</field>
     </record>
 
     <record id="dm_hr_leave_action_my" model="ir.actions.act_window">

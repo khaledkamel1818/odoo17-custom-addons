@@ -72,11 +72,12 @@ class DmHrServiceCenter(models.AbstractModel):
         if not action_xml:
             return False
         action = self.env.ref(action_xml).sudo().read()[0]
+        Type = self.env['dm.hr.service.request.type'].sudo()
         defaults = {
-            'new_permission': {'default_request_type': 'permission', 'default_subject': _('طلب استئذان')},
-            'new_salary_certificate': {'default_request_type': 'salary_certificate', 'default_subject': _('طلب تعريف راتب')},
-            'new_salary_transfer': {'default_request_type': 'salary_transfer_certificate', 'default_subject': _('طلب تثبيت/تحويل راتب للبنك')},
-            'new_business_trip': {'default_request_type': 'business_trip', 'default_subject': _('طلب انتداب')},
+            'new_permission': {'default_request_type_id': Type.search([('code', '=', 'permission')], limit=1).id, 'default_subject': _('طلب استئذان')},
+            'new_salary_certificate': {'default_request_type_id': Type.search([('code', '=', 'salary_certificate')], limit=1).id, 'default_subject': _('طلب تعريف راتب')},
+            'new_salary_transfer': {'default_request_type_id': Type.search([('code', '=', 'salary_transfer_certificate')], limit=1).id, 'default_subject': _('طلب تثبيت/تحويل راتب للبنك')},
+            'new_business_trip': {'default_request_type_id': Type.search([('code', '=', 'business_trip')], limit=1).id, 'default_subject': _('طلب انتداب')},
         }.get(key, {})
         context = action.get('context') if isinstance(action.get('context'), dict) else {}
         context.update(defaults)

@@ -10,11 +10,6 @@ from odoo.exceptions import AccessError, UserError, ValidationError
 class DmHrApprovalPolicy(models.Model):
     _inherit = 'dm.hr.approval.policy'
 
-    request_type = fields.Selection(
-        selection_add=[('offboarding', 'إنهاء خدمة')],
-        ondelete={'offboarding': 'set default'},
-    )
-
 
 class DmHrOffboardingType(models.Model):
     _name = 'dm.hr.offboarding.type'

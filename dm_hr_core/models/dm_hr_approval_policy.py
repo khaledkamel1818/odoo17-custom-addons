@@ -4,12 +4,18 @@ from odoo.exceptions import ValidationError
 
 
 REQUEST_TYPES = [
-    ('all', 'جميع الطلبات'), ('permission', 'استئذان'),
-    ('remote_work', 'عمل عن بعد'), ('salary_certificate', 'خطاب تعريف بالراتب'),
-    ('salary_transfer_certificate', 'خطاب تثبيت راتب'),
-    ('experience_certificate', 'شهادة خبرة'), ('document_update', 'تحديث بيانات أو مستندات'),
-    ('overtime', 'طلب ساعات إضافية'), ('business_trip', 'انتداب / مهمة عمل'),
-    ('equipment', 'أدوات أو عهدة'), ('other', 'طلب آخر'),
+    ('all', 'جميع الطلبات'),
+    ('permission', 'استئذان'),
+    ('remote_work', 'عمل عن بعد'),
+    ('salary_certificate', 'خطاب تعريف بالراتب'),
+    ('salary_transfer_certificate', 'خطاب تثبيت/تحويل راتب للبنك'),
+    ('experience_certificate', 'شهادة خبرة'),
+    ('document_update', 'تحديث بيانات أو مستندات'),
+    ('overtime', 'طلب ساعات إضافية'),
+    ('business_trip', 'انتداب / مهمة عمل'),
+    ('equipment', 'أدوات أو عهدة'),
+    ('other', 'طلب آخر'),
+    ('offboarding', 'إنهاء خدمة'),
 ]
 
 
@@ -25,6 +31,18 @@ class DmHrApprovalPolicy(models.Model):
     company_id = fields.Many2one('res.company', string='الشركة', required=True,
                                  default=lambda self: self.env.company, index=True)
     request_type = fields.Selection(REQUEST_TYPES, string='نوع الطلب', required=True, default='all')
+    request_type_id = fields.Many2one(
+        'dm.hr.service.request.type',
+        string='إعداد نوع الطلب',
+        compute='_compute_request_type_id',
+        store=False,
+        readonly=True,
+    )
+    apply_to_all_types = fields.Boolean(
+        string='تطبيق على جميع الأنواع',
+        default=False,
+        help='إذا كان مفعلاً، تطبق السياسة على كل أنواع طلبات الخدمة.',
+    )
     branch_id = fields.Many2one(
         'dm.hr.branch',
         string='فرع محدد',
@@ -83,6 +101,18 @@ class DmHrApprovalPolicy(models.Model):
         help='يستخدم كمسؤول تصعيد افتراضي للخطوات التي لا تحتوي مسؤول تصعيد.',
     )
     note = fields.Text(string='ملاحظات')
+
+    @api.depends('request_type')
+    def _compute_request_type_id(self):
+        Type = self.env['dm.hr.service.request.type'].sudo()
+        for policy in self:
+            if policy.request_type not in ('all', 'offboarding'):
+                policy.request_type_id = Type.search([
+                    ('code', '=', policy.request_type),
+                    ('company_id', '=', policy.company_id.id),
+                ], limit=1)
+            else:
+                policy.request_type_id = False
 
     @api.constrains('active', 'step_ids')
     def _check_steps(self):

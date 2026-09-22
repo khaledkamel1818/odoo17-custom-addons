@@ -7,7 +7,7 @@
             <tree string="سياسات الموافقات" decoration-muted="not active">
                 <field name="sequence" widget="handle"/>
                 <field name="name" class="dm_hr_list_emphasis"/>
-                <field name="request_type" widget="badge"/>
+                <field name="request_type_id" widget="badge"/>
                 <field name="branch_id"/>
                 <field name="sector_id"/>
                 <field name="department_id"/>
@@ -42,7 +42,7 @@
                                 <h3>نطاق السياسة</h3>
                             </div>
                             <group>
-                                <field name="request_type"/>
+                                <field name="request_type_id"/>
                                 <field name="branch_id"/>
                                 <field name="sector_id"/>
                                 <field name="department_id"/>
@@ -106,7 +106,7 @@
         <field name="arch" type="xml">
             <search string="بحث سياسات الموافقات">
                 <field name="name"/>
-                <field name="request_type"/>
+                <field name="request_type_id"/>
                 <field name="branch_id"/>
                 <field name="sector_id"/>
                 <field name="department_id"/>
@@ -116,7 +116,7 @@
                 <filter name="active_policies" string="نشطة" domain="[('active', '=', True)]"/>
                 <filter name="archived_policies" string="مؤرشفة" domain="[('active', '=', False)]"/>
                 <group expand="0" string="تجميع حسب">
-                    <filter name="group_request_type" string="نوع الطلب" context="{'group_by': 'request_type'}"/>
+                    <filter name="group_request_type" string="نوع الطلب" context="{'group_by': 'request_type_id'}"/>
                     <filter name="group_branch" string="الفرع" context="{'group_by': 'branch_id'}"/>
                     <filter name="group_sector" string="القطاع" context="{'group_by': 'sector_id'}"/>
                     <filter name="group_department" string="الإدارة" context="{'group_by': 'department_id'}"/>
