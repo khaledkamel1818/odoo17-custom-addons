@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+            Saudi labour reference notes used by HR users as configuration hints.
+            Values remain configurable in Odoo; these notes are deliberately not
+            hard-coded into payroll or attendance calculations.
+        -->
+        <record id="mail_activity_type_saudi_hr_review" model="mail.activity.type">
+            <field name="name">مراجعة امتثال الموارد البشرية السعودي</field>
+            <field name="icon">fa-balance-scale</field>
+            <field name="delay_count">1</field>
+            <field name="delay_unit">days</field>
+            <field name="summary">مراجعة طلب موظف وفق سياسة الشركة ونظام العمل السعودي</field>
+        </record>
+    </data>
+</odoo>

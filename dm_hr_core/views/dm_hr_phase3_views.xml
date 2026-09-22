@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Return to Work -->
+    <record id="dm_hr_return_work_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.return.work.tree</field>
+        <field name="model">dm.hr.return.work</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'" decoration-info="state in ('manager','hr')">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="return_type"/>
+                <field name="return_date"/>
+                <field name="manager_id"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_return_work_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.return.work.form</field>
+        <field name="model">dm.hr.return.work</field>
+        <field name="arch" type="xml">
+            <form string="مباشرة العمل">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_reject" type="object" string="رفض" class="btn-secondary" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group string="بيانات الطلب">
+                            <field name="employee_id"/>
+                            <field name="return_type"/>
+                            <field name="return_date"/>
+                            <field name="related_leave_id"/>
+                            <field name="related_request_id"/>
+                        </group>
+                        <group string="الهيكل وقت الطلب">
+                            <field name="company_id"/>
+                            <field name="branch_id"/>
+                            <field name="sector_id"/>
+                            <field name="department_level_id"/>
+                            <field name="section_id"/>
+                            <field name="unit_id"/>
+                            <field name="job_id"/>
+                            <field name="manager_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="السبب والمرفقات">
+                            <field name="reason"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_return_work_view_search" model="ir.ui.view">
+        <field name="name">dm.hr.return.work.search</field>
+        <field name="model">dm.hr.return.work</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="branch_id"/>
+                <field name="department_level_id"/>
+                <filter name="pending" string="قيد الموافقة" domain="[('state','in',('manager','hr'))]"/>
+                <filter name="group_state" string="الحالة" context="{'group_by':'state'}"/>
+                <filter name="group_department" string="الإدارة" context="{'group_by':'department_level_id'}"/>
+            </search>
+        </field>
+    </record>
+    <record id="dm_hr_return_work_action" model="ir.actions.act_window">
+        <field name="name">مباشرة العمل</field>
+        <field name="res_model">dm.hr.return.work</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="search_view_id" ref="dm_hr_return_work_view_search"/>
+    </record>
+
+    <!-- Clearance -->
+    <record id="dm_hr_clearance_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.clearance.tree</field>
+        <field name="model">dm.hr.clearance</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'" decoration-warning="state == 'in_progress'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="last_working_date"/>
+                <field name="branch_id"/>
+                <field name="department_level_id"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_clearance_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.clearance.form</field>
+        <field name="model">dm.hr.clearance</field>
+        <field name="arch" type="xml">
+            <form string="إخلاء طرف">
+                <header>
+                    <button name="action_submit" type="object" string="بدء الإخلاء" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_close_if_ready" type="object" string="إغلاق بعد اكتمال الاعتمادات" class="btn-primary" invisible="state != 'in_progress'"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="last_working_date"/>
+                            <field name="reason"/>
+                        </group>
+                        <group string="الهيكل">
+                            <field name="branch_id"/>
+                            <field name="sector_id"/>
+                            <field name="department_level_id"/>
+                            <field name="section_id"/>
+                            <field name="manager_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="أقسام الإخلاء">
+                            <field name="line_ids">
+                                <tree editable="bottom" decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="clearance_department"/>
+                                    <field name="name"/>
+                                    <field name="approver_id"/>
+                                    <field name="approved_date"/>
+                                    <field name="state" widget="badge"/>
+                                    <button name="action_approve" type="object" string="اعتماد" class="btn-link"/>
+                                    <button name="action_reject" type="object" string="رفض" class="btn-link"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="العهد والمرفقات">
+                            <field name="custody_ids"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_clearance_action" model="ir.actions.act_window">
+        <field name="name">إخلاء طرف الموظف</field>
+        <field name="res_model">dm.hr.clearance</field>
+        <field name="view_mode">tree,form,activity</field>
+    </record>
+
+    <!-- Employee Transfer -->
+    <record id="dm_hr_employee_transfer_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.employee.transfer.tree</field>
+        <field name="model">dm.hr.employee.transfer</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="from_branch_id"/>
+                <field name="to_branch_id"/>
+                <field name="from_job_id"/>
+                <field name="to_job_id"/>
+                <field name="effective_date"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_employee_transfer_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.employee.transfer.form</field>
+        <field name="model">dm.hr.employee.transfer</field>
+        <field name="arch" type="xml">
+            <form string="نقل/تغيير وظيفة">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','department_manager','hr')"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,department_manager,hr,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="effective_date"/>
+                            <field name="reason"/>
+                        </group>
+                        <group string="الوظيفة">
+                            <field name="from_job_id"/>
+                            <field name="to_job_id"/>
+                        </group>
+                    </group>
+                    <group string="من">
+                        <field name="from_branch_id"/>
+                        <field name="from_sector_id"/>
+                        <field name="from_department_id"/>
+                        <field name="from_section_id"/>
+                    </group>
+                    <group string="إلى">
+                        <field name="to_branch_id"/>
+                        <field name="to_sector_id"/>
+                        <field name="to_department_id"/>
+                        <field name="to_section_id"/>
+                        <field name="to_unit_id"/>
+                    </group>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_employee_transfer_action" model="ir.actions.act_window">
+        <field name="name">تنقلات وتغيير وظائف</field>
+        <field name="res_model">dm.hr.employee.transfer</field>
+        <field name="view_mode">tree,form,activity</field>
+    </record>
+
+    <!-- Custody -->
+    <record id="dm_hr_custody_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.custody.tree</field>
+        <field name="model">dm.hr.custody</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'delivered'" decoration-success="state in ('returned','settled')" decoration-danger="state == 'lost'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="custody_type"/>
+                <field name="code"/>
+                <field name="serial_no"/>
+                <field name="delivery_date"/>
+                <field name="return_date"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_custody_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.custody.form</field>
+        <field name="model">dm.hr.custody</field>
+        <field name="arch" type="xml">
+            <form string="عهدة غير مالية">
+                <header>
+                    <button name="action_deliver" type="object" string="تسليم" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_return" type="object" string="استرجاع" class="btn-primary" invisible="state != 'delivered'"/>
+                    <button name="action_settle" type="object" string="تسوية" invisible="state not in ('returned','lost')"/>
+                    <button name="action_lost" type="object" string="مفقود/تالف" invisible="state not in ('delivered','returned')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,delivered,returned,settled"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="company_id"/>
+                            <field name="branch_id"/>
+                            <field name="custody_type"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="serial_no"/>
+                            <field name="delivery_date"/>
+                            <field name="return_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="التسوية">
+                            <field name="settlement_notes"/>
+                        </page>
+                        <page string="المرفقات">
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_custody_action" model="ir.actions.act_window">
+        <field name="name">العهد غير المالية</field>
+        <field name="res_model">dm.hr.custody</field>
+        <field name="view_mode">tree,form,activity</field>
+    </record>
+
+    <!-- Project task HR report/search additions -->
+    <record id="project_task_view_search_inherit_dm_hr" model="ir.ui.view">
+        <field name="name">project.task.search.inherit.dm.hr</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="dm_employee_id"/>
+                <field name="dm_branch_id"/>
+                <field name="dm_department_level_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='project']" position="after">
+                <filter name="group_dm_employee" string="الموظف" context="{'group_by':'dm_employee_id'}"/>
+                <filter name="group_dm_department" string="الإدارة" context="{'group_by':'dm_department_level_id'}"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="project_task_view_form_inherit_dm_hr" model="ir.ui.view">
+        <field name="name">project.task.form.inherit.dm.hr</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_ids']" position="after">
+                <field name="dm_employee_id"/>
+                <field name="dm_service_request_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="dm_hr_task_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير المهام</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="domain">[('dm_employee_id','!=',False)]</field>
+        <field name="context">{'search_default_group_dm_employee': 1}</field>
+    </record>
+
+    <record id="dm_hr_wage_report_action_contracts" model="ir.actions.act_window">
+        <field name="name">تقرير الأجر</field>
+        <field name="res_model">hr.contract</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+</odoo>

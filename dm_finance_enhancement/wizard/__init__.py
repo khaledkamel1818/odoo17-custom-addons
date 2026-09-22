@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+
+from . import finance_report_wizard
+

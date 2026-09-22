@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_dm_hr_workspace" model="ir.actions.client">
+        <field name="name">منصة الموارد البشرية</field>
+        <field name="tag">dm_hr_workspace.dashboard</field>
+    </record>
+
+    <menuitem id="menu_dm_hr_workspace"
+              name="لوحة الموارد البشرية"
+              parent="dm_hr_core.menu_dm_hr_root"
+              action="action_dm_hr_workspace"
+              sequence="1"
+              groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin,dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager"/>
+
+    <menuitem id="menu_dm_hr_attendance_check_in_out"
+              name="تسجيل الحضور / الخروج"
+              parent="dm_hr_core.menu_dm_hr_attendance_root"
+              action="action_dm_hr_workspace"
+              sequence="1"
+              groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_line_manager,dm_hr_core.group_dm_hr_attendance_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+</odoo>

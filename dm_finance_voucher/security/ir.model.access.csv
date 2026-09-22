@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dm_finance_voucher_requester,dm.finance.voucher.requester,model_dm_finance_voucher,dm_finance_core.group_finance_requester,1,1,1,0
+access_dm_finance_voucher_auditor,dm.finance.voucher.auditor,model_dm_finance_voucher,dm_finance_core.group_finance_auditor,1,0,0,0
+access_dm_finance_voucher_accountant,dm.finance.voucher.accountant,model_dm_finance_voucher,dm_finance_core.group_finance_general_accountant,1,1,1,0
+access_dm_finance_voucher_manager,dm.finance.voucher.manager,model_dm_finance_voucher,dm_finance_core.group_finance_manager,1,1,1,0
+access_dm_finance_voucher_admin,dm.finance.voucher.admin,model_dm_finance_voucher,dm_finance_core.group_finance_admin,1,1,1,1
+access_dm_finance_voucher_line_requester,dm.finance.voucher.line.requester,model_dm_finance_voucher_line,dm_finance_core.group_finance_requester,1,1,1,1
+access_dm_finance_voucher_line_auditor,dm.finance.voucher.line.auditor,model_dm_finance_voucher_line,dm_finance_core.group_finance_auditor,1,0,0,0
+access_dm_finance_voucher_line_accountant,dm.finance.voucher.line.accountant,model_dm_finance_voucher_line,dm_finance_core.group_finance_general_accountant,1,1,1,1
+access_dm_finance_voucher_line_manager,dm.finance.voucher.line.manager,model_dm_finance_voucher_line,dm_finance_core.group_finance_manager,1,1,1,1
+access_dm_finance_voucher_line_admin,dm.finance.voucher.line.admin,model_dm_finance_voucher_line,dm_finance_core.group_finance_admin,1,1,1,1

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_asset_asset_form_dm_finance_enhancement" model="ir.ui.view">
+        <field name="name">account.asset.asset.form.dm.finance.enhancement</field>
+        <field name="model">account.asset.asset</field>
+        <field name="inherit_id" ref="om_account_asset.view_account_asset_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="DM Professional Asset Details">
+                    <field name="dm_asset_profile"/>
+                    <field name="dm_branch_id"/>
+                    <field name="dm_location"/>
+                    <field name="dm_revaluation_value"/>
+                    <field name="dm_last_revaluation_date"/>
+                    <field name="dm_maintenance_notes"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

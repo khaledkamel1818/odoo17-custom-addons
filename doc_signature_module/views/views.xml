@@ -59,6 +59,9 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="menu_signature_root" name="Document Signature" sequence="10"/>
+    <menuitem id="menu_signature_root"
+              name="Document Signature"
+              sequence="10"
+              web_icon="doc_signature_module,static/description/icon.svg"/>
     <menuitem id="menu_signature_docs" name="Documents" parent="menu_signature_root" action="action_signature_document" sequence="10"/>
 </odoo>

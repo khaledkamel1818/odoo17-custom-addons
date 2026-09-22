@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_form_inherit_ui" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.dm.hr.ui</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="dm_hr_core.view_employee_form_inherit_dm_hr_core"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_offboarding_requests" type="object"
+                        class="oe_stat_button dm_hr_ui_stat_danger" icon="fa-sign-out"
+                        string="إنهاء الخدمة"
+                        groups="dm_hr_offboarding.group_dm_hr_offboarding_employee,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer">
+                    <field name="dm_offboarding_count" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='dm_hr']" position="attributes">
+                <attribute name="string">الملف الوظيفي</attribute>
+            </xpath>
+            <xpath expr="//group[@name='dm_hr_identity']" position="before">
+                <div class="dm_hr_ui_hint">
+                    <i class="fa fa-id-card-o" title="إرشاد"/> هذه البيانات تستخدم في الصلاحيات، الموافقات، التقارير، والتنبيهات؛ لذلك يجب أن تكون مكتملة ومحدثة.
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.form.inherit.ui</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_service_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('dm_hr_form_hero')]" position="attributes">
+                <attribute name="class">dm_hr_form_hero dm_hr_ui_hero</attribute>
+            </xpath>
+            <xpath expr="//field[@name='current_approval_label']" position="after">
+                <div class="dm_hr_ui_hint" invisible="not approval_policy_id">
+                    <i class="fa fa-info-circle" title="إرشاد"/> المسؤول الحالي وخطوة الاعتماد تظهر هنا لتقليل الرجوع إلى السجل.
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_offboarding_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.form.inherit.ui</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="inherit_id" ref="dm_hr_offboarding.dm_hr_offboarding_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_title']" position="replace">
+                <div class="dm_hr_ui_hero dm_hr_ui_offboarding_hero">
+                    <div>
+                        <span class="dm_hr_ui_eyebrow">إنهاء الخدمة</span>
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div class="dm_hr_ui_meta">
+                            <span><i class="fa fa-user" title="الموظف"/> <field name="employee_id"/></span>
+                            <span><i class="fa fa-sitemap" title="الإدارة"/> <field name="department_level_id"/></span>
+                            <span><i class="fa fa-user-circle" title="المسؤول الحالي"/> <field name="current_responsible_id"/></span>
+                        </div>
+                    </div>
+                    <div class="dm_hr_ui_kpi">
+                        <span>بنود إخلاء معلقة</span>
+                        <strong><field name="clearance_pending_count"/></strong>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='clearance_line_ids']/ancestor::page[1]" position="inside">
+                <div class="dm_hr_ui_hint">
+                    <i class="fa fa-check-square-o" title="تنبيه"/> لا يمكن الانتقال إلى التسوية قبل اعتماد أو استثناء كل البنود الإلزامية.
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_custody_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.custody.form.inherit.ui</field>
+        <field name="model">dm.hr.custody</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_custody_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="attributes">
+                <attribute name="class">oe_title dm_hr_ui_title</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_attendance_correction_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.correction.form.inherit.ui</field>
+        <field name="model">dm.hr.attendance.correction</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_attendance_correction_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
+                <div class="dm_hr_ui_hero">
+                    <div>
+                        <span class="dm_hr_ui_eyebrow">تصحيح حضور وانصراف</span>
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div class="dm_hr_ui_meta">
+                            <span><i class="fa fa-user" title="الموظف"/> <field name="employee_id"/></span>
+                            <span><i class="fa fa-calendar" title="التاريخ"/> <field name="request_date"/></span>
+                            <span><i class="fa fa-user-circle" title="المدير"/> <field name="manager_id"/></span>
+                        </div>
+                    </div>
+                    <div class="dm_hr_ui_kpi">
+                        <span>نوع الطلب</span>
+                        <strong><field name="request_type"/></strong>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='original_check_in']/ancestor::group[1]" position="before">
+                <div class="dm_hr_ui_hint">
+                    <i class="fa fa-clock-o" title="إرشاد"/> راجع الوقت الأصلي والوقت المطلوب قبل الإرسال؛ بعد الاعتماد سيتم تحديث سجل الحضور المرتبط.
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_financial_request_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.employee.financial.request.form.inherit.ui</field>
+        <field name="model">dm.hr.employee.financial.request</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_employee_financial_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
+                <div class="dm_hr_ui_hero dm_hr_ui_finance_hero">
+                    <div>
+                        <span class="dm_hr_ui_eyebrow">طلب مالي للموظف</span>
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div class="dm_hr_ui_meta">
+                            <span><i class="fa fa-user" title="الموظف"/> <field name="employee_id"/></span>
+                            <span><i class="fa fa-calendar" title="أول قسط"/> أول قسط: <field name="first_installment_date"/></span>
+                        </div>
+                    </div>
+                    <div class="dm_hr_ui_kpi_grid">
+                        <div class="dm_hr_ui_kpi">
+                            <span>المبلغ</span>
+                            <strong><field name="amount"/></strong>
+                        </div>
+                        <div class="dm_hr_ui_kpi">
+                            <span>الرصيد</span>
+                            <strong><field name="balance_amount"/></strong>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='reason']" position="before">
+                <div class="dm_hr_ui_hint">
+                    <i class="fa fa-info-circle" title="إرشاد"/> يتم إنشاء جدول الأقساط تلقائيًا بعد الاعتماد المالي.
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_purchase_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.leave.purchase.form.inherit.ui</field>
+        <field name="model">dm.hr.leave.purchase</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_leave_purchase_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
+                <div class="dm_hr_ui_hero">
+                    <div>
+                        <span class="dm_hr_ui_eyebrow">شراء إجازة</span>
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div class="dm_hr_ui_meta">
+                            <span><i class="fa fa-user" title="الموظف"/> <field name="employee_id"/></span>
+                            <span><i class="fa fa-calendar" title="الأيام"/> <field name="days"/> يوم</span>
+                        </div>
+                    </div>
+                    <div class="dm_hr_ui_kpi">
+                        <span>القيمة</span>
+                        <strong><field name="amount"/></strong>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_balance_request_form_inherit_ui" model="ir.ui.view">
+        <field name="name">dm.hr.leave.balance.request.form.inherit.ui</field>
+        <field name="model">dm.hr.leave.balance.request</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_leave_balance_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
+                <div class="dm_hr_ui_hero">
+                    <div>
+                        <span class="dm_hr_ui_eyebrow">طلب إضافة رصيد</span>
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div class="dm_hr_ui_meta">
+                            <span><i class="fa fa-user" title="الموظف"/> <field name="employee_id"/></span>
+                            <span><i class="fa fa-calendar-plus-o" title="الأيام"/> <field name="days"/> يوم</span>
+                        </div>
+                    </div>
+                    <div class="dm_hr_ui_kpi">
+                        <span>الرصيد المطلوب</span>
+                        <strong><field name="days"/></strong>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='reason']" position="before">
+                <div class="dm_hr_ui_hint">
+                    <i class="fa fa-lock" title="تنبيه"/> لا يتم تحديث رصيد الموظف إلا بعد اعتماد الموارد البشرية.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

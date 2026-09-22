@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="them_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.them</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="95"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="مظهر النظام" string="مظهر النظام" name="them" groups="base.group_system">
+                    <block title="قائمة التطبيقات" name="them_apps_menu_settings">
+                        <setting string="خلفية شاشة الأيقونات"
+                                 help="اختر خلفية قائمة التطبيقات التي تظهر عند الضغط على أيقونة التطبيقات الرئيسية.">
+                            <field name="them_apps_background_preset"/>
+                        </setting>
+                        <setting string="صورة الخلفية"
+                                 help="ارفع صورة تظهر خلف أيقونات التطبيقات. يفضل صورة أفقية عالية الجودة."
+                                 invisible="them_apps_background_preset != 'image'">
+                            <field name="them_apps_background_image"
+                                   widget="image"
+                                   filename="them_apps_background_image_filename"
+                                   options="{'size': [320, 180]}"/>
+                            <field name="them_apps_background_image_filename" invisible="1"/>
+                        </setting>
+                        <setting string="خلفية مخصصة"
+                                 help="استخدم CSS background مثل لون HEX أو linear-gradient. يظهر هذا الحقل عند اختيار مخصص."
+                                 invisible="them_apps_background_preset != 'custom'">
+                            <field name="them_apps_background_custom"
+                                   placeholder="linear-gradient(135deg, #0f172a 0%, #164e63 100%)"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="them_config_settings_action" model="ir.actions.act_window">
+        <field name="name">مظهر قائمة التطبيقات</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'them', 'bin_size': False}</field>
+    </record>
+
+    <menuitem id="them_config_settings_menu"
+              name="مظهر قائمة التطبيقات"
+              parent="base_setup.menu_config"
+              action="them_config_settings_action"
+              sequence="5"
+              groups="base.group_system"/>
+</odoo>

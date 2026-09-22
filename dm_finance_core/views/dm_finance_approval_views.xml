@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_finance_approval_flow_view_tree" model="ir.ui.view">
+        <field name="name">dm.finance.approval.flow.tree</field>
+        <field name="model">dm.finance.approval.flow</field>
+        <field name="arch" type="xml">
+            <tree string="Finance Approval Flows">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="document_type"/>
+                <field name="model_id"/>
+                <field name="amount_min"/>
+                <field name="amount_max"/>
+                <field name="company_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_flow_view_form" model="ir.ui.view">
+        <field name="name">dm.finance.approval.flow.form</field>
+        <field name="model">dm.finance.approval.flow</field>
+        <field name="arch" type="xml">
+            <form string="Finance Approval Flow">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Approval flow name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="document_type"/>
+                            <field name="model_id"/>
+                            <field name="company_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="amount_min"/>
+                            <field name="amount_max"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="allow_self_approval"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Approval Steps" name="steps">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="approver_type"/>
+                                    <field name="group_id" invisible="approver_type != 'group'"/>
+                                    <field name="user_id" invisible="approver_type != 'user'"/>
+                                    <field name="mandatory"/>
+                                    <field name="require_comment"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="note" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_flow_view_search" model="ir.ui.view">
+        <field name="name">dm.finance.approval.flow.search</field>
+        <field name="model">dm.finance.approval.flow</field>
+        <field name="arch" type="xml">
+            <search string="Finance Approval Flows">
+                <field name="name"/>
+                <field name="model_id"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_document_type" string="Document Type" context="{'group_by': 'document_type'}"/>
+                    <filter name="group_company" string="Company" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_flow_action" model="ir.actions.act_window">
+        <field name="name">Finance Approval Flows</field>
+        <field name="res_model">dm.finance.approval.flow</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_finance_approval_request_view_tree" model="ir.ui.view">
+        <field name="name">dm.finance.approval.request.tree</field>
+        <field name="model">dm.finance.approval.request</field>
+        <field name="arch" type="xml">
+            <tree string="Finance Approval Requests">
+                <field name="request_name"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="requester_id"/>
+                <field name="flow_id"/>
+                <field name="company_id"/>
+                <field name="state" widget="badge"/>
+                <field name="submitted_on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_request_view_form" model="ir.ui.view">
+        <field name="name">dm.finance.approval.request.form</field>
+        <field name="model">dm.finance.approval.request</field>
+        <field name="arch" type="xml">
+            <form string="Finance Approval Request">
+                <header>
+                    <button name="action_submit" type="object" string="Submit" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve" class="oe_highlight" invisible="state != 'under_approval'"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state in ('approved', 'cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,under_approval,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="request_name"/>
+                        <h1><field name="request_name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="res_model" readonly="1"/>
+                            <field name="res_id" readonly="1"/>
+                            <field name="flow_id"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group>
+                            <field name="requester_id"/>
+                            <field name="submitted_on"/>
+                            <field name="approved_on"/>
+                            <field name="rejected_on"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Approval History" name="items">
+                            <field name="item_ids">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="flow_line_id"/>
+                                    <field name="approver_type"/>
+                                    <field name="approver_user_id"/>
+                                    <field name="approver_group_id"/>
+                                    <field name="state" widget="badge"/>
+                                    <field name="date_done"/>
+                                    <field name="action_done_by_id"/>
+                                    <field name="comment"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Rejection" name="rejection" invisible="state != 'rejected'">
+                            <field name="rejection_reason" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_request_view_search" model="ir.ui.view">
+        <field name="name">dm.finance.approval.request.search</field>
+        <field name="model">dm.finance.approval.request</field>
+        <field name="arch" type="xml">
+            <search string="Finance Approval Requests">
+                <field name="request_name"/>
+                <field name="requester_id"/>
+                <field name="flow_id"/>
+                <filter name="pending" string="Pending" domain="[('state', '=', 'under_approval')]"/>
+                <filter name="approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="group_flow" string="Flow" context="{'group_by': 'flow_id'}"/>
+                    <filter name="group_company" string="Company" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dm_finance_approval_request_action" model="ir.actions.act_window">
+        <field name="name">Finance Approval Requests</field>
+        <field name="res_model">dm.finance.approval.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

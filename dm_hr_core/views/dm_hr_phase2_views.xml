@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_probation_extension_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.probation.extension.tree</field>
+        <field name="model">dm.hr.probation.extension</field>
+        <field name="arch" type="xml">
+            <tree string="تمديد فترة التجربة">
+                <field name="name"/><field name="employee_id"/><field name="contract_id"/>
+                <field name="used_days"/><field name="extension_days"/><field name="new_probation_end"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_probation_extension_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.probation.extension.form</field>
+        <field name="model">dm.hr.probation.extension</field>
+        <field name="arch" type="xml">
+            <form string="تمديد فترة التجربة">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve_next" type="object" string="اعتماد المرحلة" class="btn-primary" invisible="state not in ('manager','department','hr','employee')"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected','cancelled')"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group><field name="name"/><field name="employee_id"/><field name="contract_id"/></group>
+                        <group><field name="current_start_date"/><field name="current_probation_end"/><field name="used_days"/><field name="extension_days"/><field name="new_probation_end"/></group>
+                    </group>
+                    <group><field name="reason"/><field name="manager_evaluation"/><field name="manager_recommendation"/><field name="employee_written_approval"/></group>
+                    <group><field name="extension_file" widget="binary"/><field name="document_id"/></group>
+                </sheet><div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_probation_extension_action" model="ir.actions.act_window">
+        <field name="name">تمديد فترة التجربة</field><field name="res_model">dm.hr.probation.extension</field><field name="view_mode">tree,form,activity</field>
+    </record>
+
+    <record id="dm_hr_document_renewal_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.document.renewal.tree</field><field name="model">dm.hr.document.renewal</field>
+        <field name="arch" type="xml"><tree><field name="name"/><field name="employee_id"/><field name="document_type"/><field name="current_expiry_date"/><field name="fees"/><field name="transaction_state" widget="badge"/><field name="state" widget="badge"/></tree></field>
+    </record>
+    <record id="dm_hr_document_renewal_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.document.renewal.form</field><field name="model">dm.hr.document.renewal</field>
+        <field name="arch" type="xml">
+            <form string="تجديد الهوية والوثائق">
+                <header><button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/><button name="action_approve_next" type="object" string="اعتماد المرحلة" class="btn-primary" invisible="state not in ('manager','hr','gov_relations')"/><field name="state" widget="statusbar"/></header>
+                <sheet><group><group><field name="name"/><field name="employee_id"/><field name="document_type"/><field name="current_expiry_date"/></group><group><field name="fees"/><field name="responsible_id"/><field name="transaction_state"/><field name="new_document_id"/></group></group><field name="attachment_ids" widget="many2many_binary"/></sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_document_renewal_action" model="ir.actions.act_window"><field name="name">تجديد الهوية والوثائق</field><field name="res_model">dm.hr.document.renewal</field><field name="view_mode">tree,form,activity</field></record>
+
+    <record id="dm_hr_manpower_request_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.manpower.request.tree</field><field name="model">dm.hr.manpower.request</field>
+        <field name="arch" type="xml"><tree><field name="name"/><field name="branch_id"/><field name="department_id"/><field name="job_id"/><field name="requested_count"/><field name="need_type"/><field name="required_join_date"/><field name="state" widget="badge"/></tree></field>
+    </record>
+    <record id="dm_hr_manpower_request_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.manpower.request.form</field><field name="model">dm.hr.manpower.request</field>
+        <field name="arch" type="xml">
+            <form string="طلب احتياج وظيفي">
+                <header><button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/><button name="action_approve_next" type="object" string="اعتماد المرحلة" class="btn-primary" invisible="state not in ('section_manager','department_manager','sector_manager','hr','finance','executive')"/><button name="action_create_vacancy" type="object" string="إنشاء وظيفة شاغرة" invisible="state != 'approved' or vacancy_job_id"/><field name="state" widget="statusbar"/></header>
+                <sheet><group><group><field name="company_id"/><field name="branch_id"/><field name="sector_id"/><field name="department_id"/><field name="section_id"/></group><group><field name="job_id"/><field name="requested_count"/><field name="need_type"/><field name="budget_amount"/><field name="cost_center"/><field name="required_join_date"/><field name="vacancy_job_id"/></group></group><group><field name="reason"/><field name="qualifications"/></group></sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_manpower_request_action" model="ir.actions.act_window"><field name="name">طلبات الاحتياج الوظيفي</field><field name="res_model">dm.hr.manpower.request</field><field name="view_mode">tree,form,activity</field></record>
+
+    <record id="dm_hr_announcement_view_tree" model="ir.ui.view"><field name="name">dm.hr.announcement.tree</field><field name="model">dm.hr.announcement</field><field name="arch" type="xml"><tree><field name="name"/><field name="announcement_type"/><field name="publish_date"/><field name="expiry_date"/><field name="priority" widget="badge"/><field name="state" widget="badge"/></tree></field></record>
+    <record id="dm_hr_announcement_view_form" model="ir.ui.view"><field name="name">dm.hr.announcement.form</field><field name="model">dm.hr.announcement</field><field name="arch" type="xml"><form string="إعلان/تعميم"><header><button name="action_publish" type="object" string="نشر" class="btn-primary" invisible="state != 'draft'"/><field name="state" widget="statusbar"/></header><sheet><group><group><field name="name"/><field name="announcement_type"/><field name="company_id"/><field name="priority"/></group><group><field name="publish_date"/><field name="effective_date"/><field name="expiry_date"/><field name="acknowledgement_required"/></group></group><group string="الجمهور"><field name="branch_id"/><field name="sector_id"/><field name="department_id"/><field name="section_id"/><field name="job_id"/></group><field name="body"/><field name="attachment_ids" widget="many2many_binary"/><field name="acknowledgement_ids"/></sheet><div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div></form></field></record>
+    <record id="dm_hr_announcement_news_action" model="ir.actions.act_window"><field name="name">الأخبار والإعلانات</field><field name="res_model">dm.hr.announcement</field><field name="view_mode">tree,form,activity</field><field name="domain">[('announcement_type','=','news')]</field><field name="context">{'default_announcement_type':'news'}</field></record>
+    <record id="dm_hr_announcement_circular_action" model="ir.actions.act_window"><field name="name">التعاميم</field><field name="res_model">dm.hr.announcement</field><field name="view_mode">tree,form,activity</field><field name="domain">[('announcement_type','=','circular')]</field><field name="context">{'default_announcement_type':'circular'}</field></record>
+    <record id="dm_hr_announcement_ack_action" model="ir.actions.act_window"><field name="name">تأكيدات الاطلاع</field><field name="res_model">dm.hr.announcement.ack</field><field name="view_mode">tree,form</field></record>
+
+    <record id="dm_hr_company_document_view_tree" model="ir.ui.view"><field name="name">dm.hr.company.document.tree</field><field name="model">dm.hr.company.document</field><field name="arch" type="xml"><tree><field name="name"/><field name="category"/><field name="version"/><field name="effective_date"/><field name="is_confidential"/><field name="state" widget="badge"/></tree></field></record>
+    <record id="dm_hr_company_document_view_form" model="ir.ui.view"><field name="name">dm.hr.company.document.form</field><field name="model">dm.hr.company.document</field><field name="arch" type="xml"><form string="مستند شركة"><header><button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state != 'draft'"/><field name="state" widget="statusbar"/></header><sheet><group><group><field name="name"/><field name="category"/><field name="company_id"/><field name="version"/></group><group><field name="effective_date"/><field name="is_confidential"/><field name="acknowledgement_required"/><field name="approved_by_id"/></group></group><field name="file" widget="binary"/></sheet><div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div></form></field></record>
+    <record id="dm_hr_company_document_action" model="ir.actions.act_window"><field name="name">مستندات الشركة</field><field name="res_model">dm.hr.company.document</field><field name="view_mode">tree,form,activity</field></record>
+</odoo>

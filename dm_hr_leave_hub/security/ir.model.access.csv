@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dm_hr_leave_hub_employee,dm.hr.leave.hub.employee,model_dm_hr_leave_hub,dm_hr_core.group_dm_hr_employee,1,0,0,0
+access_dm_hr_leave_hub_officer,dm.hr.leave.hub.officer,model_dm_hr_leave_hub,dm_hr_core.group_dm_hr_officer,1,0,0,0
+access_dm_hr_leave_hub_manager,dm.hr.leave.hub.manager,model_dm_hr_leave_hub,dm_hr_core.group_dm_hr_manager,1,0,0,0
+access_dm_hr_leave_balance_wizard_officer,dm.hr.leave.balance.wizard.officer,model_dm_hr_leave_balance_wizard,dm_hr_core.group_dm_hr_officer,1,1,1,1
+access_dm_hr_leave_balance_wizard_manager,dm.hr.leave.balance.wizard.manager,model_dm_hr_leave_balance_wizard,dm_hr_core.group_dm_hr_manager,1,1,1,1
+access_dm_hr_leave_annual_allocation_wizard_officer,dm.hr.leave.annual.allocation.wizard.officer,model_dm_hr_leave_annual_allocation_wizard,dm_hr_core.group_dm_hr_officer,1,1,1,1
+access_dm_hr_leave_annual_allocation_wizard_manager,dm.hr.leave.annual.allocation.wizard.manager,model_dm_hr_leave_annual_allocation_wizard,dm_hr_core.group_dm_hr_manager,1,1,1,1

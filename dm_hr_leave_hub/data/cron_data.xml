@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_generate_saudi_annual_leave_allocations" model="ir.cron">
+        <field name="name">HR: توليد رصيد الإجازة السنوية السعودية</field>
+        <field name="model_id" ref="model_dm_hr_leave_hub"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_generate_saudi_annual_allocations()</field>
+        <field name="interval_number">12</field>
+        <field name="interval_type">months</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

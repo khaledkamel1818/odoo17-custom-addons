@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+            Default allowance types — generic templates (no company).
+            Deliberately WITHOUT any financial value, ratio or legal constant:
+            amounts and percentages are always entered on the contract/employee line.
+            All records stay editable / archivable.
+        -->
+        <record id="allowance_type_housing" model="dm.hr.allowance.type">
+            <field name="name">بدل السكن</field>
+            <field name="code">HOUSING</field>
+            <field name="amount_type">fixed</field>
+            <field name="schedule">monthly</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="allowance_type_transportation" model="dm.hr.allowance.type">
+            <field name="name">بدل النقل</field>
+            <field name="code">TRANSPORT</field>
+            <field name="amount_type">fixed</field>
+            <field name="schedule">monthly</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="allowance_type_communication" model="dm.hr.allowance.type">
+            <field name="name">بدل الاتصالات</field>
+            <field name="code">COMMUNICATION</field>
+            <field name="amount_type">fixed</field>
+            <field name="schedule">monthly</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="allowance_type_meal" model="dm.hr.allowance.type">
+            <field name="name">بدل الوجبات</field>
+            <field name="code">MEAL</field>
+            <field name="amount_type">fixed</field>
+            <field name="schedule">monthly</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="allowance_type_other" model="dm.hr.allowance.type">
+            <field name="name">أخرى</field>
+            <field name="code">OTHER</field>
+            <field name="amount_type">fixed</field>
+            <field name="schedule">monthly</field>
+            <field name="sequence">50</field>
+        </record>
+    </data>
+</odoo>

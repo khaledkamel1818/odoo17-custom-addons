@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============ Dependents ============ -->
+    <record id="dm_hr_employee_dependent_list" model="ir.ui.view">
+        <field name="name">dm.hr.employee.dependent.list</field>
+        <field name="model">dm.hr.employee.dependent</field>
+        <field name="arch" type="xml">
+            <tree string="المرافقون" editable="bottom" decoration-muted="not active">
+                <field name="employee_id"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="relationship"/>
+                <field name="birthdate"/>
+                <field name="included_in_gos"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_dependent_form" model="ir.ui.view">
+        <field name="name">dm.hr.employee.dependent.form</field>
+        <field name="model">dm.hr.employee.dependent</field>
+        <field name="arch" type="xml">
+            <form string="مرافق الموظف">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="بيانات المرافق" col="2">
+                        <group string="الشخص">
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="relationship"/>
+                        <field name="birthdate"/>
+                        </group>
+                        <group string="التغطية">
+                        <field name="included_in_gos"/>
+                        <field name="active"/>
+                        <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_dependent_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.employee.dependent.kanban</field>
+        <field name="model">dm.hr.employee.dependent</field>
+        <field name="arch" type="xml">
+            <kanban string="المرافقون" class="o_kanban_small_column">
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="relationship"/>
+                <field name="birthdate"/>
+                <field name="included_in_gos"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="name"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="employee_id"/></div>
+                            <div><field name="relationship"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span><field name="birthdate"/></span>
+                                <span t-if="record.included_in_gos.raw_value">مشمول بالتأمينات</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_dependent_action" model="ir.actions.act_window">
+        <field name="name">المرافقون</field>
+        <field name="res_model">dm.hr.employee.dependent</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_hr_employee_dependent_search" model="ir.ui.view">
+        <field name="name">dm.hr.employee.dependent.search</field>
+        <field name="model">dm.hr.employee.dependent</field>
+        <field name="arch" type="xml">
+            <search string="المرافقون">
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="relationship"/>
+                <filter name="active_records" string="نشط" domain="[('active', '=', True)]"/>
+                <filter name="included_in_gosi" string="مشمول في التأمينات الاجتماعية" domain="[('included_in_gos', '=', True)]"/>
+                <separator/>
+                <filter name="group_employee" string="الموظف" context="{'group_by': 'employee_id'}"/>
+                <filter name="group_relationship" string="صلة القرابة" context="{'group_by': 'relationship'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ============ Documents ============ -->
+    <record id="dm_hr_document_list" model="ir.ui.view">
+        <field name="name">dm.hr.document.list</field>
+        <field name="model">dm.hr.document</field>
+        <field name="arch" type="xml">
+            <tree string="مستندات الموظفين" editable="bottom" decoration-danger="expiry_date and expiry_date &lt; context_today().strftime('%Y-%m-%d')" decoration-muted="not active">
+                <field name="employee_id"/>
+                <field name="document_type"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="reference_no"/>
+                <field name="issue_date"/>
+                <field name="expiry_date"/>
+                <field name="is_confidential" widget="boolean_toggle"/>
+                <field name="alert_before_days"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_document_form" model="ir.ui.view">
+        <field name="name">dm.hr.document.form</field>
+        <field name="model">dm.hr.document</field>
+        <field name="arch" type="xml">
+            <form string="مستند الموظف">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="بيانات المستند">
+                        <group string="المستند">
+                            <field name="employee_id"/>
+                            <field name="document_type"/>
+                            <field name="name"/>
+                        </group>
+                        <group string="التواريخ والمرجع">
+                            <field name="reference_no"/>
+                            <field name="issue_date"/>
+                            <field name="expiry_date"/>
+                            <field name="is_confidential" widget="boolean_toggle"/>
+                            <field name="alert_before_days"/>
+                            <field name="renewal_responsible_id"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="الملف">
+                        <field name="document_file" widget="binary" filename="name"/>
+                    </group>
+                    <group string="ملاحظات">
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_document_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.document.kanban</field>
+        <field name="model">dm.hr.document</field>
+        <field name="arch" type="xml">
+            <kanban string="مستندات الموظفين" class="o_kanban_small_column">
+                <field name="employee_id"/>
+                <field name="document_type"/>
+                <field name="name"/>
+                <field name="reference_no"/>
+                <field name="expiry_date"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="name"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="employee_id"/></div>
+                            <div><field name="document_type"/> - <field name="reference_no"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span>ينتهي في</span>
+                                <span><field name="expiry_date"/></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_document_action" model="ir.actions.act_window">
+        <field name="name">مستندات الموظفين</field>
+        <field name="res_model">dm.hr.document</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_hr_document_search" model="ir.ui.view">
+        <field name="name">dm.hr.document.search</field>
+        <field name="model">dm.hr.document</field>
+        <field name="arch" type="xml">
+            <search string="مستندات الموظفين">
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="reference_no"/>
+                <field name="document_type"/>
+                <filter name="active_records" string="نشط" domain="[('active', '=', True)]"/>
+                <filter name="expired" string="منتهي" domain="[('expiry_date', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter name="group_employee" string="الموظف" context="{'group_by': 'employee_id'}"/>
+                <filter name="group_document_type" string="نوع المستند" context="{'group_by': 'document_type'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

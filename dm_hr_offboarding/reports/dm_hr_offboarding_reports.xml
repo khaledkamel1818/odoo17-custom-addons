@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_offboarding_document">
+        <t t-call="web.external_layout">
+            <main dir="rtl" style="font-family: sans-serif;">
+                <h2><t t-esc="title"/></h2>
+                <p><strong>الرقم:</strong> <span t-field="o.name"/></p>
+                <p><strong>الموظف:</strong> <span t-field="o.employee_id"/></p>
+                <p><strong>الوظيفة:</strong> <span t-field="o.job_id"/></p>
+                <p><strong>الإدارة:</strong> <span t-field="o.department_level_id"/></p>
+                <p><strong>نوع الإنهاء:</strong> <span t-field="o.termination_type_id"/></p>
+                <p><strong>تاريخ الطلب:</strong> <span t-field="o.request_date"/></p>
+                <p><strong>آخر يوم عمل معتمد:</strong> <span t-field="o.approved_last_work_date"/></p>
+                <p><strong>السبب:</strong> <span t-field="o.reason"/></p>
+                <hr/>
+                <p>يعتمد هذا المستند من سجلات نظام الموارد البشرية، مع حفظ كامل سجل الإجراءات والموافقات في الطلب.</p>
+            </main>
+        </t>
+    </template>
+    <template id="report_offboarding_generic">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="title" t-value="'مستند إنهاء خدمة'"/>
+                <t t-call="dm_hr_offboarding.report_offboarding_document"/>
+            </t>
+        </t>
+    </template>
+    <template id="report_clearance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <main dir="rtl">
+                        <h2>نموذج إخلاء طرف</h2>
+                        <p><strong>الموظف:</strong> <span t-field="o.employee_id"/> - <strong>آخر يوم:</strong> <span t-field="o.approved_last_work_date"/></p>
+                        <table class="table table-sm">
+                            <thead><tr><th>الجهة</th><th>الوصف</th><th>الحالة</th><th>حسم</th><th>ملاحظات</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.clearance_line_ids" t-as="l">
+                                    <td><span t-field="l.department_id"/></td><td><span t-field="l.description"/></td><td><span t-field="l.state"/></td><td><span t-field="l.deduction_amount"/></td><td><span t-field="l.notes"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </main>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_settlement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <main dir="rtl">
+                        <h2>بيان التسوية النهائية</h2>
+                        <p><strong>الموظف:</strong> <span t-field="o.employee_id"/> - <strong>التاريخ:</strong> <span t-field="o.settlement_date"/></p>
+                        <p><span t-field="o.eos_explanation"/></p>
+                        <table class="table table-sm">
+                            <thead><tr><th>النوع</th><th>المصدر</th><th>الوصف</th><th>الكمية</th><th>السعر</th><th>الإجمالي</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="l">
+                                    <td><span t-field="l.line_type"/></td><td><span t-field="l.source"/></td><td><span t-field="l.description"/></td><td><span t-field="l.quantity"/></td><td><span t-field="l.price_unit"/></td><td><span t-field="l.amount"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>الصافي: <span t-field="o.net_amount"/></h4>
+                    </main>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_exit_interview">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <main dir="rtl">
+                        <h2>مقابلة الخروج</h2>
+                        <p><strong>الموظف:</strong> <span t-field="o.employee_id"/> - <strong>التاريخ:</strong> <span t-field="o.interview_date"/></p>
+                        <p><strong>مستوى الرضا:</strong> <span t-field="o.satisfaction"/></p>
+                        <p><strong>ملخص الأسباب:</strong> <span t-field="o.reason_summary"/></p>
+                        <p><strong>التوصيات:</strong> <span t-field="o.recommendations"/></p>
+                    </main>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_resignation_request" model="ir.actions.report"><field name="name">طلب استقالة</field><field name="model">dm.hr.offboarding</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_offboarding_generic</field><field name="report_file">dm_hr_offboarding.report_offboarding_generic</field><field name="print_report_name">'Resignation - %s' % object.name</field><field name="binding_model_id" ref="model_dm_hr_offboarding"/><field name="binding_type">report</field></record>
+    <record id="action_report_resignation_acceptance" model="ir.actions.report"><field name="name">قبول الاستقالة</field><field name="model">dm.hr.offboarding</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_offboarding_generic</field><field name="binding_model_id" ref="model_dm_hr_offboarding"/><field name="binding_type">report</field></record>
+    <record id="action_report_termination_decision" model="ir.actions.report"><field name="name">قرار إنهاء خدمة</field><field name="model">dm.hr.offboarding</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_offboarding_generic</field><field name="binding_model_id" ref="model_dm_hr_offboarding"/><field name="binding_type">report</field></record>
+    <record id="action_report_clearance" model="ir.actions.report"><field name="name">نموذج إخلاء طرف</field><field name="model">dm.hr.offboarding</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_clearance</field><field name="binding_model_id" ref="model_dm_hr_offboarding"/><field name="binding_type">report</field></record>
+    <record id="action_report_eos" model="ir.actions.report"><field name="name">بيان مكافأة نهاية الخدمة</field><field name="model">dm.hr.offboarding.settlement</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_settlement</field><field name="binding_model_id" ref="model_dm_hr_offboarding_settlement"/><field name="binding_type">report</field></record>
+    <record id="action_report_final_settlement" model="ir.actions.report"><field name="name">بيان التسوية النهائية</field><field name="model">dm.hr.offboarding.settlement</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_settlement</field><field name="binding_model_id" ref="model_dm_hr_offboarding_settlement"/><field name="binding_type">report</field></record>
+    <record id="action_report_experience_certificate" model="ir.actions.report"><field name="name">شهادة خبرة</field><field name="model">dm.hr.offboarding</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_offboarding_generic</field><field name="binding_model_id" ref="model_dm_hr_offboarding"/><field name="binding_type">report</field></record>
+    <record id="action_report_exit_interview" model="ir.actions.report"><field name="name">تقرير مقابلة الخروج</field><field name="model">dm.hr.exit.interview</field><field name="report_type">qweb-pdf</field><field name="report_name">dm_hr_offboarding.report_exit_interview</field><field name="binding_model_id" ref="model_dm_hr_exit_interview"/><field name="binding_type">report</field></record>
+</odoo>

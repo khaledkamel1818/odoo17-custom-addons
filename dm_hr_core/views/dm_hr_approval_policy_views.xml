@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_approval_policy_tree" model="ir.ui.view">
+        <field name="name">dm.hr.approval.policy.tree</field>
+        <field name="model">dm.hr.approval.policy</field>
+        <field name="arch" type="xml">
+            <tree string="سياسات الموافقات" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="request_type" widget="badge"/>
+                <field name="branch_id"/>
+                <field name="sector_id"/>
+                <field name="department_id"/>
+                <field name="section_id"/>
+                <field name="unit_id"/>
+                <field name="job_id"/>
+                <field name="priority_filter" widget="badge"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="allow_self_approval" widget="boolean_toggle"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_approval_policy_form" model="ir.ui.view">
+        <field name="name">dm.hr.approval.policy.form</field>
+        <field name="model">dm.hr.approval.policy</field>
+        <field name="arch" type="xml">
+            <form string="سياسة موافقات الموارد البشرية">
+                <sheet>
+                    <div class="dm_hr_form_hero dm_hr_approval_hero">
+                        <div>
+                            <label for="name" string="اسم السياسة"/>
+                            <h1><field name="name" placeholder="مثال: اعتماد طلبات الانتداب"/></h1>
+                            <p>عرّف متى تطبق السياسة، ثم رتب خطوات الاعتماد مع المهلة والتفويض والتصعيد لكل خطوة.</p>
+                        </div>
+                        <span class="dm_hr_title_badge">Workflow</span>
+                    </div>
+                    <div class="dm_hr_geo_cards">
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-sliders" title="نطاق السياسة"/>
+                                <h3>نطاق السياسة</h3>
+                            </div>
+                            <group>
+                                <field name="request_type"/>
+                                <field name="branch_id"/>
+                                <field name="sector_id"/>
+                                <field name="department_id"/>
+                                <field name="section_id"/>
+                                <field name="unit_id"/>
+                                <field name="apply_on_child_levels" widget="boolean_toggle"/>
+                                <field name="job_id"/>
+                                <field name="priority_filter"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                        </div>
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-check-square-o" title="قواعد الاعتماد"/>
+                                <h3>قواعد الاعتماد</h3>
+                            </div>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="min_duration_hours"/>
+                                <field name="max_duration_hours"/>
+                                <field name="min_service_years"/>
+                                <field name="sla_hours"/>
+                                <field name="escalation_user_id"/>
+                                <field name="allow_self_approval" widget="boolean_toggle"/>
+                                <field name="active" widget="boolean_toggle"/>
+                            </group>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="خطوات الاعتماد">
+                            <div class="dm_hr_section_note">
+                                رتّب الخطوات من الأعلى إلى الأسفل. لكل خطوة يمكن تحديد المعتمد، المهلة، المفوّض، التصعيد، وتعليمات التنفيذ.
+                            </div>
+                            <field name="step_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="approver_type" widget="badge"/>
+                                    <field name="user_id" invisible="approver_type != 'user'"/>
+                                    <field name="group_id" invisible="approver_type != 'group'"/>
+                                    <field name="job_approval_role" invisible="approver_type != 'job_role'"/>
+                                    <field name="require_comment" widget="boolean_toggle"/>
+                                    <field name="sla_hours"/>
+                                    <field name="delegate_user_id"/>
+                                    <field name="escalation_user_id"/>
+                                    <field name="instructions"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="ملاحظات">
+                            <field name="note" nolabel="1" placeholder="ملاحظات داخلية عن استخدام هذه السياسة..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_approval_policy_search" model="ir.ui.view">
+        <field name="name">dm.hr.approval.policy.search</field>
+        <field name="model">dm.hr.approval.policy</field>
+        <field name="arch" type="xml">
+            <search string="بحث سياسات الموافقات">
+                <field name="name"/>
+                <field name="request_type"/>
+                <field name="branch_id"/>
+                <field name="sector_id"/>
+                <field name="department_id"/>
+                <field name="section_id"/>
+                <field name="unit_id"/>
+                <field name="job_id"/>
+                <filter name="active_policies" string="نشطة" domain="[('active', '=', True)]"/>
+                <filter name="archived_policies" string="مؤرشفة" domain="[('active', '=', False)]"/>
+                <group expand="0" string="تجميع حسب">
+                    <filter name="group_request_type" string="نوع الطلب" context="{'group_by': 'request_type'}"/>
+                    <filter name="group_branch" string="الفرع" context="{'group_by': 'branch_id'}"/>
+                    <filter name="group_sector" string="القطاع" context="{'group_by': 'sector_id'}"/>
+                    <filter name="group_department" string="الإدارة" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_section" string="القسم" context="{'group_by': 'section_id'}"/>
+                    <filter name="group_unit" string="الوحدة" context="{'group_by': 'unit_id'}"/>
+                    <filter name="group_job" string="الوظيفة" context="{'group_by': 'job_id'}"/>
+                    <filter name="group_company" string="الشركة" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="dm_hr_approval_policy_action" model="ir.actions.act_window">
+        <field name="name">موافقات طلبات الخدمات</field>
+        <field name="res_model">dm.hr.approval.policy</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="dm_hr_approval_policy_search"/>
+        <field name="context">{'search_default_active_policies': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">أنشئ سياسة موافقات مرنة.</p>
+            <p>يمكنك ربط السياسة بنوع طلب محدد مثل الاستئذان أو العمل الإضافي أو جعلها سياسة عامة لكل الطلبات.</p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.dm.hr.core</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="الموارد البشرية" string="الموارد البشرية الأساسية" name="dm_hr" groups="dm_hr_core.group_dm_hr_admin">
+                    <block title="التأمينات الاجتماعية" name="dm_social_insurance_setting_container">
+                        <setting help="النظام المستخدم افتراضياً عند احتساب التأمينات الاجتماعية لفترات الرواتب الجديدة."
+                                 title="نظام التأمينات الاجتماعية الافتراضي">
+                            <field name="social_insurance_scheme_id"/>
+                        </setting>
+                    </block>
+                    <block title="الحضور والانصراف" name="dm_attendance_setting_container">
+                        <setting title="فترة السماح للتأخير" help="عدد الدقائق المسموح بها قبل اعتبار السجل متأخرًا.">
+                            <field name="dm_attendance_late_grace_minutes"/>
+                        </setting>
+                        <setting title="فترة السماح للخروج المبكر" help="عدد الدقائق المسموح بها قبل اعتبار الانصراف خروجًا مبكرًا.">
+                            <field name="dm_attendance_early_leave_grace_minutes"/>
+                        </setting>
+                        <setting title="سياسة الغياب" help="وصف سياسة الغياب المستخدمة في المعالجة والتقارير.">
+                            <field name="dm_attendance_absence_policy"/>
+                        </setting>
+                        <setting title="ربط الحضور بالإجازات" help="عند التفعيل، يمنع تسجيل الحضور أو الانصراف في يوم إجازة معتمدة.">
+                            <field name="dm_attendance_block_on_approved_leave"/>
+                        </setting>
+                        <setting title="سير عمل الموبايل" help="تفعيل حضور الموبايل وتصحيحاته وإشعارات المدير.">
+                            <field name="dm_attendance_mobile_enabled"/>
+                            <field name="dm_attendance_mobile_correction_enabled"/>
+                            <field name="dm_attendance_manager_notifications"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

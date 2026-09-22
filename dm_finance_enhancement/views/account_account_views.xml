@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_form_dm_finance_enhancement" model="ir.ui.view">
+        <field name="name">account.account.form.dm.finance.enhancement</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='account_type']" position="after">
+                <field name="dm_parent_account_id"/>
+                <field name="dm_account_group" readonly="1"/>
+                <field name="dm_account_level" readonly="1"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="Professional Balances">
+                    <field name="dm_current_debit" readonly="1"/>
+                    <field name="dm_current_credit" readonly="1"/>
+                    <field name="dm_closing_balance" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_list_dm_finance_enhancement" model="ir.ui.view">
+        <field name="name">account.account.list.dm.finance.enhancement</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="dm_parent_account_id" optional="show"/>
+                <field name="dm_account_group" optional="show"/>
+                <field name="dm_account_level" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='account_type']" position="after">
+                <field name="opening_balance" optional="show"/>
+                <field name="dm_current_debit" optional="show" sum="Debit"/>
+                <field name="dm_current_credit" optional="show" sum="Credit"/>
+                <field name="dm_closing_balance" optional="show" sum="Balance"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_search_dm_finance_enhancement" model="ir.ui.view">
+        <field name="name">account.account.search.dm.finance.enhancement</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="dm_parent_account_id"/>
+                <filter name="dm_asset_accounts" string="Assets" domain="[('dm_account_group','=','asset')]"/>
+                <filter name="dm_liability_accounts" string="Liabilities" domain="[('dm_account_group','=','liability')]"/>
+                <filter name="dm_equity_accounts" string="Equity" domain="[('dm_account_group','=','equity')]"/>
+                <filter name="dm_revenue_accounts" string="Revenue" domain="[('dm_account_group','=','income')]"/>
+                <filter name="dm_expense_accounts" string="Expenses" domain="[('dm_account_group','=','expense')]"/>
+                <separator/>
+                <filter name="group_dm_parent" string="Parent Account" context="{'group_by':'dm_parent_account_id'}"/>
+                <filter name="group_dm_financial_category" string="Financial Category" context="{'group_by':'dm_account_group'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_dm_finance_enhanced_chart_accounts" model="ir.actions.act_window">
+        <field name="name">Advanced Chart of Accounts</field>
+        <field name="res_model">account.account</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="account.view_account_search"/>
+        <field name="context">{'search_default_group_dm_financial_category': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Build a professional hierarchical chart of accounts.</p>
+        </field>
+    </record>
+</odoo>

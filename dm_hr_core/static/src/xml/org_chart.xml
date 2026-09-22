@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dm_hr_core.OrgChart">
+        <div class="dm_hr_org_chart o_action" dir="auto">
+            <div class="dm_hr_org_header">
+                <div>
+                    <h2>الهيكل التنظيمي</h2>
+                    <p>عرض شجري متدرج للهيكل والموظفين دون مكونات خارجية.</p>
+                    <div class="dm_hr_org_tip">
+                        <i class="fa fa-info-circle" title="إرشاد"/> اضغط على أي فرع أو إدارة أو موظف لفتح السجل. استخدم الفلاتر لتقليل النتائج عند كبر الهيكل.
+                    </div>
+                </div>
+                <div class="dm_hr_org_filters">
+                    <select t-on-change="onCompanyChange" t-att-value="state.companyId">
+                        <option value="">كل الشركات</option>
+                        <t t-foreach="state.filters.companies" t-as="company" t-key="company.id">
+                            <option t-att-value="company.id" t-esc="company.name"/>
+                        </t>
+                    </select>
+                    <select t-on-change="onBranchChange" t-att-value="state.branchId">
+                        <option value="">كل الفروع</option>
+                        <t t-foreach="visibleBranches" t-as="branch" t-key="branch.id">
+                            <option t-att-value="branch.id" t-esc="branch.name"/>
+                        </t>
+                    </select>
+                    <div class="dm_hr_org_search">
+                        <input type="search" placeholder="بحث باسم وحدة تنظيمية أو موظف..."
+                               t-att-value="state.search" t-on-input="onSearch" t-on-keyup="onSearchKeyup"/>
+                        <button class="btn btn-primary" t-on-click="searchNow">بحث</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dm_hr_org_summary">
+                <span><b t-esc="state.summary.branches || 0"/> فروع</span>
+                <span><b t-esc="state.summary.sectors || 0"/> قطاعات</span>
+                <span><b t-esc="state.summary.departments || 0"/> إدارات</span>
+                <span><b t-esc="state.summary.sections || 0"/> أقسام</span>
+                <span><b t-esc="state.summary.units || 0"/> وحدات</span>
+                <span><b t-esc="state.summary.employees || 0"/> موظفين</span>
+            </div>
+            <t t-if="state.loading">
+                <div class="dm_hr_org_empty">جاري تحميل الهيكل...</div>
+            </t>
+            <t t-elif="!flatRows.length">
+                <div class="dm_hr_org_empty">
+                    لا توجد بيانات ضمن نطاق صلاحياتك أو الفلاتر الحالية.
+                    <small>جرّب إزالة الفلاتر أو تواصل مع مسؤول الموارد البشرية إذا كنت تتوقع ظهور بيانات.</small>
+                </div>
+            </t>
+            <div class="dm_hr_org_tree" t-else="">
+                <t t-foreach="flatRows" t-as="row" t-key="row.key">
+                    <div t-if="row.kind === 'node'"
+                         t-attf-class="dm_hr_org_card dm_hr_org_level_{{row.level}}"
+                         t-att-style="'margin-inline-start:' + (row.depth * 22) + 'px'">
+                        <button class="dm_hr_org_title"
+                                t-att-data-model="row.model"
+                                t-att-data-res-id="row.resId"
+                                t-on-click="openRecord">
+                            <span class="dm_hr_org_badge" t-esc="row.levelLabel"/>
+                            <span t-esc="row.name"/>
+                        </button>
+                        <div class="dm_hr_org_meta">
+                            <span t-if="row.manager"><i class="fa fa-user" title="المدير"/> المدير: <t t-esc="row.manager"/></span>
+                            <span><i class="fa fa-users" title="الموظفون"/> الموظفون: <t t-esc="row.employeeCount"/></span>
+                        </div>
+                    </div>
+                    <button t-if="row.kind === 'employee'"
+                            class="dm_hr_org_employee"
+                            t-att-style="'margin-inline-start:' + (row.depth * 22) + 'px'"
+                            t-att-data-model="row.model"
+                            t-att-data-res-id="row.resId"
+                            t-on-click="openEmployee">
+                        <span class="dm_hr_org_employee_name" t-esc="row.name"/>
+                        <span class="dm_hr_org_employee_job" t-esc="row.job || 'بدون منصب'"/>
+                        <span class="dm_hr_org_employee_manager">المدير المباشر: <t t-esc="row.manager || 'غير محدد'"/></span>
+                    </button>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

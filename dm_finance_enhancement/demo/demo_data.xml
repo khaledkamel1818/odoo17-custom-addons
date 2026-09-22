@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_branch_riyadh" model="dm.finance.branch">
+        <field name="name">Riyadh Finance Branch</field>
+        <field name="code">RYD-FIN</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="city">Riyadh</field>
+    </record>
+
+    <record id="demo_branch_cairo" model="dm.finance.branch">
+        <field name="name">Cairo Finance Branch</field>
+        <field name="code">CAI-FIN</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="city">Cairo</field>
+    </record>
+</odoo>
+

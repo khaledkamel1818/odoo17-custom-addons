@@ -21,14 +21,15 @@ class TestApp(models.Model):
 
 class MyOrders(models.Model):
       _name = 'my.order'
-     
+      _description = 'My Orders'
+
       orderDes = fields.Char()
       data_time = fields.Datetime()
       items_ids = fields.One2many('my.orders.items', 'order_id')
 
 class MyOrdersItems(models.Model):
       _name = 'my.orders.items'
-
+      _description = 'My Order Items'
       itemName = fields.Char()
       itemPrice = fields.Float()
       qty = fields.Integer()

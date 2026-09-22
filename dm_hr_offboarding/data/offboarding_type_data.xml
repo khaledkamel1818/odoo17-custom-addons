@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="offboarding_rule_saudi_default" model="dm.hr.offboarding.rule">
+            <field name="name">قاعدة السعودية الافتراضية</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="first_period_years">5</field>
+            <field name="first_period_month_ratio">0.5</field>
+            <field name="later_period_month_ratio">1</field>
+            <field name="resignation_no_entitlement_years">2</field>
+            <field name="resignation_one_third_years">5</field>
+            <field name="resignation_two_third_years">10</field>
+        </record>
+        <record id="offboarding_type_resignation" model="dm.hr.offboarding.type">
+            <field name="name">استقالة</field><field name="code">resignation</field><field name="sequence">10</field><field name="initiated_by">employee</field>
+        </record>
+        <record id="offboarding_type_contract_expiry" model="dm.hr.offboarding.type">
+            <field name="name">انتهاء العقد</field><field name="code">contract_expiry</field><field name="sequence">20</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_nonrenewal_employee" model="dm.hr.offboarding.type">
+            <field name="name">عدم تجديد العقد من الموظف</field><field name="code">nonrenewal_employee</field><field name="sequence">30</field><field name="initiated_by">employee</field>
+        </record>
+        <record id="offboarding_type_nonrenewal_company" model="dm.hr.offboarding.type">
+            <field name="name">عدم تجديد العقد من الشركة</field><field name="code">nonrenewal_company</field><field name="sequence">40</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_mutual" model="dm.hr.offboarding.type">
+            <field name="name">اتفاق الطرفين</field><field name="code">mutual</field><field name="sequence">50</field><field name="initiated_by">both</field>
+        </record>
+        <record id="offboarding_type_employer_termination" model="dm.hr.offboarding.type">
+            <field name="name">إنهاء من صاحب العمل</field><field name="code">employer_termination</field><field name="sequence">60</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_disciplinary" model="dm.hr.offboarding.type">
+            <field name="name">إنهاء تأديبي</field><field name="code">disciplinary</field><field name="sequence">70</field><field name="initiated_by">hr</field><field name="default_entitlement_ratio">0</field>
+        </record>
+        <record id="offboarding_type_probation" model="dm.hr.offboarding.type">
+            <field name="name">إنهاء خلال فترة التجربة</field><field name="code">probation</field><field name="sequence">80</field><field name="initiated_by">both</field><field name="default_entitlement_ratio">0</field>
+        </record>
+        <record id="offboarding_type_retirement" model="dm.hr.offboarding.type">
+            <field name="name">تقاعد</field><field name="code">retirement</field><field name="sequence">90</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_medical_disability" model="dm.hr.offboarding.type">
+            <field name="name">عجز طبي</field><field name="code">medical_disability</field><field name="sequence">100</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_death" model="dm.hr.offboarding.type">
+            <field name="name">وفاة</field><field name="code">death</field><field name="sequence">110</field><field name="initiated_by">hr</field><field name="notice_required">0</field>
+        </record>
+        <record id="offboarding_type_force_majeure" model="dm.hr.offboarding.type">
+            <field name="name">قوة قاهرة</field><field name="code">force_majeure</field><field name="sequence">120</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_absence" model="dm.hr.offboarding.type">
+            <field name="name">انقطاع / غياب</field><field name="code">absence</field><field name="sequence">130</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_transfer_company" model="dm.hr.offboarding.type">
+            <field name="name">نقل لشركة أخرى</field><field name="code">transfer_company</field><field name="sequence">140</field><field name="initiated_by">hr</field>
+        </record>
+        <record id="offboarding_type_other" model="dm.hr.offboarding.type">
+            <field name="name">أخرى</field><field name="code">other</field><field name="sequence">999</field><field name="initiated_by">both</field>
+        </record>
+
+        <record id="clearance_department_manager" model="dm.hr.offboarding.clearance.department">
+            <field name="name">الإدارة المباشرة</field><field name="code">direct_management</field><field name="sequence">10</field><field name="default_description">اعتماد تسليم الأعمال والملفات والمهام المفتوحة.</field>
+        </record>
+        <record id="clearance_department_hr" model="dm.hr.offboarding.clearance.department">
+            <field name="name">الموارد البشرية</field><field name="code">hr</field><field name="sequence">20</field><field name="default_description">مراجعة ملف الموظف والمستندات والإجراءات النظامية.</field>
+        </record>
+        <record id="clearance_department_finance" model="dm.hr.offboarding.clearance.department">
+            <field name="name">المالية</field><field name="code">finance</field><field name="sequence">30</field><field name="default_description">مراجعة السلف والقروض والمستحقات والحسميات.</field>
+        </record>
+        <record id="clearance_department_it" model="dm.hr.offboarding.clearance.department">
+            <field name="name">تقنية المعلومات</field><field name="code">it</field><field name="sequence">40</field><field name="default_description">إغلاق/استلام حسابات وأنظمة وأجهزة تقنية المعلومات.</field>
+        </record>
+        <record id="clearance_department_custody" model="dm.hr.offboarding.clearance.department">
+            <field name="name">العهد</field><field name="code">custody</field><field name="sequence">50</field><field name="default_description">استلام العهد غير المالية أو تسويتها.</field>
+        </record>
+    </data>
+</odoo>

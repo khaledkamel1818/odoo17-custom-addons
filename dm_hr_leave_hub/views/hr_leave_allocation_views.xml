@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_leave_balance_wizard_form" model="ir.ui.view">
+        <field name="name">dm.hr.leave.balance.wizard.form</field>
+        <field name="model">dm.hr.leave.balance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="إضافة رصيد إجازات يدوي">
+                <sheet>
+                    <div class="dm_hr_form_hero">
+                        <div>
+                            <h1>إضافة رصيد إجازات يدوي</h1>
+                            <p>استخدمها لمسؤول الموارد البشرية لإضافة رصيد لموظف أو أكثر مع اعتماد مباشر اختياري.</p>
+                        </div>
+                        <span class="dm_hr_title_badge">HR</span>
+                    </div>
+                    <group>
+                        <group string="الرصيد">
+                            <field name="holiday_status_id"/>
+                            <field name="number_of_days"/>
+                            <field name="validate_now" widget="boolean_toggle"/>
+                        </group>
+                        <group string="الصلاحية">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                    </group>
+                    <group string="الموظفون">
+                        <field name="employee_ids" widget="many2many_tags"/>
+                    </group>
+                    <field name="reason" placeholder="سبب إضافة الرصيد..."/>
+                </sheet>
+                <footer>
+                    <button name="action_create_allocations" type="object" string="إضافة الرصيد" class="btn-primary"/>
+                    <button string="إلغاء" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_balance_wizard_action" model="ir.actions.act_window">
+        <field name="name">إضافة رصيد إجازات يدوي</field>
+        <field name="res_model">dm.hr.leave.balance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="dm_hr_leave_annual_allocation_wizard_form" model="ir.ui.view">
+        <field name="name">dm.hr.leave.annual.allocation.wizard.form</field>
+        <field name="model">dm.hr.leave.annual.allocation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="توليد الرصيد السنوي السعودي">
+                <sheet>
+                    <div class="dm_hr_form_hero">
+                        <div>
+                            <h1>توليد الرصيد السنوي السعودي</h1>
+                            <p>يمنح النظام 21 يوم لمن هم أقل من خمس سنوات خدمة و30 يوم لمن أكمل خمس سنوات فأكثر.</p>
+                        </div>
+                        <span class="dm_hr_title_badge">21 / 30</span>
+                    </div>
+                    <group>
+                        <field name="year"/>
+                        <field name="holiday_status_id"/>
+                        <field name="employee_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_generate" type="object" string="توليد واعتماد الرصيد" class="btn-primary"/>
+                    <button string="إلغاء" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_annual_allocation_wizard_action" model="ir.actions.act_window">
+        <field name="name">توليد الرصيد السنوي السعودي</field>
+        <field name="res_model">dm.hr.leave.annual.allocation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="hr_leave_type_form_saudi_annual" model="ir.ui.view">
+        <field name="name">hr.leave.type.form.saudi.annual</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='requires_allocation']" position="after">
+                <field name="dm_is_saudi_annual_leave" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_leave_allocation_tree_dm_origin" model="ir.ui.view">
+        <field name="name">hr.leave.allocation.tree.dm.origin</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="dm_allocation_origin" widget="badge" optional="show"/>
+                <field name="dm_auto_annual_year" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_dm_hr_manual_leave_balance"
+              name="إضافة رصيد إجازات يدوي"
+              parent="dm_hr_core.menu_dm_hr_operations"
+              action="dm_hr_leave_balance_wizard_action"
+              sequence="76"
+              groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+
+    <menuitem id="menu_dm_hr_generate_annual_leave"
+              name="توليد الرصيد السنوي السعودي"
+              parent="dm_hr_core.menu_dm_hr_operations"
+              action="dm_hr_leave_annual_allocation_wizard_action"
+              sequence="77"
+              groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+</odoo>

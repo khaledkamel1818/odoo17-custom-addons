@@ -54,7 +54,8 @@
 <!-- ================= KH APP ================= -->
 <menuitem name="KH App"
           id="testapp.menu_root"
-          sequence="1"/>
+          sequence="1"
+          web_icon="testapp,static/description/icon.svg"/>
 
 <!-- ================= ORDERS APP ================= -->
 <menuitem name="Dashboard"

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_contract_history_list" model="ir.ui.view">
+        <field name="name">dm.hr.contract.history.list</field>
+        <field name="model">dm.hr.contract.history</field>
+        <field name="arch" type="xml">
+            <tree string="سجل العقد والراتب" editable="bottom">
+                <field name="date"/>
+                <field name="employee_id"/>
+                <field name="contract_id"/>
+                <field name="change_type" widget="badge"/>
+                <field name="previous_wage"/>
+                <field name="new_wage"/>
+                <field name="note"/>
+                <field name="company_id" groups="base.group_multi_company" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_contract_history_form" model="ir.ui.view">
+        <field name="name">dm.hr.contract.history.form</field>
+        <field name="model">dm.hr.contract.history</field>
+        <field name="arch" type="xml">
+            <form string="سجل العقد والراتب">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="قيد السجل">
+                        <group string="المرجع">
+                            <field name="employee_id"/>
+                            <field name="contract_id"/>
+                            <field name="date"/>
+                        </group>
+                        <group string="التغيير">
+                            <field name="change_type" widget="radio"/>
+                            <field name="previous_wage"/>
+                            <field name="new_wage"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="ملاحظات">
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_contract_history_action" model="ir.actions.act_window">
+        <field name="name">سجل العقد والراتب</field>
+        <field name="res_model">dm.hr.contract.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hr_contract_history_list"/>
+    </record>
+
+    <record id="hr_contract_history_search" model="ir.ui.view">
+        <field name="name">dm.hr.contract.history.search</field>
+        <field name="model">dm.hr.contract.history</field>
+        <field name="arch" type="xml">
+            <search string="سجل العقد والراتب">
+                <field name="employee_id"/>
+                <field name="contract_id"/>
+                <field name="change_type"/>
+                <filter name="group_employee" string="الموظف" context="{'group_by': 'employee_id'}"/>
+                <filter name="group_change_type" string="نوع التغيير" context="{'group_by': 'change_type'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

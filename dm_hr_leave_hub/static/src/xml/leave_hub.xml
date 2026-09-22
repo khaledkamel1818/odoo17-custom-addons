@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dm_hr_leave_hub.Dashboard">
+        <Layout display="display">
+            <main class="dm_leave_hub" dir="rtl">
+                <div class="dm_leave_loading" t-if="state.loading"><i class="fa fa-spinner fa-spin"/> جاري تحميل الإجازات...</div>
+                <t t-else="">
+                    <header class="dm_leave_hero">
+                        <div><small>الخدمة الذاتية · الإجازات</small><h1>مرحبًا، <t t-esc="state.data.employee.name"/></h1><p>تابع رصيدك وطلباتك واعتمادات فريقك من مكان واحد.</p></div>
+                        <button class="btn btn-light" t-on-click="() => this.open('new')"><i class="fa fa-plus"/> طلب إجازة جديد</button>
+                    </header>
+                    <section class="dm_leave_metrics">
+                        <button t-on-click="() => this.open('mine')"><span>قيد الاعتماد</span><strong><t t-esc="state.data.metrics.pending"/></strong></button>
+                        <button t-on-click="() => this.open('mine')"><span>معتمدة</span><strong><t t-esc="state.data.metrics.approved"/></strong></button>
+                        <button t-on-click="() => this.open('mine')"><span>مرفوضة</span><strong><t t-esc="state.data.metrics.refused"/></strong></button>
+                        <button t-if="state.data.role.officer" t-on-click="() => this.open('approvals')"><span>بانتظار اعتمادك</span><strong><t t-esc="state.data.metrics.waiting_approval"/></strong></button>
+                    </section>
+                    <nav class="dm_leave_actions">
+                        <button t-on-click="() => this.open('calendar')"><i class="fa fa-calendar"/><span>تقويم إجازاتي</span></button>
+                        <button t-on-click="() => this.open('allocations')"><i class="fa fa-pie-chart"/><span>تخصيصاتي</span></button>
+                        <button t-if="state.data.role.officer" t-on-click="() => this.open('manual_balance')"><i class="fa fa-plus-square"/><span>إضافة رصيد يدوي</span></button>
+                        <button t-if="state.data.role.officer" t-on-click="() => this.open('annual_balance')"><i class="fa fa-magic"/><span>توليد الرصيد السنوي</span></button>
+                        <button t-if="state.data.role.officer" t-on-click="() => this.open('approvals')"><i class="fa fa-check-square-o"/><span>اعتماد الطلبات</span></button>
+                        <button t-if="state.data.role.officer" t-on-click="() => this.open('reports')"><i class="fa fa-bar-chart"/><span>التقارير</span></button>
+                        <button t-if="state.data.role.manager" t-on-click="() => this.open('types')"><i class="fa fa-sliders"/><span>أنواع الإجازات</span></button>
+                        <button t-if="state.data.role.manager" t-on-click="() => this.open('accruals')"><i class="fa fa-refresh"/><span>خطط الاستحقاق</span></button>
+                    </nav>
+                    <section class="dm_leave_grid">
+                        <article class="dm_leave_card"><h2>أرصدة الإجازات</h2>
+                            <div class="dm_leave_empty" t-if="!state.data.balances.length">لا توجد أرصدة مخصصة.</div>
+                            <div class="dm_leave_balance" t-foreach="state.data.balances" t-as="item" t-key="item.id">
+                                <div><strong><t t-esc="item.name"/></strong><span>المتبقي: <t t-esc="item.unlimited ? 'مفتوح' : item.remaining + ' ' + item.unit"/></span></div>
+                                <div class="dm_leave_progress"><span t-att-style="'width:' + item.percentage + '%'"/></div>
+                            </div>
+                        </article>
+                        <article class="dm_leave_card"><h2>آخر الطلبات</h2>
+                            <div class="dm_leave_empty" t-if="!state.data.recent.length">لا توجد طلبات حتى الآن.</div>
+                            <button class="dm_leave_request" t-foreach="state.data.recent" t-as="leave" t-key="leave.id" t-on-click="() => this.open('mine')">
+                                <span><strong><t t-esc="leave.type"/></strong><small><t t-esc="leave.from"/> — <t t-esc="leave.to"/> · <t t-esc="leave.duration"/></small></span>
+                                <em t-attf-class="state_{{leave.state}}"><t t-esc="leave.state_label"/></em>
+                            </button>
+                        </article>
+                    </section>
+                </t>
+            </main>
+        </Layout>
+    </t>
+</templates>

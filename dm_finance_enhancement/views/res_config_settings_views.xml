@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_finance_enhancement_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.dm.finance.enhancement</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Finance Enhancement" name="dm_finance_enhancement" data-string="Finance Enhancement">
+                    <block title="Localization and Tax Settings">
+                        <setting string="Localization Mode" help="Choose the financial localization profile used by reports and dashboards.">
+                            <field name="dm_finance_localization_mode"/>
+                        </setting>
+                        <setting string="Saudi VAT" help="Configurable default. Actual tax records remain the source of accounting truth.">
+                            <field name="dm_finance_sa_vat_rate"/>
+                        </setting>
+                        <setting string="Egypt VAT" help="Configurable default. Keep it aligned with current legal/tax setup.">
+                            <field name="dm_finance_eg_vat_rate"/>
+                        </setting>
+                        <setting string="Withholding Tax" help="Default reporting rate for withholding tax summaries.">
+                            <field name="dm_finance_withholding_rate"/>
+                        </setting>
+                        <setting string="Zakat" help="Default configurable zakat reporting rate.">
+                            <field name="dm_finance_zakat_rate"/>
+                        </setting>
+                    </block>
+                    <block title="Closing and Governance">
+                        <setting string="Retained Earnings Account">
+                            <field name="dm_finance_default_retained_earnings_account_id"/>
+                        </setting>
+                        <setting string="Closing Journal">
+                            <field name="dm_finance_default_closing_journal_id"/>
+                        </setting>
+                        <setting string="Audit Trail">
+                            <field name="dm_finance_enable_audit_trail"/>
+                        </setting>
+                        <setting string="Advanced Dashboard">
+                            <field name="dm_finance_enable_advanced_dashboard"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_dm_finance_enhancement_settings" model="ir.actions.act_window">
+        <field name="name">Finance Enhancement Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'dm_finance_enhancement'}</field>
+    </record>
+</odoo>
+

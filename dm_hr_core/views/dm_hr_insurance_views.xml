@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============ Insurance Provider ============ -->
+    <record id="dm_hr_insurance_provider_list" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.provider.list</field>
+        <field name="model">dm.hr.insurance.provider</field>
+        <field name="arch" type="xml">
+            <tree string="مزودو التأمين" editable="bottom" decoration-muted="not active">
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="provider_type"/>
+                <field name="partner_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_provider_form" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.provider.form</field>
+        <field name="model">dm.hr.insurance.provider</field>
+        <field name="arch" type="xml">
+            <form string="مزود التأمين">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <div class="dm_hr_panel">
+                    <group string="بيانات المزود">
+                        <group>
+                            <field name="provider_type"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_provider_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.provider.kanban</field>
+        <field name="model">dm.hr.insurance.provider</field>
+        <field name="arch" type="xml">
+            <kanban string="مزودو التأمين" class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="provider_type"/>
+                <field name="partner_id"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="name"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="provider_type"/></div>
+                            <div><field name="partner_id"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span t-if="record.active.raw_value">نشط</span>
+                                <span t-if="!record.active.raw_value">مؤرشف</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_provider_action" model="ir.actions.act_window">
+        <field name="name">مزودو التأمين</field>
+        <field name="res_model">dm.hr.insurance.provider</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <!-- ============ Employee Insurance Policy ============ -->
+    <record id="dm_hr_insurance_policy_list" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.policy.list</field>
+        <field name="model">dm.hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <tree string="وثائق تأمين الموظفين" editable="bottom" decoration-success="state == 'active'" decoration-warning="state == 'scheduled'" decoration-muted="state == 'expired'">
+                <field name="employee_id"/>
+                <field name="provider_id"/>
+                <field name="policy_type"/>
+                <field name="policy_no"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="premium"/>
+                <field name="state" widget="badge"/>
+                <field name="currency_id" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_policy_form" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.policy.form</field>
+        <field name="model">dm.hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <form string="وثيقة تأمين الموظف">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="بيانات الوثيقة">
+                        <group string="الموظف والوثيقة">
+                            <field name="employee_id"/>
+                            <field name="provider_id"/>
+                            <field name="policy_type"/>
+                            <field name="policy_no"/>
+                        </group>
+                        <group string="توزيع القسط">
+                            <field name="premium"/>
+                            <field name="employee_share_percent"/>
+                            <field name="employer_share_percent"/>
+                            <field name="state" readonly="1" widget="badge"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="الصلاحية">
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="company_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_policy_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.policy.kanban</field>
+        <field name="model">dm.hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <kanban string="وثائق التأمين" class="o_kanban_small_column">
+                <field name="employee_id"/>
+                <field name="provider_id"/>
+                <field name="policy_type"/>
+                <field name="policy_no"/>
+                <field name="premium"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="employee_id"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="provider_id"/> - <field name="policy_no"/></div>
+                            <div><field name="policy_type"/> | <field name="premium"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span><field name="state"/></span>
+                                <span><field name="start_date"/> - <field name="end_date"/></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_insurance_policy_action" model="ir.actions.act_window">
+        <field name="name">وثائق التأمين</field>
+        <field name="res_model">dm.hr.insurance.policy</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_hr_insurance_policy_search" model="ir.ui.view">
+        <field name="name">dm.hr.insurance.policy.search</field>
+        <field name="model">dm.hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <search string="وثائق التأمين">
+                <field name="employee_id"/>
+                <field name="provider_id"/>
+                <field name="policy_no"/>
+                <filter name="active_records" string="نشط" domain="[('active', '=', True)]"/>
+                <filter name="state_active" string="نشط حالياً" domain="[('state', '=', 'active')]"/>
+                <filter name="state_expired" string="منتهي" domain="[('state', '=', 'expired')]"/>
+                <separator/>
+                <filter name="group_provider" string="مزود التأمين" context="{'group_by': 'provider_id'}"/>
+                <filter name="group_policy_type" string="نوع الوثيقة" context="{'group_by': 'policy_type'}"/>
+                <filter name="group_state" string="الحالة" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+<!-- ============ Social Insurance Scheme ============ -->
+    <record id="dm_hr_social_insurance_scheme_list" model="ir.ui.view">
+        <field name="name">dm.hr.social.insurance.scheme.list</field>
+        <field name="model">dm.hr.social.insurance.scheme</field>
+        <field name="arch" type="xml">
+            <tree string="أنظمة التأمينات الاجتماعية" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="code" class="dm_hr_list_emphasis"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_social_insurance_scheme_form" model="ir.ui.view">
+        <field name="name">dm.hr.social.insurance.scheme.form</field>
+        <field name="model">dm.hr.social.insurance.scheme</field>
+        <field name="arch" type="xml">
+            <form string="نظام التأمينات الاجتماعية">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                        <field name="code" placeholder="الرمز"/>
+                    </div>
+                    <div class="dm_hr_panel">
+                    <group string="إعدادات النظام">
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    </div>
+                    <notebook>
+                        <page string="النسب" name="rates">
+                            <field name="rate_ids">
+                                <tree editable="bottom" string="النسب">
+                                    <field name="employee_category"/>
+                                    <field name="effective_from"/>
+                                    <field name="effective_to"/>
+                                    <field name="is_active"/>
+                                    <field name="gosi_employee_ratio"/>
+                                    <field name="gosi_employer_ratio"/>
+                                    <field name="gosi_sanad_ratio"/>
+                                    <field name="min_insurable_wage"/>
+                                    <field name="max_insurable_wage"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="البدلات الخاضعة للتأمين" name="subject_allowances">
+                            <field name="rate_ids">
+                                <tree string="النسب والبدلات الخاضعة للتأمين" editable="bottom">
+                                    <field name="employee_category"/>
+                                    <field name="effective_from"/>
+                                    <field name="effective_to"/>
+                                    <field name="subject_allowance_type_ids" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_social_insurance_scheme_action" model="ir.actions.act_window">
+        <field name="name">أنظمة التأمينات الاجتماعية</field>
+        <field name="res_model">dm.hr.social.insurance.scheme</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <!-- ============ Social Insurance Rate (standalone, optional) ============ -->
+    <record id="dm_hr_social_insurance_rate_form" model="ir.ui.view">
+        <field name="name">dm.hr.social.insurance.rate.form</field>
+        <field name="model">dm.hr.social.insurance.rate</field>
+        <field name="arch" type="xml">
+            <form string="نسبة التأمينات الاجتماعية">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="scheme_id"/>
+                            <field name="employee_category"/>
+                            <field name="is_active" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="effective_from"/>
+                            <field name="effective_to"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="النسب (%)">
+                        <group>
+                            <field name="gosi_employee_ratio"/>
+                            <field name="gosi_employer_ratio"/>
+                        </group>
+                        <group>
+                            <field name="gosi_sanad_ratio"/>
+                        </group>
+                    </group>
+                    <group string="الأجر الخاضع للتأمين">
+                        <group>
+                            <field name="min_insurable_wage"/>
+                            <field name="max_insurable_wage"/>
+                        </group>
+                        <group>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="أنواع البدلات الخاضعة للتأمين">
+                        <field name="subject_allowance_type_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

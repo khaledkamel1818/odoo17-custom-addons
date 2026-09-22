@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_dm_finance_dashboard" model="ir.actions.client">
+        <field name="name">لوحة الحسابات</field>
+        <field name="tag">dm_finance_dashboard.dashboard</field>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_root" model="ir.ui.menu">
+        <field name="action" eval="'ir.actions.client,%d' % ref('action_dm_finance_dashboard')"/>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_overview" model="ir.ui.menu">
+        <field name="action" eval="'ir.actions.client,%d' % ref('action_dm_finance_dashboard')"/>
+    </record>
+
+    <menuitem id="menu_dm_finance_dashboard"
+              name="لوحة الحسابات"
+              parent="dm_finance_core.menu_dm_finance_overview"
+              action="action_dm_finance_dashboard"
+              sequence="1"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_auditor,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+</odoo>

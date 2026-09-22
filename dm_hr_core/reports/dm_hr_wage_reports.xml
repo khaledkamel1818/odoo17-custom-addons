@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_dm_hr_wage_summary" model="ir.actions.report">
+        <field name="name">تقرير الأجر</field>
+        <field name="model">hr.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dm_hr_core.report_dm_hr_wage_summary</field>
+        <field name="report_file">dm_hr_core.report_dm_hr_wage_summary</field>
+        <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_dm_hr_wage_summary">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="contract">
+                <t t-call="web.external_layout">
+                    <div class="page" dir="rtl">
+                        <h2>تقرير الأجر</h2>
+                        <p><strong>الموظف:</strong> <span t-field="contract.employee_id"/></p>
+                        <p><strong>العقد:</strong> <span t-field="contract.name"/></p>
+                        <p><strong>الشركة:</strong> <span t-field="contract.company_id"/></p>
+                        <p><strong>تاريخ البداية:</strong> <span t-field="contract.date_start"/></p>
+                        <p><strong>تاريخ النهاية:</strong> <span t-field="contract.date_end"/></p>
+                        <table class="table table-sm o_main_table">
+                            <tbody>
+                                <tr>
+                                    <td><strong>الأجر الأساسي</strong></td>
+                                    <td class="text-end"><span t-field="contract.wage"/></td>
+                                </tr>
+                                <t t-if="'allowance_ids' in contract._fields">
+                                    <tr t-foreach="contract.allowance_ids" t-as="allowance">
+                                        <td><span t-field="allowance.allowance_type_id"/></td>
+                                        <td class="text-end"><span t-field="allowance.amount"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

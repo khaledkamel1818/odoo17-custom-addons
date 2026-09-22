@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- نوع الإجازة السنوية السعودي: يستخدمه الـcron والمعالج لتوليد الأرصدة تلقائياً (21/30 يوماً). -->
+    <record id="holiday_status_saudi_annual" model="hr.leave.type">
+        <field name="name">إجازة سنوية سعودية</field>
+        <field name="requires_allocation">yes</field>
+        <field name="dm_is_saudi_annual_leave">True</field>
+        <field name="company_id" eval="False"/>
+        <field name="time_type">leave</field>
+        <field name="leave_validation_type">hr</field>
+        <field name="color">4</field>
+    </record>
+</odoo>

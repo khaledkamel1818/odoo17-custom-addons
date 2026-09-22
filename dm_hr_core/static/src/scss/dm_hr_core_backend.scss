@@ -1,0 +1,574 @@
+.o_form_view .dm_hr_panel {
+    border: 1px solid #d8dee6;
+    border-inline-start: 4px solid #0f766e;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    margin-bottom: 16px;
+    padding: 16px 18px;
+    background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+    direction: rtl;
+    text-align: start;
+}
+
+.o_form_view .dm_hr_panel *,
+.o_form_view .dm_hr_form_hero *,
+.o_kanban_view .dm_hr_kanban_card *,
+.o_kanban_view .dm_hr_service_card * {
+    direction: inherit;
+}
+
+.o_form_view .dm_hr_panel h3 {
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.o_form_view .dm_hr_panel > .o_inner_group,
+.o_form_view .dm_hr_panel > table {
+    margin-bottom: 0;
+}
+
+.o_form_view .dm_hr_section_note {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #5b6470;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+}
+
+.o_form_view .dm_hr_title_line {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    direction: rtl;
+}
+
+.o_form_view .dm_hr_title_line i {
+    align-items: center;
+    background: #ccfbf1;
+    border-radius: 10px;
+    color: #0f766e;
+    display: inline-flex;
+    height: 34px;
+    justify-content: center;
+    width: 34px;
+}
+
+.o_form_view .dm_hr_title_badge {
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    color: #166534;
+    font-size: 12px;
+    padding: 3px 10px;
+}
+
+.o_list_view .dm_hr_list_emphasis {
+    font-weight: 600;
+}
+
+.o_kanban_view .dm_hr_kanban_card {
+    border-inline-start: 4px solid #0f766e;
+    min-height: 132px;
+    direction: rtl;
+    text-align: start;
+}
+
+.o_kanban_view .dm_hr_kanban_title {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.o_kanban_view .dm_hr_kanban_meta {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.o_kanban_view .dm_hr_kanban_footer {
+    align-items: center;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+.o_form_view .dm_hr_form_hero {
+    align-items: flex-start;
+    background: linear-gradient(135deg, #0f766e 0%, #0f172a 100%);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0 18px;
+    padding: 22px 24px;
+    direction: rtl;
+    text-align: start;
+}
+
+.o_form_view .dm_hr_form_hero p {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 8px 0 0;
+    max-width: 720px;
+}
+
+.o_form_view .dm_hr_form_hero .dm_hr_title_badge {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.30);
+    color: #fff;
+}
+
+.o_form_view .dm_hr_geo_hero {
+    background: linear-gradient(135deg, #064e3b 0%, #0f766e 58%, #22c55e 100%);
+}
+
+.o_form_view .dm_hr_shift_hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 68%, #06b6d4 100%);
+}
+
+.o_form_view .dm_hr_approval_hero {
+    background: linear-gradient(135deg, #312e81 0%, #0f766e 70%, #14b8a6 100%);
+}
+
+.o_form_view .dm_hr_geo_cards {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 16px;
+}
+
+.o_form_view .dm_hr_week_panel .o_group {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.o_list_view .dm_hr_list_emphasis,
+.o_list_view td[name="name"] {
+    color: #0f172a;
+}
+
+.o_list_view th,
+.o_list_view td {
+    vertical-align: middle;
+}
+
+.o_form_view .o_notebook .tab-content {
+    background: #fff;
+}
+
+html[dir="rtl"] .o_form_view .dm_hr_form_hero,
+html[dir="rtl"] .o_form_view .dm_hr_panel,
+html[dir="rtl"] .o_kanban_view .dm_hr_service_card {
+    text-align: right;
+}
+
+@media (max-width: 992px) {
+    .o_form_view .dm_hr_form_hero {
+        border-radius: 12px;
+        display: block;
+        padding: 18px;
+    }
+
+    .o_form_view .dm_hr_geo_cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.o_form_view .dm_hr_form_hero label,
+.o_form_view .dm_hr_form_hero .o_form_label {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.o_form_view .dm_hr_form_hero h1,
+.o_form_view .dm_hr_form_hero .o_field_widget {
+    color: #fff;
+}
+
+.o_kanban_view.dm_hr_service_kanban {
+    background:
+        radial-gradient(circle at top right, rgba(20, 184, 166, 0.10), transparent 34rem),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.o_kanban_view .dm_hr_service_card {
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-inline-start: 5px solid #0f766e;
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.09);
+    min-height: 168px;
+    padding: 16px;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+    direction: rtl;
+    text-align: start;
+}
+
+.o_kanban_view .dm_hr_service_card:hover {
+    box-shadow: 0 22px 44px rgba(15, 23, 42, 0.14);
+    transform: translateY(-2px);
+}
+
+.o_kanban_view .dm_hr_service_card_header,
+.o_kanban_view .dm_hr_service_footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.o_kanban_view .dm_hr_service_number {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.o_kanban_view .dm_hr_service_title {
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin: 12px 0 10px;
+}
+
+.o_kanban_view .dm_hr_service_meta {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.o_kanban_view .dm_hr_service_meta i {
+    color: #0f766e;
+    margin-inline-end: 5px;
+}
+
+.o_kanban_view .dm_hr_service_footer {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 14px;
+    padding-top: 12px;
+}
+
+.o_kanban_view .dm_hr_service_type,
+.o_kanban_view .dm_hr_service_hours {
+    background: #f1f5f9;
+    border-radius: 999px;
+    color: #334155;
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+.o_kanban_view .dm_hr_state_approved {
+    border-inline-start-color: #16a34a;
+}
+
+.o_kanban_view .dm_hr_state_rejected {
+    border-inline-start-color: #dc2626;
+}
+
+.o_kanban_view .dm_hr_state_manager_approved {
+    border-inline-start-color: #f59e0b;
+}
+
+.o_kanban_view .dm_hr_state_cancelled {
+    opacity: 0.72;
+}
+
+.dm_hr_org_chart {
+    padding: 18px;
+    background: #f7f8fb;
+    min-height: 100%;
+}
+
+.dm_hr_org_header {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+.dm_hr_org_header h2 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.dm_hr_org_header p {
+    margin: 4px 0 0;
+    color: #667085;
+}
+
+.dm_hr_org_filters,
+.dm_hr_org_search,
+.dm_hr_org_meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dm_hr_org_filters {
+    justify-content: flex-end;
+}
+
+.dm_hr_org_filters select,
+.dm_hr_org_filters input {
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: #fff;
+    min-height: 36px;
+    padding: 6px 10px;
+}
+
+.dm_hr_org_summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.dm_hr_org_summary span {
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    color: #475467;
+    padding: 10px 12px;
+}
+
+.dm_hr_org_summary b {
+    color: #344054;
+    margin-inline-end: 4px;
+}
+
+.dm_hr_org_tree {
+    overflow-x: auto;
+    padding-bottom: 24px;
+}
+
+.dm_hr_org_node {
+    position: relative;
+    margin: 10px 0 10px 22px;
+}
+
+[dir="rtl"] .dm_hr_org_node,
+.o_rtl .dm_hr_org_node {
+    margin: 10px 22px 10px 0;
+}
+
+.dm_hr_org_children {
+    border-inline-start: 1px dashed #d0d5dd;
+    margin-inline-start: 22px;
+    padding-inline-start: 18px;
+}
+
+.dm_hr_org_card {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-inline-start: 4px solid #98a2b3;
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+}
+
+.dm_hr_org_level_branch > .dm_hr_org_card { border-inline-start-color: #667085; }
+.dm_hr_org_level_sector > .dm_hr_org_card { border-inline-start-color: #7a5af8; }
+.dm_hr_org_level_department > .dm_hr_org_card { border-inline-start-color: #2e90fa; }
+.dm_hr_org_level_section > .dm_hr_org_card { border-inline-start-color: #12b76a; }
+.dm_hr_org_level_unit > .dm_hr_org_card { border-inline-start-color: #f79009; }
+
+.dm_hr_org_toggle,
+.dm_hr_org_title,
+.dm_hr_org_employee,
+.dm_hr_org_employee_toggle {
+    background: transparent;
+    border: 0;
+}
+
+.dm_hr_org_toggle {
+    color: #667085;
+}
+
+.dm_hr_org_title {
+    align-items: center;
+    color: #344054;
+    display: flex;
+    font-weight: 700;
+    gap: 8px;
+}
+
+.dm_hr_org_badge {
+    background: #f2f4f7;
+    border-radius: 999px;
+    color: #475467;
+    font-size: 12px;
+    padding: 3px 8px;
+}
+
+.dm_hr_org_meta {
+    color: #667085;
+    font-size: 13px;
+}
+
+.dm_hr_org_employees {
+    margin: 8px 0 8px 28px;
+}
+
+[dir="rtl"] .dm_hr_org_employees,
+.o_rtl .dm_hr_org_employees {
+    margin: 8px 28px 8px 0;
+}
+
+.dm_hr_org_employee_toggle {
+    color: #475467;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.dm_hr_org_employee_grid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.dm_hr_org_employee {
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    padding: 9px 10px;
+    text-align: start;
+}
+
+.dm_hr_org_employee_name {
+    color: #344054;
+    display: block;
+    font-weight: 700;
+}
+
+.dm_hr_org_employee_job,
+.dm_hr_org_employee_manager {
+    color: #667085;
+    display: block;
+    font-size: 12px;
+}
+
+.dm_hr_org_empty {
+    background: #fff;
+    border: 1px dashed #d0d5dd;
+    border-radius: 14px;
+    color: #667085;
+    padding: 24px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .dm_hr_org_header {
+        display: block;
+    }
+
+    .dm_hr_org_filters,
+    .dm_hr_org_search {
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    .dm_hr_org_filters select,
+    .dm_hr_org_search input {
+        flex: 1 1 100%;
+    }
+}
+
+.dm_hr_service_center {
+    padding: 18px;
+    min-height: 100%;
+    background: #f7f8fb;
+}
+
+.dm_hr_service_center_header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.dm_hr_service_center_header h2 {
+    margin: 0;
+    font-weight: 800;
+}
+
+.dm_hr_service_center_header p {
+    color: #667085;
+    margin: 4px 0 0;
+}
+
+.dm_hr_service_center_stats,
+.dm_hr_service_center_cards {
+    display: grid;
+    gap: 10px;
+}
+
+.dm_hr_service_center_stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-bottom: 16px;
+}
+
+.dm_hr_service_center_stats button,
+.dm_hr_service_center_card {
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-radius: 14px;
+    color: #344054;
+    padding: 12px;
+    text-align: start;
+}
+
+.dm_hr_service_center_stats strong {
+    display: block;
+    font-size: 22px;
+}
+
+.dm_hr_service_center_cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dm_hr_service_center_card i {
+    color: #0f766e;
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dm_hr_service_center_title {
+    display: block;
+    font-weight: 800;
+}
+
+.dm_hr_service_center_desc {
+    color: #667085;
+    display: block;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .dm_hr_service_center_header {
+        display: block;
+    }
+    .dm_hr_service_center_header .btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}

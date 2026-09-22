@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_attendance_location_tree" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.location.tree</field>
+        <field name="model">dm.hr.attendance.location</field>
+        <field name="arch" type="xml">
+            <tree string="مواقع بصمة الحضور" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="address"/>
+                <field name="radius_meters"/>
+                <field name="latitude" optional="hide"/>
+                <field name="longitude" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_location_form" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.location.form</field>
+        <field name="model">dm.hr.attendance.location</field>
+        <field name="arch" type="xml">
+            <form string="موقع بصمة الحضور">
+                <sheet>
+                    <div class="dm_hr_form_hero dm_hr_geo_hero">
+                        <div>
+                            <label for="name" string="اسم الموقع"/>
+                            <h1><field name="name" placeholder="مثال: المقر الرئيسي"/></h1>
+                            <p>حدد نقطة البصمة ونطاق السماح بالمتر. يمكن تخصيص الموقع لموظفين محددين أو تركه عامًا لكل موظفي الشركة.</p>
+                        </div>
+                        <span class="dm_hr_title_badge">GPS</span>
+                    </div>
+                    <div class="dm_hr_geo_cards">
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-map-marker" title="نقطة GPS"/>
+                                <h3>نقطة البصمة</h3>
+                            </div>
+                            <group>
+                                <field name="latitude"/>
+                                <field name="longitude"/>
+                                <field name="radius_meters"/>
+                                <field name="map_url" widget="url" placeholder="رابط Google Maps اختياري"/>
+                            </group>
+                        </div>
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-building" title="بيانات الموقع"/>
+                                <h3>بيانات الموقع</h3>
+                            </div>
+                            <group>
+                                <field name="address" placeholder="العنوان المختصر للموقع"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="sequence"/>
+                                <field name="active" widget="boolean_toggle"/>
+                            </group>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="الموظفون المخصصون">
+                            <div class="dm_hr_section_note">
+                                اترك القائمة فارغة للسماح لجميع موظفي الشركة باستخدام هذا الموقع.
+                            </div>
+                            <field name="employee_ids">
+                                <tree>
+                                    <field name="employee_number"/>
+                                    <field name="name"/>
+                                    <field name="department_id"/>
+                                    <field name="job_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_location_search" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.location.search</field>
+        <field name="model">dm.hr.attendance.location</field>
+        <field name="arch" type="xml">
+            <search string="بحث مواقع بصمة GPS">
+                <field name="name"/>
+                <field name="address"/>
+                <filter name="active_locations" string="نشطة" domain="[('active', '=', True)]"/>
+                <filter name="archived_locations" string="مؤرشفة" domain="[('active', '=', False)]"/>
+                <group expand="0" string="تجميع حسب">
+                    <filter name="group_company" string="الشركة" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_location_action" model="ir.actions.act_window">
+        <field name="name">مواقع بصمة GPS</field>
+        <field name="res_model">dm.hr.attendance.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="dm_hr_attendance_location_search"/>
+        <field name="context">{'search_default_active_locations': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">أنشئ أول موقع بصمة GPS.</p>
+            <p>حدد الإحداثيات ونطاق السماح ليتم قبول الحضور والانصراف داخل الموقع فقط عند تفعيل النطاق الجغرافي.</p>
+        </field>
+    </record>
+    <menuitem id="menu_dm_hr_attendance_locations" name="مواقع بصمة GPS" parent="dm_hr_core.menu_dm_hr_configuration" action="dm_hr_attendance_location_action" sequence="8" groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+
+    <record id="hr_employee_form_attendance_locations" model="ir.ui.view">
+        <field name="name">hr.employee.form.attendance.locations</field><field name="model">hr.employee</field><field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml"><xpath expr="//field[@name='resource_calendar_id']" position="after"><field name="dm_attendance_location_ids" widget="many2many_tags" groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/></xpath></field>
+    </record>
+    <record id="hr_attendance_form_gps_location" model="ir.ui.view">
+        <field name="name">hr.attendance.form.gps.location</field><field name="model">hr.attendance</field><field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <field name="in_latitude" position="after">
+                <field name="in_gps_accuracy"/>
+                <field name="in_dm_location_id"/>
+                <field name="dm_attendance_source" widget="badge"/>
+                <field name="dm_gps_compliance" widget="badge"/>
+            </field>
+            <field name="out_latitude" position="after">
+                <field name="out_gps_accuracy"/>
+                <field name="out_dm_location_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>

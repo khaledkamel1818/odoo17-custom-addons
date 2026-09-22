@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_offboarding_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.tree</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state in ('rejected','cancelled')" decoration-success="state == 'done'" decoration-warning="state in ('manager_approval','hr_review','clearance','finance_settlement','final_approval')">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="termination_type_id"/>
+                <field name="request_date"/>
+                <field name="approved_last_work_date"/>
+                <field name="manager_id"/>
+                <field name="current_responsible_id"/>
+                <field name="clearance_pending_count"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_offboarding_view_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.kanban</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+                <field name="name"/><field name="employee_id"/><field name="termination_type_id"/><field name="approved_last_work_date"/><field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+                            <div><field name="employee_id"/></div>
+                            <div class="text-muted"><field name="termination_type_id"/></div>
+                            <div>آخر يوم: <field name="approved_last_work_date"/></div>
+                            <field name="state" widget="badge"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="dm_hr_offboarding_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.form</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="arch" type="xml">
+            <form string="طلب إنهاء خدمة">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="اعتماد المرحلة" class="btn-primary" invisible="state not in ('manager_approval','hr_review','notice_period','clearance','finance_settlement','final_approval')"/>
+                    <button name="action_generate_clearance" type="object" string="تجهيز إخلاء الطرف" invisible="state not in ('notice_period','clearance')"/>
+                    <button name="action_generate_settlement" type="object" string="إنشاء التسوية" invisible="state not in ('finance_settlement','final_approval') or settlement_id"/>
+                    <button name="action_open_settlement" type="object" string="فتح التسوية" invisible="not settlement_id"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('draft','done','rejected','cancelled')"/>
+                    <button name="action_withdraw" type="object" string="سحب الطلب" invisible="state not in ('submitted','manager_approval')"/>
+                    <button name="action_cancel" type="object" string="إلغاء" invisible="state in ('done','cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager_approval,hr_review,notice_period,clearance,finance_settlement,final_approval,done"/>
+                </header>
+                <sheet>
+                    <field name="settlement_id" invisible="1"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_settlement" type="object" class="oe_stat_button" icon="fa-money" invisible="not settlement_id">
+                            <field name="settlement_count" widget="statinfo" string="التسوية"/>
+                        </button>
+                    </div>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group string="بيانات الموظف">
+                            <field name="employee_id" readonly="state != 'draft'"/>
+                            <field name="employee_number"/>
+                            <field name="company_id" readonly="1"/>
+                            <field name="branch_id"/>
+                            <field name="sector_id"/>
+                            <field name="department_level_id"/>
+                            <field name="section_id"/>
+                            <field name="unit_id"/>
+                            <field name="job_id"/>
+                            <field name="manager_id"/>
+                            <field name="contract_id" readonly="state != 'draft'"/>
+                        </group>
+                        <group string="بيانات الإنهاء">
+                            <field name="termination_type_id" readonly="state not in ('draft','submitted','manager_approval')"/>
+                            <field name="reason" readonly="state != 'draft'"/>
+                            <field name="request_date" readonly="state != 'draft'"/>
+                            <field name="service_start_date"/>
+                            <field name="contract_end_date"/>
+                            <field name="requested_last_work_date" readonly="state not in ('draft','manager_approval','hr_review')"/>
+                            <field name="approved_last_work_date" readonly="state in ('done','cancelled','rejected')"/>
+                            <field name="settlement_date"/>
+                            <field name="required_notice_days"/>
+                            <field name="actual_notice_days"/>
+                            <field name="notice_difference_days"/>
+                            <field name="service_years"/>
+                            <field name="current_responsible_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="الموافقات">
+                            <field name="approval_item_ids" readonly="1">
+                                <tree>
+                                    <field name="sequence"/><field name="name"/><field name="approver_user_id"/><field name="approver_group_id"/><field name="state"/><field name="action_by_id"/><field name="action_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="إخلاء الطرف">
+                            <field name="clearance_line_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence"/><field name="department_id"/><field name="description"/><field name="responsible_user_id"/><field name="mandatory"/><field name="due_date"/><field name="has_custody"/><field name="custody_id"/><field name="received"/><field name="custody_condition"/><field name="deduction_amount"/><field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="مكافأة نهاية الخدمة">
+                            <group>
+                                <field name="eos_base_wage"/>
+                                <field name="eos_manual_override"/>
+                                <field name="eos_manual_amount" invisible="not eos_manual_override"/>
+                                <field name="eos_manual_reason" invisible="not eos_manual_override"/>
+                            </group>
+                        </page>
+                        <page string="الملاحظات والمرفقات">
+                            <group>
+                                <field name="employee_note"/>
+                                <field name="manager_note"/>
+                                <field name="hr_note"/>
+                                <field name="finance_note"/>
+                                <field name="rejection_reason"/>
+                                <field name="cancel_reason"/>
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_offboarding_view_search" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.search</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/><field name="employee_id"/><field name="termination_type_id"/><field name="manager_id"/>
+                <filter name="open" string="مفتوحة" domain="[('state','not in',('done','rejected','cancelled'))]"/>
+                <filter name="pending_me" string="بانتظار مسؤوليتي" domain="[('current_responsible_id','=',uid)]"/>
+                <group expand="0" string="تجميع">
+                    <filter name="grp_state" string="الحالة" context="{'group_by':'state'}"/>
+                    <filter name="grp_type" string="النوع" context="{'group_by':'termination_type_id'}"/>
+                    <filter name="grp_department" string="الإدارة" context="{'group_by':'department_level_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dm_hr_offboarding_action_my" model="ir.actions.act_window">
+        <field name="name">طلبات إنهاء خدمتي</field><field name="res_model">dm.hr.offboarding</field><field name="view_mode">kanban,tree,form,pivot,graph</field><field name="domain">[('employee_id.user_id','=',uid)]</field><field name="search_view_id" ref="dm_hr_offboarding_view_search"/>
+    </record>
+    <record id="dm_hr_offboarding_action_team" model="ir.actions.act_window">
+        <field name="name">طلبات فريقي</field><field name="res_model">dm.hr.offboarding</field><field name="view_mode">tree,kanban,form,pivot,graph</field><field name="domain">['|',('manager_user_id','=',uid),('employee_id.parent_id.user_id','=',uid)]</field><field name="search_view_id" ref="dm_hr_offboarding_view_search"/>
+    </record>
+    <record id="dm_hr_offboarding_action_all" model="ir.actions.act_window">
+        <field name="name">جميع طلبات إنهاء الخدمة</field><field name="res_model">dm.hr.offboarding</field><field name="view_mode">tree,kanban,form,pivot,graph</field><field name="search_view_id" ref="dm_hr_offboarding_view_search"/>
+    </record>
+
+    <record id="dm_hr_offboarding_settlement_tree" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.settlement.tree</field><field name="model">dm.hr.offboarding.settlement</field>
+        <field name="arch" type="xml"><tree><field name="name"/><field name="employee_id"/><field name="settlement_date"/><field name="earnings_total"/><field name="deductions_total"/><field name="net_amount"/><field name="state" widget="badge"/></tree></field>
+    </record>
+    <record id="dm_hr_offboarding_settlement_form" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.settlement.form</field><field name="model">dm.hr.offboarding.settlement</field>
+        <field name="arch" type="xml">
+            <form string="التسوية النهائية">
+                <header>
+                    <button name="action_compute_lines" type="object" string="إعادة احتساب" invisible="state not in ('draft','ready')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state != 'ready'"/>
+                    <button name="action_mark_paid" type="object" string="مدفوعة" invisible="state != 'approved'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group><group><field name="name"/><field name="offboarding_id"/><field name="employee_id"/><field name="settlement_date"/></group><group><field name="earnings_total"/><field name="deductions_total"/><field name="net_amount"/></group></group>
+                    <field name="eos_explanation" readonly="1"/>
+                    <field name="line_ids">
+                        <tree editable="bottom"><field name="line_type"/><field name="source"/><field name="description"/><field name="quantity"/><field name="price_unit"/><field name="amount"/><field name="payroll_postable"/></tree>
+                    </field>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_offboarding_settlement_action" model="ir.actions.act_window">
+        <field name="name">التسويات النهائية</field><field name="res_model">dm.hr.offboarding.settlement</field><field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <record id="dm_hr_exit_interview_tree" model="ir.ui.view">
+        <field name="name">dm.hr.exit.interview.tree</field><field name="model">dm.hr.exit.interview</field>
+        <field name="arch" type="xml"><tree><field name="name"/><field name="employee_id"/><field name="interview_date"/><field name="satisfaction"/><field name="can_return"/><field name="state"/></tree></field>
+    </record>
+    <record id="dm_hr_exit_interview_form" model="ir.ui.view">
+        <field name="name">dm.hr.exit.interview.form</field><field name="model">dm.hr.exit.interview</field>
+        <field name="arch" type="xml"><form><header><button name="action_submit" type="object" string="اعتماد" invisible="state != 'draft'"/><field name="state" widget="statusbar"/></header><sheet><group><field name="employee_id"/><field name="offboarding_id"/><field name="interview_date"/><field name="satisfaction"/><field name="can_return"/></group><group><field name="reason_summary"/><field name="recommendations"/><field name="confidential_notes"/></group></sheet><div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div></form></field>
+    </record>
+    <record id="dm_hr_exit_interview_action" model="ir.actions.act_window">
+        <field name="name">مقابلات الخروج</field><field name="res_model">dm.hr.exit.interview</field><field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="dm_hr_offboarding_type_tree" model="ir.ui.view"><field name="name">dm.hr.offboarding.type.tree</field><field name="model">dm.hr.offboarding.type</field><field name="arch" type="xml"><tree editable="bottom"><field name="sequence"/><field name="name"/><field name="code"/><field name="initiated_by"/><field name="notice_required"/><field name="notice_days"/><field name="requires_clearance"/><field name="creates_settlement"/><field name="active"/></tree></field></record>
+    <record id="dm_hr_offboarding_type_action" model="ir.actions.act_window"><field name="name">أنواع إنهاء الخدمة</field><field name="res_model">dm.hr.offboarding.type</field><field name="view_mode">tree,form</field></record>
+    <record id="dm_hr_offboarding_rule_action" model="ir.actions.act_window"><field name="name">قواعد مكافأة نهاية الخدمة</field><field name="res_model">dm.hr.offboarding.rule</field><field name="view_mode">tree,form</field></record>
+    <record id="dm_hr_offboarding_clearance_department_action" model="ir.actions.act_window"><field name="name">أقسام إخلاء الطرف</field><field name="res_model">dm.hr.offboarding.clearance.department</field><field name="view_mode">tree,form</field></record>
+</odoo>

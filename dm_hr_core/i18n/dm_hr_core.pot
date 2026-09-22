@@ -1,0 +1,474 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_hr_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 21:08+0000\n"
+"PO-Revision-Date: 2026-08-09 21:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__a+
+msgid "A+"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__a-
+msgid "A-"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__ab+
+msgid "AB+"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__ab-
+msgid "AB-"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_contract_allowance__state__active
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_allowance__state__active
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_policy__state__active
+msgid "Active"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_allowance_type
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_allowance_type_form
+msgid "Allowance Type"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_allowance_type_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_allowance_type
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_allowance_type_list
+msgid "Allowance Types"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_hr_contract_form_inherit_dm_hr_core
+msgid "Allowances"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__b+
+msgid "B+"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__b-
+msgid "B-"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_dependent__relationship__child
+msgid "Child"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Code"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_allowance_type_form
+msgid "Code e.g. HOUSING"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_hr_contract
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_document__document_type__contract
+msgid "Contract"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_contract_allowance
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_contract_allowance_form
+msgid "Contract Allowance"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_contract_allowance_list
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_hr_contract_form_inherit_dm_hr_core
+msgid "Contract Allowances"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_employee_form_inherit_dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_hr_contract_form_inherit_dm_hr_core
+msgid "DM HR"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_res_config_settings_view_form
+msgid "DM HR Core"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_res_config_settings_view_form
+msgid "Default Social Insurance Scheme"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_employee_dependent_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_dependent
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_dependent_list
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_employee_form_inherit_dm_hr_core
+msgid "Dependents"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_employee_form_inherit_dm_hr_core
+msgid "Documents"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_document__document_type__education
+msgid "Education Certificate"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_hr_employee
+#: model:res.groups,name:dm_hr_core.group_employee
+msgid "Employee"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_employee_dependent
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_dependent_form
+msgid "Employee Dependent"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_document
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_document_form
+msgid "Employee Document"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_document_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_document
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_document_list
+msgid "Employee Documents"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_policy_list
+msgid "Employee Insurance Policies"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_insurance_policy
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_policy_form
+msgid "Employee Insurance Policy"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_employee_allowance
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_allowance_form
+msgid "Employee Special Allowance"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_allowance_list
+msgid "Employee Special Allowances"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields,field_description:dm_hr_core.field_hr_employee__employee_type
+msgid "Employee Type"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_contract_allowance__state__expired
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_allowance__state__expired
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_policy__state__expired
+msgid "Expired"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_dependent__relationship__father
+msgid "Father"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_document_form
+msgid "File"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_allowance_type__amount_type__fixed
+msgid "Fixed Amount"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_contract__contract_class__fixed
+msgid "Fixed Term"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__employee_type__foreign
+msgid "Foreign"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_hr_admin
+msgid "Full HR configuration access. Does not inherit any accounting group."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,name:dm_hr_core.group_hr_admin
+msgid "HR Admin"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,name:dm_hr_core.group_hr_manager
+msgid "HR Manager"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_hr_manager
+msgid "HR Manager: final HR approvals and configuration."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,name:dm_hr_core.group_hr_officer
+msgid "HR Officer"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_hr_officer
+msgid "HR Officer: manages HR records of his allowed companies."
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_rate_form
+msgid "Insurable Allowance Types"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Insurable Allowances"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_rate_form
+msgid "Insurable Wage"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_insurance_policy_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_insurance_policy
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.view_employee_form_inherit_dm_hr_core
+msgid "Insurance Policies"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_insurance_provider
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_provider_form
+msgid "Insurance Provider"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_insurance_provider_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_insurance_provider
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_provider_list
+msgid "Insurance Providers"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_employee
+msgid "Internal employee: only sees his own HR data."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_document__document_type__iqama
+msgid "Iqama / National ID"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_policy__policy_type__life
+msgid "Life"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_policy__policy_type__medical
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_provider__provider_type__medical
+msgid "Medical"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_document__document_type__medical_policy
+msgid "Medical Policy"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_allowance_type__schedule__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_dependent__relationship__mother
+msgid "Mother"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_social_insurance_rate__employee_category__non_saudi
+msgid "Non-Saudi"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_allowance_type_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_contract_allowance_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_allowance_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_policy_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_provider_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Notes"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__blood_type__o+
+msgid "O+"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_document__document_type__other
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_employee_dependent__relationship__other
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_insurance_provider__provider_type__other
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_social_insurance_rate__employee_category__other
+msgid "Other"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_contract__contract_class__part_time
+msgid "Part Time"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,name:dm_hr_core.group_payroll_manager
+msgid "Payroll Manager"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_payroll_manager
+msgid "Payroll Manager: reviews and finalizes payroll."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,name:dm_hr_core.group_payroll_officer
+msgid "Payroll Officer"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:res.groups,comment:dm_hr_core.group_payroll_officer
+msgid "Payroll Officer: reads payroll data and computes payslips."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__dm_hr_allowance_type__amount_type__percentage_of_basic
+msgid "Percentage of Basic Salary"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_contract__contract_class__permanent
+msgid "Permanent"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Rates"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Rates (insurable allowances)"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_rate_form
+msgid "Ratios (%)"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields.selection,name:dm_hr_core.selection__hr_employee__employee_type__saudi
+msgid "Saudi"
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_res_config_settings_view_form
+msgid ""
+"Scheme applied as default when computing social insurance for new payroll "
+"periods."
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_res_config_settings_view_form
+msgid "Social Insurance"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_social_insurance_rate
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_rate_form
+msgid "Social Insurance Rate"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model,name:dm_hr_core.model_dm_hr_social_insurance_scheme
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_form
+msgid "Social Insurance Scheme"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_social_insurance_scheme_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_social_insurance_scheme
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_social_insurance_scheme_list
+msgid "Social Insurance Schemes"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.actions.act_window,name:dm_hr_core.dm_hr_employee_allowance_action
+#: model:ir.ui.menu,name:dm_hr_core.menu_dm_hr_special_allowance
+msgid "Special Allowances"
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.fields,help:dm_hr_core.field_hr_employee__employee_type
+msgid ""
+"The employee type. Although the primary purpose may seem to categorize "
+"employees, this field has also an impact in the Contract History. Only "
+"Employee type is supposed to be under contract and will have a Contract "
+"History."
+msgstr ""
+
+#. module: dm_hr_core
+#: model:ir.model.constraint,message:dm_hr_core.constraint_dm_hr_insurance_provider_name_company_uniq
+msgid "The insurance provider name must be unique per company."
+msgstr ""
+
+#. module: dm_hr_core
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_contract_allowance_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_employee_allowance_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_core.dm_hr_insurance_policy_form
+msgid "Validity"
+msgstr ""

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dm_hr_core.ServiceCenter">
+        <div class="dm_hr_service_center" dir="auto">
+            <div class="dm_hr_service_center_header">
+                <div>
+                    <h2>لوحة خدمات الموظفين</h2>
+                    <p>مركز موحد للاستئذان، تعريف الراتب، تثبيت الراتب، والانتداب.</p>
+                </div>
+                <button class="btn btn-primary" t-on-click="() => open('new_request')">
+                    طلب جديد
+                </button>
+            </div>
+            <t t-if="state.loading">
+                <div class="dm_hr_org_empty">جاري تحميل لوحة الخدمات...</div>
+            </t>
+            <t t-else="">
+                <div class="dm_hr_service_center_stats">
+                    <button t-on-click="() => open('my_requests')">
+                        <strong t-esc="state.data.counts.my_draft || 0"/> مسوداتي
+                    </button>
+                    <button t-on-click="() => open('my_requests')">
+                        <strong t-esc="state.data.counts.my_pending || 0"/> طلباتي المعلقة
+                    </button>
+                    <button t-on-click="() => open('my_requests')">
+                        <strong t-esc="state.data.counts.my_approved || 0"/> طلباتي المعتمدة
+                    </button>
+                    <button t-on-click="() => open('to_approve')">
+                        <strong t-esc="state.data.counts.to_approve || 0"/> بانتظار موافقتي
+                    </button>
+                </div>
+                <div class="dm_hr_service_center_cards">
+                    <t t-foreach="state.data.cards" t-as="card" t-key="card.key">
+                        <button class="dm_hr_service_center_card" t-on-click="() => open(card.key)">
+                            <i t-attf-class="fa {{card.icon}}"/>
+                            <span class="dm_hr_service_center_title" t-esc="card.title"/>
+                            <span class="dm_hr_service_center_desc" t-esc="card.description"/>
+                        </button>
+                    </t>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

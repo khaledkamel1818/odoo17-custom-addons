@@ -1,18 +1,38 @@
-*.pyc
+# Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
 *.log
-*.pid
 
-venv/
-.local/
-logs/
-
-filestore/
-sessions/
-
+# OS/Editor
+.DS_Store
 .idea/
 .vscode/
+*.bak
+*.tmp
 
-node_modules/
+# Virtual envs
+.venv/
+venv/
+env/
 
-*.swp
+# Odoo runtime/session data
+.pg-odoo17/
+*.sql
+
+# Shell history
+.bash_history
+
+# Misc config/cache dirs
+.config/
+.cache/
+.local/
+.landscape/
+.codex/
+.kilo/
+.agents/
+firebase-debug.log
+

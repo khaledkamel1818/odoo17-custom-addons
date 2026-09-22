@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============ Allowance Type ============ -->
+    <record id="dm_hr_allowance_type_list" model="ir.ui.view">
+        <field name="name">dm.hr.allowance.type.list</field>
+        <field name="model">dm.hr.allowance.type</field>
+        <field name="arch" type="xml">
+            <tree string="أنواع البدلات" editable="bottom" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="code" class="dm_hr_list_emphasis"/>
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="amount_type"/>
+                <field name="schedule"/>
+                <field name="subject_to_gosi"/>
+                <field name="include_in_net"/>
+                <field name="show_on_payslip"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_allowance_type_form" model="ir.ui.view">
+        <field name="name">dm.hr.allowance.type.form</field>
+        <field name="model">dm.hr.allowance.type</field>
+        <field name="arch" type="xml">
+            <form string="نوع البدل">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="نوع البدل"/>
+                        <h1><field name="name"/></h1>
+                        <field name="code" placeholder="الرمز مثل HOUSING"/>
+                    </div>
+                    <div class="dm_hr_panel">
+                    <group string="إعدادات الاحتساب">
+                        <group string="الاحتساب">
+                            <field name="amount_type"/>
+                            <field name="schedule"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="خيارات الرواتب">
+                            <field name="subject_to_gosi"/>
+                            <field name="include_in_net"/>
+                            <field name="show_on_payslip"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_allowance_type_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.allowance.type.kanban</field>
+        <field name="model">dm.hr.allowance.type</field>
+        <field name="arch" type="xml">
+            <kanban string="أنواع البدلات" class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="amount_type"/>
+                <field name="schedule"/>
+                <field name="subject_to_gosi"/>
+                <field name="include_in_net"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="name"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="code"/></div>
+                            <div><field name="amount_type"/></div>
+                            <div><field name="schedule"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span t-if="record.subject_to_gosi.raw_value">خاضع للتأمينات</span>
+                                <span t-if="!record.subject_to_gosi.raw_value">غير خاضع للتأمينات</span>
+                                <span t-if="record.include_in_net.raw_value">يدخل في الصافي</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_allowance_type_action" model="ir.actions.act_window">
+        <field name="name">أنواع البدلات</field>
+        <field name="res_model">dm.hr.allowance.type</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_hr_allowance_type_search" model="ir.ui.view">
+        <field name="name">dm.hr.allowance.type.search</field>
+        <field name="model">dm.hr.allowance.type</field>
+        <field name="arch" type="xml">
+            <search string="أنواع البدلات">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="amount_type"/>
+                <filter name="active" string="نشط" domain="[('active', '=', True)]"/>
+                <filter name="subject_to_gosi" string="خاضع للتأمينات الاجتماعية" domain="[('subject_to_gosi', '=', True)]"/>
+                <separator/>
+                <filter name="group_amount_type" string="طريقة الاحتساب" context="{'group_by': 'amount_type'}"/>
+                <filter name="group_schedule" string="التكرار" context="{'group_by': 'schedule'}"/>
+            </search>
+        </field>
+    </record>
+
+<!-- ============ Contract Allowance (list used inside Contract form) ============ -->
+    <record id="dm_hr_contract_allowance_list" model="ir.ui.view">
+        <field name="name">dm.hr.contract.allowance.list</field>
+        <field name="model">dm.hr.contract.allowance</field>
+        <field name="arch" type="xml">
+            <tree string="بدلات العقد" editable="bottom" decoration-success="state == 'active'" decoration-warning="state == 'scheduled'" decoration-muted="state == 'expired'">
+                <field name="sequence" widget="handle"/>
+                <field name="allowance_type_id"/>
+                <field name="amount" sum="1"/>
+                <field name="percent"/>
+                <field name="percent_of_allowance_type_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state" widget="badge"/>
+                <field name="currency_id" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_contract_allowance_form" model="ir.ui.view">
+        <field name="name">dm.hr.contract.allowance.form</field>
+        <field name="model">dm.hr.contract.allowance</field>
+        <field name="arch" type="xml">
+            <form string="بدل العقد">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="قيمة البدل">
+                        <group string="المصدر">
+                            <field name="contract_id"/>
+                            <field name="allowance_type_id"/>
+                        </group>
+                        <group string="المبلغ">
+                            <field name="amount"/>
+                            <field name="percent"/>
+                            <field name="percent_of_allowance_type_id"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="الصلاحية">
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="state" readonly="1" widget="badge"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============ Employee Special Allowance ============ -->
+    <record id="dm_hr_employee_allowance_list" model="ir.ui.view">
+        <field name="name">dm.hr.employee.allowance.list</field>
+        <field name="model">dm.hr.employee.allowance</field>
+        <field name="arch" type="xml">
+            <tree string="البدلات الخاصة للموظفين" editable="bottom" decoration-success="state == 'active'" decoration-warning="state == 'scheduled'" decoration-muted="state == 'expired'">
+                <field name="employee_id"/>
+                <field name="allowance_type_id"/>
+                <field name="amount"/>
+                <field name="percent"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state" widget="badge"/>
+                <field name="currency_id" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_allowance_form" model="ir.ui.view">
+        <field name="name">dm.hr.employee.allowance.form</field>
+        <field name="model">dm.hr.employee.allowance</field>
+        <field name="arch" type="xml">
+            <form string="بدل خاص للموظف">
+                <sheet>
+                    <div class="dm_hr_panel">
+                    <group string="قيمة البدل">
+                        <group string="الموظف">
+                            <field name="employee_id"/>
+                            <field name="allowance_type_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="المبلغ">
+                            <field name="amount"/>
+                            <field name="percent"/>
+                            <field name="percent_of_allowance_type_id"/>
+                        </group>
+                    </group>
+                    </div>
+                    <group string="الصلاحية">
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="state" readonly="1" widget="badge"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="ملاحظات">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_allowance_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.employee.allowance.kanban</field>
+        <field name="model">dm.hr.employee.allowance</field>
+        <field name="arch" type="xml">
+            <kanban string="البدلات الخاصة" class="o_kanban_small_column">
+                <field name="employee_id"/>
+                <field name="allowance_type_id"/>
+                <field name="amount"/>
+                <field name="percent"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click dm_hr_kanban_card">
+                            <div class="dm_hr_kanban_title"><field name="employee_id"/></div>
+                            <div class="dm_hr_kanban_meta"><field name="allowance_type_id"/></div>
+                            <div><field name="amount"/> <field name="percent"/></div>
+                            <div class="dm_hr_kanban_footer">
+                                <span><field name="state"/></span>
+                                <span><field name="start_date"/> - <field name="end_date"/></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_employee_allowance_action" model="ir.actions.act_window">
+        <field name="name">البدلات الخاصة</field>
+        <field name="res_model">dm.hr.employee.allowance</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="dm_hr_employee_allowance_search" model="ir.ui.view">
+        <field name="name">dm.hr.employee.allowance.search</field>
+        <field name="model">dm.hr.employee.allowance</field>
+        <field name="arch" type="xml">
+            <search string="البدلات الخاصة">
+                <field name="employee_id"/>
+                <field name="allowance_type_id"/>
+                <filter name="active_records" string="نشط" domain="[('active', '=', True)]"/>
+                <filter name="state_active" string="نشط حالياً" domain="[('state', '=', 'active')]"/>
+                <filter name="state_scheduled" string="مجدول" domain="[('state', '=', 'scheduled')]"/>
+                <filter name="state_expired" string="منتهي" domain="[('state', '=', 'expired')]"/>
+                <separator/>
+                <filter name="group_employee" string="الموظف" context="{'group_by': 'employee_id'}"/>
+                <filter name="group_allowance_type" string="نوع البدل" context="{'group_by': 'allowance_type_id'}"/>
+                <filter name="group_state" string="الحالة" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

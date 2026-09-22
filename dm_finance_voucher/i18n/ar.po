@@ -1,0 +1,629 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_finance_voucher
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 17:33+0000\n"
+"PO-Revision-Date: 2026-08-11 17:45+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__account_id
+msgid "Account"
+msgstr "الحساب"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Accounting Links"
+msgstr "روابط المحاسبة"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid ""
+"Accounting posting for finance vouchers is not enabled yet. Approve the "
+"voucher accounting matrix first, then enable the posting adapter."
+msgstr ""
+"ترحيل السندات المالية محاسبيًا غير مفعّل حاليًا. اعتمد مصفوفة قيود السندات "
+"أولًا، ثم فعّل موصل الترحيل."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب إجراءً"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تمييز استثناء النشاط"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Add at least one voucher line before submitting."
+msgstr "أضف بندًا واحدًا على الأقل في السند قبل الإرسال."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__analytic_distribution
+msgid "Analytic Distribution"
+msgstr "التوزيع التحليلي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__approval_request_id
+msgid "Approval Request"
+msgstr "طلب الموافقة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__approved
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__bank_reference
+msgid "Bank Reference"
+msgstr "مرجع البنك"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__cheque_date
+msgid "Cheque Date"
+msgstr "تاريخ الشيك"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__cheque_number
+msgid "Cheque Number"
+msgstr "رقم الشيك"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__company_id
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.actions.act_window,help:dm_finance_voucher.dm_finance_voucher_action
+msgid "Create your first finance voucher"
+msgstr "أنشئ أول سند مالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__create_uid
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__create_date
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__currency_id
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__partner_id
+msgid ""
+"Customer, vendor, employee contact, or other party related to this voucher."
+msgstr "عميل أو مورد أو جهة اتصال موظف أو أي طرف آخر مرتبط بهذا السند."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__destination_journal_id
+msgid "Destination Journal"
+msgstr "دفتر اليومية الوجهة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__display_name
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__draft
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dm_finance_voucher
+#: model:ir.model,name:dm_finance_voucher.model_dm_finance_approval_request
+msgid "Finance Approval Request"
+msgstr "طلب موافقة مالية"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__branch_id
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Finance Branch"
+msgstr "فرع مالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model,name:dm_finance_voucher.model_dm_finance_voucher
+msgid "Finance Voucher"
+msgstr "سند مالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model,name:dm_finance_voucher.model_dm_finance_voucher_line
+msgid "Finance Voucher Line"
+msgstr "بند سند مالي"
+
+#. module: dm_finance_voucher
+#: model:ir.actions.act_window,name:dm_finance_voucher.dm_finance_voucher_action
+#: model:ir.ui.menu,name:dm_finance_voucher.menu_dm_finance_vouchers
+msgid "Finance Vouchers"
+msgstr "السندات المالية"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Finance branch is required by finance settings."
+msgstr "الفرع المالي مطلوب حسب إعدادات المالية."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__id
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التفعيل، توجد رسائل جديدة تحتاج انتباهك."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__message_has_error
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التفعيل، توجد رسائل بها خطأ في التسليم."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__journal_id
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__move_id
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Journal is required for receipt and payment vouchers."
+msgstr "دفتر اليومية مطلوب لسندات القبض والصرف."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__write_uid
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__write_date
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد أنشطتي النهائي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__narration
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Narration"
+msgstr "البيان"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "No active finance approval flow is configured for this voucher amount."
+msgstr "لا يوجد مسار موافقة مالي نشط مناسب لمبلغ هذا السند."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Only draft or cancelled vouchers can be deleted."
+msgstr "يمكن حذف السندات المسودة أو الملغاة فقط."
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Only draft or rejected vouchers can be edited."
+msgstr "يمكن تعديل السندات المسودة أو المرفوضة فقط."
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Only draft or rejected vouchers can be submitted."
+msgstr "يمكن إرسال السندات المسودة أو المرفوضة فقط."
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Only rejected or cancelled vouchers can be reset to draft."
+msgstr "يمكن إرجاع السندات المرفوضة أو الملغاة فقط إلى مسودة."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__partner_id
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__partner_id
+msgid "Partner"
+msgstr "الطرف"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__payment_id
+msgid "Payment"
+msgstr "الدفع"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Payment Details"
+msgstr "تفاصيل الدفع"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__payment_reference
+msgid "Payment Reference"
+msgstr "مرجع الدفع"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__voucher_type__payment
+msgid "Payment Voucher"
+msgstr "سند صرف"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Payment Vouchers"
+msgstr "سندات الصرف"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Post"
+msgstr "ترحيل"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__posted
+msgid "Posted"
+msgstr "مرحل"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Posted vouchers cannot be cancelled. Use a controlled reversal."
+msgstr "لا يمكن إلغاء السندات المرحلة. استخدم عكسًا محاسبيًا مضبوطًا."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__voucher_type__receipt
+msgid "Receipt Voucher"
+msgstr "سند قبض"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Receipt Vouchers"
+msgstr "سندات القبض"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__destination_journal_id
+msgid "Required only for transfer vouchers."
+msgstr "مطلوب فقط لسندات التحويل."
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Source and destination journals are required for transfer vouchers."
+msgstr "دفتر اليومية المصدر والوجهة مطلوبان لسندات التحويل."
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Source and destination journals must be different."
+msgstr "يجب أن يختلف دفتر اليومية المصدر عن دفتر اليومية الوجهة."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__state
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Submit for Approval"
+msgstr "إرسال للاعتماد"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "The finance branch must belong to the voucher company."
+msgstr "يجب أن يتبع الفرع المالي شركة السند."
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_tree
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__amount_total
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__voucher_type__transfer
+msgid "Transfer Voucher"
+msgstr "سند تحويل"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Transfer Vouchers"
+msgstr "سندات التحويل"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي على السجل."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields.selection,name:dm_finance_voucher.selection__dm_finance_voucher__state__under_approval
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Under Approval"
+msgstr "قيد الاعتماد"
+
+#. module: dm_finance_voucher
+#: model_terms:ir.actions.act_window,help:dm_finance_voucher.dm_finance_voucher_action
+msgid ""
+"Use vouchers to control receipt, payment, and transfer requests before "
+"accounting posting."
+msgstr "استخدم السندات لضبط طلبات القبض والصرف والتحويل قبل الترحيل المحاسبي."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher_line__voucher_id
+msgid "Voucher"
+msgstr "سند"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__date
+msgid "Voucher Date"
+msgstr "تاريخ السند"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__line_ids
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_form
+msgid "Voucher Lines"
+msgstr "بنود السند"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__name
+msgid "Voucher Number"
+msgstr "رقم السند"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__voucher_type
+#: model_terms:ir.ui.view,arch_db:dm_finance_voucher.dm_finance_voucher_view_search
+msgid "Voucher Type"
+msgstr "نوع السند"
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Voucher line amount must be greater than zero."
+msgstr "يجب أن يكون مبلغ بند السند أكبر من صفر."
+
+#. module: dm_finance_voucher
+#: model:ir.model.constraint,message:dm_finance_voucher.constraint_dm_finance_voucher_dm_finance_voucher_name_company_uniq
+msgid "Voucher number must be unique per company."
+msgstr "يجب أن يكون رقم السند فريدًا لكل شركة."
+
+#. module: dm_finance_voucher
+#. odoo-python
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#: code:addons/dm_finance_voucher/models/dm_finance_voucher.py:0
+#, python-format
+msgid "Voucher total amount must be greater than zero."
+msgstr "يجب أن يكون إجمالي السند أكبر من صفر."
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,field_description:dm_finance_voucher.field_dm_finance_voucher__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: dm_finance_voucher
+#: model:ir.model.fields,help:dm_finance_voucher.field_dm_finance_voucher__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"

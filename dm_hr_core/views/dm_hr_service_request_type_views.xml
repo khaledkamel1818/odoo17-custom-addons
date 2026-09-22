@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_service_request_type_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.type.tree</field>
+        <field name="model">dm.hr.service.request.type</field>
+        <field name="arch" type="xml">
+            <tree string="أنواع طلبات خدمات الموظفين" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code" widget="badge"/>
+                <field name="monthly_limit_hours"/>
+                <field name="yearly_limit_hours"/>
+                <field name="require_attachment" widget="boolean_toggle"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_service_request_type_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.type.form</field>
+        <field name="model">dm.hr.service.request.type</field>
+        <field name="arch" type="xml">
+            <form string="نوع طلب خدمة">
+                <sheet>
+                    <div class="dm_hr_form_hero">
+                        <div>
+                            <label for="name" string="اسم النوع"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <span class="dm_hr_title_badge">Requests</span>
+                    </div>
+                    <group>
+                        <group string="الإعدادات العامة">
+                            <field name="code"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="sequence"/>
+                            <field name="active" widget="boolean_toggle"/>
+                            <field name="require_attachment" widget="boolean_toggle"/>
+                        </group>
+                        <group string="حدود الاستئذان">
+                            <field name="monthly_limit_hours"/>
+                            <field name="yearly_limit_hours"/>
+                        </group>
+                    </group>
+                    <group string="القوالب">
+                        <field name="report_action_xmlid"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_service_request_type_action" model="ir.actions.act_window">
+        <field name="name">أنواع الطلبات</field>
+        <field name="res_model">dm.hr.service.request.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

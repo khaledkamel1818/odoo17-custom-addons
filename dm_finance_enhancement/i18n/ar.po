@@ -1,0 +1,531 @@
+# Translation of Odoo Server.
+# This file contains the Arabic translation for dm_finance_enhancement.
+msgid ""
+msgstr ""
+"Project-Id-Version: dm_finance_enhancement 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-20 00:00+0000\n"
+"PO-Revision-Date: 2026-08-20 00:00+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dm_finance_enhancement
+msgid "DM Finance Enhancement"
+msgstr "تطوير المالية الاحترافي"
+
+#. module: dm_finance_enhancement
+msgid "Professional finance layer for Saudi and Egyptian accounting requirements"
+msgstr "طبقة مالية احترافية لمتطلبات المحاسبة السعودية والمصرية"
+
+#. module: dm_finance_enhancement
+msgid "Finance Enhancement"
+msgstr "تطوير المالية"
+
+#. module: dm_finance_enhancement
+msgid "Finance Executive Dashboard"
+msgstr "لوحة الإدارة المالية"
+
+#. module: dm_finance_enhancement
+msgid "Financial Performance Dashboard"
+msgstr "لوحة الأداء المالي"
+
+#. module: dm_finance_enhancement
+msgid "Finance Command Center"
+msgstr "مركز قيادة المالية"
+
+#. module: dm_finance_enhancement
+msgid "Cash & Banks"
+msgstr "البنوك والصناديق"
+
+#. module: dm_finance_enhancement
+msgid "Revenue"
+msgstr "الإيرادات"
+
+#. module: dm_finance_enhancement
+msgid "Expenses"
+msgstr "المصروفات"
+
+#. module: dm_finance_enhancement
+msgid "Net Profit"
+msgstr "صافي الربح"
+
+#. module: dm_finance_enhancement
+msgid "Receivables"
+msgstr "الذمم المدينة"
+
+#. module: dm_finance_enhancement
+msgid "Payables"
+msgstr "الذمم الدائنة"
+
+#. module: dm_finance_enhancement
+msgid "Tax Due"
+msgstr "الضرائب المستحقة"
+
+#. module: dm_finance_enhancement
+msgid "Overdue AR"
+msgstr "المديونيات المتأخرة"
+
+#. module: dm_finance_enhancement
+msgid "Bank & Cash Balances"
+msgstr "أرصدة البنوك والصناديق"
+
+#. module: dm_finance_enhancement
+msgid "Executive Reports"
+msgstr "التقارير التنفيذية"
+
+#. module: dm_finance_enhancement
+msgid "Advanced Chart of Accounts"
+msgstr "الدليل المحاسبي المتطور"
+
+#. module: dm_finance_enhancement
+msgid "Parent Account"
+msgstr "الحساب الرئيسي"
+
+#. module: dm_finance_enhancement
+msgid "Child Accounts"
+msgstr "الحسابات الفرعية"
+
+#. module: dm_finance_enhancement
+msgid "Account Level"
+msgstr "مستوى الحساب"
+
+#. module: dm_finance_enhancement
+msgid "Financial Category"
+msgstr "التصنيف المالي"
+
+#. module: dm_finance_enhancement
+msgid "Assets"
+msgstr "الأصول"
+
+#. module: dm_finance_enhancement
+msgid "Liabilities"
+msgstr "الالتزامات"
+
+#. module: dm_finance_enhancement
+msgid "Equity"
+msgstr "حقوق الملكية"
+
+#. module: dm_finance_enhancement
+msgid "Debit"
+msgstr "مدين"
+
+#. module: dm_finance_enhancement
+msgid "Credit"
+msgstr "دائن"
+
+#. module: dm_finance_enhancement
+msgid "Closing Balance"
+msgstr "الرصيد الختامي"
+
+#. module: dm_finance_enhancement
+msgid "Professional Balances"
+msgstr "الأرصدة الاحترافية"
+
+#. module: dm_finance_enhancement
+msgid "Dynamic Finance Report"
+msgstr "تقرير مالي ديناميكي"
+
+#. module: dm_finance_enhancement
+msgid "Report"
+msgstr "التقرير"
+
+#. module: dm_finance_enhancement
+msgid "Profit and Loss"
+msgstr "قائمة الربح والخسارة"
+
+#. module: dm_finance_enhancement
+msgid "Balance Sheet"
+msgstr "الميزانية العمومية"
+
+#. module: dm_finance_enhancement
+msgid "Trial Balance"
+msgstr "ميزان المراجعة"
+
+#. module: dm_finance_enhancement
+msgid "General Ledger"
+msgstr "الأستاذ العام"
+
+#. module: dm_finance_enhancement
+msgid "Partner Ledger"
+msgstr "أستاذ الشركاء"
+
+#. module: dm_finance_enhancement
+msgid "Aged Receivable"
+msgstr "أعمار الديون للعملاء"
+
+#. module: dm_finance_enhancement
+msgid "Aged Payable"
+msgstr "أعمار الديون للموردين"
+
+#. module: dm_finance_enhancement
+msgid "Cash Flow"
+msgstr "التدفقات النقدية"
+
+#. module: dm_finance_enhancement
+msgid "Tax Report"
+msgstr "تقرير الضرائب"
+
+#. module: dm_finance_enhancement
+msgid "VAT Return"
+msgstr "إقرار ضريبة القيمة المضافة"
+
+#. module: dm_finance_enhancement
+msgid "Zakat and Income Summary"
+msgstr "ملخص الزكاة والدخل"
+
+#. module: dm_finance_enhancement
+msgid "Bank Reconciliation"
+msgstr "مطابقة البنوك"
+
+#. module: dm_finance_enhancement
+msgid "Fixed Assets"
+msgstr "الأصول الثابتة"
+
+#. module: dm_finance_enhancement
+msgid "Annual Closing"
+msgstr "الإقفال السنوي"
+
+#. module: dm_finance_enhancement
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: dm_finance_enhancement
+msgid "To Date"
+msgstr "إلى تاريخ"
+
+#. module: dm_finance_enhancement
+msgid "Company"
+msgstr "الشركة"
+
+#. module: dm_finance_enhancement
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: dm_finance_enhancement
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dm_finance_enhancement
+msgid "Accounts"
+msgstr "الحسابات"
+
+#. module: dm_finance_enhancement
+msgid "Partners"
+msgstr "الشركاء"
+
+#. module: dm_finance_enhancement
+msgid "Cost Center"
+msgstr "مركز التكلفة"
+
+#. module: dm_finance_enhancement
+msgid "Hide Zero Balance Accounts"
+msgstr "إخفاء الحسابات ذات الرصيد صفر"
+
+#. module: dm_finance_enhancement
+msgid "Comparison"
+msgstr "المقارنة"
+
+#. module: dm_finance_enhancement
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: dm_finance_enhancement
+msgid "Export PDF"
+msgstr "تصدير PDF"
+
+#. module: dm_finance_enhancement
+msgid "Export Excel"
+msgstr "تصدير Excel"
+
+#. module: dm_finance_enhancement
+msgid "Bank Reconciliation Workspace"
+msgstr "مساحة مطابقة البنوك"
+
+#. module: dm_finance_enhancement
+msgid "Bank/Cash Journal"
+msgstr "دفتر البنك/الصندوق"
+
+#. module: dm_finance_enhancement
+msgid "Statement Date"
+msgstr "تاريخ كشف الحساب"
+
+#. module: dm_finance_enhancement
+msgid "Bank Statement File"
+msgstr "ملف كشف البنك"
+
+#. module: dm_finance_enhancement
+msgid "Import Statement"
+msgstr "استيراد كشف الحساب"
+
+#. module: dm_finance_enhancement
+msgid "Auto Match"
+msgstr "مطابقة تلقائية"
+
+#. module: dm_finance_enhancement
+msgid "Confirm Match"
+msgstr "تأكيد المطابقة"
+
+#. module: dm_finance_enhancement
+msgid "Reset"
+msgstr "إعادة ضبط"
+
+#. module: dm_finance_enhancement
+msgid "Statement Lines"
+msgstr "سطور كشف الحساب"
+
+#. module: dm_finance_enhancement
+msgid "Unmatched"
+msgstr "غير مطابق"
+
+#. module: dm_finance_enhancement
+msgid "Suggested"
+msgstr "مقترح"
+
+#. module: dm_finance_enhancement
+msgid "Matched"
+msgstr "مطابق"
+
+#. module: dm_finance_enhancement
+msgid "Ignored"
+msgstr "متجاهل"
+
+#. module: dm_finance_enhancement
+msgid "Match Score"
+msgstr "درجة المطابقة"
+
+#. module: dm_finance_enhancement
+msgid "Annual Financial Closing"
+msgstr "الإقفال المالي السنوي"
+
+#. module: dm_finance_enhancement
+msgid "Closing Journal"
+msgstr "دفتر الإقفال"
+
+#. module: dm_finance_enhancement
+msgid "Retained Earnings Account"
+msgstr "حساب الأرباح المرحلة"
+
+#. module: dm_finance_enhancement
+msgid "Closing Journal Entry"
+msgstr "قيد الإقفال"
+
+#. module: dm_finance_enhancement
+msgid "Net Profit/Loss"
+msgstr "صافي الربح/الخسارة"
+
+#. module: dm_finance_enhancement
+msgid "Generate Entry"
+msgstr "إنشاء القيد"
+
+#. module: dm_finance_enhancement
+msgid "Post Entry"
+msgstr "ترحيل القيد"
+
+#. module: dm_finance_enhancement
+msgid "Apply Lock Date"
+msgstr "تطبيق تاريخ الإقفال"
+
+#. module: dm_finance_enhancement
+msgid "Finance User"
+msgstr "مستخدم المالية"
+
+#. module: dm_finance_enhancement
+msgid "Finance Manager"
+msgstr "مدير المالية"
+
+#. module: dm_finance_enhancement
+msgid "Tax Manager"
+msgstr "مدير الضرائب"
+
+#. module: dm_finance_enhancement
+msgid "Bank Reconciliation Officer"
+msgstr "مسؤول مطابقة البنوك"
+
+#. module: dm_finance_enhancement
+msgid "Asset Accountant"
+msgstr "محاسب الأصول"
+
+#. module: dm_finance_enhancement
+msgid "Auditor Read Only"
+msgstr "مدقق قراءة فقط"
+
+#. module: dm_finance_enhancement
+msgid "Finance Localization Mode"
+msgstr "نمط التوطين المالي"
+
+#. module: dm_finance_enhancement
+msgid "Saudi VAT Rate (%)"
+msgstr "نسبة ضريبة القيمة المضافة السعودية (%)"
+
+#. module: dm_finance_enhancement
+msgid "Egypt VAT Rate (%)"
+msgstr "نسبة ضريبة القيمة المضافة المصرية (%)"
+
+#. module: dm_finance_enhancement
+msgid "Withholding Tax Rate (%)"
+msgstr "نسبة ضريبة الاستقطاع (%)"
+
+#. module: dm_finance_enhancement
+msgid "Zakat Rate (%)"
+msgstr "نسبة الزكاة (%)"
+
+#. module: dm_finance_enhancement
+msgid "Enable Finance Audit Trail"
+msgstr "تفعيل سجل التدقيق المالي"
+
+#. module: dm_finance_enhancement
+msgid "Chart of Accounts"
+msgstr "شجرة الحسابات"
+
+#. module: dm_finance_enhancement
+msgid "Bank Matching"
+msgstr "مطابقة البنوك"
+
+#. module: dm_finance_enhancement
+msgid "Loading finance indicators..."
+msgstr "جارٍ تحميل المؤشرات المالية..."
+
+#. module: dm_finance_enhancement
+msgid "No bank or cash journals found."
+msgstr "لم يتم العثور على دفاتر بنكية أو صناديق."
+
+#. module: dm_finance_enhancement
+msgid "Profit & Loss"
+msgstr "الربح والخسارة"
+
+#. module: dm_finance_enhancement
+msgid "Zakat Summary"
+msgstr "ملخص الزكاة"
+
+#. module: dm_finance_enhancement
+msgid "Finance Report"
+msgstr "التقرير المالي"
+
+#. module: dm_finance_enhancement
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dm_finance_enhancement
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: dm_finance_enhancement
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: dm_finance_enhancement
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: dm_finance_enhancement
+msgid "Match"
+msgstr "مطابقة"
+
+#. module: dm_finance_enhancement
+msgid "Ignore"
+msgstr "تجاهل"
+
+#. module: dm_finance_enhancement
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: dm_finance_enhancement
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: dm_finance_enhancement
+msgid "Lines"
+msgstr "البنود"
+
+#. module: dm_finance_enhancement
+msgid "Account"
+msgstr "الحساب"
+
+#. module: dm_finance_enhancement
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: dm_finance_enhancement
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: dm_finance_enhancement
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dm_finance_enhancement
+msgid "Period"
+msgstr "الفترة"
+
+#. module: dm_finance_enhancement
+msgid "Localization and Tax Settings"
+msgstr "إعدادات التوطين والضرائب"
+
+#. module: dm_finance_enhancement
+msgid "Closing and Governance"
+msgstr "الإقفال والحوكمة"
+
+#. module: dm_finance_enhancement
+msgid "Localization Mode"
+msgstr "نمط التوطين"
+
+#. module: dm_finance_enhancement
+msgid "Saudi VAT"
+msgstr "ضريبة القيمة المضافة السعودية"
+
+#. module: dm_finance_enhancement
+msgid "Egypt VAT"
+msgstr "ضريبة القيمة المضافة المصرية"
+
+#. module: dm_finance_enhancement
+msgid "Withholding Tax"
+msgstr "ضريبة الاستقطاع"
+
+#. module: dm_finance_enhancement
+msgid "Zakat"
+msgstr "الزكاة"
+
+#. module: dm_finance_enhancement
+msgid "Audit Trail"
+msgstr "سجل التدقيق"
+
+#. module: dm_finance_enhancement
+msgid "Advanced Dashboard"
+msgstr "لوحة التحكم المتقدمة"
+
+#. module: dm_finance_enhancement
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: dm_finance_enhancement
+msgid "A closing entry already exists."
+msgstr "يوجد قيد إقفال بالفعل."
+
+#. module: dm_finance_enhancement
+msgid "Generate the closing entry first."
+msgstr "أنشئ قيد الإقفال أولًا."
+
+#. module: dm_finance_enhancement
+msgid "No income or expense balances were found for this period."
+msgstr "لم يتم العثور على أرصدة إيرادات أو مصروفات لهذه الفترة."
+
+#. module: dm_finance_enhancement
+msgid "Please upload a CSV or XLSX bank statement file."
+msgstr "يرجى رفع ملف كشف بنك بصيغة CSV أو XLSX."
+
+#. module: dm_finance_enhancement
+msgid "Only finance managers can perform annual closing operations."
+msgstr "يسمح لمديري المالية فقط بتنفيذ عمليات الإقفال السنوي."
+
+#. module: dm_finance_enhancement
+msgid "Only bank reconciliation officers or finance managers can modify a reconciliation."
+msgstr "يسمح لمسؤولي مطابقة البنوك ومديري المالية فقط بتعديل المطابقة."
+
+#. module: dm_finance_enhancement
+msgid "Generated by DM Finance Enhancement. Tax and zakat calculations must be reviewed against configured Odoo taxes and current regulations."
+msgstr "تم إنشاء التقرير بواسطة تطوير المالية. يجب مراجعة حسابات الضرائب والزكاة مقابل ضرائب Odoo المُهيأة واللوائح الحالية."

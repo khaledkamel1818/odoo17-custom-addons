@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_finance_annual_closing_view_list" model="ir.ui.view">
+        <field name="name">dm.finance.annual.closing.list</field>
+        <field name="model">dm.finance.annual.closing</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'posted'" decoration-info="state == 'generated'">
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="journal_id"/>
+                <field name="retained_earnings_account_id"/>
+                <field name="net_result"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_finance_annual_closing_view_form" model="ir.ui.view">
+        <field name="name">dm.finance.annual.closing.form</field>
+        <field name="model">dm.finance.annual.closing</field>
+        <field name="arch" type="xml">
+            <form string="Annual Closing">
+                <header>
+                    <button name="action_generate_closing_entry" string="Generate Entry" type="object" class="btn-primary" groups="dm_finance_enhancement.group_finance_manager"/>
+                    <button name="action_post_closing_entry" string="Post Entry" type="object" class="btn-success" groups="dm_finance_enhancement.group_finance_manager"/>
+                    <button name="action_apply_lock_date" string="Apply Lock Date" type="object" class="btn-secondary" groups="dm_finance_enhancement.group_finance_manager"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary" groups="dm_finance_enhancement.group_finance_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,generated,posted"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(account.action_move_journal_line)d" type="action" class="oe_stat_button" icon="fa-book" invisible="not move_id">
+                            <field name="move_id" widget="statinfo" string="Journal Entry"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="company_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <field name="journal_id"/>
+                            <field name="retained_earnings_account_id"/>
+                            <field name="net_result" readonly="1"/>
+                            <field name="move_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_finance_annual_closing_view_search" model="ir.ui.view">
+        <field name="name">dm.finance.annual.closing.search</field>
+        <field name="model">dm.finance.annual.closing</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="journal_id"/>
+                <filter name="posted" string="Posted" domain="[('state','=','posted')]"/>
+                <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_company" string="Company" context="{'group_by':'company_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dm_finance_annual_closing" model="ir.actions.act_window">
+        <field name="name">Annual Closing</field>
+        <field name="res_model">dm.finance.annual.closing</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="dm_finance_annual_closing_view_search"/>
+    </record>
+</odoo>

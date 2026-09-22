@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_dm_hr_workspace_settings" model="ir.actions.act_window">
+        <field name="name">إعدادات الموارد البشرية</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'dm_hr_workspace'}</field>
+    </record>
+
+    <record id="res_config_settings_view_form_hr_workspace" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.hr.workspace</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='dm_hr']" position="inside">
+                <block title="منصة العمل الموحدة" name="dm_hr_workspace_settings">
+                    <setting string="هوية المنصة" help="اسم مرن يظهر في الصفحة الرئيسية ويمكن تخصيصه لكل شركة.">
+                        <field name="hr_workspace_name" placeholder="منصة الموارد البشرية"/>
+                    </setting>
+                    <setting string="الحضور والانصراف" help="يسمح للموظف بتسجيل الحضور والانصراف من الصفحة الرئيسية.">
+                        <field name="hr_workspace_attendance_enabled"/>
+                    </setting>
+                    <setting string="توثيق الموقع GPS" help="اشتراط الحصول على إحداثيات الجهاز عند تسجيل الحضور والانصراف.">
+                        <field name="hr_workspace_gps_required"/>
+                        <div class="content-group" invisible="not hr_workspace_gps_required">
+                            <label for="hr_workspace_gps_max_accuracy" string="أقصى هامش للدقة"/>
+                            <field name="hr_workspace_gps_max_accuracy" class="oe_inline"/> متر
+                        </div>
+                    </setting>
+                    <setting string="نطاق مواقع البصمة" help="منع التسجيل إذا كان الموظف خارج نصف قطر أحد مواقع الحضور المسموحة.">
+                        <field name="hr_workspace_geofence_required"/>
+                        <div class="content-group mt16" invisible="not hr_workspace_geofence_required">
+                            <button name="%(dm_hr_workspace.dm_hr_attendance_location_action)d" type="action" string="إعداد مواقع بصمة GPS" class="btn-link" icon="fa-map-marker"/>
+                        </div>
+                    </setting>
+                    <setting string="الخدمة الذاتية" help="إظهار إنشاء طلب الإجازة والاستئذان والخطابات للموظفين.">
+                        <field name="hr_workspace_self_service_enabled"/>
+                    </setting>
+                    <setting string="جاهزية ملف الموظف" help="إظهار قائمة اكتمال الهوية والعقد والتأمين والمستندات.">
+                        <field name="hr_workspace_compliance_enabled"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

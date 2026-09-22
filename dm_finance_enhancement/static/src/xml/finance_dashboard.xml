@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dm_finance_enhancement.FinanceDashboard">
+        <div class="dm-finance-dashboard">
+            <div class="dm-finance-hero">
+                <div>
+                    <span class="dm-finance-eyebrow">Finance Command Center</span>
+                    <h1>Financial Performance Dashboard</h1>
+                    <p>
+                        <t t-esc="state.data.company.name"/>
+                        ·
+                        <t t-esc="state.data.period.date_from"/>
+                        -
+                        <t t-esc="state.data.period.date_to"/>
+                    </p>
+                </div>
+                <div class="dm-finance-hero-actions">
+                    <button class="btn btn-light" t-on-click="() => this.openReport('trial_balance')">Trial Balance</button>
+                    <button class="btn btn-outline-light" t-on-click="openChart">Chart of Accounts</button>
+                    <button class="btn btn-outline-light" t-on-click="openBankReconciliation">Bank Matching</button>
+                </div>
+            </div>
+
+            <t t-if="state.loading">
+                <div class="dm-finance-loading">Loading finance indicators...</div>
+            </t>
+            <t t-else="">
+                <div class="dm-finance-kpis">
+                    <div class="dm-finance-kpi dm-accent-teal">
+                        <span>Cash &amp; Banks</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.cash"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi dm-accent-green">
+                        <span>Revenue</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.revenue"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi dm-accent-amber">
+                        <span>Expenses</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.expense"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi dm-accent-blue">
+                        <span>Net Profit</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.net_profit"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi">
+                        <span>Receivables</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.receivable"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi">
+                        <span>Payables</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.payable"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi">
+                        <span>Tax Due</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.tax_due"/></strong>
+                    </div>
+                    <div class="dm-finance-kpi">
+                        <span>Overdue AR</span>
+                        <strong><t t-esc="state.data.currency"/> <t t-esc="state.data.cards.overdue_receivable"/></strong>
+                    </div>
+                </div>
+
+                <div class="dm-finance-grid">
+                    <section class="dm-finance-panel">
+                        <div class="dm-finance-panel-head">
+                            <h2>Bank &amp; Cash Balances</h2>
+                        </div>
+                        <div class="dm-finance-bank-list">
+                            <t t-foreach="state.data.bank_cards" t-as="bank" t-key="bank.id">
+                                <div class="dm-finance-bank-card">
+                                    <div>
+                                        <strong><t t-esc="bank.name"/></strong>
+                                        <span><t t-esc="bank.type"/></span>
+                                    </div>
+                                    <b><t t-esc="bank.currency"/> <t t-esc="bank.balance"/></b>
+                                </div>
+                            </t>
+                            <t t-if="!state.data.bank_cards.length">
+                                <div class="dm-finance-empty">No bank or cash journals found.</div>
+                            </t>
+                        </div>
+                    </section>
+
+                    <section class="dm-finance-panel">
+                        <div class="dm-finance-panel-head">
+                            <h2>Executive Reports</h2>
+                        </div>
+                        <div class="dm-finance-report-buttons">
+                            <button t-on-click="() => this.openReport('profit_loss')">Profit &amp; Loss</button>
+                            <button t-on-click="() => this.openReport('balance_sheet')">Balance Sheet</button>
+                            <button t-on-click="() => this.openReport('general_ledger')">General Ledger</button>
+                            <button t-on-click="() => this.openReport('vat_return')">VAT Return</button>
+                            <button t-on-click="() => this.openReport('zakat_income')">Zakat Summary</button>
+                            <button t-on-click="() => this.openReport('cash_flow')">Cash Flow</button>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
+

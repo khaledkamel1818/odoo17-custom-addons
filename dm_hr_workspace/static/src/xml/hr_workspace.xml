@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="dm_hr_workspace.Dashboard">
+        <Layout display="display">
+            <div class="dm_hr_workspace" dir="rtl">
+                <t t-if="state.loading">
+                    <div class="dm_hr_loading">
+                        <i class="fa fa-circle-o-notch fa-spin" role="img" title="تحميل"/>
+                        <span>جاري تجهيز منصة الموارد البشرية...</span>
+                    </div>
+                </t>
+                <t t-else="">
+                    <section class="dm_hr_workspace_hero">
+                        <div class="dm_hr_hero_content">
+                            <div class="dm_hr_employee_avatar">
+                                <t t-if="state.data.employee.image_url">
+                                    <img t-att-src="state.data.employee.image_url" alt="صورة الموظف"/>
+                                </t>
+                                <t t-else="">
+                                    <i class="fa fa-user" role="img" title="الموظف"/>
+                                </t>
+                            </div>
+                            <div>
+                                <div class="dm_hr_eyebrow"><t t-esc="state.data.config.name"/></div>
+                                <h1>
+                                    أهلًا، <t t-esc="state.data.employee.name"/>
+                                </h1>
+                                <div class="dm_hr_hero_meta">
+                                    <span t-if="state.data.employee.employee_number">
+                                        <i class="fa fa-id-badge" role="img" title="الرقم الوظيفي"/>
+                                        <t t-esc="state.data.employee.employee_number"/>
+                                    </span>
+                                    <span t-if="state.data.employee.job">
+                                        <i class="fa fa-briefcase" role="img" title="المسمى الوظيفي"/>
+                                        <t t-esc="state.data.employee.job"/>
+                                    </span>
+                                    <span t-if="state.data.employee.department">
+                                        <i class="fa fa-sitemap" role="img" title="الإدارة"/>
+                                        <t t-esc="state.data.employee.department"/>
+                                    </span>
+                                    <span t-if="state.data.employee.manager">
+                                        <i class="fa fa-user-circle" role="img" title="المدير المباشر"/>
+                                        المدير: <t t-esc="state.data.employee.manager"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dm_hr_attendance_panel" t-if="state.data.config.attendance_enabled">
+                            <div class="dm_hr_attendance_state" t-att-class="state.data.attendance.state === 'checked_in' ? 'is_in' : 'is_out'">
+                                <span class="dm_hr_pulse"/>
+                                <t t-esc="state.data.attendance.state_label"/>
+                            </div>
+                            <div class="dm_hr_attendance_hours">
+                                <strong><t t-esc="state.data.attendance.hours_today"/></strong>
+                                <span>ساعات اليوم</span>
+                            </div>
+                            <button class="btn btn-light dm_hr_attendance_button" t-on-click="toggleAttendance">
+                                <i class="fa fa-clock-o" role="img" title="الحضور"/>
+                                <t t-esc="state.data.attendance.button_label"/>
+                            </button>
+                            <small t-if="state.data.attendance.last_check_in">
+                                آخر حضور: <t t-esc="state.data.attendance.last_check_in"/>
+                            </small>
+                            <small t-if="state.data.config.gps_required">
+                                <i class="fa fa-map-marker"/> التسجيل موثق بالموقع GPS
+                            </small>
+                        </div>
+                    </section>
+
+                    <section class="dm_hr_quick_actions" t-if="state.data.config.self_service_enabled">
+                        <t t-foreach="state.data.quick_actions" t-as="quick" t-key="quick.key">
+                            <button class="dm_hr_quick_action" t-on-click="() => this.openAction(quick.key)">
+                                <span class="dm_hr_quick_icon">
+                                    <i t-att-class="'fa ' + quick.icon" role="img" t-att-title="quick.label"/>
+                                </span>
+                                <span>
+                                    <strong><t t-esc="quick.label"/></strong>
+                                    <small><t t-esc="quick.description"/></small>
+                                </span>
+                            </button>
+                        </t>
+                    </section>
+
+                    <section class="dm_hr_services_hub">
+                        <div class="dm_hr_panel_header">
+                            <div>
+                                <span class="dm_hr_eyebrow">بوابة موحدة</span>
+                                <h2>كل خدمات الموارد البشرية</h2>
+                                <p>الأقسام المتاحة لك مرتبة حسب دورك وصلاحياتك.</p>
+                            </div>
+                        </div>
+                        <div class="dm_hr_service_sections">
+                            <article class="dm_hr_service_section" t-foreach="state.data.service_sections" t-as="section" t-key="section.key">
+                                <header>
+                                    <h3><t t-esc="section.title"/></h3>
+                                    <p><t t-esc="section.description"/></p>
+                                </header>
+                                <div class="dm_hr_service_links">
+                                    <button t-foreach="section.items" t-as="item" t-key="item.key"
+                                            class="dm_hr_service_link" t-on-click="() => this.openAction(item.key)">
+                                        <span><i t-att-class="'fa ' + item.icon" role="img" t-att-title="item.label"/></span>
+                                        <strong><t t-esc="item.label"/></strong>
+                                        <i class="fa fa-angle-right dm_hr_service_arrow" role="img" title="فتح"/>
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="dm_hr_metrics_grid">
+                        <t t-foreach="state.data.metrics" t-as="metric" t-key="metric.key">
+                            <button t-attf-class="dm_hr_metric_card tone_{{metric.tone}}" t-on-click="() => this.openAction(metric.action)">
+                                <div class="dm_hr_metric_icon">
+                                    <i t-att-class="'fa ' + metric.icon" role="img" t-att-title="metric.label"/>
+                                </div>
+                                <div>
+                                    <span class="dm_hr_metric_label"><t t-esc="metric.label"/></span>
+                                    <strong class="dm_hr_metric_value"><t t-esc="metric.value"/></strong>
+                                </div>
+                            </button>
+                        </t>
+                    </section>
+
+                    <section class="dm_hr_command_center" t-if="state.data.config.show_hr_command">
+                        <div class="dm_hr_panel_header">
+                            <div>
+                                <span class="dm_hr_eyebrow">مركز التحكم</span>
+                                <h2>مركز قيادة الموارد البشرية</h2>
+                                <p>متابعة فورية للامتثال، الملفات الناقصة، ومسار الطلبات داخل الشركة.</p>
+                            </div>
+                            <button class="btn btn-primary" t-on-click="() => this.openAction('employees')">
+                                إدارة ملفات الموظفين
+                            </button>
+                        </div>
+                        <div class="dm_hr_command_tiles">
+                            <button class="dm_hr_command_tile tile_danger" t-on-click="() => this.openAction('employees')">
+                                <span>تأمينات ناقصة</span>
+                                <strong><t t-esc="state.data.hr_command.missing_gosi"/></strong>
+                                <small>فئة أو رقم اشتراك غير مكتمل</small>
+                            </button>
+                            <button class="dm_hr_command_tile tile_warning" t-on-click="() => this.openAction('employees')">
+                                <span>إقامات تنتهي قريبًا</span>
+                                <strong><t t-esc="state.data.hr_command.iqama_expiring"/></strong>
+                                <small>خلال 30 يومًا</small>
+                            </button>
+                            <button class="dm_hr_command_tile tile_info" t-on-click="() => this.openAction('employees')">
+                                <span>بدون مدير مباشر</span>
+                                <strong><t t-esc="state.data.hr_command.without_manager"/></strong>
+                                <small>تحتاج استكمال الهيكل التنظيمي</small>
+                            </button>
+                            <button class="dm_hr_command_tile tile_success" t-on-click="() => this.openAction('employees')">
+                                <span>بدون عقد</span>
+                                <strong><t t-esc="state.data.hr_command.without_contract"/></strong>
+                                <small>ملفات تحتاج عقد وظيفي</small>
+                            </button>
+                            <button class="dm_hr_command_tile tile_info" t-on-click="() => this.openAction('employees')">
+                                <span>بيانات بنكية ناقصة</span>
+                                <strong><t t-esc="state.data.hr_command.missing_bank"/></strong>
+                                <small>مطلوبة لحماية الأجور وتثبيت الراتب</small>
+                            </button>
+                        </div>
+                        <div class="dm_hr_pipeline">
+                            <t t-foreach="state.data.request_pipeline" t-as="step" t-key="step.state">
+                                <div t-attf-class="dm_hr_pipeline_step badge_{{step.tone}}">
+                                    <span><t t-esc="step.label"/></span>
+                                    <strong><t t-esc="step.count"/></strong>
+                                </div>
+                            </t>
+                        </div>
+                    </section>
+
+                    <section class="dm_hr_workspace_body">
+                        <div class="dm_hr_panel_card dm_hr_workforce_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">نظرة تشغيلية</span>
+                                    <h2>حالة القوى العاملة</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('employees')">عرض الموظفين</button>
+                            </div>
+                            <div class="dm_hr_workforce_rows">
+                                <div>
+                                    <span>الفريق المباشر</span>
+                                    <strong><t t-esc="state.data.workforce.team_count"/></strong>
+                                </div>
+                                <div>
+                                    <span>الموظفون النشطون</span>
+                                    <strong><t t-esc="state.data.workforce.active_count"/></strong>
+                                </div>
+                                <div>
+                                    <span>داخل الدوام الآن</span>
+                                    <strong><t t-esc="state.data.workforce.present_now"/></strong>
+                                </div>
+                                <div>
+                                    <span>إجازاتي المعتمدة</span>
+                                    <strong><t t-esc="state.data.workforce.approved_leaves"/></strong>
+                                </div>
+                                <div>
+                                    <span>طلباتي المعتمدة</span>
+                                    <strong><t t-esc="state.data.workforce.approved_requests"/></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_list_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">الخدمة الذاتية</span>
+                                    <h2>آخر طلباتي</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('my_requests')">عرض الكل</button>
+                            </div>
+                            <t t-if="state.data.recent_requests.length">
+                                <div class="dm_hr_record_list">
+                                    <t t-foreach="state.data.recent_requests" t-as="request" t-key="request.id">
+                                        <button class="dm_hr_record_item" t-on-click="() => this.openAction('my_requests')">
+                                            <span class="dm_hr_record_icon"><i class="fa fa-inbox" role="img" title="طلب"/></span>
+                                            <span class="dm_hr_record_content">
+                                                <strong><t t-esc="request.subject"/></strong>
+                                                <small><t t-esc="request.number"/> · <t t-esc="request.type_label"/> · <t t-esc="request.date"/></small>
+                                            </span>
+                                            <span t-attf-class="dm_hr_badge badge_{{request.tone}}">
+                                                <t t-esc="request.state_label"/>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_hr_empty_state compact">
+                                    <i class="fa fa-folder-open-o" role="img" title="لا توجد طلبات"/>
+                                    <strong>لا توجد طلبات حديثة</strong>
+                                    <span>ابدأ بطلب إجازة أو استئذان من الإجراءات السريعة.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_alerts_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">تنبيهات ذكية</span>
+                                    <h2>ما يحتاج انتباهك</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="loadDashboard">
+                                    <i class="fa fa-refresh" role="img" title="تحديث"/>
+                                    تحديث
+                                </button>
+                            </div>
+                            <t t-if="state.data.alerts.length">
+                                <div class="dm_hr_alert_list">
+                                    <t t-foreach="state.data.alerts" t-as="alert" t-key="alert.title + alert.message">
+                                        <button t-attf-class="dm_hr_alert alert_{{alert.level}}" t-on-click="() => this.openAction(alert.action)">
+                                            <span class="dm_hr_alert_dot"/>
+                                            <span>
+                                                <strong><t t-esc="alert.title"/></strong>
+                                                <small><t t-esc="alert.message"/></small>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_hr_empty_state">
+                                    <i class="fa fa-check-circle" role="img" title="لا توجد تنبيهات"/>
+                                    <strong>كل شيء مستقر</strong>
+                                    <span>لا توجد تنبيهات مهمة حاليًا.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_list_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">موافقات</span>
+                                    <h2>طلبات بانتظار الإجراء</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('approvals')">فتح الموافقات</button>
+                            </div>
+                            <t t-if="state.data.pending_approvals.length">
+                                <div class="dm_hr_record_list">
+                                    <t t-foreach="state.data.pending_approvals" t-as="approval" t-key="approval.id">
+                                        <button class="dm_hr_record_item" t-on-click="() => this.openAction('approvals')">
+                                            <span class="dm_hr_record_icon approval"><i class="fa fa-check-square-o" role="img" title="موافقة"/></span>
+                                            <span class="dm_hr_record_content">
+                                                <strong><t t-esc="approval.subject"/></strong>
+                                                <small><t t-esc="approval.employee"/> · <t t-esc="approval.type_label"/> · <t t-esc="approval.date"/></small>
+                                            </span>
+                                            <span t-attf-class="dm_hr_badge badge_{{approval.tone}}">
+                                                <t t-esc="approval.state_label"/>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_hr_empty_state compact">
+                                    <i class="fa fa-check-circle" role="img" title="لا توجد موافقات"/>
+                                    <strong>لا توجد موافقات معلقة</strong>
+                                    <span>كل طلبات الفريق مستقرة حاليًا.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_balance_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">الإجازات</span>
+                                    <h2>أرصدة الإجازات</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('my_leaves')">إجازاتي</button>
+                            </div>
+                            <t t-if="state.data.leave_balances.length">
+                                <div class="dm_hr_balance_list">
+                                    <t t-foreach="state.data.leave_balances" t-as="balance" t-key="balance.id">
+                                        <div class="dm_hr_balance_item">
+                                            <div>
+                                                <strong><t t-esc="balance.name"/></strong>
+                                                <small>
+                                                    المتبقي:
+                                                    <t t-esc="balance.unlimited ? 'مفتوح' : balance.remaining"/>
+                                                    <t t-if="!balance.unlimited"> <t t-esc="balance.unit"/></t>
+                                                    · المستخدم: <t t-esc="balance.taken"/>
+                                                </small>
+                                            </div>
+                                            <div class="dm_hr_progress" t-if="!balance.unlimited">
+                                                <span t-att-style="'width:' + balance.percentage + '%'"/>
+                                            </div>
+                                            <div class="dm_hr_progress unlimited" t-if="balance.unlimited">
+                                                <span/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_hr_empty_state compact">
+                                    <i class="fa fa-calendar-o" role="img" title="أرصدة الإجازات"/>
+                                    <strong>لا توجد أرصدة مخصصة</strong>
+                                    <span>راجع أنواع الإجازات والتخصيصات من إعدادات الإجازات.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_timeline_card">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">الحضور</span>
+                                    <h2>آخر الحضور والانصراف</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('my_attendance')">سجلاتي</button>
+                            </div>
+                            <t t-if="state.data.attendance_timeline.length">
+                                <div class="dm_hr_timeline">
+                                    <t t-foreach="state.data.attendance_timeline" t-as="attendance" t-key="attendance.id">
+                                        <div t-att-class="attendance.open ? 'dm_hr_timeline_item is_open' : 'dm_hr_timeline_item'">
+                                            <span class="dm_hr_timeline_dot"/>
+                                            <div>
+                                                <strong><t t-esc="attendance.check_in"/></strong>
+                                                <small>الانصراف: <t t-esc="attendance.check_out"/> · الساعات: <t t-esc="attendance.hours"/></small>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_hr_empty_state compact">
+                                    <i class="fa fa-clock-o" role="img" title="الحضور"/>
+                                    <strong>لا توجد سجلات حضور</strong>
+                                    <span>استخدم زر تسجيل الحضور من أعلى الصفحة.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_hr_panel_card dm_hr_compliance_card" t-if="state.data.config.compliance_enabled">
+                            <div class="dm_hr_panel_header">
+                                <div>
+                                    <span class="dm_hr_eyebrow">جاهزية الملف</span>
+                                    <h2>Checklist الموظف</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('my_profile')">ملفي</button>
+                            </div>
+                            <div class="dm_hr_checklist">
+                                <t t-foreach="state.data.compliance" t-as="item" t-key="item.label">
+                                    <div t-att-class="item.done ? 'dm_hr_check_item done' : 'dm_hr_check_item pending'">
+                                        <span class="dm_hr_check_icon">
+                                            <i t-att-class="item.done ? 'fa fa-check' : 'fa fa-exclamation'" role="img" t-att-title="item.label"/>
+                                        </span>
+                                        <span>
+                                            <strong><t t-esc="item.label"/></strong>
+                                            <small><t t-esc="item.detail"/></small>
+                                        </span>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </section>
+                </t>
+            </div>
+        </Layout>
+    </t>
+
+</templates>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_finance_report_wizard_view_form" model="ir.ui.view">
+        <field name="name">dm.finance.report.wizard.form</field>
+        <field name="model">dm.finance.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Dynamic Finance Report">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        Use the filters below to generate executive PDF and Excel reports. Tax and zakat rates remain configurable in settings.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="report_type"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="company_id"/>
+                            <field name="branch_id"/>
+                        </group>
+                        <group>
+                            <field name="currency_id"/>
+                            <field name="account_ids" widget="many2many_tags"/>
+                            <field name="partner_ids" widget="many2many_tags"/>
+                            <field name="analytic_account_id"/>
+                            <field name="hide_zero"/>
+                        </group>
+                    </group>
+                    <group string="Comparison">
+                        <field name="comparison_date_from"/>
+                        <field name="comparison_date_to"/>
+                    </group>
+                    <notebook>
+                        <page string="Preview">
+                            <field name="line_ids" readonly="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="account_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="debit" sum="Debit"/>
+                                    <field name="credit" sum="Credit"/>
+                                    <field name="balance" sum="Balance"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_preview" string="Preview" type="object" class="btn-secondary"/>
+                    <button name="action_print_pdf" string="Export PDF" type="object" class="btn-primary"/>
+                    <button name="action_export_xlsx" string="Export Excel" type="object" class="btn-success"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dm_finance_report_trial_balance" model="ir.actions.act_window">
+        <field name="name">Trial Balance</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'trial_balance'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_profit_loss" model="ir.actions.act_window">
+        <field name="name">Profit and Loss</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'profit_loss'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_balance_sheet" model="ir.actions.act_window">
+        <field name="name">Balance Sheet</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'balance_sheet'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_general_ledger" model="ir.actions.act_window">
+        <field name="name">General Ledger</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'general_ledger'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_partner_ledger" model="ir.actions.act_window">
+        <field name="name">Partner Ledger</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'partner_ledger'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_tax" model="ir.actions.act_window">
+        <field name="name">Tax, VAT and Zakat Reports</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'tax_report'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_aged_receivable" model="ir.actions.act_window">
+        <field name="name">Aged Receivable</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'aged_receivable'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_aged_payable" model="ir.actions.act_window">
+        <field name="name">Aged Payable</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'aged_payable'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_cash_flow" model="ir.actions.act_window">
+        <field name="name">Cash Flow Report</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'cash_flow'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_vat_return" model="ir.actions.act_window">
+        <field name="name">VAT Return Report</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'vat_return'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_zakat_income" model="ir.actions.act_window">
+        <field name="name">Zakat and Income Summary</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'zakat_income'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_bank_reconciliation" model="ir.actions.act_window">
+        <field name="name">Bank Reconciliation Report</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'bank_reconciliation'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_fixed_assets" model="ir.actions.act_window">
+        <field name="name">Fixed Assets Report</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'fixed_assets'}</field>
+    </record>
+
+    <record id="action_dm_finance_report_annual_closing" model="ir.actions.act_window">
+        <field name="name">Annual Closing Report</field>
+        <field name="res_model">dm.finance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dm_finance_report_wizard_view_form"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'annual_closing'}</field>
+    </record>
+</odoo>

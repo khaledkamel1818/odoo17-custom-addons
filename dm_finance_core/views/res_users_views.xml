@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_dm_finance_core" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.dm.finance.core</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="inside">
+                <group string="Finance Branch Access" groups="dm_finance_core.group_finance_admin">
+                    <field name="dm_finance_branch_ids" widget="many2many_tags"/>
+                    <field name="dm_finance_default_branch_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

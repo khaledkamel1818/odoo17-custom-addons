@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_finance_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.dm.finance.core</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="96"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Finance" string="Finance" name="dm_finance" groups="dm_finance_core.group_finance_admin">
+                    <block title="Finance Controls" name="dm_finance_controls">
+                        <setting string="Require Branch"
+                                 help="Require branch on finance documents introduced by DM Finance modules.">
+                            <field name="dm_finance_require_branch"/>
+                        </setting>
+                        <setting string="Default Branch"
+                                 help="Default branch used when a finance document can safely infer a branch.">
+                            <field name="dm_finance_default_branch_id"/>
+                        </setting>
+                        <setting string="Prevent Self Approval"
+                                 help="Requester cannot approve their own finance document unless the approval flow explicitly allows it.">
+                            <field name="dm_finance_prevent_self_approval"/>
+                        </setting>
+                        <setting string="Require Attachments"
+                                 help="Future finance documents will block submission when mandatory attachments are missing.">
+                            <field name="dm_finance_require_attachment_on_submit"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_finance_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Finance Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'dm_finance', 'bin_size': False}</field>
+    </record>
+</odoo>

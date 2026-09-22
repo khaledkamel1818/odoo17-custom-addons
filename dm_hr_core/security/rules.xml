@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ============ Multi-company scoping for HR / Payroll groups ============ -->
+        <record id="dm_hr_allowance_type_multi_company_rule" model="ir.rule">
+            <field name="name">نوع البدل: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_allowance_type"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_contract_allowance_multi_company_rule" model="ir.rule">
+            <field name="name">بدل العقد: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_contract_allowance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_employee_allowance_multi_company_rule" model="ir.rule">
+            <field name="name">بدل الموظف: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_employee_allowance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_insurance_provider_multi_company_rule" model="ir.rule">
+            <field name="name">مزود التأمين: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_insurance_provider"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_insurance_policy_multi_company_rule" model="ir.rule">
+            <field name="name">وثيقة التأمين: متعددة الشركات</field>
+            <field name="model_id" ref="model_dm_hr_insurance_policy"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_social_insurance_scheme_multi_company_rule" model="ir.rule">
+            <field name="name">نظام التأمينات الاجتماعية: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_social_insurance_scheme"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_social_insurance_rate_multi_company_rule" model="ir.rule">
+            <field name="name">نسبة التأمينات الاجتماعية: متعددة الشركات</field>
+            <field name="model_id" ref="model_dm_hr_social_insurance_rate"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+
+<record id="dm_hr_employee_dependent_multi_company_rule" model="ir.rule">
+            <field name="name">المرافق: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_employee_dependent"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_document_multi_company_rule" model="ir.rule">
+            <field name="name">المستند: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_document"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_service_request_multi_company_rule" model="ir.rule">
+            <field name="name">طلب خدمة الموظف: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_service_request_type_multi_company_rule" model="ir.rule">
+            <field name="name">نوع طلب خدمة الموظفين: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_service_request_type"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_approval_policy_multi_company_rule" model="ir.rule">
+            <field name="name">سياسة موافقات الموارد البشرية: متعددة الشركات</field>
+            <field name="model_id" ref="model_dm_hr_approval_policy"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_shift_multi_company_rule" model="ir.rule">
+            <field name="name">ورديات العمل: متعددة الشركات</field>
+            <field name="model_id" ref="model_dm_hr_shift"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee')), (4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_approval_policy_step_multi_company_rule" model="ir.rule">
+            <field name="name">خطوة موافقات الموارد البشرية: متعددة الشركات</field>
+            <field name="model_id" ref="model_dm_hr_approval_policy_step"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_service_approval_item_multi_company_rule" model="ir.rule">
+            <field name="name">سجل موافقات الطلب: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_service_approval_item"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_payroll_officer')), (4, ref('group_dm_payroll_manager'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_branch_multi_company_rule" model="ir.rule">
+            <field name="name">فرع الشركة: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_branch"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee')), (4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_return_work_multi_company_rule" model="ir.rule">
+            <field name="name">مباشرة العمل: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_return_work"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_clearance_multi_company_rule" model="ir.rule">
+            <field name="name">إخلاء الطرف: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_clearance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_clearance_line_multi_company_rule" model="ir.rule">
+            <field name="name">بنود إخلاء الطرف: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_clearance_line"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('clearance_id.company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_employee_transfer_multi_company_rule" model="ir.rule">
+            <field name="name">النقل الوظيفي: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_employee_transfer"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_custody_multi_company_rule" model="ir.rule">
+            <field name="name">العهد غير المالية: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_custody"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <!-- ============ Self-ownership rules for plain employees ============ -->
+        <record id="dm_hr_contract_allowance_own_rule" model="ir.rule">
+            <field name="name">بدل العقد: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_contract_allowance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('contract_id.employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_employee_allowance_own_rule" model="ir.rule">
+            <field name="name">بدل الموظف: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_employee_allowance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_insurance_policy_own_rule" model="ir.rule">
+            <field name="name">وثيقة التأمين: الخاصة بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_insurance_policy"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_employee_dependent_own_rule" model="ir.rule">
+            <field name="name">المرافق: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_employee_dependent"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_document_own_rule" model="ir.rule">
+            <field name="name">المستند: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_document"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_request_own_rule" model="ir.rule">
+            <field name="name">طلب خدمة الموظف: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_request_team_rule" model="ir.rule">
+            <field name="name">طلب خدمة الموظف: طلبات المرؤوسين للمدير</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('manager_user_id', '=', user.id), ('employee_id.leave_manager_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_request_approver_rule" model="ir.rule">
+            <field name="name">طلب خدمة الموظف: الطلبات المسندة للمعتمد أو المفوض</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('approval_item_ids.approver_user_id', '=', user.id), ('approval_item_ids.delegate_user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_approval_item_own_rule" model="ir.rule">
+            <field name="name">سجل موافقات الطلب: الخاص بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_service_approval_item"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('request_id.employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_approval_item_team_rule" model="ir.rule">
+            <field name="name">سجل موافقات الطلب: طلبات المرؤوسين للمدير</field>
+            <field name="model_id" ref="model_dm_hr_service_approval_item"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('request_id.manager_user_id', '=', user.id), ('request_id.employee_id.leave_manager_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_service_approval_item_approver_rule" model="ir.rule">
+            <field name="name">سجل موافقات الطلب: المسند للمعتمد أو المفوض</field>
+            <field name="model_id" ref="model_dm_hr_service_approval_item"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('approver_user_id', '=', user.id), ('delegate_user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_return_work_own_or_manager_rule" model="ir.rule">
+            <field name="name">مباشرة العمل: الموظف أو المدير</field>
+            <field name="model_id" ref="model_dm_hr_return_work"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_clearance_own_or_manager_rule" model="ir.rule">
+            <field name="name">إخلاء الطرف: الموظف أو المدير</field>
+            <field name="model_id" ref="model_dm_hr_clearance"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_clearance_line_own_or_manager_rule" model="ir.rule">
+            <field name="name">بند إخلاء الطرف: الموظف أو المدير</field>
+            <field name="model_id" ref="model_dm_hr_clearance_line"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('clearance_id.employee_id.user_id', '=', user.id), ('clearance_id.manager_user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_employee_transfer_own_or_manager_rule" model="ir.rule">
+            <field name="name">النقل الوظيفي: الموظف أو المدير</field>
+            <field name="model_id" ref="model_dm_hr_employee_transfer"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('employee_id.parent_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_custody_own_rule" model="ir.rule">
+            <field name="name">العهد غير المالية: الخاصة بالمستخدم فقط</field>
+            <field name="model_id" ref="model_dm_hr_custody"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_attendance_reason_multi_company_rule" model="ir.rule">
+            <field name="name">أسباب الحضور: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_attendance_reason"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee')), (4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_attendance_correction_multi_company_rule" model="ir.rule">
+            <field name="name">تصحيحات الحضور: متعدد الشركات</field>
+            <field name="model_id" ref="model_dm_hr_attendance_correction"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_attendance_correction_own_or_manager_rule" model="ir.rule">
+            <field name="name">تصحيحات الحضور: الموظف أو المدير</field>
+            <field name="model_id" ref="model_dm_hr_attendance_correction"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_user_id', '=', user.id)]</field>
+        </record>
+
+        <!-- ============ Dedicated role scopes ============ -->
+        <record id="dm_hr_service_request_leave_officer_rule" model="ir.rule">
+            <field name="name">طلبات الخدمة: مسؤول الإجازات</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_leave_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids), ('request_type', 'in', ['permission', 'remote_work', 'business_trip'])]</field>
+        </record>
+        <record id="dm_hr_service_request_attendance_officer_rule" model="ir.rule">
+            <field name="name">طلبات الخدمة: مسؤول الحضور والانصراف</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_attendance_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids), ('request_type', 'in', ['permission', 'remote_work', 'overtime'])]</field>
+        </record>
+        <record id="dm_hr_service_request_document_officer_rule" model="ir.rule">
+            <field name="name">طلبات الخدمة: مسؤول الوثائق</field>
+            <field name="model_id" ref="model_dm_hr_service_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids), ('request_type', 'in', ['salary_certificate', 'salary_transfer_certificate', 'experience_certificate', 'document_update'])]</field>
+        </record>
+        <record id="dm_hr_document_document_officer_rule" model="ir.rule">
+            <field name="name">المستندات: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_document"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_document_renewal_document_officer_rule" model="ir.rule">
+            <field name="name">تجديد الوثائق: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_document_renewal"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_employee_dependent_document_officer_rule" model="ir.rule">
+            <field name="name">المرافقون: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_employee_dependent"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_company_document_document_officer_rule" model="ir.rule">
+            <field name="name">مستندات الشركة: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_company_document"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_insurance_policy_document_officer_rule" model="ir.rule">
+            <field name="name">التأمين الطبي: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_insurance_policy"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_expiry_alert_document_officer_rule" model="ir.rule">
+            <field name="name">تنبيهات الانتهاء: مسؤول الوثائق حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_expiry_alert"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_document_officer'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="dm_hr_attendance_correction_attendance_officer_rule" model="ir.rule">
+            <field name="name">تصحيحات الحضور: مسؤول الحضور حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_attendance_correction"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_attendance_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_attendance_reason_attendance_officer_rule" model="ir.rule">
+            <field name="name">أسباب الحضور: مسؤول الحضور حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_attendance_reason"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_attendance_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+        <record id="dm_hr_leave_action_leave_officer_rule" model="ir.rule">
+            <field name="name">إجراءات الإجازات: مسؤول الإجازات حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_leave_action"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_leave_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_leave_purchase_leave_officer_rule" model="ir.rule">
+            <field name="name">شراء الإجازات: مسؤول الإجازات حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_leave_purchase"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_leave_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_leave_balance_request_leave_officer_rule" model="ir.rule">
+            <field name="name">طلبات أرصدة الإجازات: مسؤول الإجازات حسب الشركة</field>
+            <field name="model_id" ref="model_dm_hr_leave_balance_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_leave_officer'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

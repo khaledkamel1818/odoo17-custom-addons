@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_contract_form_inherit_dm_hr_core" model="ir.ui.view">
+        <field name="name">hr.contract.form.inherit.dm.hr.core</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- DM HR fields on the Salary Information page -->
+            <xpath expr="//page[@name='information']" position="inside">
+                <div class="dm_hr_panel">
+                    <div class="dm_hr_title_line">
+                        <h3>إعدادات العقد</h3>
+                        <span class="dm_hr_title_badge">الموارد البشرية</span>
+                    </div>
+                    <group string="إعدادات العقد" name="dm_hr_contract_info" col="2">
+                    <group string="الشروط">
+                        <field name="contract_class"/>
+                        <field name="gosi_insured"/>
+                        <field name="probation_end"/>
+                        <field name="dm_payment_method"/>
+                        <field name="dm_salary_payment_day"/>
+                        <field name="dm_wps_required" widget="boolean_toggle"/>
+                    </group>
+                    <group string="دورة العقد">
+                        <field name="dm_contract_state" widget="radio"/>
+                        <field name="notice_period_days"/>
+                        <field name="dm_work_days_per_week"/>
+                        <field name="dm_auto_renew"/>
+                        <field name="dm_termination_reason"/>
+                        <field name="medical_insurance_policy_id"
+                               domain="[('employee_id', '=', employee_id)]"/>
+                    </group>
+                </group>
+                </div>
+            </xpath>
+
+            <!-- Allowances notebook page -->
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="البدلات" name="dm_allowances" groups="hr.group_hr_user">
+                    <div class="dm_hr_panel">
+                    <field name="allowance_ids" context="{'default_contract_id': id}">
+                        <tree string="بدلات العقد" editable="bottom" decoration-success="state == 'active'" decoration-warning="state == 'scheduled'" decoration-muted="state == 'expired'">
+                            <field name="sequence" widget="handle"/>
+                            <field name="allowance_type_id"/>
+                            <field name="amount"/>
+                            <field name="percent"/>
+                            <field name="percent_of_allowance_type_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="state" widget="badge"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </tree>
+                    </field>
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_shift_tree" model="ir.ui.view">
+        <field name="name">dm.hr.shift.tree</field>
+        <field name="model">dm.hr.shift</field>
+        <field name="arch" type="xml">
+            <tree string="ورديات العمل" decoration-muted="not active">
+                <field name="name" class="dm_hr_list_emphasis"/>
+                <field name="time_from" widget="float_time"/>
+                <field name="time_to" widget="float_time"/>
+                <field name="employee_count"/>
+                <field name="calendar_id" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_shift_form" model="ir.ui.view">
+        <field name="name">dm.hr.shift.form</field>
+        <field name="model">dm.hr.shift</field>
+        <field name="arch" type="xml">
+            <form string="وردية عمل">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_employees" type="object" class="oe_stat_button" icon="fa-users">
+                            <field name="employee_count" widget="statinfo" string="الموظفون"/>
+                        </button>
+                    </div>
+                    <div class="dm_hr_form_hero dm_hr_shift_hero">
+                        <div>
+                            <label for="name" string="اسم الوردية"/>
+                            <h1><field name="name" placeholder="مثال: الوردية الصباحية"/></h1>
+                            <p>حدد وقت بداية ونهاية الوردية وأيام العمل، وسيتم ربطها بتقويم العمل للموظفين تلقائيًا.</p>
+                        </div>
+                        <span class="dm_hr_title_badge">جدولة</span>
+                    </div>
+                    <div class="dm_hr_geo_cards">
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-clock-o" title="وقت الوردية"/>
+                                <h3>وقت الوردية</h3>
+                            </div>
+                            <group>
+                                <field name="time_from" widget="float_time"/>
+                                <field name="time_to" widget="float_time"/>
+                                <field name="calendar_id" readonly="1"/>
+                            </group>
+                        </div>
+                        <div class="dm_hr_panel">
+                            <div class="dm_hr_title_line">
+                                <i class="fa fa-cog" title="الإعدادات"/>
+                                <h3>الإعدادات</h3>
+                            </div>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="active" widget="boolean_toggle"/>
+                            </group>
+                        </div>
+                    </div>
+                    <div class="dm_hr_panel dm_hr_week_panel">
+                        <div class="dm_hr_title_line">
+                            <i class="fa fa-calendar" title="أيام العمل"/>
+                            <h3>أيام العمل</h3>
+                        </div>
+                        <group col="7">
+                            <field name="sunday"/>
+                            <field name="monday"/>
+                            <field name="tuesday"/>
+                            <field name="wednesday"/>
+                            <field name="thursday"/>
+                            <field name="friday"/>
+                            <field name="saturday"/>
+                        </group>
+                    </div>
+                    <notebook>
+                        <page string="الموظفون">
+                            <field name="employee_ids" context="{'default_dm_shift_id': id}">
+                                <tree>
+                                    <field name="employee_number"/>
+                                    <field name="name"/>
+                                    <field name="department_id"/>
+                                    <field name="job_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_shift_search" model="ir.ui.view">
+        <field name="name">dm.hr.shift.search</field>
+        <field name="model">dm.hr.shift</field>
+        <field name="arch" type="xml">
+            <search string="بحث ورديات العمل">
+                <field name="name"/>
+                <filter name="active_shifts" string="نشطة" domain="[('active', '=', True)]"/>
+                <filter name="archived_shifts" string="مؤرشفة" domain="[('active', '=', False)]"/>
+                <group expand="0" string="تجميع حسب">
+                    <filter name="group_company" string="الشركة" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="dm_hr_shift_action" model="ir.actions.act_window">
+        <field name="name">ورديات العمل</field>
+        <field name="res_model">dm.hr.shift</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="dm_hr_shift_search"/>
+        <field name="context">{'search_default_active_shifts': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">أنشئ أول وردية عمل.</p>
+            <p>استخدم الورديات لتحديد أوقات العمل من/إلى وربطها بالموظفين وتقويمات العمل.</p>
+        </field>
+    </record>
+</odoo>

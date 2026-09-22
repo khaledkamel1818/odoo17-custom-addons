@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_om_account_asset_root"
+              name="Assets"
+              sequence="75"
+              web_icon="om_account_asset,static/description/icon.png"
+              groups="account.group_account_user,account.group_account_manager"/>
+
+    <menuitem id="menu_om_account_asset_assets"
+              name="Assets"
+              parent="menu_om_account_asset_root"
+              action="action_account_asset_asset_form"
+              sequence="10"
+              groups="account.group_account_user,account.group_account_manager"/>
+
+    <menuitem id="menu_om_account_asset_categories"
+              name="Asset Categories"
+              parent="menu_om_account_asset_root"
+              action="action_account_asset_asset_list_normal_purchase"
+              sequence="20"
+              groups="account.group_account_user,account.group_account_manager"/>
+
+    <menuitem id="menu_om_account_asset_generate_entries"
+              name="Generate Depreciation Entries"
+              parent="menu_om_account_asset_root"
+              action="action_asset_depreciation_confirmation_wizard"
+              sequence="30"
+              groups="account.group_account_manager"/>
+
+    <menuitem id="menu_om_account_asset_report"
+              name="Assets Analysis"
+              parent="menu_om_account_asset_root"
+              action="action_asset_asset_report"
+              sequence="40"
+              groups="account.group_account_user,account.group_account_manager"/>
+</odoo>

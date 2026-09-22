@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_dm_hr_offboarding_root" name="إنهاء الخدمة" parent="dm_hr_core.menu_dm_hr_root" sequence="260" groups="dm_hr_offboarding.group_dm_hr_offboarding_employee,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
+    <menuitem id="menu_dm_hr_offboarding_my" name="طلباتي" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_my" sequence="10"/>
+    <menuitem id="menu_dm_hr_offboarding_team" name="طلبات فريقي" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_team" sequence="20" groups="dm_hr_offboarding.group_dm_hr_offboarding_manager,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
+    <menuitem id="menu_dm_hr_offboarding_all" name="جميع الطلبات" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_all" sequence="30" groups="dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
+    <menuitem id="menu_dm_hr_offboarding_settlements" name="التسويات النهائية" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_settlement_action" sequence="40" groups="dm_hr_offboarding.group_dm_hr_offboarding_finance_officer,dm_hr_offboarding.group_dm_hr_offboarding_hr_manager"/>
+    <menuitem id="menu_dm_hr_exit_interviews" name="مقابلات الخروج" parent="menu_dm_hr_offboarding_root" action="dm_hr_exit_interview_action" sequence="50" groups="dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
+    <menuitem id="menu_dm_hr_offboarding_settings" name="الإعدادات" parent="menu_dm_hr_offboarding_root" sequence="90" groups="dm_hr_offboarding.group_dm_hr_offboarding_hr_manager"/>
+    <menuitem id="menu_dm_hr_offboarding_types" name="أنواع إنهاء الخدمة" parent="menu_dm_hr_offboarding_settings" action="dm_hr_offboarding_type_action" sequence="10"/>
+    <menuitem id="menu_dm_hr_offboarding_rules" name="قواعد مكافأة نهاية الخدمة" parent="menu_dm_hr_offboarding_settings" action="dm_hr_offboarding_rule_action" sequence="20"/>
+    <menuitem id="menu_dm_hr_offboarding_clearance_departments" name="أقسام إخلاء الطرف" parent="menu_dm_hr_offboarding_settings" action="dm_hr_offboarding_clearance_department_action" sequence="30"/>
+</odoo>

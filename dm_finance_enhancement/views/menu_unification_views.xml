@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Keep the technical modules separated, but present one clean finance workspace
+        to the end user under dm_finance_core.menu_dm_finance_root.
+    -->
+
+    <record id="dm_finance_core.menu_dm_finance_root" model="ir.ui.menu">
+        <field name="name">الحسابات والمالية</field>
+        <field name="sequence">55</field>
+        <field name="action" eval="False"/>
+        <field name="groups_id" eval="[
+            (4, ref('account.group_account_readonly')),
+            (4, ref('account.group_account_manager')),
+            (4, ref('dm_finance_core.group_finance_requester')),
+            (4, ref('dm_finance_core.group_finance_auditor')),
+            (4, ref('dm_finance_core.group_finance_manager')),
+            (4, ref('dm_finance_core.group_finance_admin')),
+            (4, ref('dm_finance_enhancement.group_finance_user')),
+            (4, ref('dm_finance_enhancement.group_finance_manager')),
+            (4, ref('dm_finance_enhancement.group_auditor_readonly'))
+        ]"/>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_overview" model="ir.ui.menu">
+        <field name="name">لوحات التحكم</field>
+        <field name="sequence">1</field>
+        <field name="action" eval="False"/>
+        <field name="groups_id" eval="[
+            (4, ref('account.group_account_readonly')),
+            (4, ref('dm_finance_enhancement.group_finance_user')),
+            (4, ref('dm_finance_enhancement.group_finance_manager')),
+            (4, ref('dm_finance_enhancement.group_auditor_readonly'))
+        ]"/>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_transactions" model="ir.ui.menu">
+        <field name="name">العمليات المالية</field>
+        <field name="sequence">10</field>
+        <field name="groups_id" eval="[
+            (4, ref('account.group_account_readonly')),
+            (4, ref('dm_finance_enhancement.group_finance_user')),
+            (4, ref('dm_finance_enhancement.group_finance_manager'))
+        ]"/>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_reports" model="ir.ui.menu">
+        <field name="name">التقارير والتحليلات</field>
+        <field name="sequence">80</field>
+        <field name="groups_id" eval="[
+            (4, ref('account.group_account_readonly')),
+            (4, ref('dm_finance_enhancement.group_finance_user')),
+            (4, ref('dm_finance_enhancement.group_tax_manager')),
+            (4, ref('dm_finance_enhancement.group_finance_manager')),
+            (4, ref('dm_finance_enhancement.group_auditor_readonly'))
+        ]"/>
+    </record>
+
+    <record id="dm_finance_core.menu_dm_finance_configuration" model="ir.ui.menu">
+        <field name="name">الإعدادات والتهيئة</field>
+        <field name="sequence">90</field>
+        <field name="groups_id" eval="[
+            (4, ref('account.group_account_manager')),
+            (4, ref('dm_finance_enhancement.group_finance_manager'))
+        ]"/>
+    </record>
+
+    <!-- Hide standalone technical app roots after moving their useful children. -->
+    <record id="account.menu_finance" model="ir.ui.menu">
+        <field name="name">المحاسبة</field>
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+
+    <record id="om_account_asset.menu_om_account_asset_root" model="ir.ui.menu">
+        <field name="name">الأصول</field>
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+
+    <!-- Odoo accounting workspace moved into DM Finance. -->
+    <record id="account.menu_board_journal_1" model="ir.ui.menu">
+        <field name="name">لوحة البنوك والصناديق</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_overview"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="account.menu_finance_receivables" model="ir.ui.menu">
+        <field name="name">العملاء والمبيعات</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_transactions"/>
+        <field name="sequence">10</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="account.menu_finance_payables" model="ir.ui.menu">
+        <field name="name">الموردون والمشتريات</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_transactions"/>
+        <field name="sequence">20</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="account.menu_finance_entries" model="ir.ui.menu">
+        <field name="name">القيود واليوميات</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_transactions"/>
+        <field name="sequence">30</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="account.menu_finance_reports" model="ir.ui.menu">
+        <field name="name">تقارير Odoo المحاسبية</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_reports"/>
+        <field name="sequence">70</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="account.menu_finance_configuration" model="ir.ui.menu">
+        <field name="name">إعدادات المحاسبة</field>
+        <field name="parent_id" ref="dm_finance_core.menu_dm_finance_configuration"/>
+        <field name="sequence">80</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- The enhanced dashboard is the single entry point for finance KPIs. -->
+    <record id="dm_finance_dashboard.menu_dm_finance_dashboard" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+
+    <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu">
+        <field name="name">فواتير العملاء</field>
+    </record>
+    <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu">
+        <field name="name">إشعارات دائنة للعملاء</field>
+    </record>
+    <record id="account.menu_action_account_payments_receivable" model="ir.ui.menu">
+        <field name="name">مدفوعات العملاء</field>
+    </record>
+    <record id="account.menu_account_customer" model="ir.ui.menu">
+        <field name="name">العملاء</field>
+    </record>
+    <record id="account.menu_action_move_in_invoice_type" model="ir.ui.menu">
+        <field name="name">فواتير الموردين</field>
+    </record>
+    <record id="account.menu_action_move_in_refund_type" model="ir.ui.menu">
+        <field name="name">إشعارات دائنة للموردين</field>
+    </record>
+    <record id="account.menu_action_account_payments_payable" model="ir.ui.menu">
+        <field name="name">مدفوعات الموردين</field>
+    </record>
+    <record id="account.menu_account_supplier" model="ir.ui.menu">
+        <field name="name">الموردون</field>
+    </record>
+    <record id="account.menu_finance_entries_accounting_miscellaneous" model="ir.ui.menu">
+        <field name="name">اليوميات والقيود</field>
+    </record>
+    <record id="account.menu_action_move_journal_line_form" model="ir.ui.menu">
+        <field name="name">بنود القيود اليومية</field>
+    </record>
+    <record id="account.menu_action_account_moves_all" model="ir.ui.menu">
+        <field name="name">كل القيود اليومية</field>
+    </record>
+
+    <!-- Direct shortcuts: these make the unified finance menu usable even when old roots are hidden. -->
+    <menuitem id="menu_dm_finance_accounting_shortcuts"
+              name="المحاسبة"
+              parent="dm_finance_core.menu_dm_finance_transactions"
+              sequence="5"
+              groups="account.group_account_readonly,dm_finance_enhancement.group_finance_user,dm_finance_enhancement.group_finance_manager,dm_finance_enhancement.group_auditor_readonly"/>
+
+    <menuitem id="menu_dm_finance_customer_invoices"
+              name="فواتير العملاء"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_move_out_invoice_type"
+              sequence="10"/>
+
+    <menuitem id="menu_dm_finance_customer_credit_notes"
+              name="إشعارات العملاء الدائنة"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_move_out_refund_type"
+              sequence="20"/>
+
+    <menuitem id="menu_dm_finance_customer_payments"
+              name="مدفوعات العملاء"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_account_payments"
+              sequence="30"/>
+
+    <menuitem id="menu_dm_finance_customers"
+              name="العملاء"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.res_partner_action_customer"
+              sequence="40"/>
+
+    <menuitem id="menu_dm_finance_vendor_bills"
+              name="فواتير الموردين"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_move_in_invoice_type"
+              sequence="50"/>
+
+    <menuitem id="menu_dm_finance_vendor_refunds"
+              name="إشعارات الموردين الدائنة"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_move_in_refund_type"
+              sequence="60"/>
+
+    <menuitem id="menu_dm_finance_vendor_payments"
+              name="مدفوعات الموردين"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_account_payments_payable"
+              sequence="70"/>
+
+    <menuitem id="menu_dm_finance_vendors"
+              name="الموردون"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.res_partner_action_supplier"
+              sequence="80"/>
+
+    <menuitem id="menu_dm_finance_journal_items"
+              name="بنود القيود اليومية"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_move_journal_line"
+              sequence="90"/>
+
+    <menuitem id="menu_dm_finance_journal_entries"
+              name="القيود اليومية"
+              parent="menu_dm_finance_accounting_shortcuts"
+              action="account.action_account_moves_all"
+              sequence="100"/>
+
+    <menuitem id="menu_dm_finance_accounting_setup_shortcuts"
+              name="تهيئة المحاسبة"
+              parent="dm_finance_core.menu_dm_finance_configuration"
+              sequence="5"
+              groups="account.group_account_manager,dm_finance_enhancement.group_finance_manager"/>
+
+    <menuitem id="menu_dm_finance_coa_setup"
+              name="الدليل المحاسبي"
+              parent="menu_dm_finance_accounting_setup_shortcuts"
+              action="account.action_account_form"
+              sequence="10"/>
+
+    <menuitem id="menu_dm_finance_taxes_setup"
+              name="الضرائب"
+              parent="menu_dm_finance_accounting_setup_shortcuts"
+              action="account.action_tax_form"
+              sequence="20"/>
+
+    <menuitem id="menu_dm_finance_journals_setup"
+              name="اليوميات"
+              parent="menu_dm_finance_accounting_setup_shortcuts"
+              action="account.action_account_journal_form"
+              sequence="30"/>
+
+    <menuitem id="menu_dm_finance_accounting_settings"
+              name="إعدادات Odoo المحاسبية"
+              parent="menu_dm_finance_accounting_setup_shortcuts"
+              action="account.action_account_config"
+              sequence="90"/>
+
+    <!-- Dedicated fixed assets section inside the unified workspace. -->
+    <menuitem id="menu_dm_finance_assets_unified"
+              name="الأصول الثابتة"
+              parent="dm_finance_core.menu_dm_finance_transactions"
+              sequence="50"
+              groups="dm_finance_enhancement.group_asset_accountant,dm_finance_enhancement.group_finance_manager,dm_finance_enhancement.group_auditor_readonly"/>
+
+    <record id="om_account_asset.menu_om_account_asset_assets" model="ir.ui.menu">
+        <field name="name">سجل الأصول</field>
+        <field name="parent_id" ref="menu_dm_finance_assets_unified"/>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="om_account_asset.menu_om_account_asset_categories" model="ir.ui.menu">
+        <field name="name">تصنيفات الأصول</field>
+        <field name="parent_id" ref="menu_dm_finance_assets_unified"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="om_account_asset.menu_om_account_asset_generate_entries" model="ir.ui.menu">
+        <field name="name">إنشاء قيود الإهلاك</field>
+        <field name="parent_id" ref="menu_dm_finance_assets_unified"/>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="om_account_asset.menu_om_account_asset_report" model="ir.ui.menu">
+        <field name="name">تحليل الأصول</field>
+        <field name="parent_id" ref="menu_dm_finance_assets_unified"/>
+        <field name="sequence">40</field>
+    </record>
+
+    <!-- Hide duplicate asset shortcuts created under the original Accounting menu. -->
+    <record id="om_account_asset.menu_action_account_asset_asset_form" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="om_account_asset.menu_action_account_asset_asset_list_normal_purchase" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="om_account_asset.menu_action_asset_asset_report" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="om_account_asset.menu_asset_depreciation_confirmation_wizard" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+
+    <!-- Retain one canonical implementation of each financial report. -->
+    <record id="account.menu_action_account_form" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_partner_ledger" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_general_ledger" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_general_balance_report" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_account_report_bs" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_account_report_pl" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_account_report" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_aged_trial_balance" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_aged_receivable" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_aged_payable" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_finance_legal_statement" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_finance_partner_reports" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_finance_entries_accounting_ledgers" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_action_account_moves_ledger_general" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_action_account_moves_ledger_partner" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="accounting_pdf_reports.menu_finance_audit_reports" model="ir.ui.menu">
+        <field name="name">تقارير التدقيق اليومية</field>
+    </record>
+
+    <!-- The complete Odoo accounting containers above are the single source of
+         truth. Hide only the convenience shortcuts to avoid duplicate actions. -->
+    <record id="menu_dm_finance_accounting_shortcuts" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="menu_dm_finance_accounting_setup_shortcuts" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+
+    <!-- Keep the Arabic labels explicit.  Odoo stores menu translations separately,
+         so this prevents old account-module translations from replacing the
+         unified workspace labels after a module update. -->
+    <record id="dm_finance_core.menu_dm_finance_root" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">الحسابات والمالية</field>
+        <field name="action" eval="False"/>
+    </record>
+    <record id="dm_finance_core.menu_dm_finance_overview" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">لوحات التحكم</field>
+        <field name="action" eval="False"/>
+    </record>
+    <record id="dm_finance_core.menu_dm_finance_transactions" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">العمليات المالية</field>
+    </record>
+    <record id="dm_finance_core.menu_dm_finance_reports" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">التقارير والتحليلات</field>
+    </record>
+    <record id="dm_finance_core.menu_dm_finance_configuration" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">الإعدادات والتهيئة</field>
+    </record>
+    <record id="account.menu_finance_receivables" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">العملاء والمبيعات</field>
+    </record>
+    <record id="account.menu_finance_payables" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">الموردون والمشتريات</field>
+    </record>
+    <record id="account.menu_finance_entries" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">القيود واليوميات</field>
+    </record>
+    <record id="account.menu_finance_reports" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">تقارير أودو المحاسبية</field>
+    </record>
+    <record id="account.menu_finance_configuration" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">تهيئة المحاسبة الأساسية</field>
+    </record>
+    <record id="account.menu_board_journal_1" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">لوحة البنوك والصناديق</field>
+    </record>
+    <record id="account.menu_finance_reports" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">تقارير أودو التفصيلية</field>
+    </record>
+    <record id="dm_finance_core.menu_dm_finance_settings" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">إعدادات الحوكمة المالية</field>
+    </record>
+    <record id="dm_finance_enhancement.menu_dm_finance_enhancement_settings" model="ir.ui.menu" context="{'lang': 'ar_001'}">
+        <field name="name">إعدادات الضرائب والتقارير</field>
+    </record>
+</odoo>

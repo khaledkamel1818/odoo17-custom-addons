@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_leave_view_tree_inherit_dm_hr_leave_finance" model="ir.ui.view">
+        <field name="name">hr.leave.tree.inherit.dm.hr.leave.finance</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="dm_branch_id" optional="show"/>
+                <field name="dm_sector_id" optional="hide"/>
+                <field name="dm_department_level_id" optional="show"/>
+                <field name="dm_section_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_leave_view_form_inherit_dm_hr_leave_finance" model="ir.ui.view">
+        <field name="name">hr.leave.form.inherit.dm.hr.leave.finance</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="dm_branch_id"/>
+                <field name="dm_sector_id"/>
+                <field name="dm_department_level_id"/>
+                <field name="dm_section_id"/>
+                <field name="dm_manager_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_action_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.leave.action.tree</field>
+        <field name="model">dm.hr.leave.action</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                <field name="name"/><field name="operation"/><field name="employee_id"/><field name="leave_id"/>
+                <field name="actual_return_date"/><field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_leave_action_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.leave.action.form</field>
+        <field name="model">dm.hr.leave.action</field>
+        <field name="arch" type="xml">
+            <form string="إجراء إجازة">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="operation"/>
+                            <field name="leave_id"/>
+                            <field name="employee_id"/>
+                            <field name="actual_return_date"/>
+                            <field name="effective_last_leave_date"/>
+                        </group>
+                        <group string="الهيكل الإداري">
+                            <field name="branch_id"/><field name="sector_id"/><field name="department_level_id"/>
+                            <field name="section_id"/><field name="manager_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="السبب"><field name="reason"/></page>
+                        <page string="المرفقات"><field name="attachment_ids" widget="many2many_binary"/></page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_leave_action_action" model="ir.actions.act_window">
+        <field name="name">الرجوع/الإلغاء/قطع الإجازة</field>
+        <field name="res_model">dm.hr.leave.action</field>
+        <field name="view_mode">tree,form,activity</field>
+    </record>
+    <record id="dm_hr_leave_return_action" model="ir.actions.act_window">
+        <field name="name">الرجوع من الإجازة</field>
+        <field name="res_model">dm.hr.leave.action</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="domain">[('operation','=','return')]</field>
+        <field name="context">{'default_operation':'return'}</field>
+    </record>
+    <record id="dm_hr_leave_cancel_interrupt_action" model="ir.actions.act_window">
+        <field name="name">إلغاء / قطع إجازة</field>
+        <field name="res_model">dm.hr.leave.action</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="domain">[('operation','in',('cancel','interrupt'))]</field>
+    </record>
+
+    <record id="dm_hr_leave_purchase_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.leave.purchase.tree</field>
+        <field name="model">dm.hr.leave.purchase</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                <field name="name"/><field name="employee_id"/><field name="holiday_status_id"/><field name="days"/>
+                <field name="amount"/><field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_leave_purchase_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.leave.purchase.form</field>
+        <field name="model">dm.hr.leave.purchase</field>
+        <field name="arch" type="xml">
+            <form string="شراء إجازة">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,finance,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group><field name="employee_id"/><field name="contract_id"/><field name="holiday_status_id"/><field name="days"/></group>
+                        <group><field name="daily_wage"/><field name="amount"/><field name="currency_id"/></group>
+                    </group>
+                    <field name="reason"/>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_leave_purchase_action" model="ir.actions.act_window">
+        <field name="name">شراء إجازة</field>
+        <field name="res_model">dm.hr.leave.purchase</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+    </record>
+
+    <record id="dm_hr_leave_balance_request_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.leave.balance.request.tree</field>
+        <field name="model">dm.hr.leave.balance.request</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                <field name="name"/><field name="employee_id"/><field name="holiday_status_id"/><field name="days"/>
+                <field name="allocation_id"/><field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_leave_balance_request_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.leave.balance.request.form</field>
+        <field name="model">dm.hr.leave.balance.request</field>
+        <field name="arch" type="xml">
+            <form string="طلب إضافة رصيد">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="اعتماد وإضافة الرصيد" class="btn-primary" invisible="state != 'hr'"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,hr,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group><field name="employee_id"/><field name="holiday_status_id"/><field name="days"/><field name="date_from"/><field name="date_to"/></group>
+                        <group><field name="branch_id"/><field name="department_level_id"/><field name="allocation_id"/></group>
+                    </group>
+                    <field name="reason"/>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_leave_balance_request_action" model="ir.actions.act_window">
+        <field name="name">طلب إضافة رصيد</field>
+        <field name="res_model">dm.hr.leave.balance.request</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+    </record>
+
+    <record id="dm_hr_leave_approval_followup_action" model="ir.actions.act_window">
+        <field name="name">متابعة اعتمادات الإجازات</field>
+        <field name="res_model">hr.leave</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,activity</field>
+        <field name="domain">[('state','in',('confirm','validate1','validate','refuse'))]</field>
+        <field name="context">{'search_default_waiting_for_me': 1}</field>
+    </record>
+    <record id="dm_hr_leave_balance_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير رصيد الإجازة</field>
+        <field name="res_model">hr.leave.allocation</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="domain">[('state','=','validate')]</field>
+    </record>
+    <record id="dm_hr_leave_cost_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير تكلفة الإجازة</field>
+        <field name="res_model">dm.hr.leave.purchase</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+    </record>
+    <record id="dm_hr_leave_approval_performance_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير أداء اعتماد الإجازات</field>
+        <field name="res_model">hr.leave</field>
+        <field name="view_mode">pivot,graph,tree,form</field>
+        <field name="domain">[('state','in',('validate','refuse'))]</field>
+    </record>
+
+    <record id="dm_hr_employee_financial_request_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.employee.financial.request.tree</field>
+        <field name="model">dm.hr.employee.financial.request</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state in ('approved','settled')" decoration-danger="state == 'rejected'">
+                <field name="name"/><field name="request_type"/><field name="employee_id"/><field name="amount"/>
+                <field name="installment_count"/><field name="balance_amount"/><field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_employee_financial_request_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.employee.financial.request.form</field>
+        <field name="model">dm.hr.employee.financial.request</field>
+        <field name="arch" type="xml">
+            <form string="طلب مالي للموظف">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
+                    <button name="action_mark_settled" type="object" string="تسوية مبكرة" invisible="state != 'approved'"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','settled','rejected','cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,finance,approved,settled"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group><field name="request_type"/><field name="employee_id"/><field name="contract_id"/><field name="amount"/><field name="currency_id"/></group>
+                        <group><field name="deduction_method"/><field name="installment_count"/><field name="first_installment_date"/><field name="paid_amount"/><field name="balance_amount"/></group>
+                    </group>
+                    <field name="reason"/>
+                    <notebook>
+                        <page string="الأقساط">
+                            <field name="installment_ids">
+                                <tree editable="bottom" decoration-danger="state == 'cancelled'" decoration-success="state == 'paid'" decoration-warning="state == 'due'">
+                                    <field name="sequence"/><field name="due_date"/><field name="amount"/><field name="state" widget="badge"/>
+                                    <field name="payment_date"/><field name="notes"/>
+                                    <button name="action_mark_due" type="object" string="استحقاق"/>
+                                    <button name="action_mark_paid" type="object" string="مدفوع"/>
+                                    <button name="action_cancel" type="object" string="إلغاء"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="المرفقات"><field name="attachment_ids" widget="many2many_binary"/></page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_employee_financial_request_action_advance" model="ir.actions.act_window">
+        <field name="name">طلب سلفة</field>
+        <field name="res_model">dm.hr.employee.financial.request</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+        <field name="domain">[('request_type','=','advance')]</field>
+        <field name="context">{'default_request_type':'advance'}</field>
+    </record>
+    <record id="dm_hr_employee_financial_request_action_loan" model="ir.actions.act_window">
+        <field name="name">طلب قرض</field>
+        <field name="res_model">dm.hr.employee.financial.request</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+        <field name="domain">[('request_type','=','loan')]</field>
+        <field name="context">{'default_request_type':'loan'}</field>
+    </record>
+    <record id="dm_hr_employee_financial_request_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير السلف والقروض</field>
+        <field name="res_model">dm.hr.employee.financial.request</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+    </record>
+    <record id="dm_hr_employee_financial_installment_action" model="ir.actions.act_window">
+        <field name="name">الأقساط والتسويات</field>
+        <field name="res_model">dm.hr.employee.financial.installment</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+    </record>
+</odoo>

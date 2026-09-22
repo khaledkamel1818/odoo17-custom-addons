@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_dm_finance_root"
+              name="الحسابات والمالية"
+              sequence="70"
+              web_icon="dm_finance_core,static/description/icon.svg"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_auditor,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_overview"
+              name="نظرة عامة"
+              parent="menu_dm_finance_root"
+              sequence="5"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_auditor,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_transactions"
+              name="العمليات"
+              parent="menu_dm_finance_root"
+              sequence="10"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_reports"
+              name="التقارير"
+              parent="menu_dm_finance_root"
+              sequence="80"
+              groups="dm_finance_core.group_finance_auditor,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_configuration"
+              name="الإعدادات"
+              parent="menu_dm_finance_root"
+              sequence="90"
+              groups="dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_branches"
+              name="الفروع المالية"
+              parent="menu_dm_finance_configuration"
+              action="dm_finance_branch_action"
+              sequence="10"
+              groups="dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_approval_flows"
+              name="مسارات الموافقة"
+              parent="menu_dm_finance_configuration"
+              action="dm_finance_approval_flow_action"
+              sequence="20"
+              groups="dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_approval_requests"
+              name="طلبات الموافقة"
+              parent="menu_dm_finance_transactions"
+              action="dm_finance_approval_request_action"
+              sequence="10"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+
+    <menuitem id="menu_dm_finance_settings"
+              name="إعدادات المالية"
+              parent="menu_dm_finance_configuration"
+              action="dm_finance_config_settings_action"
+              sequence="100"
+              groups="dm_finance_core.group_finance_admin"/>
+</odoo>

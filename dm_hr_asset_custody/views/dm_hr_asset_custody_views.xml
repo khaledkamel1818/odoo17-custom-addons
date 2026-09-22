@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dm_hr_custody_view_tree_inherit_asset" model="ir.ui.view">
+        <field name="name">dm.hr.custody.tree.inherit.asset</field>
+        <field name="model">dm.hr.custody</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_custody_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='serial_no']" position="after">
+                <field name="asset_id"/>
+                <field name="asset_state" widget="badge"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_custody_view_form_inherit_asset" model="ir.ui.view">
+        <field name="name">dm.hr.custody.form.inherit.asset</field>
+        <field name="model">dm.hr.custody</field>
+        <field name="inherit_id" ref="dm_hr_core.dm_hr_custody_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div class="oe_button_box" name="asset_button_box">
+                    <button name="action_open_asset" type="object" class="oe_stat_button" icon="fa-building-o" invisible="not asset_id">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">الأصل</span>
+                            <span class="o_stat_value">فتح</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='serial_no']" position="after">
+                <field name="asset_id" options="{'no_create': True}"/>
+                <field name="asset_category_id"/>
+                <field name="asset_state" widget="badge"/>
+            </xpath>
+            <xpath expr="//field[@name='settlement_notes']/ancestor::page[1]" position="before">
+                <page string="الأصل المحاسبي">
+                    <group>
+                        <group>
+                            <field name="asset_id" options="{'no_create': True}"/>
+                            <field name="asset_category_id"/>
+                            <field name="asset_state" widget="badge"/>
+                        </group>
+                        <group>
+                            <field name="asset_value"/>
+                            <field name="asset_residual_value"/>
+                            <field name="asset_currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <p class="text-muted">
+                        الربط هنا لا ينقل الأصل محاسبيًا ولا يعدّل قيوده؛ هو ربط تشغيلي بين عهدة الموظف وسجل الأصل الثابت.
+                    </p>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_asset_asset_form_inherit_hr_custody" model="ir.ui.view">
+        <field name="name">account.asset.asset.form.inherit.hr.custody</field>
+        <field name="model">account.asset.asset</field>
+        <field name="inherit_id" ref="om_account_asset.view_account_asset_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div class="oe_button_box" name="hr_custody_button_box">
+                    <button name="action_view_hr_custodies" type="object" class="oe_stat_button" icon="fa-id-card-o">
+                        <field name="custody_count" widget="statinfo" string="العهد"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="current_custody_employee_id" readonly="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="عهد الموظفين">
+                    <field name="custody_ids" readonly="1">
+                        <tree>
+                            <field name="name"/>
+                            <field name="employee_id"/>
+                            <field name="custody_type"/>
+                            <field name="delivery_date"/>
+                            <field name="return_date"/>
+                            <field name="state" widget="badge"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_offboarding_form_inherit_clearance_asset" model="ir.ui.view">
+        <field name="name">dm.hr.offboarding.form.inherit.clearance.asset</field>
+        <field name="model">dm.hr.offboarding</field>
+        <field name="inherit_id" ref="dm_hr_offboarding.dm_hr_offboarding_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='clearance_line_ids']/tree/field[@name='custody_id']" position="after">
+                <field name="asset_id"/>
+                <field name="asset_residual_value"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

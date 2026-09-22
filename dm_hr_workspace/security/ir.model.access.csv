@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dm_hr_workspace_dashboard_employee,dm.hr.workspace.dashboard.employee,model_dm_hr_workspace_dashboard,dm_hr_core.group_dm_hr_employee,1,0,0,0
+access_dm_hr_workspace_dashboard_officer,dm.hr.workspace.dashboard.officer,model_dm_hr_workspace_dashboard,dm_hr_core.group_dm_hr_officer,1,0,0,0
+access_dm_hr_workspace_dashboard_manager,dm.hr.workspace.dashboard.manager,model_dm_hr_workspace_dashboard,dm_hr_core.group_dm_hr_manager,1,0,0,0
+access_dm_hr_workspace_dashboard_admin,dm.hr.workspace.dashboard.admin,model_dm_hr_workspace_dashboard,dm_hr_core.group_dm_hr_admin,1,0,0,0
+access_dm_hr_attendance_location_employee,dm.hr.attendance.location.employee,model_dm_hr_attendance_location,dm_hr_core.group_dm_hr_employee,1,0,0,0
+access_dm_hr_attendance_location_officer,dm.hr.attendance.location.officer,model_dm_hr_attendance_location,dm_hr_core.group_dm_hr_officer,1,1,1,1
+access_dm_hr_attendance_location_manager,dm.hr.attendance.location.manager,model_dm_hr_attendance_location,dm_hr_core.group_dm_hr_manager,1,0,0,0
+access_dm_hr_attendance_location_admin,dm.hr.attendance.location.admin,model_dm_hr_attendance_location,dm_hr_core.group_dm_hr_admin,1,0,0,0
+access_dm_hr_attendance_location_system,dm.hr.attendance.location.system,model_dm_hr_attendance_location,base.group_system,1,0,0,0

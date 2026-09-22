@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherit_dm_hr_core" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.dm.hr.core</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <!-- DM HR identity fields on the Private Information page -->
+            <xpath expr="//page[@name='personal_information']" position="inside">
+                <div class="dm_hr_panel">
+                    <div class="dm_hr_title_line">
+                        <h3>ملف الموارد البشرية</h3>
+                        <span class="dm_hr_title_badge">الموارد البشرية</span>
+                    </div>
+                    <p class="dm_hr_section_note">بيانات الهوية وحالة التوظيف ومرجع بيانات الموارد البشرية السعودية.</p>
+                    <group string="الهوية" name="dm_hr_identity" col="2">
+                        <group string="هوية الموظف">
+                        <field name="employee_number"/>
+                        <field name="name_ar"/>
+                        <field name="iqama_no"/>
+                        <field name="iqama_expiry_date"/>
+                        <field name="social_security_no"/>
+                        <field name="dm_bank_name"/>
+                        <field name="dm_iban"/>
+                    </group>
+                        <group string="ملخص التوظيف">
+                        <field name="dm_employment_status" widget="radio"/>
+                        <field name="gosi_employee_category"/>
+                        <field name="blood_type"/>
+                        <field name="join_date"/>
+                        <field name="emergency_contact_name"/>
+                        <field name="emergency_contact_phone"/>
+                    </group>
+                </group>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='department_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="dm_branch_id"
+                       required="1"
+                       domain="[('company_id', '=', company_id)]"/>
+                <field name="dm_sector_id"
+                       required="1"
+                       domain="[('dm_org_level', '=', 'sector'), ('dm_branch_id', '=', dm_branch_id)]"
+                       options="{'no_create_edit': True}"/>
+                <field name="dm_department_level_id"
+                       required="1"
+                       domain="[('dm_org_level', '=', 'department'), ('parent_id', '=', dm_sector_id)]"
+                       options="{'no_create_edit': True}"/>
+                <field name="dm_section_id"
+                       required="1"
+                       domain="[('dm_org_level', '=', 'section'), ('parent_id', '=', dm_department_level_id)]"
+                       options="{'no_create_edit': True}"/>
+                <field name="dm_unit_id"
+                       domain="[('dm_org_level', '=', 'unit'), ('parent_id', '=', dm_section_id)]"
+                       options="{'no_create_edit': True}"/>
+            </xpath>
+
+            <!-- Smart buttons -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_attendances" type="object"
+                        class="oe_stat_button" icon="fa-clock-o"
+                        string="الحضور">
+                    <field name="dm_attendance_count" widget="statinfo"/>
+                </button>
+                <button name="action_open_contracts" type="object"
+                        class="oe_stat_button" icon="fa-file-text-o"
+                        string="العقود">
+                    <field name="dm_contract_count" widget="statinfo"/>
+                </button>
+                <button name="action_open_leaves" type="object"
+                        class="oe_stat_button" icon="fa-calendar"
+                        string="الإجازات">
+                    <field name="dm_leave_count" widget="statinfo"/>
+                </button>
+                <button name="action_open_service_requests" type="object"
+                        class="oe_stat_button" icon="fa-pencil-square-o"
+                        string="الطلبات">
+                    <field name="dm_request_count" widget="statinfo"/>
+                </button>
+                <button name="action_open_tasks" type="object"
+                        class="oe_stat_button" icon="fa-tasks"
+                        string="المهام">
+                    <field name="dm_task_count" widget="statinfo"/>
+                </button>
+                <button name="action_open_custodies" type="object"
+                        class="oe_stat_button" icon="fa-briefcase"
+                        string="العهد">
+                    <field name="dm_custody_count" widget="statinfo"/>
+                </button>
+            </xpath>
+
+            <xpath expr="//field[@name='resource_calendar_id']" position="after">
+                <field name="dm_shift_id" options="{'no_create_edit': False}"/>
+            </xpath>
+
+            <!-- DM HR data page: dependents, insurance policies, documents -->
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="ملف الموظف الشامل" name="dm_hr" groups="hr.group_hr_user">
+                    <div class="dm_hr_panel">
+                    <group string="العائلة والمرافقون">
+                        <field name="dm_dependent_ids">
+                            <tree string="المرافقون" editable="bottom">
+                                <field name="name"/>
+                                <field name="relationship"/>
+                                <field name="birthdate"/>
+                                <field name="included_in_gos"/>
+                                <field name="company_id" column_invisible="True"/>
+                            </tree>
+                        </field>
+                    </group>
+                    </div>
+                    <div class="dm_hr_panel">
+                    <group string="التأمين الطبي">
+                        <field name="dm_insurance_policy_ids">
+                            <tree string="وثائق التأمين" editable="bottom" decoration-success="state == 'active'" decoration-warning="state == 'scheduled'" decoration-muted="state == 'expired'">
+                                <field name="provider_id"/>
+                                <field name="policy_type"/>
+                                <field name="policy_no"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="premium"/>
+                                <field name="state" widget="badge"/>
+                                <field name="company_id" column_invisible="True"/>
+                            </tree>
+                        </field>
+                    </group>
+                    </div>
+                    <div class="dm_hr_panel">
+                    <group string="مستندات الموظف">
+                        <field name="dm_document_ids">
+                            <tree string="المستندات" editable="bottom">
+                                <field name="document_type"/>
+                                <field name="name"/>
+                                <field name="reference_no"/>
+                                <field name="issue_date"/>
+                                <field name="expiry_date"/>
+                                <field name="company_id" column_invisible="True"/>
+                            </tree>
+                        </field>
+                    </group>
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Employee search view (inherited) -->
+    <record id="view_employee_search_inherit_dm_hr_core" model="ir.ui.view">
+        <field name="name">hr.employee.search.inherit.dm.hr.core</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="employee_number"/>
+                <field name="iqama_no"/>
+                <field name="dm_employment_status"/>
+                <field name="dm_branch_id"/>
+                <field name="dm_sector_id"/>
+                <field name="dm_department_level_id"/>
+                <field name="dm_section_id"/>
+                <field name="dm_unit_id"/>
+            </xpath>
+                        <xpath expr="//filter[@name='group_manager']" position="before">
+                <filter name="group_dm_employment_status"
+                        string="حالة التوظيف"
+                        domain="[]" context="{'group_by': 'dm_employment_status'}"/>
+                <filter name="group_dm_branch"
+                        string="الفرع"
+                        domain="[]" context="{'group_by': 'dm_branch_id'}"/>
+                <filter name="group_dm_sector"
+                        string="القطاع"
+                        domain="[]" context="{'group_by': 'dm_sector_id'}"/>
+                <filter name="group_dm_department_level"
+                        string="الإدارة"
+                        domain="[]" context="{'group_by': 'dm_department_level_id'}"/>
+                <filter name="group_dm_section"
+                        string="القسم"
+                        domain="[]" context="{'group_by': 'dm_section_id'}"/>
+                <filter name="group_dm_unit"
+                        string="الوحدة"
+                        domain="[]" context="{'group_by': 'dm_unit_id'}"/>
+                <filter name="group_gosi_employee_category"
+                        string="فئة التأمينات"
+                        domain="[]" context="{'group_by': 'gosi_employee_category'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Employee kanban view (inherited) -->
+    <record id="view_employee_kanban_inherit_dm_hr_core" model="ir.ui.view">
+        <field name="name">hr.employee.kanban.inherit.dm.hr.core</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
+                <div class="o_kanban_record_headings text-muted">
+                    <field name="employee_number"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

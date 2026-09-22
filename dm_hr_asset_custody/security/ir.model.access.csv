@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_asset_asset_hr_officer_read,account.asset.asset.hr.officer.read,om_account_asset.model_account_asset_asset,dm_hr_core.group_dm_hr_officer,1,0,0,0
+access_account_asset_asset_hr_manager_read,account.asset.asset.hr.manager.read,om_account_asset.model_account_asset_asset,dm_hr_core.group_dm_hr_manager,1,0,0,0
+access_account_asset_category_hr_officer_read,account.asset.category.hr.officer.read,om_account_asset.model_account_asset_category,dm_hr_core.group_dm_hr_officer,1,0,0,0
+access_account_asset_category_hr_manager_read,account.asset.category.hr.manager.read,om_account_asset.model_account_asset_category,dm_hr_core.group_dm_hr_manager,1,0,0,0

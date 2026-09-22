@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="them.EnterpriseAppsMenu" t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown" position="attributes">
+            <attribute name="menuClass">'them_apps_kanban_menu'</attribute>
+        </xpath>
+        <xpath expr="//DropdownItem[@t-foreach='apps']" position="replace">
+            <DropdownItem
+                t-foreach="apps"
+                t-as="app"
+                t-key="app.id"
+                class="{ 'o_app': true, 'them_enterprise_app': true, focus: menuService.getCurrentApp() === app }"
+                href="getMenuItemHref(app)"
+                title="app.name"
+                dataset="{ menuXmlid: app.xmlid, section: app.id }"
+                onSelected="() => this.onNavBarDropdownItemSelection(app)"
+            >
+                <span class="them_enterprise_app_icon">
+                    <img t-att-src="themAppIconSrc(app)" t-att-alt="app.name"/>
+                </span>
+                <span class="them_enterprise_app_label" t-esc="app.name"/>
+            </DropdownItem>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="dm_finance_dashboard.Dashboard">
+        <Layout display="display">
+            <div class="dm_finance_dashboard" dir="rtl">
+                <t t-if="state.loading">
+                    <div class="dm_finance_loading">
+                        <i class="fa fa-circle-o-notch fa-spin" role="img" title="تحميل"/>
+                        <span>جاري تجهيز لوحة الحسابات...</span>
+                    </div>
+                </t>
+                <t t-else="">
+                    <section class="dm_finance_hero">
+                        <div>
+                            <span class="dm_finance_eyebrow">مركز القيادة المالي</span>
+                            <h1>لوحة الحسابات والتحكم المالي</h1>
+                            <p>
+                                متابعة السيولة، الذمم، السندات، الفواتير، والتنبيهات المالية من مكان واحد.
+                            </p>
+                            <div class="dm_finance_hero_meta">
+                                <span><i class="fa fa-building" role="img" title="الشركة"/> <t t-esc="state.data.user.company"/></span>
+                                <span><i class="fa fa-calendar" role="img" title="الفترة"/> من <t t-esc="state.data.period.month_start"/> إلى <t t-esc="state.data.period.today"/></span>
+                                <span><i class="fa fa-money" role="img" title="العملة"/> <t t-esc="state.data.user.currency"/></span>
+                            </div>
+                        </div>
+                        <div class="dm_finance_cash_card">
+                            <span>صافي حركة الشهر</span>
+                            <strong><t t-esc="state.data.cashflow.net"/></strong>
+                            <small>إيرادات: <t t-esc="state.data.cashflow.month_revenue"/> · مصروفات: <t t-esc="state.data.cashflow.month_bills"/></small>
+                        </div>
+                    </section>
+
+                    <section class="dm_finance_quick_actions">
+                        <t t-foreach="state.data.quick_actions" t-as="quick" t-key="quick.key">
+                            <button class="dm_finance_quick_action" t-on-click="() => this.openAction(quick.key)">
+                                <span class="dm_finance_quick_icon">
+                                    <i t-att-class="'fa ' + quick.icon" role="img" t-att-title="quick.label"/>
+                                </span>
+                                <span>
+                                    <strong><t t-esc="quick.label"/></strong>
+                                    <small><t t-esc="quick.description"/></small>
+                                </span>
+                            </button>
+                        </t>
+                    </section>
+
+                    <section class="dm_finance_metrics">
+                        <t t-foreach="state.data.metrics" t-as="metric" t-key="metric.key">
+                            <button t-attf-class="dm_finance_metric tone_{{metric.tone}}" t-on-click="() => this.openAction(metric.action)">
+                                <span class="dm_finance_metric_icon">
+                                    <i t-att-class="'fa ' + metric.icon" role="img" t-att-title="metric.label"/>
+                                </span>
+                                <span>
+                                    <small><t t-esc="metric.label"/></small>
+                                    <strong><t t-esc="metric.value"/></strong>
+                                </span>
+                            </button>
+                        </t>
+                    </section>
+
+                    <section class="dm_finance_command">
+                        <div class="dm_finance_panel_header">
+                            <div>
+                                <span class="dm_finance_eyebrow">الصحة المالية</span>
+                                <h2>التحصيل والمدفوعات</h2>
+                                <p>مؤشرات مباشرة للذمم المفتوحة والمتأخرة.</p>
+                            </div>
+                            <button class="btn btn-primary" t-on-click="loadDashboard">
+                                <i class="fa fa-refresh" role="img" title="تحديث"/>
+                                تحديث
+                            </button>
+                        </div>
+                        <div class="dm_finance_health_grid">
+                            <button class="dm_finance_health_card receivable" t-on-click="() => this.openAction('customer_invoices')">
+                                <span>ذمم العملاء</span>
+                                <strong><t t-esc="state.data.receivable_health.open"/></strong>
+                                <small>المفتوح: <t t-esc="state.data.receivable_health.open_count"/> · المتأخر: <t t-esc="state.data.receivable_health.overdue_count"/></small>
+                            </button>
+                            <button class="dm_finance_health_card payable" t-on-click="() => this.openAction('vendor_bills')">
+                                <span>ذمم الموردين</span>
+                                <strong><t t-esc="state.data.payable_health.open"/></strong>
+                                <small>المفتوح: <t t-esc="state.data.payable_health.open_count"/> · المتأخر: <t t-esc="state.data.payable_health.overdue_count"/></small>
+                            </button>
+                            <button class="dm_finance_health_card warning" t-on-click="() => this.openAction('overdue_receivables')">
+                                <span>تحصيل متأخر</span>
+                                <strong><t t-esc="state.data.receivable_health.overdue"/></strong>
+                                <small>فواتير عملاء تجاوزت تاريخ الاستحقاق</small>
+                            </button>
+                            <button class="dm_finance_health_card danger" t-on-click="() => this.openAction('overdue_payables')">
+                                <span>مدفوعات متأخرة</span>
+                                <strong><t t-esc="state.data.payable_health.overdue"/></strong>
+                                <small>فواتير موردين تجاوزت تاريخ الاستحقاق</small>
+                            </button>
+                        </div>
+                        <div class="dm_finance_pipeline">
+                            <t t-foreach="state.data.voucher_pipeline" t-as="step" t-key="step.state">
+                                <div t-attf-class="dm_finance_pipeline_step badge_{{step.tone}}">
+                                    <span><t t-esc="step.label"/></span>
+                                    <strong><t t-esc="step.count"/></strong>
+                                </div>
+                            </t>
+                        </div>
+                    </section>
+
+                    <section class="dm_finance_body">
+                        <div class="dm_finance_panel">
+                            <div class="dm_finance_panel_header">
+                                <div>
+                                    <span class="dm_finance_eyebrow">الفواتير</span>
+                                    <h2>آخر الفواتير</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('customer_invoices')">عرض الفواتير</button>
+                            </div>
+                            <t t-if="state.data.recent_invoices.length">
+                                <div class="dm_finance_record_list">
+                                    <t t-foreach="state.data.recent_invoices" t-as="invoice" t-key="invoice.id">
+                                        <button class="dm_finance_record" t-on-click="() => this.openAction('customer_invoices')">
+                                            <span class="dm_finance_record_icon"><i class="fa fa-file-text-o" role="img" title="فاتورة"/></span>
+                                            <span class="dm_finance_record_content">
+                                                <strong><t t-esc="invoice.name"/></strong>
+                                                <small><t t-esc="invoice.partner"/> · <t t-esc="invoice.type"/> · <t t-esc="invoice.date"/></small>
+                                            </span>
+                                            <span>
+                                                <strong class="dm_finance_amount"><t t-esc="invoice.amount"/></strong>
+                                                <small t-attf-class="dm_finance_badge badge_{{invoice.tone}}"><t t-esc="invoice.payment_state"/></small>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_finance_empty">
+                                    <i class="fa fa-file-o" role="img" title="لا توجد فواتير"/>
+                                    <strong>لا توجد فواتير حديثة</strong>
+                                    <span>ابدأ بإنشاء فاتورة عميل أو مورد من الإجراءات السريعة.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_finance_panel">
+                            <div class="dm_finance_panel_header">
+                                <div>
+                                    <span class="dm_finance_eyebrow">السندات</span>
+                                    <h2>آخر السندات المالية</h2>
+                                </div>
+                                <button class="btn btn-secondary" t-on-click="() => this.openAction('vouchers')">عرض السندات</button>
+                            </div>
+                            <t t-if="state.data.recent_vouchers.length">
+                                <div class="dm_finance_record_list">
+                                    <t t-foreach="state.data.recent_vouchers" t-as="voucher" t-key="voucher.id">
+                                        <button class="dm_finance_record" t-on-click="() => this.openAction('vouchers')">
+                                            <span class="dm_finance_record_icon voucher"><i class="fa fa-money" role="img" title="سند"/></span>
+                                            <span class="dm_finance_record_content">
+                                                <strong><t t-esc="voucher.name"/></strong>
+                                                <small><t t-esc="voucher.partner"/> · <t t-esc="voucher.type"/> · <t t-esc="voucher.date"/></small>
+                                            </span>
+                                            <span>
+                                                <strong class="dm_finance_amount"><t t-esc="voucher.amount"/></strong>
+                                                <small t-attf-class="dm_finance_badge badge_{{voucher.tone}}"><t t-esc="voucher.state"/></small>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_finance_empty">
+                                    <i class="fa fa-money" role="img" title="لا توجد سندات"/>
+                                    <strong>لا توجد سندات حديثة</strong>
+                                    <span>استخدم سند قبض أو صرف لبداية دورة الموافقات المالية.</span>
+                                </div>
+                            </t>
+                        </div>
+
+                        <div class="dm_finance_panel dm_finance_alert_panel">
+                            <div class="dm_finance_panel_header">
+                                <div>
+                                    <span class="dm_finance_eyebrow">تنبيهات</span>
+                                    <h2>ما يحتاج متابعة</h2>
+                                </div>
+                            </div>
+                            <t t-if="state.data.alerts.length">
+                                <div class="dm_finance_alerts">
+                                    <t t-foreach="state.data.alerts" t-as="alert" t-key="alert.title + alert.message">
+                                        <button t-attf-class="dm_finance_alert alert_{{alert.level}}" t-on-click="() => this.openAction(alert.action)">
+                                            <span class="dm_finance_alert_dot"/>
+                                            <span>
+                                                <strong><t t-esc="alert.title"/></strong>
+                                                <small><t t-esc="alert.message"/></small>
+                                            </span>
+                                        </button>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="dm_finance_empty">
+                                    <i class="fa fa-check-circle" role="img" title="لا توجد تنبيهات"/>
+                                    <strong>الوضع المالي مستقر</strong>
+                                    <span>لا توجد تنبيهات مالية مهمة حاليًا.</span>
+                                </div>
+                            </t>
+                        </div>
+                    </section>
+                </t>
+            </div>
+        </Layout>
+    </t>
+
+</templates>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_dm_finance_vouchers"
+              name="السندات المالية"
+              parent="dm_finance_core.menu_dm_finance_transactions"
+              action="dm_finance_voucher_action"
+              sequence="5"
+              groups="dm_finance_core.group_finance_requester,dm_finance_core.group_finance_general_accountant,dm_finance_core.group_finance_manager,dm_finance_core.group_finance_admin"/>
+</odoo>

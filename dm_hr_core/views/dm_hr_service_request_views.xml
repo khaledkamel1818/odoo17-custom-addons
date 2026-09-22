@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ===================== Views: Employee Service Requests ===================== -->
+    <record id="dm_hr_service_request_view_search" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.search</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <search string="بحث طلبات خدمات الموظفين">
+                <field name="name" string="رقم الطلب"/>
+                <field name="subject" string="موضوع الطلب"/>
+                <field name="employee_id"/>
+                <field name="branch_id"/>
+                <field name="department_id"/>
+                <field name="request_type"/>
+                <filter name="my_requests" string="طلباتي" domain="[('employee_id.user_id', '=', uid)]"/>
+                <filter name="to_approve" string="بانتظار الاعتماد" domain="[('state', 'in', ['submitted', 'manager_approved'])]"/>
+                <filter name="approved" string="معتمدة" domain="[('state', '=', 'approved')]"/>
+                <filter name="rejected" string="مرفوضة" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter name="permission" string="استئذانات" domain="[('request_type', '=', 'permission')]"/>
+                <filter name="overtime" string="ساعات إضافية" domain="[('request_type', '=', 'overtime')]"/>
+                <filter name="letters" string="خطابات وشهادات" domain="[('request_type', 'in', ['salary_certificate', 'salary_transfer_certificate', 'experience_certificate'])]"/>
+                <separator/>
+                <filter name="this_month" string="هذا الشهر"
+                        domain="[('create_date', '&gt;=', (context_today().replace(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="تجميع حسب">
+                    <filter name="group_state" string="الحالة" context="{'group_by': 'state'}"/>
+                    <filter name="group_type" string="نوع الطلب" context="{'group_by': 'request_type'}"/>
+                    <filter name="group_employee" string="الموظف" context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_branch" string="الفرع" context="{'group_by': 'branch_id'}"/>
+                    <filter name="group_department" string="الإدارة" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_company" string="الشركة" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.tree</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <tree string="طلبات خدمات الموظفين"
+                  decoration-info="state == 'submitted'"
+                  decoration-warning="state == 'manager_approved'"
+                  decoration-success="state == 'approved'"
+                  decoration-danger="state == 'rejected'"
+                  decoration-muted="state == 'cancelled'">
+                <field name="name" string="رقم الطلب"/>
+                <field name="subject"/>
+                <field name="employee_id"/>
+                <field name="branch_id"/>
+                <field name="request_type" widget="badge"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="duration_hours" sum="إجمالي الساعات"/>
+                <field name="priority" widget="priority"/>
+                <field name="state" widget="badge"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_view_kanban" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.kanban</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column dm_hr_service_kanban">
+                <field name="name"/>
+                <field name="subject"/>
+                <field name="employee_id"/>
+                <field name="branch_id"/>
+                <field name="department_id"/>
+                <field name="request_type"/>
+                <field name="date_from"/>
+                <field name="duration_hours"/>
+                <field name="priority"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click dm_hr_service_card dm_hr_state_#{record.state.raw_value}">
+                            <div class="dm_hr_service_card_header">
+                                <span class="dm_hr_service_number"><field name="name"/></span>
+                                <field name="priority" widget="priority"/>
+                            </div>
+                            <div class="dm_hr_service_title">
+                                <field name="subject"/>
+                            </div>
+                            <div class="dm_hr_service_meta">
+                                <i class="fa fa-user" title="الموظف"/> <field name="employee_id"/>
+                            </div>
+                            <div class="dm_hr_service_meta" t-if="record.department_id.raw_value">
+                                <i class="fa fa-sitemap" title="الإدارة"/> <field name="department_id"/>
+                            </div>
+                            <div class="dm_hr_service_footer">
+                                <span class="dm_hr_service_type"><field name="request_type"/></span>
+                                <span class="dm_hr_service_hours" t-if="record.duration_hours.raw_value">
+                                    <i class="fa fa-clock-o" title="المدة"/> <field name="duration_hours"/> ساعة
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.form</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <form string="طلب خدمة موظف">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال الطلب"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_manager_approve" type="object" string="اعتماد المدير"
+                            class="btn-primary" invisible="state != 'submitted' or approval_policy_id"/>
+                    <button name="action_approve" type="object" string="اعتماد الخطوة الحالية"
+                            class="btn-primary" invisible="state not in ('submitted', 'manager_approved') or not approval_policy_id"/>
+                    <button name="action_hr_approve" type="object" string="اعتماد الموارد البشرية"
+                            class="btn-success" invisible="state not in ('submitted', 'manager_approved') or approval_policy_id"
+                            groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+                    <button name="action_reject" type="object" string="رفض"
+                            class="btn-secondary" invisible="state not in ('submitted', 'manager_approved')"/>
+                    <button name="action_cancel" type="object" string="إلغاء"
+                            invisible="state not in ('draft', 'submitted', 'manager_approved')"/>
+                    <button name="action_reset_to_draft" type="object" string="إعادة لمسودة"
+                            invisible="state not in ('rejected', 'cancelled')"/>
+                    <button name="action_print_request_pdf" type="object" string="طباعة PDF"
+                            invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,manager_approved,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_attachments" type="object" class="oe_stat_button" icon="fa-paperclip">
+                            <field name="attachment_count" widget="statinfo" string="المرفقات"/>
+                        </button>
+                    </div>
+                    <div class="dm_hr_form_hero">
+                        <div>
+                            <label for="subject" string="موضوع الطلب"/>
+                            <h1><field name="subject" placeholder="مثال: استئذان طبي، خطاب تعريف، طلب عهدة..."/></h1>
+                        </div>
+                        <span class="dm_hr_title_badge">خدمات الموظف</span>
+                    </div>
+                    <group>
+                        <group string="بيانات الطلب">
+                            <field name="name" readonly="1"/>
+                            <field name="request_type"/>
+                            <field name="priority" widget="priority"/>
+                            <field name="employee_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="المتابعة">
+                            <field name="branch_id"/>
+                            <field name="sector_id"/>
+                            <field name="department_level_id"/>
+                            <field name="section_id"/>
+                            <field name="unit_id"/>
+                            <field name="job_id"/>
+                            <field name="manager_user_id"/>
+                            <field name="approver_user_id"/>
+                            <field name="approval_policy_id"/>
+                            <field name="approval_policy_preview_id"/>
+                            <field name="current_approval_label" invisible="not approval_policy_id"/>
+                        </group>
+                    </group>
+                    <group string="المدة" invisible="request_type not in ('permission', 'remote_work', 'overtime', 'business_trip')">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="duration_hours" readonly="1"/>
+                    </group>
+                    <div class="dm_hr_panel" invisible="request_type != 'permission'">
+                        <div class="dm_hr_title_line">
+                            <i class="fa fa-clock-o" title="الاستئذان"/>
+                            <h3>تفاصيل الاستئذان</h3>
+                        </div>
+                        <group>
+                            <field name="permission_kind"/>
+                            <field name="permission_reason"/>
+                        </group>
+                    </div>
+                    <div class="dm_hr_panel" invisible="request_type not in ('salary_certificate', 'salary_transfer_certificate')">
+                        <div class="dm_hr_title_line">
+                            <i class="fa fa-bank" title="بيانات الخطاب"/>
+                            <h3>بيانات خطاب الراتب</h3>
+                            <span class="dm_hr_title_badge">حماية الأجور</span>
+                        </div>
+                        <group>
+                            <group string="الخطاب">
+                                <field name="letter_recipient" placeholder="مثال: بنك الراجحي"/>
+                                <field name="letter_language"/>
+                                <field name="letter_purpose"/>
+                                <field name="letter_reference"/>
+                                <field name="include_allowances" widget="boolean_toggle"/>
+                            </group>
+                            <group string="بيانات البنك" invisible="request_type != 'salary_transfer_certificate'">
+                                <field name="bank_name"/>
+                                <field name="iban" placeholder="SA..."/>
+                            </group>
+                        </group>
+                        <field name="salary_compliance_note" nolabel="1" readonly="1"/>
+                    </div>
+                    <div class="dm_hr_panel" invisible="request_type != 'business_trip'">
+                        <div class="dm_hr_title_line">
+                            <i class="fa fa-briefcase" title="الانتداب"/>
+                            <h3>تفاصيل الانتداب</h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="trip_type"/>
+                                <field name="trip_location"/>
+                                <field name="trip_mission"/>
+                                <field name="project_name"/>
+                                <field name="cost_center"/>
+                            </group>
+                            <group>
+                                <field name="need_ticket" widget="boolean_toggle"/>
+                                <field name="need_accommodation" widget="boolean_toggle"/>
+                                <field name="allowance_amount"/>
+                                <field name="advance_amount"/>
+                            </group>
+                        </group>
+                    </div>
+                    <div class="dm_hr_panel">
+                        <div class="dm_hr_title_line">
+                            <h3>مرجع وإرشاد</h3>
+                            <span class="dm_hr_title_badge">السوق السعودي</span>
+                        </div>
+                        <field name="saudi_policy_note" nolabel="1" readonly="1"/>
+                    </div>
+                    <div class="dm_hr_panel">
+                        <div class="dm_hr_title_line">
+                            <i class="fa fa-route" title="مسار الموافقة"/>
+                            <h3>مسار الموافقة المتوقع</h3>
+                            <span class="dm_hr_title_badge">واضح قبل الإرسال</span>
+                        </div>
+                        <field name="approval_route_preview" nolabel="1" readonly="1"/>
+                    </div>
+                    <notebook>
+                        <page string="التفاصيل">
+                            <field name="description" placeholder="اكتب تفاصيل الطلب وأي ملاحظات تساعد المدير أو الموارد البشرية..."/>
+                        </page>
+                        <page string="المرفقات">
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </page>
+                        <page string="الاعتماد والرفض">
+                            <group>
+                                <field name="submitted_on"/>
+                                <field name="approved_on"/>
+                                <field name="rejected_on"/>
+                            </group>
+                            <group string="سبب الرفض" invisible="state not in ('submitted', 'manager_approved', 'rejected')">
+                                <field name="rejection_reason" placeholder="اكتب سبب الرفض قبل الضغط على زر رفض..."/>
+                            </group>
+                            <group string="ملاحظات الموارد البشرية" groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin">
+                                <field name="hr_notes"/>
+                            </group>
+                            <group string="تنفيذ خطوة الاعتماد" invisible="state not in ('submitted', 'manager_approved') or not approval_policy_id">
+                                <field name="approval_comment" placeholder="اكتب تعليق الاعتماد إذا كانت الخطوة تشترطه..."/>
+                            </group>
+                            <field name="approval_item_ids" nolabel="1" invisible="not approval_policy_id">
+                                <tree create="0" delete="0" edit="0" decoration-success="state == 'approved'" decoration-danger="state == 'rejected'">
+                                    <field name="sequence"/><field name="name"/><field name="approver_type"/>
+                                    <field name="approver_user_id"/><field name="approver_group_id"/>
+                                    <field name="delegate_user_id"/>
+                                    <field name="deadline"/>
+                                    <field name="escalation_user_id"/>
+                                    <field name="escalated" widget="boolean_toggle"/>
+                                    <field name="state" widget="badge"/><field name="action_by_id"/><field name="action_date"/><field name="comment"/>
+                                    <field name="instructions"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="لقطة الهيكل وسجل الإجراءات">
+                            <group string="الهيكل وقت تقديم الطلب">
+                                <field name="submitted_org_snapshot" nolabel="1" readonly="1"/>
+                            </group>
+                            <div class="dm_hr_section_note">
+                                سجل الإجراءات التفصيلي يظهر أيضاً في المحادثات والأنشطة أسفل الطلب.
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_view_pivot" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.pivot</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <pivot string="تحليل طلبات خدمات الموظفين">
+                <field name="request_type" type="row"/>
+                <field name="state" type="col"/>
+                <field name="duration_hours" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_view_graph" model="ir.ui.view">
+        <field name="name">dm.hr.service.request.graph</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="arch" type="xml">
+            <graph string="طلبات خدمات الموظفين" type="bar">
+                <field name="request_type"/>
+                <field name="duration_hours" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- ===================== Actions ===================== -->
+    <record id="dm_hr_service_center_client_action" model="ir.actions.client">
+        <field name="name">لوحة خدمات الموظفين</field>
+        <field name="tag">dm_hr_core.service_center_action</field>
+    </record>
+
+    <record id="dm_hr_service_request_action_new" model="ir.actions.act_window">
+        <field name="name">طلب جديد</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="dm_hr_service_request_action_my" model="ir.actions.act_window">
+        <field name="name">طلباتي</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="context">{'search_default_my_requests': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">ابدأ طلبك الأول من هنا.</p>
+            <p>يمكنك تقديم الاستئذانات والخطابات وطلبات الأدوات والمهام الأخرى ومتابعة الاعتماد.</p>
+        </field>
+    </record>
+
+    <record id="dm_hr_service_request_action_to_approve" model="ir.actions.act_window">
+        <field name="name">بانتظار موافقتي</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
+        <field name="domain">[('state', 'in', ['submitted', 'manager_approved']), '|', ('manager_user_id', '=', uid), '|', ('approval_item_ids.approver_user_id', '=', uid), ('approval_item_ids.delegate_user_id', '=', uid)]</field>
+        <field name="context">{'search_default_to_approve': 1}</field>
+    </record>
+
+    <record id="dm_hr_service_request_action_all" model="ir.actions.act_window">
+        <field name="name">كل طلبات الموظفين</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
+        <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
+        <field name="domain">[('company_id', 'in', allowed_company_ids)]</field>
+        <field name="context">{'search_default_to_approve': 1}</field>
+    </record>
+
+    <record id="dm_hr_service_request_action_permission" model="ir.actions.act_window">
+        <field name="name">استئذانات الموظفين</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
+        <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
+        <field name="domain">[('request_type', '=', 'permission')]</field>
+        <field name="context">{'default_request_type': 'permission', 'search_default_permission': 1}</field>
+    </record>
+
+    <record id="dm_hr_service_request_action_other" model="ir.actions.act_window">
+        <field name="name">الطلبات الأخرى</field>
+        <field name="res_model">dm.hr.service.request</field>
+        <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
+        <field name="search_view_id" ref="dm_hr_service_request_view_search"/>
+        <field name="domain">[('request_type', 'not in', ['permission'])]</field>
+        <field name="context">{'default_request_type': 'other'}</field>
+    </record>
+
+    <record id="dm_hr_leave_action_my" model="ir.actions.act_window">
+        <field name="name">إجازاتي</field>
+        <field name="res_model">hr.leave</field>
+        <field name="view_mode">calendar,tree,form,kanban,activity</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="search_view_id" ref="hr_holidays.hr_leave_view_search_my"/>
+        <field name="context">{'search_default_active_time_off': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">تابع إجازاتك وطلبات الإجازة من هنا.</p>
+        </field>
+    </record>
+
+    <record id="dm_hr_leave_action_all" model="ir.actions.act_window">
+        <field name="name">إجازات الموظفين</field>
+        <field name="res_model">hr.leave</field>
+        <field name="view_mode">tree,kanban,form,calendar,activity</field>
+        <field name="domain">[('employee_id.company_id', 'in', allowed_company_ids)]</field>
+        <field name="search_view_id" ref="hr_holidays.hr_leave_view_search_manager"/>
+        <field name="context">{'search_default_waiting_for_me': 1}</field>
+    </record>
+
+    <record id="dm_hr_attendance_action_my" model="ir.actions.act_window">
+        <field name="name">حضوري وانصرافي</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter"/>
+    </record>
+
+    <record id="dm_hr_attendance_action_all" model="ir.actions.act_window">
+        <field name="name">حضور وانصراف الموظفين</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id.company_id', 'in', allowed_company_ids)]</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="context">{'search_default_employee': 1}</field>
+    </record>
+
+    <record id="dm_hr_attendance_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير الحضور والانصراف</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="context">{'search_default_groupby_name': 1, 'search_default_employee': 1}</field>
+    </record>
+</odoo>

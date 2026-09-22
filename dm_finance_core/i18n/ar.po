@@ -1,0 +1,1098 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_finance_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 17:33+0000\n"
+"PO-Revision-Date: 2026-08-11 17:45+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: dm_finance_core
+#: model:ir.model.constraint,message:dm_finance_core.constraint_dm_finance_approval_request_dm_finance_approval_request_document_uniq
+msgid "A finance approval request already exists for this document."
+msgstr "يوجد طلب موافقة مالية بالفعل لهذا المستند."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "A rejection reason is required."
+msgstr "سبب الرفض مطلوب."
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_ap_accountant
+msgid "AP Accountant"
+msgstr "محاسب الموردين"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_ar_accountant
+msgid "AR Accountant"
+msgstr "محاسب العملاء"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__date_done
+msgid "Action Date"
+msgstr "تاريخ الإجراء"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__action_done_by_id
+msgid "Action Done By"
+msgstr "تم الإجراء بواسطة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_needaction
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_needaction
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب إجراءً"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__active
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__active
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_exception_decoration
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تمييز استثناء النشاط"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_state
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_state
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_type_icon
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_type_icon
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_form
+msgid "Address"
+msgstr "العنوان"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__advance
+msgid "Advance / Loan"
+msgstr "سلفة / قرض"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__allow_self_approval
+msgid "Allow Self Approval"
+msgstr "السماح بالموافقة الذاتية"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_users__dm_finance_branch_ids
+msgid "Allowed Finance Branches"
+msgstr "الفروع المالية المسموحة"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "An active approval flow must contain at least one approval step."
+msgstr "يجب أن يحتوي مسار الموافقة النشط على خطوة موافقة واحدة على الأقل."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__flow_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__flow_id
+msgid "Approval Flow"
+msgstr "مسار الموافقة"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_approval_flows
+msgid "Approval Flows"
+msgstr "مسارات الموافقة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__item_ids
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Approval History"
+msgstr "سجل الموافقات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__approval_request_id
+msgid "Approval Request"
+msgstr "طلب الموافقة"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_approval_requests
+msgid "Approval Requests"
+msgstr "طلبات الموافقة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__line_ids
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_form
+msgid "Approval Steps"
+msgstr "خطوات الموافقة"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approval amount limits cannot be negative."
+msgstr "لا يمكن أن تكون حدود مبالغ الموافقة سالبة."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_form
+msgid "Approval flow name"
+msgstr "اسم مسار الموافقة"
+
+#. module: dm_finance_core
+#: model:ir.model.constraint,message:dm_finance_core.constraint_dm_finance_approval_flow_dm_finance_approval_flow_name_company_uniq
+msgid "Approval flow name must be unique per company."
+msgstr "يجب أن يكون اسم مسار الموافقة فريدًا لكل شركة."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approval items can only be created by the finance approval engine."
+msgstr "لا يمكن إنشاء بنود الموافقة إلا بواسطة محرك الموافقات المالية."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approval items can only be removed by the finance approval engine."
+msgstr "لا يمكن حذف بنود الموافقة إلا بواسطة محرك الموافقات المالية."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approval items can only be updated by the finance approval engine."
+msgstr "لا يمكن تحديث بنود الموافقة إلا بواسطة محرك الموافقات المالية."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approval request must be under approval."
+msgstr "يجب أن يكون طلب الموافقة قيد الاعتماد."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_item__state__approved
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__approved
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__approved_on
+msgid "Approved On"
+msgstr "تاريخ الاعتماد"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid ""
+"Approved approval requests cannot be cancelled. Use a controlled reversal on"
+" the business document."
+msgstr ""
+"لا يمكن إلغاء طلبات الموافقة المعتمدة. استخدم عكسًا مضبوطًا على المستند "
+"التجاري."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__group_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__approver_group_id
+msgid "Approver Group"
+msgstr "مجموعة المعتمدين"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__approver_type
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__approver_type
+msgid "Approver Type"
+msgstr "نوع المعتمد"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__user_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__approver_user_id
+msgid "Approver User"
+msgstr "المستخدم المعتمد"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approver group is required for group-based approval steps."
+msgstr "مجموعة المعتمدين مطلوبة لخطوات الموافقة المعتمدة على مجموعة."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Approver user is required for user-based approval steps."
+msgstr "المستخدم المعتمد مطلوب لخطوات الموافقة المعتمدة على مستخدم."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__asset
+msgid "Asset"
+msgstr "أصل"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_attachment_count
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_attachment_count
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__code
+msgid "Branch Code"
+msgstr "رمز الفرع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow_line__approver_type__branch_supervisor
+#: model:res.groups,name:dm_finance_core.group_finance_branch_supervisor
+msgid "Branch Finance Supervisor"
+msgstr "مشرف مالية الفرع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__manager_id
+msgid "Branch Manager"
+msgstr "مدير الفرع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__name
+msgid "Branch Name"
+msgstr "اسم الفرع"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_branch.py:0
+#, python-format
+msgid "Branch code is required."
+msgstr "رمز الفرع مطلوب."
+
+#. module: dm_finance_core
+#: model:ir.model.constraint,message:dm_finance_core.constraint_dm_finance_branch_dm_finance_branch_code_company_uniq
+msgid "Branch code must be unique per company."
+msgstr "يجب أن يكون رمز الفرع فريدًا لكل شركة."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_form
+msgid "Branch name"
+msgstr "اسم الفرع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_res_users__dm_finance_branch_ids
+msgid "Branches this user may access for DM Finance documents."
+msgstr "الفروع التي يمكن لهذا المستخدم الوصول إليها في مستندات DM Finance."
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__budget
+msgid "Budget"
+msgstr "موازنة"
+
+#. module: dm_finance_core
+#: model:res.groups,comment:dm_finance_core.group_finance_requester
+msgid "Can create and follow own finance requests."
+msgstr "يمكنه إنشاء ومتابعة طلباته المالية الخاصة."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__comment
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__company_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__company_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__company_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__company_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__company_id
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات الضبط"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__create_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__create_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__create_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__create_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__create_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__create_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__create_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__create_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__custody
+msgid "Custody / Petty Cash"
+msgstr "عهدة / مصروفات نثرية"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Default Branch"
+msgstr "الفرع الافتراضي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_config_settings__dm_finance_default_branch_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_users__dm_finance_default_branch_id
+msgid "Default Finance Branch"
+msgstr "الفرع المالي الافتراضي"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Default branch used when a finance document can safely infer a branch."
+msgstr ""
+"الفرع الافتراضي المستخدم عندما يمكن للمستند المالي استنتاج الفرع بأمان."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__display_name
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__display_name
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__display_name
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__display_name
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__res_id
+msgid "Document ID"
+msgstr "معرّف المستند"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__model_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__res_model
+msgid "Document Model"
+msgstr "نموذج المستند"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__document_type
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_search
+msgid "Document Type"
+msgstr "نوع المستند"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_root
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Finance"
+msgstr "المالية"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_admin
+msgid "Finance Administrator"
+msgstr "مدير نظام المالية"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_dm_finance_approval_flow
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_form
+msgid "Finance Approval Flow"
+msgstr "مسار موافقة مالية"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_dm_finance_approval_flow_line
+msgid "Finance Approval Flow Step"
+msgstr "خطوة مسار الموافقة المالية"
+
+#. module: dm_finance_core
+#: model:ir.actions.act_window,name:dm_finance_core.dm_finance_approval_flow_action
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_tree
+msgid "Finance Approval Flows"
+msgstr "مسارات الموافقات المالية"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_dm_finance_approval_item
+msgid "Finance Approval Item"
+msgstr "بند موافقة مالية"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_dm_finance_approval_request
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Finance Approval Request"
+msgstr "طلب موافقة مالية"
+
+#. module: dm_finance_core
+#: model:ir.actions.act_window,name:dm_finance_core.dm_finance_approval_request_action
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_tree
+msgid "Finance Approval Requests"
+msgstr "طلبات الموافقة المالية"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_auditor
+msgid "Finance Auditor / Read Only"
+msgstr "مراجع مالي / قراءة فقط"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_dm_finance_branch
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_form
+msgid "Finance Branch"
+msgstr "فرع مالي"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.view_users_form_inherit_dm_finance_core
+msgid "Finance Branch Access"
+msgstr "صلاحيات الفروع المالية"
+
+#. module: dm_finance_core
+#: model:ir.actions.act_window,name:dm_finance_core.dm_finance_branch_action
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_branches
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_tree
+msgid "Finance Branches"
+msgstr "الفروع المالية"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_cashier
+msgid "Finance Cashier"
+msgstr "أمين الصندوق"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Finance Controls"
+msgstr "ضوابط المالية"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_custodian
+msgid "Finance Custodian"
+msgstr "أمين العهدة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow_line__approver_type__finance_manager
+#: model:res.groups,name:dm_finance_core.group_finance_manager
+msgid "Finance Manager"
+msgstr "مدير المالية"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_requester
+msgid "Finance Requester"
+msgstr "طالب مالي"
+
+#. module: dm_finance_core
+#: model:ir.actions.act_window,name:dm_finance_core.dm_finance_config_settings_action
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_settings
+msgid "Finance Settings"
+msgstr "إعدادات المالية"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+msgid "Flow"
+msgstr "المسار"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__name
+msgid "Flow Name"
+msgstr "اسم المسار"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__flow_line_id
+msgid "Flow Step"
+msgstr "خطوة المسار"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_follower_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_follower_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_partner_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_partner_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__activity_type_icon
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__activity_type_icon
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid ""
+"Future finance documents will block submission when mandatory attachments "
+"are missing."
+msgstr "ستمنع المستندات المالية القادمة الإرسال عند غياب المرفقات الإلزامية."
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_general_accountant
+msgid "General Accountant"
+msgstr "محاسب عام"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__has_message
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__has_message
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_exception_icon
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_exception_icon
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__activity_exception_icon
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__activity_exception_icon
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__message_needaction
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__message_needaction
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التفعيل، توجد رسائل جديدة تحتاج انتباهك."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__message_has_error
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__message_has_sms_error
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__message_has_error
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__message_has_sms_error
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__message_has_error
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التفعيل، توجد رسائل بها خطأ في التسليم."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__allow_self_approval
+msgid "If disabled, the requester cannot approve their own document."
+msgstr "عند التعطيل، لا يمكن لمقدم الطلب اعتماد مستنده بنفسه."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_is_follower
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_is_follower
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__write_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__write_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__write_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__write_uid
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__write_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__write_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__write_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__write_date
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_search
+msgid "Manager"
+msgstr "المدير"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__mandatory
+msgid "Mandatory"
+msgstr "إلزامي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__amount_max
+msgid "Maximum Amount"
+msgstr "الحد الأعلى للمبلغ"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_has_error
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_has_error
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__amount_min
+msgid "Minimum Amount"
+msgstr "الحد الأدنى للمبلغ"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Minimum amount cannot exceed maximum amount."
+msgstr "لا يمكن أن يتجاوز الحد الأدنى الحد الأعلى للمبلغ."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد أنشطتي النهائي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_calendar_event_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_calendar_event_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_date_deadline
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_date_deadline
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_summary
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_summary
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_type_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_type_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__note
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__note
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_flow_view_form
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_branch_view_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_needaction_counter
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_needaction_counter
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_has_error_counter
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_has_error_counter
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__message_needaction_counter
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__message_needaction_counter
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__message_has_error_counter
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__message_has_error_counter
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Only draft approval requests can be submitted."
+msgstr "يمكن إرسال طلبات الموافقة في حالة المسودة فقط."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "Only pending approval items can be acted on."
+msgstr "يمكن تنفيذ الإجراء على بنود الموافقة المعلقة فقط."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__analytic_account_id
+msgid ""
+"Optional analytic account used to map this branch into analytic reporting."
+msgstr "حساب تحليلي اختياري يُستخدم لربط هذا الفرع بالتقارير التحليلية."
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_overview
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_item__state__pending
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+msgid "Pending"
+msgstr "معلق"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_config_settings__dm_finance_prevent_self_approval
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Prevent Self Approval"
+msgstr "منع الموافقة الذاتية"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__rating_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__rating_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_item__state__rejected
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__rejected_on
+msgid "Rejected On"
+msgstr "تاريخ الرفض"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Rejection"
+msgstr "الرفض"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__rejection_reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_reports
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__request_name
+msgid "Request Name"
+msgstr "اسم الطلب"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__requester_id
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid ""
+"Requester cannot approve their own finance document unless the approval flow"
+" explicitly allows it."
+msgstr ""
+"لا يمكن لمقدم الطلب اعتماد مستنده المالي بنفسه إلا إذا سمح مسار الموافقة "
+"بذلك صراحة."
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Require Attachments"
+msgstr "إلزام المرفقات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_config_settings__dm_finance_require_attachment_on_submit
+msgid "Require Attachments on Submission"
+msgstr "إلزام المرفقات عند الإرسال"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Require Branch"
+msgstr "إلزام الفرع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_res_config_settings__dm_finance_require_branch
+msgid "Require Branch on Finance Documents"
+msgstr "إلزام الفرع في المستندات المالية"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__require_comment
+msgid "Require Comment"
+msgstr "يتطلب تعليقًا"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_res_config_settings_view_form
+msgid "Require branch on finance documents introduced by DM Finance modules."
+msgstr "إلزام الفرع في المستندات المالية التي تضيفها مديولات DM Finance."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__activity_user_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__activity_user_id
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__message_has_sms_error
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__message_has_sms_error
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow_line__approver_type__group
+msgid "Security Group"
+msgstr "مجموعة صلاحيات"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__sequence
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__sequence
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__sequence
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_item__state__skipped
+msgid "Skipped"
+msgstr "متجاوز"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow_line__approver_type__user
+msgid "Specific User"
+msgstr "مستخدم محدد"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_item__state
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__state
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__activity_state
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__activity_state
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow_line__name
+msgid "Step Name"
+msgstr "اسم الخطوة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: dm_finance_core
+#: model_terms:ir.ui.view,arch_db:dm_finance_core.dm_finance_approval_request_view_form
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__submitted
+msgid "Submitted"
+msgstr "مرسل"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__submitted_on
+msgid "Submitted On"
+msgstr "تاريخ الإرسال"
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_branch.py:0
+#, python-format
+msgid "The branch manager must be allowed on the branch company."
+msgstr "يجب أن يكون مدير الفرع مسموحًا له بالعمل على شركة الفرع."
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__model_id
+msgid "The business model this approval flow applies to."
+msgstr "نموذج الأعمال الذي ينطبق عليه مسار الموافقة هذا."
+
+#. module: dm_finance_core
+#: model:ir.ui.menu,name:dm_finance_core.menu_dm_finance_transactions
+msgid "Transactions"
+msgstr "الحركات"
+
+#. module: dm_finance_core
+#: model:res.groups,name:dm_finance_core.group_finance_treasury_accountant
+msgid "Treasury Accountant"
+msgstr "محاسب خزينة"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__activity_exception_decoration
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__activity_exception_decoration
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي على السجل."
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_request__state__under_approval
+msgid "Under Approval"
+msgstr "قيد الاعتماد"
+
+#. module: dm_finance_core
+#: model:ir.model,name:dm_finance_core.model_res_users
+msgid "User"
+msgstr "المستخدم"
+
+#. module: dm_finance_core
+#: model:ir.model.fields.selection,name:dm_finance_core.selection__dm_finance_approval_flow__document_type__voucher
+msgid "Voucher"
+msgstr "سند"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_flow__website_message_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_approval_request__website_message_ids
+#: model:ir.model.fields,field_description:dm_finance_core.field_dm_finance_branch__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_flow__website_message_ids
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_approval_request__website_message_ids
+#: model:ir.model.fields,help:dm_finance_core.field_dm_finance_branch__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: dm_finance_core
+#: model:ir.model.fields,help:dm_finance_core.field_res_config_settings__dm_finance_require_branch
+msgid ""
+"When enabled, finance documents introduced by DM Finance modules must carry "
+"a branch."
+msgstr ""
+"عند التفعيل، يجب أن تحتوي المستندات المالية التي تضيفها مديولات DM Finance "
+"على فرع."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "You are not the assigned approver for this step."
+msgstr "أنت لست المعتمد المعيّن لهذه الخطوة."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "You cannot approve your own finance document."
+msgstr "لا يمكنك اعتماد مستندك المالي بنفسك."
+
+#. module: dm_finance_core
+#. odoo-python
+#: code:addons/dm_finance_core/models/dm_finance_approval.py:0
+#, python-format
+msgid "You do not belong to the required approver group."
+msgstr "أنت لا تنتمي إلى مجموعة المعتمدين المطلوبة."

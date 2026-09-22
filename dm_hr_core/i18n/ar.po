@@ -1,0 +1,605 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * dm_hr_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 00:00+0000\n"
+"PO-Revision-Date: 2026-08-11 00:00+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "DM HR Core"
+msgstr "الموارد البشرية الأساسية"
+
+msgid "DM HR"
+msgstr "الموارد البشرية"
+
+msgid "HR Profile"
+msgstr "ملف الموارد البشرية"
+
+msgid "HR Portfolio"
+msgstr "ملف الموظف الشامل"
+
+msgid "Identity"
+msgstr "الهوية"
+
+msgid "Employee Identity"
+msgstr "هوية الموظف"
+
+msgid "Employment Snapshot"
+msgstr "ملخص التوظيف"
+
+msgid "Identity, employment status, and Saudi HR reference data."
+msgstr "بيانات الهوية وحالة التوظيف ومرجع بيانات الموارد البشرية السعودية."
+
+msgid "Contract Controls"
+msgstr "إعدادات العقد"
+
+msgid "Terms"
+msgstr "الشروط"
+
+msgid "Lifecycle"
+msgstr "دورة العقد"
+
+msgid "Family and Dependents"
+msgstr "العائلة والمرافقون"
+
+msgid "Medical Insurance"
+msgstr "التأمين الطبي"
+
+msgid "Employee Documents"
+msgstr "مستندات الموظف"
+
+msgid "Allowance Type"
+msgstr "نوع البدل"
+
+msgid "Allowance Types"
+msgstr "أنواع البدلات"
+
+msgid "Allowances"
+msgstr "البدلات"
+
+msgid "Contract Allowance"
+msgstr "بدل العقد"
+
+msgid "Contract Allowances"
+msgstr "بدلات العقد"
+
+msgid "Employee Special Allowance"
+msgstr "بدل خاص للموظف"
+
+msgid "Employee Special Allowances"
+msgstr "البدلات الخاصة للموظفين"
+
+msgid "Special Allowances"
+msgstr "البدلات الخاصة"
+
+msgid "Allowance Value"
+msgstr "قيمة البدل"
+
+msgid "Calculation Setup"
+msgstr "إعدادات الاحتساب"
+
+msgid "Calculation"
+msgstr "الاحتساب"
+
+msgid "Payroll Flags"
+msgstr "خيارات الرواتب"
+
+msgid "Source"
+msgstr "المصدر"
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Calculation Type"
+msgstr "طريقة الاحتساب"
+
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+msgid "Percentage of Basic Salary"
+msgstr "نسبة من الراتب الأساسي"
+
+msgid "Percentage of Another Component"
+msgstr "نسبة من مكون آخر"
+
+msgid "Percent (%)"
+msgstr "النسبة (%)"
+
+msgid "Percent of Allowance Type"
+msgstr "نسبة من نوع بدل"
+
+msgid "Frequency"
+msgstr "التكرار"
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "One-Time"
+msgstr "مرة واحدة"
+
+msgid "Subject to Social Insurance"
+msgstr "خاضع للتأمينات الاجتماعية"
+
+msgid "Include in Net Salary"
+msgstr "يدخل في صافي الراتب"
+
+msgid "Show on Payslip"
+msgstr "إظهاره في مسير الراتب"
+
+msgid "Insurance Provider"
+msgstr "مزود التأمين"
+
+msgid "Insurance Providers"
+msgstr "مزودو التأمين"
+
+msgid "Insurance Policies"
+msgstr "وثائق التأمين"
+
+msgid "Employee Insurance Policy"
+msgstr "وثيقة تأمين الموظف"
+
+msgid "Employee Insurance Policies"
+msgstr "وثائق تأمين الموظفين"
+
+msgid "Provider Details"
+msgstr "بيانات المزود"
+
+msgid "Provider Type"
+msgstr "نوع المزود"
+
+msgid "Related Partner"
+msgstr "جهة الاتصال المرتبطة"
+
+msgid "Policy Details"
+msgstr "بيانات الوثيقة"
+
+msgid "Employee and Policy"
+msgstr "الموظف والوثيقة"
+
+msgid "Premium Sharing"
+msgstr "توزيع القسط"
+
+msgid "Policy No"
+msgstr "رقم الوثيقة"
+
+msgid "Policy Type"
+msgstr "نوع الوثيقة"
+
+msgid "Monthly Premium"
+msgstr "القسط الشهري"
+
+msgid "Employee Share (%)"
+msgstr "حصة الموظف (%)"
+
+msgid "Employer Share (%)"
+msgstr "حصة صاحب العمل (%)"
+
+msgid "Medical"
+msgstr "طبي"
+
+msgid "Life"
+msgstr "حياة"
+
+msgid "Social Insurance"
+msgstr "التأمينات الاجتماعية"
+
+msgid "Social Insurance Scheme"
+msgstr "نظام التأمينات الاجتماعية"
+
+msgid "Social Insurance Schemes"
+msgstr "أنظمة التأمينات الاجتماعية"
+
+msgid "Social Insurance Rate"
+msgstr "نسبة التأمينات الاجتماعية"
+
+msgid "Scheme"
+msgstr "النظام"
+
+msgid "Scheme Setup"
+msgstr "إعدادات النظام"
+
+msgid "Rates"
+msgstr "النسب"
+
+msgid "Ratios (%)"
+msgstr "النسب (%)"
+
+msgid "Insurable Wage"
+msgstr "الأجر الخاضع للتأمين"
+
+msgid "Insurable Allowance Types"
+msgstr "أنواع البدلات الخاضعة للتأمين"
+
+msgid "Insurable Allowances"
+msgstr "البدلات الخاضعة للتأمين"
+
+msgid "Rates (insurable allowances)"
+msgstr "النسب والبدلات الخاضعة للتأمين"
+
+msgid "GOSI Employee Ratio (%)"
+msgstr "نسبة الموظف في التأمينات (%)"
+
+msgid "GOSI Employer Ratio (%)"
+msgstr "نسبة صاحب العمل في التأمينات (%)"
+
+msgid "Sanad / Additional Ratio (%)"
+msgstr "نسبة ساند / النسبة الإضافية (%)"
+
+msgid "Minimum Insurable Wage"
+msgstr "الحد الأدنى للأجر الخاضع للتأمين"
+
+msgid "Maximum Insurable Wage"
+msgstr "الحد الأعلى للأجر الخاضع للتأمين"
+
+msgid "Currently Effective"
+msgstr "ساري حالياً"
+
+msgid "Effective From"
+msgstr "ساري من"
+
+msgid "Effective To"
+msgstr "ساري إلى"
+
+msgid "Dependents"
+msgstr "المرافقون"
+
+msgid "Employee Dependent"
+msgstr "مرافق الموظف"
+
+msgid "Dependent Details"
+msgstr "بيانات المرافق"
+
+msgid "Person"
+msgstr "الشخص"
+
+msgid "Coverage"
+msgstr "التغطية"
+
+msgid "Relationship"
+msgstr "صلة القرابة"
+
+msgid "Spouse"
+msgstr "زوج/زوجة"
+
+msgid "Child"
+msgstr "ابن/ابنة"
+
+msgid "Father"
+msgstr "الأب"
+
+msgid "Mother"
+msgstr "الأم"
+
+msgid "Included in Social Insurance"
+msgstr "مشمول في التأمينات الاجتماعية"
+
+msgid "Employee Document"
+msgstr "مستند الموظف"
+
+msgid "Document Details"
+msgstr "بيانات المستند"
+
+msgid "Document"
+msgstr "مستند"
+
+msgid "Document Type"
+msgstr "نوع المستند"
+
+msgid "Dates and Reference"
+msgstr "التواريخ والمرجع"
+
+msgid "Reference No"
+msgstr "رقم المرجع"
+
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+msgid "File"
+msgstr "الملف"
+
+msgid "Iqama / National ID"
+msgstr "الإقامة / الهوية الوطنية"
+
+msgid "Iqama / National ID Expiry"
+msgstr "انتهاء الإقامة / الهوية الوطنية"
+
+msgid "Passport"
+msgstr "جواز السفر"
+
+msgid "Medical Policy"
+msgstr "وثيقة التأمين الطبي"
+
+msgid "Education Certificate"
+msgstr "الشهادة التعليمية"
+
+msgid "Contract / Salary History"
+msgstr "سجل العقد والراتب"
+
+msgid "History Entry"
+msgstr "قيد السجل"
+
+msgid "Reference"
+msgstr "المرجع"
+
+msgid "Change"
+msgstr "التغيير"
+
+msgid "Change Type"
+msgstr "نوع التغيير"
+
+msgid "Effective Date"
+msgstr "تاريخ السريان"
+
+msgid "Previous Wage"
+msgstr "الراتب السابق"
+
+msgid "New Wage"
+msgstr "الراتب الجديد"
+
+msgid "Creation"
+msgstr "إنشاء"
+
+msgid "Wage Change"
+msgstr "تغيير الراتب"
+
+msgid "Renewal"
+msgstr "تجديد"
+
+msgid "Termination"
+msgstr "إنهاء"
+
+msgid "Employee"
+msgstr "الموظف"
+
+msgid "Employee Number"
+msgstr "الرقم الوظيفي"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Name (Arabic)"
+msgstr "الاسم بالعربية"
+
+msgid "Employment Status"
+msgstr "حالة التوظيف"
+
+msgid "GOSI Category"
+msgstr "فئة التأمينات"
+
+msgid "GOSI Employee Category"
+msgstr "فئة الموظف في التأمينات"
+
+msgid "Saudi"
+msgstr "سعودي"
+
+msgid "Non-Saudi"
+msgstr "غير سعودي"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "On Leave"
+msgstr "في إجازة"
+
+msgid "Suspended"
+msgstr "موقوف"
+
+msgid "Terminated"
+msgstr "منتهي الخدمة"
+
+msgid "Scheduled"
+msgstr "مجدول"
+
+msgid "Expired"
+msgstr "منتهي"
+
+msgid "Currently Active"
+msgstr "نشط حالياً"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Blood Type"
+msgstr "فصيلة الدم"
+
+msgid "Join Date"
+msgstr "تاريخ الالتحاق"
+
+msgid "Emergency Contact"
+msgstr "جهة اتصال الطوارئ"
+
+msgid "Emergency Contact Phone"
+msgstr "هاتف الطوارئ"
+
+msgid "Social Security No (GOSI)"
+msgstr "رقم الاشتراك في التأمينات"
+
+msgid "Contracts"
+msgstr "العقود"
+
+msgid "Attendance"
+msgstr "الحضور"
+
+msgid "Leaves"
+msgstr "الإجازات"
+
+msgid "Requests"
+msgstr "الطلبات"
+
+msgid "Contract"
+msgstr "العقد"
+
+msgid "Contract Class"
+msgstr "فئة العقد"
+
+msgid "Permanent"
+msgstr "دائم"
+
+msgid "Fixed Term"
+msgstr "محدد المدة"
+
+msgid "Part Time"
+msgstr "دوام جزئي"
+
+msgid "Training"
+msgstr "تدريب"
+
+msgid "GOSI Insured"
+msgstr "مشترك في التأمينات"
+
+msgid "Medical Insurance Policy"
+msgstr "وثيقة التأمين الطبي"
+
+msgid "Probation End Date"
+msgstr "تاريخ انتهاء التجربة"
+
+msgid "Notice Period (Days)"
+msgstr "مدة الإشعار (أيام)"
+
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+msgid "Bank Transfer"
+msgstr "تحويل بنكي"
+
+msgid "Cash"
+msgstr "نقداً"
+
+msgid "Cheque"
+msgstr "شيك"
+
+msgid "Working Days per Week"
+msgstr "أيام العمل أسبوعياً"
+
+msgid "Auto Renew"
+msgstr "تجديد تلقائي"
+
+msgid "Contract State"
+msgstr "حالة العقد"
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Running"
+msgstr "ساري"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "Closed"
+msgstr "مغلق"
+
+msgid "Termination Reason"
+msgstr "سبب الإنهاء"
+
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+msgid "Validity"
+msgstr "الصلاحية"
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Code e.g. HOUSING"
+msgstr "الرمز مثل HOUSING"
+
+msgid "Sequence"
+msgstr "التسلسل"
+
+msgid "Company"
+msgstr "الشركة"
+
+msgid "Currency"
+msgstr "العملة"
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "The employee number must be unique within the company."
+msgstr "يجب أن يكون الرقم الوظيفي فريداً داخل الشركة."
+
+msgid "The Iqama / National ID '%s' is already used by another employee in this company."
+msgstr "الإقامة / الهوية الوطنية '%s' مستخدمة بالفعل لموظف آخر في هذه الشركة."
+
+msgid "The allowance type code is required."
+msgstr "رمز نوع البدل مطلوب."
+
+msgid "The allowance start date must not be after its end date."
+msgstr "يجب ألا يكون تاريخ بداية البدل بعد تاريخ نهايته."
+
+msgid "Two allowances of the same type cannot overlap for the same employee."
+msgstr "لا يمكن تداخل بدلَين من نفس النوع للموظف نفسه."
+
+msgid "Two allowances of the same type cannot overlap on the same contract."
+msgstr "لا يمكن تداخل بدلَين من نفس النوع على العقد نفسه."
+
+msgid "A fixed allowance requires an amount greater than zero."
+msgstr "البدل الثابت يتطلب مبلغاً أكبر من صفر."
+
+msgid "Percentage allowances require a percent strictly between 0 and 100."
+msgstr "البدلات النسبية تتطلب نسبة أكبر من 0 وأقل أو تساوي 100."
+
+msgid "A percentage-of-component allowance requires another allowance type as its base."
+msgstr "البدل المحتسب كنسبة من مكون يتطلب نوع بدل آخر كأساس."
+
+msgid "An allowance cannot be a percentage of its own type."
+msgstr "لا يمكن أن يكون البدل نسبة من نفس نوعه."
+
+msgid "Insurance share percentages must be between 0 and 100."
+msgstr "يجب أن تكون نسب التأمين بين 0 و100."
+
+msgid "The policy start date must not be after its end date."
+msgstr "يجب ألا يكون تاريخ بداية الوثيقة بعد تاريخ نهايتها."
+
+msgid "Two policies of the same provider cannot overlap for the same employee."
+msgstr "لا يمكن تداخل وثيقتين من المزود نفسه للموظف نفسه."
+
+msgid "The scheme code is required."
+msgstr "رمز النظام مطلوب."
+
+msgid "Social insurance ratios must be between 0 and 100."
+msgstr "يجب أن تكون نسب التأمينات الاجتماعية بين 0 و100."
+
+msgid "The effective-from date must not be after the effective-to date."
+msgstr "يجب ألا يكون تاريخ بداية السريان بعد تاريخ نهايته."
+
+msgid "Social insurance rates for the same scheme, category and company cannot have overlapping effective periods."
+msgstr "لا يمكن تداخل نسب التأمينات للنظام والفئة والشركة نفسها في فترات سريان متداخلة."
+
+msgid "The probation end date must not be before the contract start date."
+msgstr "يجب ألا يكون تاريخ انتهاء فترة التجربة قبل تاريخ بداية العقد."
+
+msgid "DM HR: Expiry Alerts"
+msgstr "الموارد البشرية: تنبيهات الانتهاء"
+
+msgid "Housing"
+msgstr "بدل السكن"
+
+msgid "Transportation"
+msgstr "بدل النقل"
+
+msgid "Communication"
+msgstr "بدل الاتصالات"
+
+msgid "Meal"
+msgstr "بدل الوجبات"

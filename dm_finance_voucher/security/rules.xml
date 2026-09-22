@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dm_finance_voucher_multi_company_rule" model="ir.rule">
+            <field name="name">Finance vouchers: allowed companies</field>
+            <field name="model_id" ref="model_dm_finance_voucher"/>
+            <field name="groups" eval="[(4, ref('dm_finance_core.group_finance_requester')), (4, ref('dm_finance_core.group_finance_auditor')), (4, ref('dm_finance_core.group_finance_general_accountant')), (4, ref('dm_finance_core.group_finance_manager')), (4, ref('dm_finance_core.group_finance_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="dm_finance_voucher_line_multi_company_rule" model="ir.rule">
+            <field name="name">Finance voucher lines: allowed companies</field>
+            <field name="model_id" ref="model_dm_finance_voucher_line"/>
+            <field name="groups" eval="[(4, ref('dm_finance_core.group_finance_requester')), (4, ref('dm_finance_core.group_finance_auditor')), (4, ref('dm_finance_core.group_finance_general_accountant')), (4, ref('dm_finance_core.group_finance_manager')), (4, ref('dm_finance_core.group_finance_admin'))]"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+    </data>
+</odoo>

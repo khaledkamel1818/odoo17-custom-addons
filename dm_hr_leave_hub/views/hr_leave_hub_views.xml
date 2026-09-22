@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_dm_hr_leave_hub" model="ir.actions.client">
+        <field name="name">مركز الإجازات</field>
+        <field name="tag">dm_hr_leave_hub.dashboard</field>
+    </record>
+
+    <menuitem id="menu_dm_hr_leave_hub"
+              name="مركز الإجازات"
+              parent="dm_hr_core.menu_dm_hr_root"
+              action="action_dm_hr_leave_hub"
+              sequence="6"
+              groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
+
+    <!-- Hide only the duplicate top-level app; its engine and actions remain available. -->
+    <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+</odoo>

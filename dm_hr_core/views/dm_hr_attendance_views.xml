@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_attendance_tree_inherit_dm_hr_attendance" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inherit.dm.hr.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="dm_branch_id" optional="show"/>
+                <field name="dm_department_level_id" optional="show"/>
+                <field name="dm_section_id" optional="hide"/>
+                <field name="dm_attendance_state" widget="badge" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_form_inherit_dm_hr_attendance" model="ir.ui.view">
+        <field name="name">hr.attendance.form.inherit.dm.hr.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="dm_branch_id"/>
+                <field name="dm_sector_id"/>
+                <field name="dm_department_level_id"/>
+                <field name="dm_section_id"/>
+                <field name="dm_manager_id"/>
+                <field name="dm_attendance_state" widget="badge"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_search_inherit_dm_hr_attendance" model="ir.ui.view">
+        <field name="name">hr.attendance.search.inherit.dm.hr.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="dm_branch_id"/>
+                <field name="dm_department_level_id"/>
+                <field name="dm_attendance_state"/>
+            </xpath>
+            <xpath expr="//filter[@name='myteam']" position="after">
+                <filter name="dm_late" string="تأخير" domain="[('dm_attendance_state','=','late')]"/>
+                <filter name="dm_early_leave" string="خروج مبكر" domain="[('dm_attendance_state','=','early_leave')]"/>
+                <filter name="group_dm_branch" string="الفرع" context="{'group_by':'dm_branch_id'}"/>
+                <filter name="group_dm_department" string="الإدارة" context="{'group_by':'dm_department_level_id'}"/>
+                <filter name="group_dm_state" string="الحالة" context="{'group_by':'dm_attendance_state'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dm_hr_attendance_reason_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.reason.tree</field>
+        <field name="model">dm.hr.attendance.reason</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="reason_type"/>
+                <field name="company_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_reason_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.reason.form</field>
+        <field name="model">dm.hr.attendance.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="reason_type"/>
+                        <field name="company_id"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_reason_action" model="ir.actions.act_window">
+        <field name="name">أسباب الحضور والانصراف</field>
+        <field name="res_model">dm.hr.attendance.reason</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="dm_hr_attendance_correction_view_tree" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.correction.tree</field>
+        <field name="model">dm.hr.attendance.correction</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'approved'" decoration-danger="state == 'rejected'" decoration-warning="state in ('manager','hr')">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="request_date"/>
+                <field name="request_type"/>
+                <field name="attendance_id"/>
+                <field name="manager_id"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_correction_view_form" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.correction.form</field>
+        <field name="model">dm.hr.attendance.correction</field>
+        <field name="arch" type="xml">
+            <form string="طلب تصحيح حضور">
+                <header>
+                    <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected','cancelled')"/>
+                    <button name="action_cancel" type="object" string="إلغاء" invisible="state in ('approved','rejected','cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <group string="بيانات الطلب">
+                            <field name="employee_id"/>
+                            <field name="request_date"/>
+                            <field name="request_type"/>
+                            <field name="attendance_id"/>
+                            <field name="reason_id"/>
+                        </group>
+                        <group string="الهيكل">
+                            <field name="branch_id"/>
+                            <field name="sector_id"/>
+                            <field name="department_level_id"/>
+                            <field name="section_id"/>
+                            <field name="manager_id"/>
+                        </group>
+                    </group>
+                    <group string="الأوقات">
+                        <field name="original_check_in"/>
+                        <field name="original_check_out"/>
+                        <field name="requested_check_in"/>
+                        <field name="requested_check_out"/>
+                    </group>
+                    <notebook>
+                        <page string="السبب"><field name="reason"/></page>
+                        <page string="المرفقات"><field name="attachment_ids" widget="many2many_binary"/></page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_correction_view_search" model="ir.ui.view">
+        <field name="name">dm.hr.attendance.correction.search</field>
+        <field name="model">dm.hr.attendance.correction</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="request_type"/>
+                <field name="state"/>
+                <filter name="pending" string="معلقة" domain="[('state','in',('manager','hr'))]"/>
+                <filter name="my_team" string="فريقي" domain="[('employee_id.parent_id.user_id','=',uid)]"/>
+                <filter name="violations" string="مخالفات" domain="[('request_type','in',('late_justification','early_leave_justification','absence_justification'))]"/>
+                <filter name="group_state" string="الحالة" context="{'group_by':'state'}"/>
+                <filter name="group_type" string="النوع" context="{'group_by':'request_type'}"/>
+                <filter name="group_employee" string="الموظف" context="{'group_by':'employee_id'}"/>
+            </search>
+        </field>
+    </record>
+    <record id="dm_hr_attendance_correction_action" model="ir.actions.act_window">
+        <field name="name">طلبات وتصحيحات الحضور</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+        <field name="search_view_id" ref="dm_hr_attendance_correction_view_search"/>
+    </record>
+    <record id="dm_hr_attendance_processing_action" model="ir.actions.act_window">
+        <field name="name">معالجة واعتماد الحضور</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,form,activity,pivot,graph</field>
+        <field name="domain">[('state','in',('manager','hr'))]</field>
+        <field name="search_view_id" ref="dm_hr_attendance_correction_view_search"/>
+    </record>
+    <record id="dm_hr_attendance_team_pending_action" model="ir.actions.act_window">
+        <field name="name">الطلبات المعلقة</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="domain">[('employee_id.parent_id.user_id','=',uid),('state','=','manager')]</field>
+        <field name="search_view_id" ref="dm_hr_attendance_correction_view_search"/>
+    </record>
+    <record id="dm_hr_attendance_team_violations_action" model="ir.actions.act_window">
+        <field name="name">مخالفات الفريق</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="domain">[('employee_id.parent_id.user_id','=',uid),('request_type','in',('late_justification','early_leave_justification','absence_justification'))]</field>
+        <field name="search_view_id" ref="dm_hr_attendance_correction_view_search"/>
+    </record>
+
+    <record id="dm_hr_attendance_records_action" model="ir.actions.act_window">
+        <field name="name">سجلات الحضور والانصراف</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter"/>
+    </record>
+    <record id="dm_hr_attendance_team_action" model="ir.actions.act_window">
+        <field name="name">حضور فريقي</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph</field>
+        <field name="domain">[('employee_id.parent_id.user_id','=',uid)]</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter"/>
+    </record>
+    <record id="dm_hr_attendance_absence_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير الغياب</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="domain">[('request_type','=','absence_justification')]</field>
+    </record>
+    <record id="dm_hr_attendance_late_early_report_action" model="ir.actions.act_window">
+        <field name="name">تقرير التأخير والخروج المبكر</field>
+        <field name="res_model">dm.hr.attendance.correction</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="domain">[('request_type','in',('late_justification','early_leave_justification'))]</field>
+    </record>
+</odoo>

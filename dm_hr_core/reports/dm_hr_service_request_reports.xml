@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_dm_hr_service_request" model="ir.actions.report">
+        <field name="name">طلب خدمة موظف</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dm_hr_core.report_dm_hr_service_request_document</field>
+        <field name="report_file">dm_hr_core.report_dm_hr_service_request_document</field>
+        <field name="binding_model_id" ref="model_dm_hr_service_request"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_dm_hr_salary_certificate" model="ir.actions.report">
+        <field name="name">تعريف راتب</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dm_hr_core.report_dm_hr_salary_certificate_document</field>
+        <field name="report_file">dm_hr_core.report_dm_hr_salary_certificate_document</field>
+    </record>
+    <record id="action_report_dm_hr_salary_transfer" model="ir.actions.report">
+        <field name="name">تثبيت/تحويل راتب للبنك</field>
+        <field name="model">dm.hr.service.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dm_hr_core.report_dm_hr_salary_transfer_document</field>
+        <field name="report_file">dm_hr_core.report_dm_hr_salary_transfer_document</field>
+    </record>
+
+    <template id="report_dm_hr_service_request_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" dir="rtl">
+                        <h2>طلب خدمة موظف</h2>
+                        <p><strong>رقم الطلب:</strong> <span t-field="doc.name"/></p>
+                        <p><strong>الموظف:</strong> <span t-field="doc.employee_id"/></p>
+                        <p><strong>نوع الطلب:</strong> <span t-field="doc.request_type"/></p>
+                        <p><strong>الحالة:</strong> <span t-field="doc.state"/></p>
+                        <p><strong>التفاصيل:</strong></p>
+                        <p t-field="doc.description"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_dm_hr_salary_certificate_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" t-att-dir="doc.letter_language == 'en' and 'ltr' or 'rtl'">
+                        <h2><t t-if="doc.letter_language == 'en'">Salary Certificate</t><t t-else="">تعريف راتب</t></h2>
+                        <p><strong>Ref:</strong> <span t-field="doc.letter_reference"/></p>
+                        <p><strong>Employee:</strong> <span t-field="doc.employee_id"/></p>
+                        <p><strong>Job:</strong> <span t-field="doc.job_id"/></p>
+                        <p><strong>Recipient:</strong> <span t-field="doc.letter_recipient"/></p>
+                        <p><strong>Purpose:</strong> <span t-field="doc.letter_purpose"/></p>
+                        <p><strong>Salary:</strong> <span t-esc="doc.env['hr.contract'].sudo().search([('employee_id','=',doc.employee_id.id),('state','in',['open','draft'])], order='date_start desc,id desc', limit=1).wage or 0.0"/> <span t-field="doc.currency_id"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_dm_hr_salary_transfer_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" dir="rtl">
+                        <h2>خطاب تثبيت/تحويل راتب للبنك</h2>
+                        <p><strong>الرقم المرجعي:</strong> <span t-field="doc.letter_reference"/></p>
+                        <p><strong>الموظف:</strong> <span t-field="doc.employee_id"/></p>
+                        <p><strong>البنك:</strong> <span t-field="doc.bank_name"/></p>
+                        <p><strong>IBAN:</strong> <span t-field="doc.iban"/></p>
+                        <p>نفيدكم بأن الموظف أعلاه على رأس العمل لدينا، ويصدر هذا الخطاب بناءً على طلبه دون أدنى مسؤولية على الشركة.</p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
