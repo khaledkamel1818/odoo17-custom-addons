@@ -106,18 +106,6 @@
             <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
             <field name="domain_force">[('company_id', 'in', company_ids)]</field>
         </record>
-        <record id="dm_hr_clearance_multi_company_rule" model="ir.rule">
-            <field name="name">إخلاء الطرف: متعدد الشركات</field>
-            <field name="model_id" ref="model_dm_hr_clearance"/>
-            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
-            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-        </record>
-        <record id="dm_hr_clearance_line_multi_company_rule" model="ir.rule">
-            <field name="name">بنود إخلاء الطرف: متعدد الشركات</field>
-            <field name="model_id" ref="model_dm_hr_clearance_line"/>
-            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
-            <field name="domain_force">[('clearance_id.company_id', 'in', company_ids)]</field>
-        </record>
         <record id="dm_hr_employee_transfer_multi_company_rule" model="ir.rule">
             <field name="name">النقل الوظيفي: متعدد الشركات</field>
             <field name="model_id" ref="model_dm_hr_employee_transfer"/>
@@ -203,18 +191,6 @@
             <field name="model_id" ref="model_dm_hr_return_work"/>
             <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
             <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_user_id', '=', user.id)]</field>
-        </record>
-        <record id="dm_hr_clearance_own_or_manager_rule" model="ir.rule">
-            <field name="name">إخلاء الطرف: الموظف أو المدير</field>
-            <field name="model_id" ref="model_dm_hr_clearance"/>
-            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
-            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_user_id', '=', user.id)]</field>
-        </record>
-        <record id="dm_hr_clearance_line_own_or_manager_rule" model="ir.rule">
-            <field name="name">بند إخلاء الطرف: الموظف أو المدير</field>
-            <field name="model_id" ref="model_dm_hr_clearance_line"/>
-            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
-            <field name="domain_force">['|', ('clearance_id.employee_id.user_id', '=', user.id), ('clearance_id.manager_user_id', '=', user.id)]</field>
         </record>
         <record id="dm_hr_employee_transfer_own_or_manager_rule" model="ir.rule">
             <field name="name">النقل الوظيفي: الموظف أو المدير</field>

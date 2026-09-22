@@ -56,13 +56,6 @@
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
         </record>
-        <record id="seq_clearance" model="ir.sequence">
-            <field name="name">الموارد البشرية: إخلاء طرف</field>
-            <field name="code">dm.hr.clearance</field>
-            <field name="prefix">CLR-</field>
-            <field name="padding">5</field>
-            <field name="company_id" eval="False"/>
-        </record>
         <record id="seq_transfer" model="ir.sequence">
             <field name="name">الموارد البشرية: نقل وتغيير وظيفة</field>
             <field name="code">dm.hr.employee.transfer</field>

@@ -127,12 +127,6 @@
               action="dm_hr_probation_extension_action"
               sequence="4"
               groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_clearance"
-              name="إخلاء طرف الموظف"
-              parent="menu_dm_hr_personnel_affairs"
-              action="dm_hr_clearance_action"
-              sequence="5"
-              groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
     <menuitem id="menu_dm_hr_employee_transfer"
               name="تنقلات وتغيير وظائف"
               parent="menu_dm_hr_personnel_affairs"

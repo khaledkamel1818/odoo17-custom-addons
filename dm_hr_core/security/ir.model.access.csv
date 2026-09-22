@@ -67,12 +67,6 @@ access_dm_hr_company_document_officer,dm.hr.company.document.officer,model_dm_hr
 access_dm_hr_return_work_employee,dm.hr.return.work.employee,model_dm_hr_return_work,dm_hr_core.group_dm_hr_employee,1,1,1,0
 access_dm_hr_return_work_officer,dm.hr.return.work.officer,model_dm_hr_return_work,dm_hr_core.group_dm_hr_officer,1,1,1,1
 access_dm_hr_return_work_manager,dm.hr.return.work.manager,model_dm_hr_return_work,dm_hr_core.group_dm_hr_manager,1,1,1,1
-access_dm_hr_clearance_employee,dm.hr.clearance.employee,model_dm_hr_clearance,dm_hr_core.group_dm_hr_employee,1,0,0,0
-access_dm_hr_clearance_officer,dm.hr.clearance.officer,model_dm_hr_clearance,dm_hr_core.group_dm_hr_officer,1,1,1,1
-access_dm_hr_clearance_manager,dm.hr.clearance.manager,model_dm_hr_clearance,dm_hr_core.group_dm_hr_manager,1,1,1,1
-access_dm_hr_clearance_line_employee,dm.hr.clearance.line.employee,model_dm_hr_clearance_line,dm_hr_core.group_dm_hr_employee,1,0,0,0
-access_dm_hr_clearance_line_officer,dm.hr.clearance.line.officer,model_dm_hr_clearance_line,dm_hr_core.group_dm_hr_officer,1,1,1,1
-access_dm_hr_clearance_line_manager,dm.hr.clearance.line.manager,model_dm_hr_clearance_line,dm_hr_core.group_dm_hr_manager,1,1,1,1
 access_dm_hr_employee_transfer_employee,dm.hr.employee.transfer.employee,model_dm_hr_employee_transfer,dm_hr_core.group_dm_hr_employee,1,1,1,0
 access_dm_hr_employee_transfer_officer,dm.hr.employee.transfer.officer,model_dm_hr_employee_transfer,dm_hr_core.group_dm_hr_officer,1,1,1,1
 access_dm_hr_employee_transfer_manager,dm.hr.employee.transfer.manager,model_dm_hr_employee_transfer,dm_hr_core.group_dm_hr_manager,1,1,1,1
