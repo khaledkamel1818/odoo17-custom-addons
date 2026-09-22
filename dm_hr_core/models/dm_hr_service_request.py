@@ -87,7 +87,7 @@ class DmHrServiceRequest(models.Model):
     )
     department_level_id = fields.Many2one(
         'hr.department',
-        string='الإدارة',
+        string='الإدارة (الهيكل)',
         related='employee_id.dm_department_level_id',
         store=True,
         readonly=True,

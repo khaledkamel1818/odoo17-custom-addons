@@ -144,7 +144,11 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
         self.assertEqual(self.request.approval_item_ids.mapped('state'), ['approved', 'approved'])
 
     def test_wrong_approver_is_blocked(self):
-        request = self.request.copy({'subject': 'Wrong approver check'})
+        request = self.request.copy({
+            'subject': 'Wrong approver check',
+            'date_from': self.request.date_from + timedelta(days=7),
+            'date_to': self.request.date_to + timedelta(days=7),
+        })
         request.with_user(self.employee_user).action_submit()
         with self.assertRaises(AccessError):
             request.with_user(self.hr_user).action_approve()
@@ -229,14 +233,14 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
                 'instructions': 'راجع سبب الاستئذان والمدة قبل الاعتماد.',
             })],
         })
-        now = fields.Datetime.now()
+        later = fields.Datetime.now() + timedelta(days=14)
         request = self.env['dm.hr.service.request'].create({
             'subject': 'Scoped urgent permission',
             'request_type': 'permission',
             'priority': '2',
             'employee_id': self.employee.id,
-            'date_from': now,
-            'date_to': now + timedelta(hours=1),
+            'date_from': later,
+            'date_to': later + timedelta(hours=1),
         })
 
         self.assertEqual(request.approval_policy_preview_id, scoped_policy)

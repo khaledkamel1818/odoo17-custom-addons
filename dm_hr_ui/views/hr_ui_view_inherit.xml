@@ -45,7 +45,7 @@
         <field name="model">dm.hr.offboarding</field>
         <field name="inherit_id" ref="dm_hr_offboarding.dm_hr_offboarding_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@class='oe_title']" position="replace">
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
                 <div class="dm_hr_ui_hero dm_hr_ui_offboarding_hero">
                     <div>
                         <span class="dm_hr_ui_eyebrow">إنهاء الخدمة</span>

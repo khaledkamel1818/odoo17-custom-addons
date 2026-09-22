@@ -12,7 +12,7 @@ class DmHrLeaveAllocationTest(TransactionCase):
         cls.leave_type = cls.env['hr.leave.type'].create({
             'name': 'Annual Saudi Leave',
             'requires_allocation': 'yes',
-            'allocation_validation_type': 'hr',
+            'allocation_validation_type': 'officer',
             'dm_is_saudi_annual_leave': True,
         })
         cls.employee_new = cls.env['hr.employee'].create({
