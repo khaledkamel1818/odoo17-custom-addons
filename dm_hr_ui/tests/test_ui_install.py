@@ -31,7 +31,7 @@ class TestDmHrUiInstall(TransactionCase):
             self.assertEqual(action.get('type'), 'ir.actions.act_window')
 
     def test_menu_information_architecture(self):
-        """The UI module keeps one clear HR navigation tree and hides old duplicates."""
+        """The UI module keeps one clear HR navigation tree and removes old duplicates."""
         expected_sequences = {
             'dm_hr_workspace.menu_dm_hr_workspace': 1,
             'dm_hr_core.menu_dm_hr_personnel_affairs': 10,
@@ -46,20 +46,39 @@ class TestDmHrUiInstall(TransactionCase):
             self.assertTrue(menu.active, '%s should be visible' % xmlid)
             self.assertEqual(menu.sequence, sequence, '%s sequence changed' % xmlid)
 
-        duplicate_menus = [
+        removed_menus = [
             'dm_hr_core.menu_dm_hr_operations',
+            'dm_hr_core.menu_dm_hr_app_service_requests',
+            'dm_hr_core.menu_dm_hr_employees',
             'dm_hr_core.menu_dm_hr_contracts',
             'dm_hr_core.menu_dm_hr_app_leave_requests',
             'dm_hr_core.menu_dm_hr_app_attendance',
+            'dm_hr_core.menu_dm_hr_app_special_allowance',
+            'dm_hr_core.menu_dm_hr_app_insurance_policy',
             'dm_hr_core.menu_dm_hr_app_document',
+            'dm_hr_core.menu_dm_hr_app_dependent',
+            'dm_hr_core.menu_dm_hr_app_contract_history',
+            'dm_hr_core.menu_dm_hr_leave_request_service',
+            'dm_hr_core.menu_dm_hr_allowance_type',
+            'dm_hr_core.menu_dm_hr_insurance_provider',
+            'dm_hr_core.menu_dm_hr_social_insurance_scheme',
+            'dm_hr_core.menu_dm_hr_special_allowance',
+            'dm_hr_core.menu_dm_hr_dependent',
+            'dm_hr_core.menu_dm_hr_document',
+            'dm_hr_core.menu_dm_hr_insurance_policy',
+        ]
+        for xmlid in removed_menus:
+            menu = self.env.ref(xmlid, raise_if_not_found=False)
+            self.assertFalse(menu, '%s should be removed as duplicate navigation' % xmlid)
+
+    def test_canonical_configuration_menus_are_visible(self):
+        for xmlid in [
             'dm_hr_core.menu_dm_hr_app_allowance_type',
             'dm_hr_core.menu_dm_hr_app_insurance_provider',
-            'dm_hr_core.menu_dm_hr_app_insurance_policy',
-        ]
-        for xmlid in duplicate_menus:
-            menu = self.env.ref(xmlid, raise_if_not_found=False)
-            if menu:
-                self.assertFalse(menu.active, '%s should be hidden as duplicate navigation' % xmlid)
+            'dm_hr_core.menu_dm_hr_app_social_insurance_scheme',
+        ]:
+            menu = self.env.ref(xmlid)
+            self.assertTrue(menu.active, '%s should be visible as canonical configuration menu' % xmlid)
 
     def test_key_ui_inherited_views_are_valid(self):
         for xmlid in [

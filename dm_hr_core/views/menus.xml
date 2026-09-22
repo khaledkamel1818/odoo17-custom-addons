@@ -67,12 +67,6 @@
               action="dm_hr_return_work_action"
               sequence="55"
               groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_line_manager,dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_leave_request_service"
-              name="طلب إجازة"
-              parent="menu_dm_hr_employee_services"
-              action="dm_hr_leave_action_my"
-              sequence="60"
-              groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_line_manager,dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
     <menuitem id="menu_dm_hr_leave_return_service"
               name="الرجوع من الإجازة"
               parent="menu_dm_hr_employee_services"
@@ -301,73 +295,6 @@
               action="dm_hr_company_document_action"
               sequence="45"
               groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-
-    <menuitem id="menu_dm_hr_operations"
-              name="العمليات"
-              parent="menu_dm_hr_root"
-              sequence="10"
-              groups="dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_attendance_officer,dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin,dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager"/>
-    <menuitem id="menu_dm_hr_app_service_requests"
-              name="طلبات الموظفين"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_service_request_action_all"
-              sequence="5"
-              groups="dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_attendance_officer,dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_employees"
-              name="الموظفون والتعيين"
-              parent="menu_dm_hr_operations"
-              action="hr.open_view_employee_list_my"
-              sequence="1"
-              groups="dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_attendance_officer,dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_contracts"
-              name="العقود"
-              parent="menu_dm_hr_operations"
-              action="hr_contract.action_hr_contract"
-              sequence="2"
-              groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin,dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager"/>
-    <menuitem id="menu_dm_hr_app_leave_requests"
-              name="طلبات الإجازة"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_leave_action_all"
-              sequence="6"
-              groups="dm_hr_core.group_dm_hr_leave_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_attendance"
-              name="الحضور والانصراف"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_attendance_action_all"
-              sequence="7"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_attendance_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_special_allowance"
-              name="البدلات الخاصة"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_employee_allowance_action"
-              sequence="10"
-              groups="dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_insurance_policy"
-              name="وثائق التأمين"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_insurance_policy_action"
-              sequence="20"
-              groups="dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_document"
-              name="مستندات الموظفين"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_document_action"
-              sequence="30"
-              groups="dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_dependent"
-              name="المرافقون"
-              parent="menu_dm_hr_operations"
-              action="dm_hr_employee_dependent_action"
-              sequence="40"
-              groups="dm_hr_core.group_dm_hr_document_officer,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
-    <menuitem id="menu_dm_hr_app_contract_history"
-              name="سجل العقد والراتب"
-              parent="menu_dm_hr_operations"
-              action="hr_contract_history_action"
-              sequence="50"
-              groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin,dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager"/>
 
     <menuitem id="menu_dm_hr_configuration"
               name="الإعدادات"
@@ -606,64 +533,6 @@
     <!-- One HR application: retain the standard engines, hide duplicate app launchers. -->
     <record id="hr.menu_hr_root" model="ir.ui.menu"><field name="active" eval="False"/></record>
     <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu"><field name="active" eval="False"/></record>
-
-    <!--
-        Legacy shortcuts under the standard Employees application.
-        They point to the same actions already available in the unified DM HR
-        application, so keep their XML IDs for safe upgrades but hide them to
-        avoid duplicate navigation entries.
-    -->
-    <menuitem id="menu_dm_hr_allowance_type"
-              name="أنواع البدلات"
-              parent="hr.menu_human_resources_configuration"
-              action="dm_hr_allowance_type_action"
-              sequence="40"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
-    <menuitem id="menu_dm_hr_insurance_provider"
-              name="مزودو التأمين"
-              parent="hr.menu_human_resources_configuration"
-              action="dm_hr_insurance_provider_action"
-              sequence="45"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
-    <menuitem id="menu_dm_hr_social_insurance_scheme"
-              name="أنظمة التأمينات الاجتماعية"
-              parent="hr.menu_human_resources_configuration"
-              action="dm_hr_social_insurance_scheme_action"
-              sequence="50"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_manager"/>
-
-    <!-- Legacy employee-data shortcuts; superseded by the unified platform. -->
-    <menuitem id="menu_dm_hr_special_allowance"
-              name="البدلات الخاصة"
-              parent="hr.menu_hr_employee_payroll"
-              action="dm_hr_employee_allowance_action"
-              sequence="15"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
-    <menuitem id="menu_dm_hr_dependent"
-              name="المرافقون"
-              parent="hr.menu_hr_employee_payroll"
-              action="dm_hr_employee_dependent_action"
-              sequence="16"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
-    <menuitem id="menu_dm_hr_document"
-              name="مستندات الموظفين"
-              parent="hr.menu_hr_employee_payroll"
-              action="dm_hr_document_action"
-              sequence="17"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
-    <menuitem id="menu_dm_hr_insurance_policy"
-              name="وثائق التأمين"
-              parent="hr.menu_hr_employee_payroll"
-              action="dm_hr_insurance_policy_action"
-              sequence="18"
-              active="False"
-              groups="dm_hr_core.group_dm_hr_officer"/>
 
     <!-- Removed duplicate report shortcut (same action as employee requests). -->
     <menuitem id="menu_dm_hr_report_service_requests"

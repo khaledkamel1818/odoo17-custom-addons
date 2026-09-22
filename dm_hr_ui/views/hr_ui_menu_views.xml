@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Reorganize existing HR navigation without duplicating business actions. -->
     <record id="dm_hr_workspace.menu_dm_hr_workspace" model="ir.ui.menu">
-        <field name="name">مساحة العمل الخاصة بي</field>
+        <field name="name">الرئيسية</field>
         <field name="sequence">1</field>
     </record>
 
     <record id="dm_hr_core.menu_dm_hr_personnel_affairs" model="ir.ui.menu">
-        <field name="name">الموظفون</field>
+        <field name="name">شؤون الموظفين</field>
         <field name="sequence">10</field>
     </record>
     <record id="dm_hr_core.menu_dm_hr_attendance_root" model="ir.ui.menu">
@@ -42,54 +41,5 @@
     <record id="dm_hr_core.menu_dm_hr_configuration" model="ir.ui.menu">
         <field name="name">الإعدادات</field>
         <field name="sequence">100</field>
-    </record>
-
-    <!-- Hide the old catch-all Operations bucket; its actions remain reachable from clearer sections. -->
-    <record id="dm_hr_core.menu_dm_hr_operations" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-
-    <record id="dm_hr_workspace.menu_dm_hr_attendance_check_in_out" model="ir.ui.menu">
-        <field name="name">الحضور اليومي</field>
-        <field name="sequence">5</field>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_attendance_records" model="ir.ui.menu">
-        <field name="name">سجل الحضور</field>
-        <field name="sequence">20</field>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_attendance_corrections" model="ir.ui.menu">
-        <field name="name">التصحيحات والمخالفات</field>
-        <field name="sequence">30</field>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_attendance_processing" model="ir.ui.menu">
-        <field name="name">اعتمادات الحضور</field>
-        <field name="sequence">40</field>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_attendance_manager_root" model="ir.ui.menu">
-        <field name="name">فريقي</field>
-        <field name="sequence">50</field>
-    </record>
-
-    <!-- Move a few duplicate leaves to the single intended location. -->
-    <record id="dm_hr_core.menu_dm_hr_contracts" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_leave_requests" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_attendance" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_document" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_allowance_type" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_insurance_provider" model="ir.ui.menu">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="dm_hr_core.menu_dm_hr_app_insurance_policy" model="ir.ui.menu">
-        <field name="active" eval="False"/>
     </record>
 </odoo>

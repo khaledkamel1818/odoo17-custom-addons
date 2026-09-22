@@ -103,15 +103,15 @@
 
     <menuitem id="menu_dm_hr_manual_leave_balance"
               name="إضافة رصيد إجازات يدوي"
-              parent="dm_hr_core.menu_dm_hr_operations"
+              parent="dm_hr_core.menu_dm_hr_configuration"
               action="dm_hr_leave_balance_wizard_action"
-              sequence="76"
+              sequence="74"
               groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
 
     <menuitem id="menu_dm_hr_generate_annual_leave"
               name="توليد الرصيد السنوي السعودي"
-              parent="dm_hr_core.menu_dm_hr_operations"
+              parent="dm_hr_core.menu_dm_hr_configuration"
               action="dm_hr_leave_annual_allocation_wizard_action"
-              sequence="77"
+              sequence="75"
               groups="dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>
 </odoo>
