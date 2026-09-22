@@ -1,0 +1,1617 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_hr_workspace
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-22 17:09+0000\n"
+"PO-Revision-Date: 2026-09-22 17:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "%s موظف/موظفين بدون فئة تأمينات اجتماعية."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "<i class=\"fa fa-building\" title=\"بيانات الموقع\"/>"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "<i class=\"fa fa-map-marker\" title=\"نقطة GPS\"/>"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "<span class=\"dm_hr_title_badge\">GPS</span>"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__active
+msgid "Active"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "Checklist الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_attendance_source__gps_only
+msgid "GPS بدون نطاق"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_attendance_source__gps_geofence
+msgid "GPS داخل موقع معتمد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__id
+msgid "ID"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "· الساعات:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "· المستخدم:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "آخر الحضور والانصراف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "آخر حضور:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "آخر طلباتي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "أرصدة الإجازات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "أضف المستندات الأساسية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_gps_max_accuracy
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_gps_max_accuracy
+msgid "أقصى هامش لدقة GPS (متر)"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "أقصى هامش للدقة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.actions.act_window,help:dm_hr_workspace.dm_hr_attendance_location_action
+msgid "أنشئ أول موقع بصمة GPS."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "أهلًا،"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "إجازاتي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "إجازاتي المعتمدة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إجازاتي المعلقة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إجازة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إحداثيات الموقع غير صحيحة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/hr_attendance_location.py:0
+#, python-format
+msgid "إحداثيات موقع الحضور غير صحيحة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إدارة الفريق والموافقات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "إدارة ملفات الموظفين"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,help:dm_hr_workspace.field_hr_employee__dm_attendance_location_ids
+msgid "إذا تُركت فارغة يستطيع الموظف التسجيل من أي موقع حضور نشط للشركة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,help:dm_hr_workspace.field_dm_hr_attendance_location__employee_ids
+msgid "إذا تُركت فارغة يصبح الموقع متاحًا لجميع موظفي الشركة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "إظهار إنشاء طلب الإجازة والاستئذان والخطابات للموظفين."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_compliance_enabled
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_compliance_enabled
+msgid "إظهار جاهزية ملف الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "إظهار قائمة اكتمال الهوية والعقد والتأمين والمستندات."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "إعداد مواقع بصمة GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.actions.act_window,name:dm_hr_workspace.action_dm_hr_workspace_settings
+msgid "إعدادات الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إعدادات الموافقات متاحة لمدير الموارد البشرية فقط."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "إقامات تنتهي قريبًا"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إنشاء طلب إجازة ومتابعة الاعتماد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "إنشاء عقد جديد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "ابدأ بطلب إجازة أو استئذان من الإجراءات السريعة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "اترك القائمة فارغة للسماح لجميع موظفي الشركة باستخدام هذا الموقع."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "اربط المستخدم بملف الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "اربط المستخدم بموظف حتى تظهر خدمات الموظف الذاتية والحضور والإجازات."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "استئذان"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "استخدم زر تسجيل الحضور من أعلى الصفحة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__name
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "اسم الموقع"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "اسم مرن يظهر في الصفحة الرئيسية ويمكن تخصيصه لكل شركة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_name
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_name
+msgid "اسم منصة الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_gps_required
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_gps_required
+msgid "اشتراط GPS للحضور والانصراف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_geofence_required
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_geofence_required
+msgid "اشتراط البصمة داخل موقع معتمد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "اشتراط الحصول على إحداثيات الجهاز عند تسجيل الحضور والانصراف."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الأقسام المتاحة لك مرتبة حسب دورك وصلاحياتك."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الإجازات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الإدارة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "الإعدادات المرنة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الانصراف:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "البدلات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "التأمين الطبي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "التأمينات الاجتماعية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "التسجيل موثق بالموقع GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "التقارير والتحليل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الحضور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.ui.menu,name:dm_hr_workspace.menu_dm_hr_attendance_check_in_out
+msgid "الحضور اليومي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "الحضور والانصراف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+#, python-format
+msgid "الخدمة الذاتية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "الخدمة الذاتية غير مفعلة لهذه الجهة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الرقم الوظيفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__company_id
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_search
+msgid "الشركة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "العقد الوظيفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "العقود"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "العقود والمستندات والتأمين والبدلات والتقارير"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__address
+msgid "العنوان"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "العنوان المختصر للموقع"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الفريق المباشر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "المتبقي:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "المدير المباشر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "المدير:"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "المستندات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "المسمى الوظيفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "الموافقات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "الموظفون"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__employee_ids
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "الموظفون المخصصون"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "الموظفون النشطون"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "امتثال التأمينات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_search
+msgid "بحث مواقع بصمة GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "بدون عقد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "بدون مدير مباشر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "بوابة موحدة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "بيانات التأمينات ناقصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "بيانات الموقع"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "بيانات بنكية ناقصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "بيانات بنكية وتحويل راتب مكتملة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "تأمينات ناقصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تثبيت راتب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_search
+msgid "تجميع حسب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "تحتاج استكمال الهيكل التنظيمي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تحتاج بنك/IBAN وعقد بتحويل بنكي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تحتاج فئة ورقم اشتراك"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "تحديث"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "تحميل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تسجيل الحضور من المنصة غير مفعل لهذه الجهة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تسجيل انصراف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تسجيل حضور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تعيين موظف جديد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_attendance_enabled
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_attendance_enabled
+msgid "تفعيل الحضور من المنصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_company__hr_workspace_self_service_enabled
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_res_config_settings__hr_workspace_self_service_enabled
+msgid "تفعيل الخدمة الذاتية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "تنبيه هوية / إقامة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "تنبيهات ذكية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "توثيق الموقع GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "جاري تجهيز منصة الموارد البشرية..."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "جاهزية الملف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "جاهزية ملف الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "حالة القوى العاملة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.actions.act_window,help:dm_hr_workspace.dm_hr_attendance_location_action
+msgid ""
+"حدد الإحداثيات ونطاق السماح ليتم قبول الحضور والانصراف داخل الموقع فقط عند "
+"تفعيل النطاق الجغرافي."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid ""
+"حدد نقطة البصمة ونطاق السماح بالمتر. يمكن تخصيص الموقع لموظفين محددين أو "
+"تركه عامًا لكل موظفي الشركة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "حضور الفريق"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "حضوري وانصرافي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "حماية الأجور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خارج الدوام"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خدماتي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__longitude
+msgid "خط الطول"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__latitude
+msgid "خط العرض"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خطاب تثبيت الراتب للبنك أو جهة التمويل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خطاب تثبيت راتب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خطاب تعريف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "خطاب تعريف بالراتب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "خلال 30 يومًا"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "داخل الدوام"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "داخل الدوام الآن"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid ""
+"دقة الموقع الحالية (%s متر) أقل من الدقة المطلوبة (%s متر). حاول في مكان "
+"مفتوح."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "رابط Google Maps اختياري"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__map_url
+msgid "رابط الخريطة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "راجع أنواع الإجازات والتخصيصات من إعدادات الإجازات."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ربط المستخدم بالموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid ""
+"رفض تسجيل الحضور: موقعك الحالي خارج نطاق مواقع البصمة المعتمدة أو لا يوجد "
+"موقع مخصص لك. راجع إعدادات مواقع GPS أو اقترب من نقطة البصمة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "ساعات اليوم"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ساعة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "سجلات حضور اليوم"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "سجلاتي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "صالحة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "صورة الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "طلب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلب آخر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلب إجازة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلب خروج مؤقت أو استئذان"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلب خطاب تعريف بالراتب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "طلبات بانتظار الإجراء"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلبات قيد الاعتماد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلباتك وملفك وحضورك في مكان واحد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلباتي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "طلباتي المعتمدة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "طلباتي المعلقة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "عرض الكل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "عرض الموظفين"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "عمليات الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "عهدة، انتداب، تحديث بيانات أو طلب عام"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_gps_compliance__missing
+msgid "غير موثق GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "فئة أو رقم اشتراك غير مكتمل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "فتح"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "فتح الموافقات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "كل خدمات الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "كل شيء مستقر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "كل طلبات الفريق مستقرة حاليًا."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد أرصدة مخصصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد تنبيهات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد تنبيهات مهمة حاليًا."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد سجلات حضور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد طلبات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد طلبات حديثة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد موافقات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "لا توجد موافقات معلقة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لا توجد وثيقة نشطة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لا يوجد عقد نشط"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لا يوجد موظف مرتبط"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لا يوجد موظف مرتبط بالمستخدم"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لا يوجد موظف مرتبط بالمستخدم الحالي."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لديك %s طلب/طلبات بانتظار الاعتماد."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لم يتم تحديد فئة الموظف في التأمينات الاجتماعية."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "لم يسجل انصراف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_dm_hr_workspace_dashboard
+msgid "لوحة منصة الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ليس لديك صلاحية لفتح هذا القسم."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_search
+msgid "مؤرشفة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "ما يحتاج انتباهك"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "متابعة الموظفين والطلبات التي تحتاج إجراء"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "متابعة فورية للامتثال، الملفات الناقصة، ومسار الطلبات داخل الشركة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "متر"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "مثال: المقر الرئيسي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "مركز التحكم"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "مركز قيادة الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.ui.menu,name:dm_hr_workspace.menu_dm_hr_workspace
+msgid "مساحة العمل الخاصة بي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "مستندات الموظف"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "مستندات تنتهي قريبًا"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_hr_attendance__dm_attendance_source
+msgid "مصدر البصمة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_gps_compliance__verified
+msgid "مطابق"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_hr_attendance__dm_gps_compliance
+msgid "مطابقة GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "مطلوبة لحماية الأجور وتثبيت الراتب"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "مكتمل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "مكتملة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "ملفات تحتاج عقد وظيفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "ملفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ملفي الوظيفي"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "منصة العمل الموحدة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#: model:ir.actions.client,name:dm_hr_workspace.action_dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+#, python-format
+msgid "منصة الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "منع التسجيل إذا كان الموظف خارج نصف قطر أحد مواقع الحضور المسموحة."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "موافقات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "موافقات الإجازات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "موافقات بانتظارك"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "موافقات طلبات الخدمات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "موافقة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_hr_employee__dm_attendance_location_ids
+msgid "مواقع الحضور المسموحة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.actions.act_window,name:dm_hr_workspace.dm_hr_attendance_location_action
+#: model:ir.ui.menu,name:dm_hr_workspace.menu_dm_hr_attendance_locations
+msgid "مواقع بصمة GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_tree
+msgid "مواقع بصمة الحضور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_gps_compliance__gps_only
+msgid "موثق GPS فقط"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_hr_attendance__out_dm_location_id
+msgid "موقع الانصراف المعتمد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_hr_attendance__in_dm_location_id
+msgid "موقع الحضور المعتمد"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "موقع بصمة الحضور"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model,name:dm_hr_workspace.model_dm_hr_attendance_location
+msgid "موقع بصمة الحضور GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ناقصة أو تنتهي قريبًا"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_search
+msgid "نشطة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields,field_description:dm_hr_workspace.field_dm_hr_attendance_location__radius_meters
+msgid "نطاق السماح (متر)"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/hr_attendance_location.py:0
+#, python-format
+msgid "نطاق السماح يجب أن يكون أكبر من صفر متر."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "نطاق مواقع البصمة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-javascript
+#: code:addons/dm_hr_workspace/static/src/xml/hr_workspace.xml:0
+#, python-format
+msgid "نظرة تشغيلية"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.dm_hr_attendance_location_form
+msgid "نقطة البصمة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "هوية / إقامة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "هوية أو إقامة الموظف تنتهي خلال 30 يومًا."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "هوية المنصة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "وثيقة نشطة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "ورديات العمل"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "يجب السماح بالوصول إلى الموقع لتسجيل الحضور أو الانصراف."
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model:ir.model.fields.selection,name:dm_hr_workspace.selection__hr_attendance__dm_attendance_source__manual
+msgid "يدوي / بدون GPS"
+msgstr ""
+
+#. module: dm_hr_workspace
+#: model_terms:ir.ui.view,arch_db:dm_hr_workspace.res_config_settings_view_form_hr_workspace
+msgid "يسمح للموظف بتسجيل الحضور والانصراف من الصفحة الرئيسية."
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "يوجد عقد نشط/مسودة"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "يوجد مستندات"
+msgstr ""
+
+#. module: dm_hr_workspace
+#. odoo-python
+#: code:addons/dm_hr_workspace/models/dm_hr_workspace_dashboard.py:0
+#, python-format
+msgid "يوم"
+msgstr ""

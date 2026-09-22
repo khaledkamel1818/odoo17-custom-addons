@@ -16,458 +16,610 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_offboarding
 msgid "DM HR Offboarding"
 msgstr "إنهاء الخدمة وإخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Resignation, termination, clearance, EOS and final settlement"
 msgstr "استقالة، إنهاء، إخلاء طرف، مكافأة نهاية الخدمة والتسوية النهائية"
 
+#. module: dm_hr_offboarding
 msgid "Request Type"
 msgstr "نوع إنهاء الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Termination Type"
 msgstr "نوع الإنهاء"
 
+#. module: dm_hr_offboarding
 msgid "EOS Rule"
 msgstr "قاعدة مكافأة نهاية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "EOS Rules"
 msgstr "قواعد مكافأة نهاية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Request"
 msgstr "طلب إنهاء خدمة"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Requests"
 msgstr "طلبات إنهاء الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Final Settlement"
 msgstr "التسوية النهائية"
 
+#. module: dm_hr_offboarding
 msgid "Final Settlements"
 msgstr "التسويات النهائية"
 
+#. module: dm_hr_offboarding
 msgid "Exit Interview"
 msgstr "مقابلة الخروج"
 
+#. module: dm_hr_offboarding
 msgid "Exit Interviews"
 msgstr "مقابلات الخروج"
 
+#. module: dm_hr_offboarding
 msgid "Clearance Department"
 msgstr "قسم إخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Clearance Departments"
 msgstr "أقسام إخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Clearance Line"
 msgstr "بند إخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Clearance Lines"
 msgstr "بنود إخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Approval Item"
 msgstr "خطوة اعتماد إنهاء الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Approval Items"
 msgstr "خطوات اعتماد إنهاء الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Employee Transfer"
 msgstr "تنقلات وتغيير وظائف الموظفين"
 
+#. module: dm_hr_offboarding
 msgid "Employee Transfers"
 msgstr "تنقلات وتغيير وظائف الموظفين"
 
+#. module: dm_hr_offboarding
 msgid "Request Date"
 msgstr "تاريخ الطلب"
 
+#. module: dm_hr_offboarding
 msgid "Last Work Date"
 msgstr "آخر يوم عمل"
 
+#. module: dm_hr_offboarding
 msgid "Service Start Date"
 msgstr "بداية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Notice Period"
 msgstr "فترة الإشعار"
 
+#. module: dm_hr_offboarding
 msgid "Employee Status"
 msgstr "حالة الموظف أثناء الإجراء"
 
+#. module: dm_hr_offboarding
 msgid "Working"
 msgstr "على رأس العمل"
 
+#. module: dm_hr_offboarding
 msgid "Notice"
 msgstr "في فترة الإشعار"
 
+#. module: dm_hr_offboarding
 msgid "Clearing"
 msgstr "إخلاء طرف"
 
+#. module: dm_hr_offboarding
 msgid "Settled"
 msgstr "تمت التسوية"
 
+#. module: dm_hr_offboarding
 msgid "Terminated"
 msgstr "منتهي الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Reason"
 msgstr "سبب الإنهاء"
 
+#. module: dm_hr_offboarding
 msgid "Manager Note"
 msgstr "ملاحظات المدير"
 
+#. module: dm_hr_offboarding
 msgid "HR Note"
 msgstr "ملاحظات الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Finance Note"
 msgstr "ملاحظات المالية"
 
+#. module: dm_hr_offboarding
 msgid "Rejection Reason"
 msgstr "سبب الرفض"
 
+#. module: dm_hr_offboarding
 msgid "Cancel Reason"
 msgstr "سبب الإلغاء"
 
+#. module: dm_hr_offboarding
 msgid "Current Responsible"
 msgstr "المسؤول الحالي"
 
+#. module: dm_hr_offboarding
 msgid "Eligible for End of Service"
 msgstr "مستحق لمكافأة نهاية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Default Entitlement Ratio"
 msgstr "نسبة الاستحقاق الافتراضية"
 
+#. module: dm_hr_offboarding
 msgid "Notice Required"
 msgstr "تتطلب مدة إشعار"
 
+#. module: dm_hr_offboarding
 msgid "Notice Days"
 msgstr "أيام الإشعار"
 
+#. module: dm_hr_offboarding
 msgid "Requires Clearance"
 msgstr "تتطلب إخلاء طرف"
 
+#. module: dm_hr_offboarding
 msgid "Creates Settlement"
 msgstr "تنشئ تسوية نهائية"
 
+#. module: dm_hr_offboarding
 msgid "Can Close Contract"
 msgstr "تغلق العقد بعد الإكمال"
 
+#. module: dm_hr_offboarding
 msgid "Allow Withdrawal"
 msgstr "السماح بسحب الطلب قبل الاعتماد"
 
+#. module: dm_hr_offboarding
 msgid "Archive Employee"
 msgstr "أرشفة الموظف بعد الإكمال"
 
+#. module: dm_hr_offboarding
 msgid "Payroll Earning Code"
 msgstr "كود استحقاق الرواتب"
 
+#. module: dm_hr_offboarding
 msgid "Payroll Deduction Code"
 msgstr "كود حسم الرواتب"
 
+#. module: dm_hr_offboarding
 msgid "First Period Years"
 msgstr "سنوات الشريحة الأولى"
 
+#. module: dm_hr_offboarding
 msgid "First Period Month Ratio"
 msgstr "نسبة شهر للشريحة الأولى"
 
+#. module: dm_hr_offboarding
 msgid "Later Period Month Ratio"
 msgstr "نسبة شهر لما بعد الشريحة الأولى"
 
+#. module: dm_hr_offboarding
 msgid "Resignation No Entitlement Years"
 msgstr "لا استحقاق للاستقالة قبل"
 
+#. module: dm_hr_offboarding
 msgid "Resignation One Third Years"
 msgstr "ثلث المكافأة حتى"
 
+#. module: dm_hr_offboarding
 msgid "Resignation Two Third Years"
 msgstr "ثلثا المكافأة حتى"
 
+#. module: dm_hr_offboarding
 msgid "Include Allowances"
 msgstr "احتساب البدلات ضمن الأجر الأساسي"
 
+#. module: dm_hr_offboarding
 msgid "Daily Wage Method"
 msgstr "طريقة احتساب اليوم"
 
+#. module: dm_hr_offboarding
 msgid "Round Digits"
 msgstr "خانات التقريب"
 
+#. module: dm_hr_offboarding
 msgid "Allow Manual Override"
 msgstr "السماح بالتعديل اليدوي"
 
+#. module: dm_hr_offboarding
 msgid "Initiated By"
 msgstr "مصدر الطلب"
 
+#. module: dm_hr_offboarding
 msgid "Employee"
 msgstr "الموظف"
 
+#. module: dm_hr_offboarding
 msgid "HR"
 msgstr "الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Both"
 msgstr "كلاهما"
 
+#. module: dm_hr_offboarding
 msgid "Code"
 msgstr "الكود"
 
+#. module: dm_hr_offboarding
 msgid "Sequence"
 msgstr "الترتيب"
 
+#. module: dm_hr_offboarding
 msgid "Company"
 msgstr "الشركة"
 
+#. module: dm_hr_offboarding
 msgid "Active"
 msgstr "نشط"
 
+#. module: dm_hr_offboarding
 msgid "Name"
 msgstr "الاسم"
 
+#. module: dm_hr_offboarding
 msgid "Note"
 msgstr "ملاحظات"
 
+#. module: dm_hr_offboarding
 msgid "Description"
 msgstr "الوصف"
 
+#. module: dm_hr_offboarding
 msgid "Mandatory"
 msgstr "إلزامي"
 
+#. module: dm_hr_offboarding
 msgid "Due Date"
 msgstr "تاريخ الاستحقاق"
 
+#. module: dm_hr_offboarding
 msgid "Has Custody"
 msgstr "مرتبط بعهدة"
 
+#. module: dm_hr_offboarding
 msgid "Custody"
 msgstr "العهدة"
 
+#. module: dm_hr_offboarding
 msgid "Custody Value"
 msgstr "قيمة العهدة/الحسم"
 
+#. module: dm_hr_offboarding
 msgid "Received"
 msgstr "تم الاستلام"
 
+#. module: dm_hr_offboarding
 msgid "Custody Condition"
 msgstr "حالة العهدة"
 
+#. module: dm_hr_offboarding
 msgid "Not Applicable"
 msgstr "لا ينطبق"
 
+#. module: dm_hr_offboarding
 msgid "Good"
 msgstr "سليمة"
 
+#. module: dm_hr_offboarding
 msgid "Damaged"
 msgstr "تالفة"
 
+#. module: dm_hr_offboarding
 msgid "Lost"
 msgstr "مفقودة"
 
+#. module: dm_hr_offboarding
 msgid "Deduction Amount"
 msgstr "مبلغ الحسم"
 
+#. module: dm_hr_offboarding
 msgid "Notes"
 msgstr "ملاحظات"
 
+#. module: dm_hr_offboarding
 msgid "Override Reason"
 msgstr "سبب الاستثناء"
 
+#. module: dm_hr_offboarding
 msgid "Approved By"
 msgstr "اعتمد بواسطة"
 
+#. module: dm_hr_offboarding
 msgid "Approved Date"
 msgstr "تاريخ الاعتماد"
 
+#. module: dm_hr_offboarding
 msgid "State"
 msgstr "الحالة"
 
+#. module: dm_hr_offboarding
 msgid "Pending"
 msgstr "بانتظار"
 
+#. module: dm_hr_offboarding
 msgid "Approved"
 msgstr "معتمد"
 
+#. module: dm_hr_offboarding
 msgid "Rejected"
 msgstr "مرفوض"
 
+#. module: dm_hr_offboarding
 msgid "Waived"
 msgstr "مستثنى"
 
+#. module: dm_hr_offboarding
 msgid "Cancelled"
 msgstr "ملغى"
 
+#. module: dm_hr_offboarding
 msgid "Done"
 msgstr "منتهي"
 
+#. module: dm_hr_offboarding
 msgid "Paid"
 msgstr "مدفوعة"
 
+#. module: dm_hr_offboarding
 msgid "Draft"
 msgstr "مسودة"
 
+#. module: dm_hr_offboarding
 msgid "Submitted"
 msgstr "مرسل"
 
+#. module: dm_hr_offboarding
 msgid "Manager Approval"
 msgstr "اعتماد المدير"
 
+#. module: dm_hr_offboarding
 msgid "HR Review"
 msgstr "مراجعة الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Notice Period"
 msgstr "فترة الإشعار"
 
+#. module: dm_hr_offboarding
 msgid "Clearance"
 msgstr "إخلاء الطرف"
 
+#. module: dm_hr_offboarding
 msgid "Finance Settlement"
 msgstr "التسوية المالية"
 
+#. module: dm_hr_offboarding
 msgid "Final Approval"
 msgstr "الاعتماد النهائي"
 
+#. module: dm_hr_offboarding
 msgid "EOS Base Wage"
 msgstr "أجر احتساب المكافأة"
 
+#. module: dm_hr_offboarding
 msgid "EOS Manual Override"
 msgstr "تعديل مكافأة نهاية الخدمة يدويًا"
 
+#. module: dm_hr_offboarding
 msgid "EOS Manual Amount"
 msgstr "قيمة المكافأة اليدوية"
 
+#. module: dm_hr_offboarding
 msgid "EOS Manual Reason"
 msgstr "سبب تعديل المكافأة"
 
+#. module: dm_hr_offboarding
 msgid "Completion Executed"
 msgstr "تم تنفيذ الإنهاء"
 
+#. module: dm_hr_offboarding
 msgid "Settlement Date"
 msgstr "تاريخ التسوية"
 
+#. module: dm_hr_offboarding
 msgid "Earnings Total"
 msgstr "إجمالي المستحقات"
 
+#. module: dm_hr_offboarding
 msgid "Deductions Total"
 msgstr "إجمالي الحسميات"
 
+#. module: dm_hr_offboarding
 msgid "Net Amount"
 msgstr "الصافي"
 
+#. module: dm_hr_offboarding
 msgid "EOS Explanation"
 msgstr "شرح مكافأة نهاية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Line Type"
 msgstr "نوع البند"
 
+#. module: dm_hr_offboarding
 msgid "Earning"
 msgstr "استحقاق"
 
+#. module: dm_hr_offboarding
 msgid "Deduction"
 msgstr "حسم"
 
+#. module: dm_hr_offboarding
 msgid "Source"
 msgstr "المصدر"
 
+#. module: dm_hr_offboarding
 msgid "Salary"
 msgstr "راتب"
 
+#. module: dm_hr_offboarding
 msgid "Leave Balance"
 msgstr "رصيد إجازات"
 
+#. module: dm_hr_offboarding
 msgid "Overtime"
 msgstr "عمل إضافي"
 
+#. module: dm_hr_offboarding
 msgid "Commission"
 msgstr "عمولات"
 
+#. module: dm_hr_offboarding
 msgid "Bonus"
 msgstr "مكافآت"
 
+#. module: dm_hr_offboarding
 msgid "Allowance"
 msgstr "بدلات/مطالبات"
 
+#. module: dm_hr_offboarding
 msgid "Advance Loan"
 msgstr "سلف/قروض"
 
+#. module: dm_hr_offboarding
 msgid "Notice"
 msgstr "إشعار"
 
+#. module: dm_hr_offboarding
 msgid "Absence"
 msgstr "غياب/تأخير"
 
+#. module: dm_hr_offboarding
 msgid "Other"
 msgstr "أخرى"
 
+#. module: dm_hr_offboarding
 msgid "Quantity"
 msgstr "الكمية"
 
+#. module: dm_hr_offboarding
 msgid "Price Unit"
 msgstr "السعر"
 
+#. module: dm_hr_offboarding
 msgid "Amount"
 msgstr "الإجمالي"
 
+#. module: dm_hr_offboarding
 msgid "Payroll Postable"
 msgstr "قابل للترحيل للرواتب"
 
+#. module: dm_hr_offboarding
 msgid "Posted to Payroll"
 msgstr "مرحل للرواتب"
 
+#. module: dm_hr_offboarding
 msgid "Interview Date"
 msgstr "تاريخ المقابلة"
 
+#. module: dm_hr_offboarding
 msgid "Satisfaction"
 msgstr "مستوى الرضا"
 
+#. module: dm_hr_offboarding
 msgid "Reason Summary"
 msgstr "ملخص الأسباب"
 
+#. module: dm_hr_offboarding
 msgid "Recommendations"
 msgstr "توصيات الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Can Return"
 msgstr "يمكن إعادة التوظيف مستقبلًا"
 
+#. module: dm_hr_offboarding
 msgid "Confidential Notes"
 msgstr "ملاحظات سرية"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Employee"
 msgstr "الموظف"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Direct Manager"
 msgstr "المدير المباشر"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding HR Officer"
 msgstr "مسؤول الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding HR Manager"
 msgstr "مدير الموارد البشرية"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Finance Officer"
 msgstr "مسؤول المالية"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Finance Manager"
 msgstr "مدير المالية"
 
+#. module: dm_hr_offboarding
 msgid "Offboarding Administrator"
 msgstr "مدير النظام"
 
+#. module: dm_hr_offboarding
 msgid "My Requests"
 msgstr "طلباتي"
 
+#. module: dm_hr_offboarding
 msgid "Team Requests"
 msgstr "طلبات فريقي"
 
+#. module: dm_hr_offboarding
 msgid "All Requests"
 msgstr "جميع الطلبات"
 
+#. module: dm_hr_offboarding
 msgid "Settlements"
 msgstr "التسويات النهائية"
 
+#. module: dm_hr_offboarding
 msgid "Exit Interviews"
 msgstr "مقابلات الخروج"
 
+#. module: dm_hr_offboarding
 msgid "Settings"
 msgstr "الإعدادات"
 
+#. module: dm_hr_offboarding
 msgid "Termination Types"
 msgstr "أنواع إنهاء الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "EOS Rules"
 msgstr "قواعد مكافأة نهاية الخدمة"
 
+#. module: dm_hr_offboarding
 msgid "Clearance Departments"
 msgstr "أقسام إخلاء الطرف"

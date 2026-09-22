@@ -1,0 +1,2004 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_hr_offboarding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-22 17:09+0000\n"
+"PO-Revision-Date: 2026-09-22 17:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"\n"
+"- و %s بنود أخرى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,print_report_name:dm_hr_offboarding.action_report_resignation_request
+msgid "'Resignation - %s' % object.name"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "- <strong>آخر يوم:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "- <strong>التاريخ:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>آخر يوم عمل معتمد:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>الإدارة:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+msgid "<strong>التوصيات:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>الرقم:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>السبب:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "<strong>الموظف:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>الوظيفة:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>تاريخ الطلب:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+msgid "<strong>مستوى الرضا:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+msgid "<strong>ملخص الأسباب:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid "<strong>نوع الإنهاء:</strong>"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__action_by_id
+msgid "Action By"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__action_date
+msgid "Action Date"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_needaction
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_needaction
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_needaction
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__active
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__active
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__active
+msgid "Active"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_exception_decoration
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_exception_decoration
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_exception_decoration
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_type_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_type_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_type_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_attachment_count
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_attachment_count
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_attachment_count
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__clearance_pending_count
+msgid "Clearance Pending Count"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__comment
+msgid "Comment"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__create_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__create_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__currency_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__currency_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__currency_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.module.category,name:dm_hr_offboarding.module_category_dm_hr_offboarding
+msgid "DM HR Offboarding"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__delegate_user_id
+msgid "Delegate User"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__display_name
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__contract_end_date
+msgid "End date of the contract (if it's a fixed-term contract)."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_follower_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_follower_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_follower_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_partner_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_partner_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_partner_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__activity_type_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__activity_type_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_type_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__has_message
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__has_message
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__has_message
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__id
+msgid "ID"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_exception_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_exception_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_exception_icon
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__activity_exception_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__activity_exception_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_exception_icon
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__message_needaction
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__message_needaction
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_needaction
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_sms_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__message_has_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__message_has_sms_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_sms_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_error
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__instructions
+msgid "Instructions"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_is_follower
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_is_follower
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_is_follower
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__write_uid
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__write_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__line_type
+msgid "Line Type"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_has_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_calendar_event_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_calendar_event_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_calendar_event_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_date_deadline
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_summary
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_summary
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_summary
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_type_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_type_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_type_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_needaction_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_needaction_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_needaction_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_error_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_has_error_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_error_counter
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__message_needaction_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__message_needaction_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_needaction_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_error_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__message_has_error_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_error_counter
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__offboarding_id
+msgid "Offboarding"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_admin
+msgid "Offboarding Administrator"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_manager
+msgid "Offboarding Direct Manager"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_employee
+msgid "Offboarding Employee"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_finance_manager
+msgid "Offboarding Finance Manager"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_finance_officer
+msgid "Offboarding Finance Officer"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_hr_manager
+msgid "Offboarding HR Manager"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:res.groups,name:dm_hr_offboarding.group_dm_hr_offboarding_hr_officer
+msgid "Offboarding HR Officer"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__policy_step_id
+msgid "Policy Step"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__rating_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__rating_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__rating_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__manager_user_id
+msgid "Related user name for the resource to manage its access."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__require_comment
+msgid "Require Comment"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__activity_user_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__activity_user_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_user_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__message_has_sms_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__message_has_sms_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__message_has_sms_error
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__sequence
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__sequence
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__sequence
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__sequence
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__sequence
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__settlement_id
+msgid "Settlement"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__settlement_count
+msgid "Settlement Count"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__source
+msgid "Source"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__state
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__state
+msgid "State"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__activity_state
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__activity_state
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_state
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__activity_exception_decoration
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__activity_exception_decoration
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__activity_exception_decoration
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__manager_user_id
+msgid "User"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__website_message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__website_message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__website_message_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_exit_interview__website_message_ids
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding__website_message_ids
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__website_message_ids
+#: model:ir.model.fields,help:dm_hr_offboarding.field_dm_hr_offboarding_settlement__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "آخر يوم عمل لا يمكن أن يكون قبل تاريخ الطلب."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "آخر يوم عمل مطلوب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__approved_last_work_date
+msgid "آخر يوم عمل معتمد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__requested_last_work_date
+msgid "آخر يوم عمل مقترح"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_kanban
+msgid "آخر يوم:"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__eos_base_wage
+msgid "أجر احتساب المكافأة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_other
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__other
+msgid "أخرى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__allow_archive_employee
+msgid "أرشفة الموظف بعد الإكمال"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__archive_employee
+msgid "أرشفة الموظف عند الإكمال"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_clearance_department_action
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_clearance_departments
+msgid "أقسام إخلاء الطرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_type_action
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_types
+msgid "أنواع إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__notice_days
+msgid "أيام الإشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__actual_notice_days
+msgid "أيام الإشعار الفعلية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__required_notice_days
+msgid "أيام الإشعار المطلوبة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__deductions_total
+msgid "إجمالي الحسميات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__earnings_total
+msgid "إجمالي المستحقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__clearance
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "إخلاء الطرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__employee_status__clearing
+msgid "إخلاء طرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "إرسال"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__notice
+msgid "إشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_settlement_form
+msgid "إعادة احتساب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "إعادة فتح طلب منتهي متاحة لمدير النظام فقط."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__mandatory
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__mandatory
+msgid "إلزامي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "إلغاء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "إنشاء التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_root
+msgid "إنهاء الخدمة وإخلاء الطرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_disciplinary
+msgid "إنهاء تأديبي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_approval_policy__request_type__offboarding
+msgid "إنهاء خدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_probation
+msgid "إنهاء خلال فترة التجربة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_employer_termination
+msgid "إنهاء من صاحب العمل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_mutual
+msgid "اتفاق الطرفين"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__include_allowances
+msgid "احتساب البدلات ضمن الأجر الأساسي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__full_entitlement_exception
+msgid "استثناء باستحقاق كامل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__line_type__earning
+msgid "استحقاق"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_resignation
+msgid "استقالة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "استلام عهدة: %s"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__name
+msgid "اسم القاعدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_exit_interview_form
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_settlement_form
+msgid "اعتماد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__manager_approval
+msgid "اعتماد المدير"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "اعتماد المرحلة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__approved_by_id
+msgid "اعتمد بواسطة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_rule__daily_wage_method__thirty
+msgid "الأجر الشهري / 30"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__amount
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "الإجمالي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__department_level_id
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+msgid "الإدارة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.clearance.department,name:dm_hr_offboarding.clearance_department_manager
+msgid "الإدارة المباشرة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_settings
+msgid "الإعدادات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__final_approval
+msgid "الاعتماد النهائي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_settlement_action
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_settlements
+msgid "التسويات النهائية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__finance_settlement
+msgid "التسوية المالية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_settlement
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__settlement_id
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_settlement_form
+#, python-format
+msgid "التسوية النهائية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "الجهة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__state
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "الحالة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__name
+msgid "الخطوة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__employee_number
+msgid "الرقم الوظيفي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__reason
+msgid "السبب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__price_unit
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "السعر"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__allow_manual_override
+msgid "السماح بالتعديل اليدوي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__allow_withdrawal
+msgid "السماح بسحب الطلب قبل الاعتماد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__company_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__company_id
+msgid "الشركة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__net_amount
+msgid "الصافي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "الصافي:"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__contract_id
+msgid "العقد الحالي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.clearance.department,name:dm_hr_offboarding.clearance_department_custody
+msgid "العهد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__custody_id
+msgid "العهدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__branch_id
+msgid "الفرع"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__section_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__name
+msgid "القسم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__sector_id
+msgid "القطاع"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__quantity
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "الكمية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__code
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__code
+msgid "الكود"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.clearance.department,name:dm_hr_offboarding.clearance_department_finance
+msgid "المالية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__manager_id
+msgid "المدير المباشر"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__name
+msgid "المرجع"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__attachment_ids
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__attachment_ids
+msgid "المرفقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__responsible_user_id
+msgid "المسؤول"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__responsible_user_id
+msgid "المسؤول الافتراضي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__current_responsible_id
+msgid "المسؤول الحالي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "المصدر"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__approver_user_id
+msgid "المعتمد المحدد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "الملاحظات والمرفقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__job_id
+msgid "المنصب الوظيفي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.clearance.department,name:dm_hr_offboarding.clearance_department_hr
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_type__initiated_by__hr
+msgid "الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "الموافقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__employee_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__employee_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__employee_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__employee_id
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_type__initiated_by__employee
+#, python-format
+msgid "الموظف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__name
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "النوع"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__unit_id
+msgid "الوحدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__description
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__description
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "الوصف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_contract_expiry
+msgid "انتهاء العقد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_absence
+msgid "انقطاع / غياب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_approval_item__state__pending
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__state__pending
+msgid "بانتظار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+msgid "بانتظار مسؤوليتي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__service_start_date
+msgid "بداية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__allowance
+msgid "بدلات/مطالبات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_clearance_line
+msgid "بند إخلاء طرف إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_settlement_line
+msgid "بند التسوية النهائية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__clearance_line_ids
+msgid "بنود إخلاء الطرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__line_ids
+msgid "بنود التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_final_settlement
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_settlement
+msgid "بيان التسوية النهائية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_eos
+msgid "بيان مكافأة نهاية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "بيانات الإنهاء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "بيانات الموظف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__due_date
+msgid "تاريخ الاستحقاق"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__approved_date
+msgid "تاريخ الاعتماد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__settlement_date
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__settlement_date
+msgid "تاريخ التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__request_date
+msgid "تاريخ الطلب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__interview_date
+msgid "تاريخ المقابلة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__custody_condition__damaged
+msgid "تالفة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__requires_clearance
+msgid "تتطلب إخلاء طرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__notice_required
+msgid "تتطلب مدة إشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+msgid "تجميع"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "تجهيز إخلاء الطرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__eos_manual_override
+msgid "تعديل مكافأة نهاية الخدمة يدويًا"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__can_close_contract
+msgid "تغلق العقد بعد الإكمال"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_retirement
+msgid "تقاعد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_exit_interview
+msgid "تقرير مقابلة الخروج"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.clearance.department,name:dm_hr_offboarding.clearance_department_it
+msgid "تقنية المعلومات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "تم إرسال طلب إنهاء الخدمة للاعتماد."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "تم استخدام قيمة يدوية: %s"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__received
+msgid "تم الاستلام"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "تم السحب بواسطة الموظف."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__completion_executed
+msgid "تم تنفيذ الإنهاء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "تم تنفيذ الإنهاء مسبقًا ولا يمكن تكراره."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "تم رفض طلب إنهاء الخدمة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__employee_status__settled
+msgid "تمت التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__creates_settlement
+msgid "تنشئ تسوية نهائية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__recommendations
+msgid "توصيات HR"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__resignation_one_third_years
+msgid "ثلث المكافأة حتى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__resignation_two_third_years
+msgid "ثلثا المكافأة حتى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement__state__ready
+msgid "جاهزة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_all
+msgid "جميع الطلبات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_action_all
+msgid "جميع طلبات إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__department_id
+msgid "جهة الإخلاء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__custody_condition
+msgid "حالة العهدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__employee_status
+msgid "حالة الموظف أثناء الإجراء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_rule__daily_wage_method__calendar
+msgid "حسب أيام الشهر"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__line_type__deduction
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "حسم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "حسم نقص مدة الإشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__rounding_digits
+msgid "خانات التقريب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_approval_item
+msgid "خطوة اعتماد إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__salary
+msgid "راتب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "راتب حتى آخر يوم عمل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__leave_balance
+msgid "رصيد إجازات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "رصيد إجازات مستحق"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "رصيد سلف/قروض قائم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "رفض"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__name
+msgid "رقم التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__name
+msgid "رقم الطلب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__cancel_reason
+msgid "سبب الإلغاء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__override_reason
+msgid "سبب الاستثناء"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__rejection_reason
+msgid "سبب الرفض"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__eos_manual_reason
+msgid "سبب تعديل المكافأة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "سحب الطلب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__advance_loan
+msgid "سلف/قروض"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__custody_condition__good
+msgid "سليمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__service_years
+msgid "سنوات الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"سنوات الخدمة: %(years).2f، الأجر: %(wage).2f، أساس المكافأة: %(base).2f، "
+"نسبة الاستحقاق: %(ratio).2f%%"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__first_period_years
+msgid "سنوات الشريحة الأولى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__approval_policy_id
+msgid "سياسة الموافقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_approval_policy
+msgid "سياسة موافقات الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__eos_explanation
+msgid "شرح مكافأة نهاية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_experience_certificate
+msgid "شهادة خبرة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__daily_wage_method
+msgid "طريقة احتساب اليوم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__offboarding_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__offboarding_id
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement__offboarding_id
+msgid "طلب إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "طلب إنهاء خدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_resignation_request
+msgid "طلب استقالة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_action_my
+msgid "طلبات إنهاء خدمتي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_action_team
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_team
+msgid "طلبات فريقي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_my
+msgid "طلباتي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_medical_disability
+msgid "عجز طبي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_nonrenewal_company
+msgid "عدم تجديد العقد من الشركة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_nonrenewal_employee
+msgid "عدم تجديد العقد من الموظف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__employee_status__working
+msgid "على رأس العمل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__overtime
+msgid "عمل إضافي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__commission
+msgid "عمولات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__custody
+msgid "عهد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__absence
+msgid "غياب/تأخير"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+msgid "فتح التسوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__notice_period
+msgid "فترة الإشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__notice_difference_days
+msgid "فرق الإشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__employee_status__notice
+msgid "في فترة الإشعار"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__payroll_postable
+msgid "قابل للترحيل للرواتب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.rule,name:dm_hr_offboarding.offboarding_rule_saudi_default
+msgid "قاعدة السعودية الافتراضية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_resignation_acceptance
+msgid "قبول الاستقالة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_termination_decision
+msgid "قرار إنهاء خدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_clearance_department
+msgid "قسم إخلاء طرف إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_offboarding_rule_action
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_rule
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_offboarding_rules
+msgid "قواعد مكافأة نهاية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_force_majeure
+msgid "قوة قاهرة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "قيم قواعد المكافأة يجب ألا تكون سالبة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__custody_value
+msgid "قيمة العهدة/الحسم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__eos_manual_amount
+msgid "قيمة المكافأة اليدوية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_type__initiated_by__both
+msgid "كلاهما"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__payroll_earning_code
+msgid "كود استحقاق الرواتب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__payroll_deduction_code
+msgid "كود حسم الرواتب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.constraint,message:dm_hr_offboarding.constraint_dm_hr_offboarding_type_code_company_uniq
+msgid "كود نوع إنهاء الخدمة يجب ألا يتكرر لنفس الشركة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__resignation_no_entitlement_years
+msgid "لا استحقاق للاستقالة قبل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن إرسال الطلب قبل استكمال البيانات التالية:\n"
+"- %s\n"
+"\n"
+"أكمل البيانات ثم اضغط إرسال مرة أخرى."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "لا يمكن إعادة احتساب تسوية معتمدة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن إكمال إخلاء الطرف لأن هناك بنودًا إلزامية لم تعتمد أو تستثن بعد:\n"
+"- %s\n"
+"\n"
+"افتح تبويب إخلاء الطرف، واعتمد كل بند أو أدخل سبب الاستثناء للبنود التي سيتم تجاوزها."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.constraint,message:dm_hr_offboarding.constraint_dm_hr_offboarding_settlement_offboarding_uniq
+msgid "لا يمكن إنشاء أكثر من تسوية لنفس طلب إنهاء الخدمة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن استثناء بند إلزامي بدون سبب واضح.\n"
+"\n"
+"اكتب سبب الاستثناء في حقل \"سبب الاستثناء\"، ثم اضغط استثناء مرة أخرى."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن اعتماد الطلب في الحالة الحالية: %s.\n"
+"\n"
+"راجع شريط الحالة أعلى الطلب وتأكد من أن الطلب وصل إلى مرحلة اعتمادك."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن الانتقال للاعتماد النهائي لأن التسوية النهائية غير معتمدة بعد.\n"
+"\n"
+"افتح التسوية من الزر الذكي، راجع البنود، ثم اعتمدها أو سجلها كمدفوعة حسب الصلاحية."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid ""
+"لا يمكن تعديل بيانات مالية/حساسة بعد الاعتماد النهائي إلا من مدير الموارد "
+"البشرية."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "لا يمكن سحب هذا الطلب في مرحلته الحالية."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__custody_condition__not_applicable
+msgid "لا ينطبق"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__deduction_amount
+msgid "مبلغ الحسم"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_approval_item__approver_group_id
+msgid "مجموعة الاعتماد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement__state__paid
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_settlement_form
+msgid "مدفوعة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__hr_review
+msgid "مراجعة HR"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__has_custody
+msgid "مرتبط بعهدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_settlement_line__posted_to_payroll
+msgid "مرحل للرواتب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__submitted
+msgid "مرسل"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__rejected
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_approval_item__state__rejected
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__state__rejected
+msgid "مرفوض"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__approval_item_ids
+msgid "مسار الموافقات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__state__waived
+msgid "مستثنى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__eos_eligible
+msgid "مستحق لمكافأة نهاية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__satisfaction
+msgid "مستوى الرضا"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_exit_interview__state__draft
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__draft
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement__state__draft
+msgid "مسودة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__initiated_by
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__initiated_by
+msgid "مصدر الطلب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_approval_item__state__approved
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__state__approved
+msgid "معتمد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_exit_interview__state__submitted
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement__state__approved
+msgid "معتمدة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_search
+msgid "مفتوحة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_clearance_line__custody_condition__lost
+msgid "مفقودة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.act_window,name:dm_hr_offboarding.dm_hr_exit_interview_action
+#: model:ir.ui.menu,name:dm_hr_offboarding.menu_dm_hr_exit_interviews
+msgid "مقابلات الخروج"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_exit_interview
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__exit_interview_id
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_exit_interview
+msgid "مقابلة الخروج"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__bonus
+msgid "مكافآت"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement_line__source__eos
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.dm_hr_offboarding_view_form
+#, python-format
+msgid "مكافأة نهاية الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_line__notes
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__note
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__note
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "ملاحظات"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__finance_note
+msgid "ملاحظات المالية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__manager_note
+msgid "ملاحظات المدير"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__hr_note
+msgid "ملاحظات الموارد البشرية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__employee_note
+msgid "ملاحظات الموظف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__confidential_notes
+msgid "ملاحظات سرية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__reason_summary
+msgid "ملخص الأسباب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__cancelled
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_approval_item__state__cancelled
+msgid "ملغي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding_settlement__state__cancelled
+msgid "ملغية"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__state__done
+msgid "منتهي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields.selection,name:dm_hr_offboarding.selection__dm_hr_offboarding__employee_status__terminated
+msgid "منتهي الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_type__default_entitlement_ratio
+msgid "نسبة الاستحقاق الافتراضية %"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__first_period_month_ratio
+msgid "نسبة شهر للشريحة الأولى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_rule__later_period_month_ratio
+msgid "نسبة شهر لما بعد الشريحة الأولى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_transfer_company
+msgid "نقل لشركة أخرى"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.actions.report,name:dm_hr_offboarding.action_report_clearance
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_clearance
+msgid "نموذج إخلاء طرف"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__contract_end_date
+msgid "نهاية العقد"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#: model:ir.model,name:dm_hr_offboarding.model_dm_hr_offboarding_type
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding__termination_type_id
+#, python-format
+msgid "نوع إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#. odoo-python
+#: code:addons/dm_hr_offboarding/models/dm_hr_offboarding.py:0
+#, python-format
+msgid "نوع الإنهاء غير مستحق للمكافأة."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_approval_policy__request_type
+msgid "نوع الطلب"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_offboarding_clearance_department__default_description
+msgid "وصف افتراضي"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:dm.hr.offboarding.type,name:dm_hr_offboarding.offboarding_type_death
+msgid "وفاة"
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model_terms:ir.ui.view,arch_db:dm_hr_offboarding.report_offboarding_document
+msgid ""
+"يعتمد هذا المستند من سجلات نظام الموارد البشرية، مع حفظ كامل سجل الإجراءات "
+"والموافقات في الطلب."
+msgstr ""
+
+#. module: dm_hr_offboarding
+#: model:ir.model.fields,field_description:dm_hr_offboarding.field_dm_hr_exit_interview__can_return
+msgid "يمكن إعادة التوظيف مستقبلًا"
+msgstr ""

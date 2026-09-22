@@ -16,149 +16,198 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_leave_hub
 msgid "DM HR Leave Hub"
 msgstr "مركز الإجازات الذكي"
 
+#. module: dm_hr_leave_hub
 msgid "Smart Leave Hub"
 msgstr "مركز الإجازات الذكي"
 
+#. module: dm_hr_leave_hub
 msgid "Unified Arabic leave interface for balances, allocations and approvals"
 msgstr "واجهة عربية موحدة للإجازات والأرصدة والاعتمادات"
 
+#. module: dm_hr_leave_hub
 msgid "Leave Hub"
 msgstr "مركز الإجازات"
 
+#. module: dm_hr_leave_hub
 msgid "Leave Balance Wizard"
 msgstr "إضافة رصيد إجازات للموظفين"
 
+#. module: dm_hr_leave_hub
 msgid "Leave Annual Allocation Wizard"
 msgstr "توليد رصيد الإجازة السنوية السعودية"
 
+#. module: dm_hr_leave_hub
 msgid "Employees"
 msgstr "الموظفون"
 
+#. module: dm_hr_leave_hub
 msgid "Leave Type"
 msgstr "نوع الإجازة"
 
+#. module: dm_hr_leave_hub
 msgid "Number of Days"
 msgstr "عدد الأيام"
 
+#. module: dm_hr_leave_hub
 msgid "Date From"
 msgstr "بداية الصلاحية"
 
+#. module: dm_hr_leave_hub
 msgid "Date To"
 msgstr "نهاية الصلاحية"
 
+#. module: dm_hr_leave_hub
 msgid "Reason"
 msgstr "السبب"
 
+#. module: dm_hr_leave_hub
 msgid "Validate Now"
 msgstr "اعتماد الرصيد مباشرة"
 
+#. module: dm_hr_leave_hub
 msgid "Year"
 msgstr "السنة"
 
+#. module: dm_hr_leave_hub
 msgid "Allocation Origin"
 msgstr "مصدر الرصيد"
 
+#. module: dm_hr_leave_hub
 msgid "Manual HR"
 msgstr "إضافة يدوية من الموارد البشرية"
 
+#. module: dm_hr_leave_hub
 msgid "Saudi Annual Auto"
 msgstr "استحقاق سنوي سعودي تلقائي"
 
+#. module: dm_hr_leave_hub
 msgid "Auto Annual Year"
 msgstr "سنة الاستحقاق السنوي"
 
+#. module: dm_hr_leave_hub
 msgid "Leave"
 msgstr "إجازة"
 
+#. module: dm_hr_leave_hub
 msgid "Allocation"
 msgstr "الرصيد"
 
+#. module: dm_hr_leave_hub
 msgid "Allocations"
 msgstr "الأرصدة"
 
+#. module: dm_hr_leave_hub
 msgid "Balance"
 msgstr "الرصيد"
 
+#. module: dm_hr_leave_hub
 msgid "Balances"
 msgstr "الأرصدة"
 
+#. module: dm_hr_leave_hub
 msgid "Taken"
 msgstr "المستخدم"
 
+#. module: dm_hr_leave_hub
 msgid "Allocated"
 msgstr "المخصص"
 
+#. module: dm_hr_leave_hub
 msgid "Remaining"
 msgstr "المتبقي"
 
+#. module: dm_hr_leave_hub
 msgid "Unlimited"
 msgstr "غير محدود"
 
+#. module: dm_hr_leave_hub
 msgid "Unit"
 msgstr "الوحدة"
 
+#. module: dm_hr_leave_hub
 msgid "Percentage"
 msgstr "النسبة"
 
+#. module: dm_hr_leave_hub
 msgid "Hour"
 msgstr "ساعة"
 
+#. module: dm_hr_leave_hub
 msgid "Day"
 msgstr "يوم"
 
+#. module: dm_hr_leave_hub
 msgid "New Request"
 msgstr "طلب جديد"
 
+#. module: dm_hr_leave_hub
 msgid "My Leaves"
 msgstr "إجازاتي"
 
+#. module: dm_hr_leave_hub
 msgid "Calendar"
 msgstr "تقويم"
 
+#. module: dm_hr_leave_hub
 msgid "Approvals"
 msgstr "الاعتمادات"
 
+#. module: dm_hr_leave_hub
 msgid "Allocation Approvals"
 msgstr "اعتمادات الأرصدة"
 
+#. module: dm_hr_leave_hub
 msgid "Types"
 msgstr "الأنواع"
 
+#. module: dm_hr_leave_hub
 msgid "Accruals"
 msgstr "الاستحقاقات"
 
+#. module: dm_hr_leave_hub
 msgid "Reports"
 msgstr "التقارير"
 
+#. module: dm_hr_leave_hub
 msgid "Manual Balance"
 msgstr "إضافة رصيد يدوي"
 
+#. module: dm_hr_leave_hub
 msgid "Annual Balance"
 msgstr "الرصيد السنوي"
 
+#. module: dm_hr_leave_hub
 msgid "Leave Balance Added"
 msgstr "الأرصدة الإجازات المضافة"
 
+#. module: dm_hr_leave_hub
 msgid "Generated Annual Allocations"
 msgstr "الأرصدة السنوية المولدة"
 
+#. module: dm_hr_leave_hub
 msgid "No employee linked to user"
 msgstr "لا يوجد موظف مرتبط بالمستخدم"
 
+#. module: dm_hr_leave_hub
 msgid "No leave type configured"
 msgstr "لم يتم تحديد نوع إجازة"
 
+#. module: dm_hr_leave_hub
 msgid "Leave balance must be greater than zero"
 msgstr "رصيد الإجازة يجب أن يكون أكبر من صفر"
 
+#. module: dm_hr_leave_hub
 msgid "End of validity must be after start"
 msgstr "نهاية صلاحية الرصيد يجب أن تكون بعد بداية الصلاحية"
 
+#. module: dm_hr_leave_hub
 msgid "You do not have permission to add leave balances"
 msgstr "إضافة أرصدة الإجازات متاحة لمسؤول الموارد البشرية فقط"
 
+#. module: dm_hr_leave_hub
 msgid "You do not have permission to generate annual allocations"
 msgstr "توليد الرصيد السنوي متاح لمسؤول الموارد البشرية فقط"

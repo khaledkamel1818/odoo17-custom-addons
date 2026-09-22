@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dm_hr_asset_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-22 17:09+0000\n"
+"PO-Revision-Date: 2026-09-22 17:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dm_hr_asset_custody
+#: model_terms:ir.ui.view,arch_db:dm_hr_asset_custody.dm_hr_custody_view_form_inherit_asset
+msgid ""
+"<span class=\"o_stat_text\">الأصل</span>\n"
+"                            <span class=\"o_stat_value\">فتح</span>"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model,name:dm_hr_asset_custody.model_account_asset_asset
+msgid "Asset/Revenue Recognition"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,help:dm_hr_asset_custody.field_dm_hr_custody__asset_state
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#. odoo-python
+#: code:addons/dm_hr_asset_custody/models/dm_hr_asset_custody.py:0
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_id
+#: model_terms:ir.ui.view,arch_db:dm_hr_asset_custody.dm_hr_custody_view_form_inherit_asset
+#, python-format
+msgid "الأصل المحاسبي"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_offboarding_clearance_line__asset_id
+msgid "الأصل المرتبط"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model_terms:ir.ui.view,arch_db:dm_hr_asset_custody.dm_hr_custody_view_form_inherit_asset
+msgid ""
+"الربط هنا لا ينقل الأصل محاسبيًا ولا يعدّل قيوده؛ هو ربط تشغيلي بين عهدة "
+"الموظف وسجل الأصل الثابت."
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model_terms:ir.ui.view,arch_db:dm_hr_asset_custody.account_asset_asset_form_inherit_hr_custody
+msgid "العهد"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model,name:dm_hr_asset_custody.model_dm_hr_custody
+msgid "العهد غير المالية"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_offboarding_clearance_line__asset_residual_value
+msgid "القيمة الدفترية"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_residual_value
+msgid "القيمة الدفترية المتبقية"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_account_asset_asset__current_custody_employee_id
+msgid "الموظف المستلم حاليًا"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model,name:dm_hr_asset_custody.model_dm_hr_offboarding_clearance_line
+msgid "بند إخلاء طرف إنهاء الخدمة"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_category_id
+msgid "تصنيف الأصل"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_state
+msgid "حالة الأصل"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_account_asset_asset__custody_count
+msgid "عدد العهد"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_currency_id
+msgid "عملة الأصل"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#. odoo-python
+#: code:addons/dm_hr_asset_custody/models/dm_hr_asset_custody.py:0
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_account_asset_asset__custody_ids
+#: model_terms:ir.ui.view,arch_db:dm_hr_asset_custody.account_asset_asset_form_inherit_hr_custody
+#, python-format
+msgid "عهد الموظفين"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,field_description:dm_hr_asset_custody.field_dm_hr_custody__asset_value
+msgid "قيمة الأصل"
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#. odoo-python
+#: code:addons/dm_hr_asset_custody/models/dm_hr_asset_custody.py:0
+#, python-format
+msgid ""
+"لا يمكن ربط العهدة بهذا الأصل لأن الشركة مختلفة.\n"
+"\n"
+"شركة العهدة: %(custody_company)s\n"
+"شركة الأصل: %(asset_company)s\n"
+"\n"
+"اختر أصلًا تابعًا لنفس الشركة أو عدّل شركة العهدة قبل الحفظ."
+msgstr ""
+
+#. module: dm_hr_asset_custody
+#: model:ir.model.fields,help:dm_hr_asset_custody.field_dm_hr_custody__asset_id
+#: model:ir.model.fields,help:dm_hr_asset_custody.field_dm_hr_offboarding_clearance_line__asset_id
+msgid ""
+"يربط العهدة غير المالية بسجل الأصل الثابت في المالية دون تكرار بيانات الأصل."
+msgstr ""

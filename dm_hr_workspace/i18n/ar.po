@@ -16,269 +16,358 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_workspace
 msgid "DM HR Workspace"
 msgstr "منصة الموارد البشرية"
 
+#. module: dm_hr_workspace
 msgid "Professional HR workspace for employee, manager and HR"
 msgstr "واجهة عمل احترافية للموظف والمدير والموارد البشرية"
 
+#. module: dm_hr_workspace
 msgid "My Workspace"
 msgstr "مساحة العمل الخاصة بي"
 
+#. module: dm_hr_workspace
 msgid "HR Platform"
 msgstr "منصة الموارد البشرية"
 
+#. module: dm_hr_workspace
 msgid "Smart Cards"
 msgstr "بطاقات ذكية"
 
+#. module: dm_hr_workspace
 msgid "Leaves"
 msgstr "الإجازات"
 
+#. module: dm_hr_workspace
 msgid "Attendance"
 msgstr "الحضور"
 
+#. module: dm_hr_workspace
 msgid "Requests"
 msgstr "الطلبات"
 
+#. module: dm_hr_workspace
 msgid "Alerts"
 msgstr "التنبيهات"
 
+#. module: dm_hr_workspace
 msgid "Compliance"
 msgstr "الامتثال"
 
+#. module: dm_hr_workspace
 msgid "Self Service"
 msgstr "الخدمات الذاتية"
 
+#. module: dm_hr_workspace
 msgid "Team Management"
 msgstr "إدارة الفريق والموافقات"
 
+#. module: dm_hr_workspace
 msgid "HR Operations"
 msgstr "عمليات الموارد البشرية"
 
+#. module: dm_hr_workspace
 msgid "My Requests"
 msgstr "طلباتي"
 
+#. module: dm_hr_workspace
 msgid "My Leaves"
 msgstr "إجازاتي"
 
+#. module: dm_hr_workspace
 msgid "My Attendance"
 msgstr "حضوري وانصرافي"
 
+#. module: dm_hr_workspace
 msgid "Approvals"
 msgstr "الموافقات"
 
+#. module: dm_hr_workspace
 msgid "Documents"
 msgstr "المستندات"
 
+#. module: dm_hr_workspace
 msgid "Employees"
 msgstr "الموظفون"
 
+#. module: dm_hr_workspace
 msgid "Contracts"
 msgstr "العقود"
 
+#. module: dm_hr_workspace
 msgid "Shifts"
 msgstr "ورديات العمل"
 
+#. module: dm_hr_workspace
 msgid "Insurance"
 msgstr "التأمين الطبي"
 
+#. module: dm_hr_workspace
 msgid "Allowances"
 msgstr "البدلات"
 
+#. module: dm_hr_workspace
 msgid "Reports"
 msgstr "التقارير والتحليل"
 
+#. module: dm_hr_workspace
 msgid "Settings"
 msgstr "الإعدادات المرنة"
 
+#. module: dm_hr_workspace
 msgid "Approval Policies"
 msgstr "موافقات طلبات الخدمات"
 
+#. module: dm_hr_workspace
 msgid "Leave Approvals"
 msgstr "موافقات الإجازات"
 
+#. module: dm_hr_workspace
 msgid "Service Request"
 msgstr "طلب خدمة"
 
+#. module: dm_hr_workspace
 msgid "Service Requests"
 msgstr "طلبات الخدمات"
 
+#. module: dm_hr_workspace
 msgid "Leave Request"
 msgstr "طلب إجازة"
 
+#. module: dm_hr_workspace
 msgid "Attendance Correction"
 msgstr "تصحيح حضور"
 
+#. module: dm_hr_workspace
 msgid "Financial Request"
 msgstr "طلب مالي"
 
+#. module: dm_hr_workspace
 msgid "Leave Purchase"
 msgstr "شراء إجازة"
 
+#. module: dm_hr_workspace
 msgid "Balance Request"
 msgstr "طلب إضافة رصيد"
 
+#. module: dm_hr_workspace
 msgid "Check In"
 msgstr "تسجيل حضور"
 
+#. module: dm_hr_workspace
 msgid "Check Out"
 msgstr "تسجيل انصراف"
 
+#. module: dm_hr_workspace
 msgid "Present Today"
 msgstr "حاضر اليوم"
 
+#. module: dm_hr_workspace
 msgid "Attendance Records Today"
 msgstr "سجلات حضور اليوم"
 
+#. module: dm_hr_workspace
 msgid "Last Check In"
 msgstr "آخر حضور"
 
+#. module: dm_hr_workspace
 msgid "Last Check Out"
 msgstr "آخر انصراف"
 
+#. module: dm_hr_workspace
 msgid "Hours Today"
 msgstr "ساعات اليوم"
 
+#. module: dm_hr_workspace
 msgid "Pending"
 msgstr "معلق"
 
+#. module: dm_hr_workspace
 msgid "Approved"
 msgstr "معتمد"
 
+#. module: dm_hr_workspace
 msgid "Refused"
 msgstr "مرفوض"
 
+#. module: dm_hr_workspace
 msgid "Waiting Approval"
 msgstr "بانتظار الاعتماد"
 
+#. module: dm_hr_workspace
 msgid "Active Employees"
 msgstr "الموظفون النشطون"
 
+#. module: dm_hr_workspace
 msgid "My Pending Leaves"
 msgstr "إجازاتي المعلقة"
 
+#. module: dm_hr_workspace
 msgid "My Pending Requests"
 msgstr "طلباتي المعلقة"
 
+#. module: dm_hr_workspace
 msgid "Approvals Waiting for You"
 msgstr "موافقات بانتظارك"
 
+#. module: dm_hr_workspace
 msgid "Expiring Documents"
 msgstr "مستندات تنتهي قريبًا"
 
+#. module: dm_hr_workspace
 msgid "Attendance Today"
 msgstr "سجلات حضور اليوم"
 
+#. module: dm_hr_workspace
 msgid "Team Count"
 msgstr "عدد الفريق"
 
+#. module: dm_hr_workspace
 msgid "Active Count"
 msgstr "الموظفون النشطون"
 
+#. module: dm_hr_workspace
 msgid "Present Now"
 msgstr "حاضرون الآن"
 
+#. module: dm_hr_workspace
 msgid "Approved Leaves"
 msgstr "إجازات معتمدة"
 
+#. module: dm_hr_workspace
 msgid "Approved Requests"
 msgstr "طلبات معتمدة"
 
+#. module: dm_hr_workspace
 msgid "Request Permission"
 msgstr "استئذان"
 
+#. module: dm_hr_workspace
 msgid "Letter"
 msgstr "خطاب تعريف"
 
+#. module: dm_hr_workspace
 msgid "Salary Transfer"
 msgstr "تثبيت راتب"
 
+#. module: dm_hr_workspace
 msgid "Other Request"
 msgstr "طلب آخر"
 
+#. module: dm_hr_workspace
 msgid "No employee linked"
 msgstr "لا يوجد موظف مرتبط"
 
+#. module: dm_hr_workspace
 msgid "Link user to employee"
 msgstr "اربط المستخدم بملف الموظف"
 
+#. module: dm_hr_workspace
 msgid "ID/Iqama"
 msgstr "هوية / إقامة"
 
+#. module: dm_hr_workspace
 msgid "Valid"
 msgstr "صالحة"
 
+#. module: dm_hr_workspace
 msgid "Missing or expiring soon"
 msgstr "ناقصة أو تنتهي قريبًا"
 
+#. module: dm_hr_workspace
 msgid "Social Insurance"
 msgstr "التأمينات الاجتماعية"
 
+#. module: dm_hr_workspace
 msgid "Category and number required"
 msgstr "تحتاج فئة ورقم اشتراك"
 
+#. module: dm_hr_workspace
 msgid "Contract"
 msgstr "العقد الوظيفي"
 
+#. module: dm_hr_workspace
 msgid "Active contract found"
 msgstr "يوجد عقد نشط/مسودة"
 
+#. module: dm_hr_workspace
 msgid "No active contract"
 msgstr "لا يوجد عقد نشط"
 
+#. module: dm_hr_workspace
 msgid "Salary Protection"
 msgstr "حماية الأجور"
 
+#. module: dm_hr_workspace
 msgid "Bank and IBAN complete"
 msgstr "بيانات بنكية وتحويل راتب مكتملة"
 
+#. module: dm_hr_workspace
 msgid "Needs bank/IBAN and bank transfer contract"
 msgstr "تحتاج بنك/IBAN وعقد بتحويل بنكي"
 
+#. module: dm_hr_workspace
 msgid "Medical Insurance"
 msgstr "التأمين الطبي"
 
+#. module: dm_hr_workspace
 msgid "Active policy found"
 msgstr "وثيقة نشطة"
 
+#. module: dm_hr_workspace
 msgid "No active policy"
 msgstr "لا توجد وثيقة نشطة"
 
+#. module: dm_hr_workspace
 msgid "Employee Documents"
 msgstr "مستندات الموظف"
 
+#. module: dm_hr_workspace
 msgid "Documents found"
 msgstr "يوجد مستندات"
 
+#. module: dm_hr_workspace
 msgid "Add basic documents"
 msgstr "أضف المستندات الأساسية"
 
+#. module: dm_hr_workspace
 msgid "My Profile"
 msgstr "ملفي الوظيفي"
 
+#. module: dm_hr_workspace
 msgid "Request Leave"
 msgstr "طلب إجازة"
 
+#. module: dm_hr_workspace
 msgid "Permission"
 msgstr "استئذان"
 
+#. module: dm_hr_workspace
 msgid "Salary Certificate"
 msgstr "خطاب تعريف بالراتب"
 
+#. module: dm_hr_workspace
 msgid "Business Trip"
 msgstr "انتداب / مهمة عمل"
 
+#. module: dm_hr_workspace
 msgid "Custody"
 msgstr "العهدة"
 
+#. module: dm_hr_workspace
 msgid "Data Update"
 msgstr "تحديث بيانات أو مستندات"
 
+#. module: dm_hr_workspace
 msgid "Overtime"
 msgstr "طلب ساعات إضافية"
 
+#. module: dm_hr_workspace
 msgid "Work Remotely"
 msgstr "عمل عن بعد"
 
+#. module: dm_hr_workspace
 msgid "Experience Certificate"
 msgstr "شهادة خبرة"

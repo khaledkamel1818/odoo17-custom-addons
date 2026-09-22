@@ -16,590 +16,786 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_core
 msgid "DM HR Core"
 msgstr "الموارد البشرية الأساسية"
 
+#. module: dm_hr_core
 msgid "DM HR"
 msgstr "الموارد البشرية"
 
+#. module: dm_hr_core
 msgid "HR Profile"
 msgstr "ملف الموارد البشرية"
 
+#. module: dm_hr_core
 msgid "HR Portfolio"
 msgstr "ملف الموظف الشامل"
 
+#. module: dm_hr_core
 msgid "Identity"
 msgstr "الهوية"
 
+#. module: dm_hr_core
 msgid "Employee Identity"
 msgstr "هوية الموظف"
 
+#. module: dm_hr_core
 msgid "Employment Snapshot"
 msgstr "ملخص التوظيف"
 
+#. module: dm_hr_core
 msgid "Identity, employment status, and Saudi HR reference data."
 msgstr "بيانات الهوية وحالة التوظيف ومرجع بيانات الموارد البشرية السعودية."
 
+#. module: dm_hr_core
 msgid "Contract Controls"
 msgstr "إعدادات العقد"
 
+#. module: dm_hr_core
 msgid "Terms"
 msgstr "الشروط"
 
+#. module: dm_hr_core
 msgid "Lifecycle"
 msgstr "دورة العقد"
 
+#. module: dm_hr_core
 msgid "Family and Dependents"
 msgstr "العائلة والمرافقون"
 
+#. module: dm_hr_core
 msgid "Medical Insurance"
 msgstr "التأمين الطبي"
 
+#. module: dm_hr_core
 msgid "Employee Documents"
 msgstr "مستندات الموظف"
 
+#. module: dm_hr_core
 msgid "Allowance Type"
 msgstr "نوع البدل"
 
+#. module: dm_hr_core
 msgid "Allowance Types"
 msgstr "أنواع البدلات"
 
+#. module: dm_hr_core
 msgid "Allowances"
 msgstr "البدلات"
 
+#. module: dm_hr_core
 msgid "Contract Allowance"
 msgstr "بدل العقد"
 
+#. module: dm_hr_core
 msgid "Contract Allowances"
 msgstr "بدلات العقد"
 
+#. module: dm_hr_core
 msgid "Employee Special Allowance"
 msgstr "بدل خاص للموظف"
 
+#. module: dm_hr_core
 msgid "Employee Special Allowances"
 msgstr "البدلات الخاصة للموظفين"
 
+#. module: dm_hr_core
 msgid "Special Allowances"
 msgstr "البدلات الخاصة"
 
+#. module: dm_hr_core
 msgid "Allowance Value"
 msgstr "قيمة البدل"
 
+#. module: dm_hr_core
 msgid "Calculation Setup"
 msgstr "إعدادات الاحتساب"
 
+#. module: dm_hr_core
 msgid "Calculation"
 msgstr "الاحتساب"
 
+#. module: dm_hr_core
 msgid "Payroll Flags"
 msgstr "خيارات الرواتب"
 
+#. module: dm_hr_core
 msgid "Source"
 msgstr "المصدر"
 
+#. module: dm_hr_core
 msgid "Amount"
 msgstr "المبلغ"
 
+#. module: dm_hr_core
 msgid "Calculation Type"
 msgstr "طريقة الاحتساب"
 
+#. module: dm_hr_core
 msgid "Fixed Amount"
 msgstr "مبلغ ثابت"
 
+#. module: dm_hr_core
 msgid "Percentage of Basic Salary"
 msgstr "نسبة من الراتب الأساسي"
 
+#. module: dm_hr_core
 msgid "Percentage of Another Component"
 msgstr "نسبة من مكون آخر"
 
+#. module: dm_hr_core
 msgid "Percent (%)"
 msgstr "النسبة (%)"
 
+#. module: dm_hr_core
 msgid "Percent of Allowance Type"
 msgstr "نسبة من نوع بدل"
 
+#. module: dm_hr_core
 msgid "Frequency"
 msgstr "التكرار"
 
+#. module: dm_hr_core
 msgid "Monthly"
 msgstr "شهري"
 
+#. module: dm_hr_core
 msgid "One-Time"
 msgstr "مرة واحدة"
 
+#. module: dm_hr_core
 msgid "Subject to Social Insurance"
 msgstr "خاضع للتأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Include in Net Salary"
 msgstr "يدخل في صافي الراتب"
 
+#. module: dm_hr_core
 msgid "Show on Payslip"
 msgstr "إظهاره في مسير الراتب"
 
+#. module: dm_hr_core
 msgid "Insurance Provider"
 msgstr "مزود التأمين"
 
+#. module: dm_hr_core
 msgid "Insurance Providers"
 msgstr "مزودو التأمين"
 
+#. module: dm_hr_core
 msgid "Insurance Policies"
 msgstr "وثائق التأمين"
 
+#. module: dm_hr_core
 msgid "Employee Insurance Policy"
 msgstr "وثيقة تأمين الموظف"
 
+#. module: dm_hr_core
 msgid "Employee Insurance Policies"
 msgstr "وثائق تأمين الموظفين"
 
+#. module: dm_hr_core
 msgid "Provider Details"
 msgstr "بيانات المزود"
 
+#. module: dm_hr_core
 msgid "Provider Type"
 msgstr "نوع المزود"
 
+#. module: dm_hr_core
 msgid "Related Partner"
 msgstr "جهة الاتصال المرتبطة"
 
+#. module: dm_hr_core
 msgid "Policy Details"
 msgstr "بيانات الوثيقة"
 
+#. module: dm_hr_core
 msgid "Employee and Policy"
 msgstr "الموظف والوثيقة"
 
+#. module: dm_hr_core
 msgid "Premium Sharing"
 msgstr "توزيع القسط"
 
+#. module: dm_hr_core
 msgid "Policy No"
 msgstr "رقم الوثيقة"
 
+#. module: dm_hr_core
 msgid "Policy Type"
 msgstr "نوع الوثيقة"
 
+#. module: dm_hr_core
 msgid "Monthly Premium"
 msgstr "القسط الشهري"
 
+#. module: dm_hr_core
 msgid "Employee Share (%)"
 msgstr "حصة الموظف (%)"
 
+#. module: dm_hr_core
 msgid "Employer Share (%)"
 msgstr "حصة صاحب العمل (%)"
 
+#. module: dm_hr_core
 msgid "Medical"
 msgstr "طبي"
 
+#. module: dm_hr_core
 msgid "Life"
 msgstr "حياة"
 
+#. module: dm_hr_core
 msgid "Social Insurance"
 msgstr "التأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Social Insurance Scheme"
 msgstr "نظام التأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Social Insurance Schemes"
 msgstr "أنظمة التأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Social Insurance Rate"
 msgstr "نسبة التأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Scheme"
 msgstr "النظام"
 
+#. module: dm_hr_core
 msgid "Scheme Setup"
 msgstr "إعدادات النظام"
 
+#. module: dm_hr_core
 msgid "Rates"
 msgstr "النسب"
 
+#. module: dm_hr_core
 msgid "Ratios (%)"
 msgstr "النسب (%)"
 
+#. module: dm_hr_core
 msgid "Insurable Wage"
 msgstr "الأجر الخاضع للتأمين"
 
+#. module: dm_hr_core
 msgid "Insurable Allowance Types"
 msgstr "أنواع البدلات الخاضعة للتأمين"
 
+#. module: dm_hr_core
 msgid "Insurable Allowances"
 msgstr "البدلات الخاضعة للتأمين"
 
+#. module: dm_hr_core
 msgid "Rates (insurable allowances)"
 msgstr "النسب والبدلات الخاضعة للتأمين"
 
+#. module: dm_hr_core
 msgid "GOSI Employee Ratio (%)"
 msgstr "نسبة الموظف في التأمينات (%)"
 
+#. module: dm_hr_core
 msgid "GOSI Employer Ratio (%)"
 msgstr "نسبة صاحب العمل في التأمينات (%)"
 
+#. module: dm_hr_core
 msgid "Sanad / Additional Ratio (%)"
 msgstr "نسبة ساند / النسبة الإضافية (%)"
 
+#. module: dm_hr_core
 msgid "Minimum Insurable Wage"
 msgstr "الحد الأدنى للأجر الخاضع للتأمين"
 
+#. module: dm_hr_core
 msgid "Maximum Insurable Wage"
 msgstr "الحد الأعلى للأجر الخاضع للتأمين"
 
+#. module: dm_hr_core
 msgid "Currently Effective"
 msgstr "ساري حالياً"
 
+#. module: dm_hr_core
 msgid "Effective From"
 msgstr "ساري من"
 
+#. module: dm_hr_core
 msgid "Effective To"
 msgstr "ساري إلى"
 
+#. module: dm_hr_core
 msgid "Dependents"
 msgstr "المرافقون"
 
+#. module: dm_hr_core
 msgid "Employee Dependent"
 msgstr "مرافق الموظف"
 
+#. module: dm_hr_core
 msgid "Dependent Details"
 msgstr "بيانات المرافق"
 
+#. module: dm_hr_core
 msgid "Person"
 msgstr "الشخص"
 
+#. module: dm_hr_core
 msgid "Coverage"
 msgstr "التغطية"
 
+#. module: dm_hr_core
 msgid "Relationship"
 msgstr "صلة القرابة"
 
+#. module: dm_hr_core
 msgid "Spouse"
 msgstr "زوج/زوجة"
 
+#. module: dm_hr_core
 msgid "Child"
 msgstr "ابن/ابنة"
 
+#. module: dm_hr_core
 msgid "Father"
 msgstr "الأب"
 
+#. module: dm_hr_core
 msgid "Mother"
 msgstr "الأم"
 
+#. module: dm_hr_core
 msgid "Included in Social Insurance"
 msgstr "مشمول في التأمينات الاجتماعية"
 
+#. module: dm_hr_core
 msgid "Employee Document"
 msgstr "مستند الموظف"
 
+#. module: dm_hr_core
 msgid "Document Details"
 msgstr "بيانات المستند"
 
+#. module: dm_hr_core
 msgid "Document"
 msgstr "مستند"
 
+#. module: dm_hr_core
 msgid "Document Type"
 msgstr "نوع المستند"
 
+#. module: dm_hr_core
 msgid "Dates and Reference"
 msgstr "التواريخ والمرجع"
 
+#. module: dm_hr_core
 msgid "Reference No"
 msgstr "رقم المرجع"
 
+#. module: dm_hr_core
 msgid "Issue Date"
 msgstr "تاريخ الإصدار"
 
+#. module: dm_hr_core
 msgid "Expiry Date"
 msgstr "تاريخ الانتهاء"
 
+#. module: dm_hr_core
 msgid "File"
 msgstr "الملف"
 
+#. module: dm_hr_core
 msgid "Iqama / National ID"
 msgstr "الإقامة / الهوية الوطنية"
 
+#. module: dm_hr_core
 msgid "Iqama / National ID Expiry"
 msgstr "انتهاء الإقامة / الهوية الوطنية"
 
+#. module: dm_hr_core
 msgid "Passport"
 msgstr "جواز السفر"
 
+#. module: dm_hr_core
 msgid "Medical Policy"
 msgstr "وثيقة التأمين الطبي"
 
+#. module: dm_hr_core
 msgid "Education Certificate"
 msgstr "الشهادة التعليمية"
 
+#. module: dm_hr_core
 msgid "Contract / Salary History"
 msgstr "سجل العقد والراتب"
 
+#. module: dm_hr_core
 msgid "History Entry"
 msgstr "قيد السجل"
 
+#. module: dm_hr_core
 msgid "Reference"
 msgstr "المرجع"
 
+#. module: dm_hr_core
 msgid "Change"
 msgstr "التغيير"
 
+#. module: dm_hr_core
 msgid "Change Type"
 msgstr "نوع التغيير"
 
+#. module: dm_hr_core
 msgid "Effective Date"
 msgstr "تاريخ السريان"
 
+#. module: dm_hr_core
 msgid "Previous Wage"
 msgstr "الراتب السابق"
 
+#. module: dm_hr_core
 msgid "New Wage"
 msgstr "الراتب الجديد"
 
+#. module: dm_hr_core
 msgid "Creation"
 msgstr "إنشاء"
 
+#. module: dm_hr_core
 msgid "Wage Change"
 msgstr "تغيير الراتب"
 
+#. module: dm_hr_core
 msgid "Renewal"
 msgstr "تجديد"
 
+#. module: dm_hr_core
 msgid "Termination"
 msgstr "إنهاء"
 
+#. module: dm_hr_core
 msgid "Employee"
 msgstr "الموظف"
 
+#. module: dm_hr_core
 msgid "Employee Number"
 msgstr "الرقم الوظيفي"
 
+#. module: dm_hr_core
 msgid "Name"
 msgstr "الاسم"
 
+#. module: dm_hr_core
 msgid "Name (Arabic)"
 msgstr "الاسم بالعربية"
 
+#. module: dm_hr_core
 msgid "Employment Status"
 msgstr "حالة التوظيف"
 
+#. module: dm_hr_core
 msgid "GOSI Category"
 msgstr "فئة التأمينات"
 
+#. module: dm_hr_core
 msgid "GOSI Employee Category"
 msgstr "فئة الموظف في التأمينات"
 
+#. module: dm_hr_core
 msgid "Saudi"
 msgstr "سعودي"
 
+#. module: dm_hr_core
 msgid "Non-Saudi"
 msgstr "غير سعودي"
 
+#. module: dm_hr_core
 msgid "Active"
 msgstr "نشط"
 
+#. module: dm_hr_core
 msgid "On Leave"
 msgstr "في إجازة"
 
+#. module: dm_hr_core
 msgid "Suspended"
 msgstr "موقوف"
 
+#. module: dm_hr_core
 msgid "Terminated"
 msgstr "منتهي الخدمة"
 
+#. module: dm_hr_core
 msgid "Scheduled"
 msgstr "مجدول"
 
+#. module: dm_hr_core
 msgid "Expired"
 msgstr "منتهي"
 
+#. module: dm_hr_core
 msgid "Currently Active"
 msgstr "نشط حالياً"
 
+#. module: dm_hr_core
 msgid "Status"
 msgstr "الحالة"
 
+#. module: dm_hr_core
 msgid "Blood Type"
 msgstr "فصيلة الدم"
 
+#. module: dm_hr_core
 msgid "Join Date"
 msgstr "تاريخ الالتحاق"
 
+#. module: dm_hr_core
 msgid "Emergency Contact"
 msgstr "جهة اتصال الطوارئ"
 
+#. module: dm_hr_core
 msgid "Emergency Contact Phone"
 msgstr "هاتف الطوارئ"
 
+#. module: dm_hr_core
 msgid "Social Security No (GOSI)"
 msgstr "رقم الاشتراك في التأمينات"
 
+#. module: dm_hr_core
 msgid "Contracts"
 msgstr "العقود"
 
+#. module: dm_hr_core
 msgid "Attendance"
 msgstr "الحضور"
 
+#. module: dm_hr_core
 msgid "Leaves"
 msgstr "الإجازات"
 
+#. module: dm_hr_core
 msgid "Requests"
 msgstr "الطلبات"
 
+#. module: dm_hr_core
 msgid "Contract"
 msgstr "العقد"
 
+#. module: dm_hr_core
 msgid "Contract Class"
 msgstr "فئة العقد"
 
+#. module: dm_hr_core
 msgid "Permanent"
 msgstr "دائم"
 
+#. module: dm_hr_core
 msgid "Fixed Term"
 msgstr "محدد المدة"
 
+#. module: dm_hr_core
 msgid "Part Time"
 msgstr "دوام جزئي"
 
+#. module: dm_hr_core
 msgid "Training"
 msgstr "تدريب"
 
+#. module: dm_hr_core
 msgid "GOSI Insured"
 msgstr "مشترك في التأمينات"
 
+#. module: dm_hr_core
 msgid "Medical Insurance Policy"
 msgstr "وثيقة التأمين الطبي"
 
+#. module: dm_hr_core
 msgid "Probation End Date"
 msgstr "تاريخ انتهاء التجربة"
 
+#. module: dm_hr_core
 msgid "Notice Period (Days)"
 msgstr "مدة الإشعار (أيام)"
 
+#. module: dm_hr_core
 msgid "Payment Method"
 msgstr "طريقة الدفع"
 
+#. module: dm_hr_core
 msgid "Bank Transfer"
 msgstr "تحويل بنكي"
 
+#. module: dm_hr_core
 msgid "Cash"
 msgstr "نقداً"
 
+#. module: dm_hr_core
 msgid "Cheque"
 msgstr "شيك"
 
+#. module: dm_hr_core
 msgid "Working Days per Week"
 msgstr "أيام العمل أسبوعياً"
 
+#. module: dm_hr_core
 msgid "Auto Renew"
 msgstr "تجديد تلقائي"
 
+#. module: dm_hr_core
 msgid "Contract State"
 msgstr "حالة العقد"
 
+#. module: dm_hr_core
 msgid "Draft"
 msgstr "مسودة"
 
+#. module: dm_hr_core
 msgid "Running"
 msgstr "ساري"
 
+#. module: dm_hr_core
 msgid "Cancelled"
 msgstr "ملغى"
 
+#. module: dm_hr_core
 msgid "Closed"
 msgstr "مغلق"
 
+#. module: dm_hr_core
 msgid "Termination Reason"
 msgstr "سبب الإنهاء"
 
+#. module: dm_hr_core
 msgid "Start Date"
 msgstr "تاريخ البداية"
 
+#. module: dm_hr_core
 msgid "End Date"
 msgstr "تاريخ النهاية"
 
+#. module: dm_hr_core
 msgid "Validity"
 msgstr "الصلاحية"
 
+#. module: dm_hr_core
 msgid "Notes"
 msgstr "ملاحظات"
 
+#. module: dm_hr_core
 msgid "Code"
 msgstr "الرمز"
 
+#. module: dm_hr_core
 msgid "Code e.g. HOUSING"
 msgstr "الرمز مثل HOUSING"
 
+#. module: dm_hr_core
 msgid "Sequence"
 msgstr "التسلسل"
 
+#. module: dm_hr_core
 msgid "Company"
 msgstr "الشركة"
 
+#. module: dm_hr_core
 msgid "Currency"
 msgstr "العملة"
 
+#. module: dm_hr_core
 msgid "Other"
 msgstr "أخرى"
 
+#. module: dm_hr_core
 msgid "The employee number must be unique within the company."
 msgstr "يجب أن يكون الرقم الوظيفي فريداً داخل الشركة."
 
+#. module: dm_hr_core
 msgid "The Iqama / National ID '%s' is already used by another employee in this company."
 msgstr "الإقامة / الهوية الوطنية '%s' مستخدمة بالفعل لموظف آخر في هذه الشركة."
 
+#. module: dm_hr_core
 msgid "The allowance type code is required."
 msgstr "رمز نوع البدل مطلوب."
 
+#. module: dm_hr_core
 msgid "The allowance start date must not be after its end date."
 msgstr "يجب ألا يكون تاريخ بداية البدل بعد تاريخ نهايته."
 
+#. module: dm_hr_core
 msgid "Two allowances of the same type cannot overlap for the same employee."
 msgstr "لا يمكن تداخل بدلَين من نفس النوع للموظف نفسه."
 
+#. module: dm_hr_core
 msgid "Two allowances of the same type cannot overlap on the same contract."
 msgstr "لا يمكن تداخل بدلَين من نفس النوع على العقد نفسه."
 
+#. module: dm_hr_core
 msgid "A fixed allowance requires an amount greater than zero."
 msgstr "البدل الثابت يتطلب مبلغاً أكبر من صفر."
 
+#. module: dm_hr_core
 msgid "Percentage allowances require a percent strictly between 0 and 100."
 msgstr "البدلات النسبية تتطلب نسبة أكبر من 0 وأقل أو تساوي 100."
 
+#. module: dm_hr_core
 msgid "A percentage-of-component allowance requires another allowance type as its base."
 msgstr "البدل المحتسب كنسبة من مكون يتطلب نوع بدل آخر كأساس."
 
+#. module: dm_hr_core
 msgid "An allowance cannot be a percentage of its own type."
 msgstr "لا يمكن أن يكون البدل نسبة من نفس نوعه."
 
+#. module: dm_hr_core
 msgid "Insurance share percentages must be between 0 and 100."
 msgstr "يجب أن تكون نسب التأمين بين 0 و100."
 
+#. module: dm_hr_core
 msgid "The policy start date must not be after its end date."
 msgstr "يجب ألا يكون تاريخ بداية الوثيقة بعد تاريخ نهايتها."
 
+#. module: dm_hr_core
 msgid "Two policies of the same provider cannot overlap for the same employee."
 msgstr "لا يمكن تداخل وثيقتين من المزود نفسه للموظف نفسه."
 
+#. module: dm_hr_core
 msgid "The scheme code is required."
 msgstr "رمز النظام مطلوب."
 
+#. module: dm_hr_core
 msgid "Social insurance ratios must be between 0 and 100."
 msgstr "يجب أن تكون نسب التأمينات الاجتماعية بين 0 و100."
 
+#. module: dm_hr_core
 msgid "The effective-from date must not be after the effective-to date."
 msgstr "يجب ألا يكون تاريخ بداية السريان بعد تاريخ نهايته."
 
+#. module: dm_hr_core
 msgid "Social insurance rates for the same scheme, category and company cannot have overlapping effective periods."
 msgstr "لا يمكن تداخل نسب التأمينات للنظام والفئة والشركة نفسها في فترات سريان متداخلة."
 
+#. module: dm_hr_core
 msgid "The probation end date must not be before the contract start date."
 msgstr "يجب ألا يكون تاريخ انتهاء فترة التجربة قبل تاريخ بداية العقد."
 
+#. module: dm_hr_core
 msgid "DM HR: Expiry Alerts"
 msgstr "الموارد البشرية: تنبيهات الانتهاء"
 
+#. module: dm_hr_core
 msgid "Housing"
 msgstr "بدل السكن"
 
+#. module: dm_hr_core
 msgid "Transportation"
 msgstr "بدل النقل"
 
+#. module: dm_hr_core
 msgid "Communication"
 msgstr "بدل الاتصالات"
 
+#. module: dm_hr_core
 msgid "Meal"
 msgstr "بدل الوجبات"

@@ -16,257 +16,342 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_ui
 msgid "DM HR UI/UX"
 msgstr "واجهة الموارد البشرية الموحدة"
 
+#. module: dm_hr_ui
 msgid "Unified HR navigation and visual system for DM HR"
 msgstr "نظام تنقل وواجهة موحد للوحدات المخصصة للموارد البشرية"
 
+#. module: dm_hr_ui
 msgid "My Workspace"
 msgstr "مساحة العمل الخاصة بي"
 
+#. module: dm_hr_ui
 msgid "Personnel Affairs"
 msgstr "شؤون الموظفين"
 
+#. module: dm_hr_ui
 msgid "Employees"
 msgstr "الموظفون"
 
+#. module: dm_hr_ui
 msgid "Time and Attendance"
 msgstr "الوقت والحضور"
 
+#. module: dm_hr_ui
 msgid "Leaves"
 msgstr "الإجازات"
 
+#. module: dm_hr_ui
 msgid "Leave Hub"
 msgstr "مركز الإجازات"
 
+#. module: dm_hr_ui
 msgid "Requests and Approvals"
 msgstr "الطلبات والموافقات"
 
+#. module: dm_hr_ui
 msgid "Payroll and Finance"
 msgstr "الرواتب والطلبات المالية"
 
+#. module: dm_hr_ui
 msgid "Offboarding and Clearance"
 msgstr "إنهاء الخدمة وإخلاء الطرف"
 
+#. module: dm_hr_ui
 msgid "Reports"
 msgstr "التقارير"
 
+#. module: dm_hr_ui
 msgid "Settings"
 msgstr "الإعدادات"
 
+#. module: dm_hr_ui
 msgid "Operations"
 msgstr "العمليات"
 
+#. module: dm_hr_ui
 msgid "Employee Requests"
 msgstr "طلبات الموظفين"
 
+#. module: dm_hr_ui
 msgid "Contracts"
 msgstr "العقود"
 
+#. module: dm_hr_ui
 msgid "Leave Requests"
 msgstr "طلبات الإجازة"
 
+#. module: dm_hr_ui
 msgid "Attendance"
 msgstr "الحضور والانصراف"
 
+#. module: dm_hr_ui
 msgid "Special Allowances"
 msgstr "البدلات الخاصة"
 
+#. module: dm_hr_ui
 msgid "Insurance Documents"
 msgstr "وثائق التأمين"
 
+#. module: dm_hr_ui
 msgid "Employee Documents"
 msgstr "مستندات الموظفين"
 
+#. module: dm_hr_ui
 msgid "Dependents"
 msgstr "المرافقون"
 
+#. module: dm_hr_ui
 msgid "Contract History"
 msgstr "سجل العقد والراتب"
 
+#. module: dm_hr_ui
 msgid "Recruitment"
 msgstr "التوظيف والاحتياج"
 
+#. module: dm_hr_ui
 msgid "Manpower Requests"
 msgstr "طلبات الاحتياج الوظيفي"
 
+#. module: dm_hr_ui
 msgid "Internal Communication"
 msgstr "التواصل الداخلي"
 
+#. module: dm_hr_ui
 msgid "News and Announcements"
 msgstr "الأخبار والإعلانات"
 
+#. module: dm_hr_ui
 msgid "Circulars"
 msgstr "التعاميم"
 
+#. module: dm_hr_ui
 msgid "Acknowledgements"
 msgstr "تأكيدات الاطلاع"
 
+#. module: dm_hr_ui
 msgid "Company Documents"
 msgstr "مستندات الشركة"
 
+#. module: dm_hr_ui
 msgid "Custody"
 msgstr "العهد"
 
+#. module: dm_hr_ui
 msgid "Non-Financial Custody"
 msgstr "العهد غير المالية"
 
+#. module: dm_hr_ui
 msgid "Attendance Records"
 msgstr "سجل الحضور"
 
+#. module: dm_hr_ui
 msgid "Corrections and Violations"
 msgstr "التصحيحات والمخالفات"
 
+#. module: dm_hr_ui
 msgid "Attendance Processing"
 msgstr "اعتمادات الحضور"
 
+#. module: dm_hr_ui
 msgid "My Team"
 msgstr "فريقي"
 
+#. module: dm_hr_ui
 msgid "Team Attendance"
 msgstr "حضور الفريق"
 
+#. module: dm_hr_ui
 msgid "Pending Requests"
 msgstr "الطلبات المعلقة"
 
+#. module: dm_hr_ui
 msgid "Approve Corrections"
 msgstr "اعتماد التصحيحات"
 
+#. module: dm_hr_ui
 msgid "Team Violations"
 msgstr "مخالفات الفريق"
 
+#. module: dm_hr_ui
 msgid "Service Requests"
 msgstr "طلبات الخدمات"
 
+#. module: dm_hr_ui
 msgid "My Service Requests"
 msgstr "طلباتي"
 
+#. module: dm_hr_ui
 msgid "To Approve"
 msgstr "بانتظار موافقتي"
 
+#. module: dm_hr_ui
 msgid "Approved"
 msgstr "معتمدة"
 
+#. module: dm_hr_ui
 msgid "Rejected"
 msgstr "مرفوضة"
 
+#. module: dm_hr_ui
 msgid "Permissions"
 msgstr "الاستئذانات"
 
+#. module: dm_hr_ui
 msgid "Document Renewal"
 msgstr "تجديد الهوية والوثائق"
 
+#. module: dm_hr_ui
 msgid "Return to Work"
 msgstr "مباشرة العمل"
 
+#. module: dm_hr_ui
 msgid "Leave Request"
 msgstr "طلب إجازة"
 
+#. module: dm_hr_ui
 msgid "Return from Leave"
 msgstr "الرجوع من الإجازة"
 
+#. module: dm_hr_ui
 msgid "Cancel/Interrupt Leave"
 msgstr "إلغاء / قطع إجازة"
 
+#. module: dm_hr_ui
 msgid "Request Balance Addition"
 msgstr "طلب إضافة رصيد"
 
+#. module: dm_hr_ui
 msgid "Purchase Leave"
 msgstr "شراء إجازة"
 
+#. module: dm_hr_ui
 msgid "Shifts"
 msgstr "ورديات وجداول العمل"
 
+#. module: dm_hr_ui
 msgid "Attendance Reasons"
 msgstr "أسباب الحضور والانصراف"
 
+#. module: dm_hr_ui
 msgid "Allowance Types"
 msgstr "أنواع البدلات"
 
+#. module: dm_hr_ui
 msgid "Insurance Providers"
 msgstr "مزودو التأمين"
 
+#. module: dm_hr_ui
 msgid "Social Insurance Schemes"
 msgstr "أنظمة التأمينات الاجتماعية"
 
+#. module: dm_hr_ui
 msgid "Request Types"
 msgstr "أنواع الطلبات"
 
+#. module: dm_hr_ui
 msgid "Approval Policies"
 msgstr "موافقات طلبات الخدمات"
 
+#. module: dm_hr_ui
 msgid "Leave Approvals"
 msgstr "موافقات الإجازات"
 
+#. module: dm_hr_ui
 msgid "Leave Types"
 msgstr "أنواع الإجازات"
 
+#. module: dm_hr_ui
 msgid "Public Holidays"
 msgstr "العطل الرسمية"
 
+#. module: dm_hr_ui
 msgid "Leave Policies"
 msgstr "سياسات وتقييد الإجازات"
 
+#. module: dm_hr_ui
 msgid "Leave Balance Settings"
 msgstr "إعدادات أرصدة الإجازات"
 
+#. module: dm_hr_ui
 msgid "Finance Settings"
 msgstr "إعدادات السلف والقروض"
 
+#. module: dm_hr_ui
 msgid "Attendance Configuration"
 msgstr "إعدادات التكوين"
 
+#. module: dm_hr_ui
 msgid "Kiosk and Mobile Settings"
 msgstr "إعدادات الكشك والموبايل"
 
+#. module: dm_hr_ui
 msgid "Employee Notifications"
 msgstr "إشعارات الموظف"
 
+#. module: dm_hr_ui
 msgid "Security and Permissions"
 msgstr "الأمن والصلاحيات"
 
+#. module: dm_hr_ui
 msgid "Users and HR Roles"
 msgstr "المستخدمون وأدوار الموارد البشرية"
 
+#. module: dm_hr_ui
 msgid "Permissions Matrix"
 msgstr "مصفوفة صلاحيات الموارد البشرية"
 
+#. module: dm_hr_ui
 msgid "Service Center"
 msgstr "لوحة الخدمات"
 
+#. module: dm_hr_ui
 msgid "New Request"
 msgstr "طلب جديد"
 
+#. module: dm_hr_ui
 msgid "My Profile"
 msgstr "ملفي الوظيفي"
 
+#. module: dm_hr_ui
 msgid "Employees and Hiring"
 msgstr "الموظفون والتعيين"
 
+#. module: dm_hr_ui
 msgid "New Employee"
 msgstr "تعيين موظف جديد"
 
+#. module: dm_hr_ui
 msgid "New Contract"
 msgstr "إنشاء عقد جديد"
 
+#. module: dm_hr_ui
 msgid "Documents"
 msgstr "المستندات"
 
+#. module: dm_hr_ui
 msgid "Insurance"
 msgstr "التأمين الطبي"
 
+#. module: dm_hr_ui
 msgid "Allowances"
 msgstr "البدلات"
 
+#. module: dm_hr_ui
 msgid "Reports and Analytics"
 msgstr "التقارير والتحليل"
 
+#. module: dm_hr_ui
 msgid "Approval Policies"
 msgstr "موافقات طلبات الخدمات"
 
+#. module: dm_hr_ui
 msgid "Leave Approvals"
 msgstr "موافقات الإجازات"
 
+#. module: dm_hr_ui
 msgid "Flexible Settings"
 msgstr "الإعدادات المرنة"

@@ -16,95 +16,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
+#. module: dm_hr_asset_custody
 msgid "DM HR Custody Asset Link"
 msgstr "ربط العهد غير المالية بالأصول المحاسبية"
 
+#. module: dm_hr_asset_custody
 msgid "Link non-financial employee custody with accounting fixed assets"
 msgstr "ربط العهدة غير المالية للموظف بالأصول الثابتة في المالية"
 
+#. module: dm_hr_asset_custody
 msgid "Custody"
 msgstr "العهدة"
 
+#. module: dm_hr_asset_custody
 msgid "Asset"
 msgstr "الأصل المحاسبي"
 
+#. module: dm_hr_asset_custody
 msgid "Asset Category"
 msgstr "تصنيف الأصل"
 
+#. module: dm_hr_asset_custody
 msgid "Asset State"
 msgstr "حالة الأصل"
 
+#. module: dm_hr_asset_custody
 msgid "Asset Value"
 msgstr "قيمة الأصل"
 
+#. module: dm_hr_asset_custody
 msgid "Asset Residual Value"
 msgstr "القيمة الدفترية المتبقية"
 
+#. module: dm_hr_asset_custody
 msgid "Asset Currency"
 msgstr "عملة الأصل"
 
+#. module: dm_hr_asset_custody
 msgid "Code"
 msgstr "الكود"
 
+#. module: dm_hr_asset_custody
 msgid "Serial Number"
 msgstr "الرقم التسلسلي"
 
+#. module: dm_hr_asset_custody
 msgid "Custody Type"
 msgstr "نوع العهدة"
 
+#. module: dm_hr_asset_custody
 msgid "Device"
 msgstr "جهاز"
 
+#. module: dm_hr_asset_custody
 msgid "Card"
 msgstr "بطاقة"
 
+#. module: dm_hr_asset_custody
 msgid "Car"
 msgstr "سيارة"
 
+#. module: dm_hr_asset_custody
 msgid "Tool"
 msgstr "أدوات"
 
+#. module: dm_hr_asset_custody
 msgid "Other"
 msgstr "أخرى"
 
+#. module: dm_hr_asset_custody
 msgid "Delivery Date"
 msgstr "تاريخ التسليم"
 
+#. module: dm_hr_asset_custody
 msgid "Return Date"
 msgstr "تاريخ الاسترجاع"
 
+#. module: dm_hr_asset_custody
 msgid "Settlement Notes"
 msgstr "ملاحظات التسوية"
 
+#. module: dm_hr_asset_custody
 msgid "Delivered"
 msgstr "مسلمة"
 
+#. module: dm_hr_asset_custody
 msgid "Returned"
 msgstr "مسترجعة"
 
+#. module: dm_hr_asset_custody
 msgid "Settled"
 msgstr "مسواة"
 
+#. module: dm_hr_asset_custody
 msgid "Lost/Damaged"
 msgstr "مفقودة/تالفة"
 
+#. module: dm_hr_asset_custody
 msgid "Open Asset"
 msgstr "فتح الأصل المحاسبي"
 
+#. module: dm_hr_asset_custody
 msgid "Employee Custodies"
 msgstr "عهد الموظفين"
 
+#. module: dm_hr_asset_custody
 msgid "Current Custody Employee"
 msgstr "الموظف المستلم حاليًا"
 
+#. module: dm_hr_asset_custody
 msgid "Custody Count"
 msgstr "عدد العهد"
 
+#. module: dm_hr_asset_custody
 msgid "Cannot link custody to asset from different company"
 msgstr "لا يمكن ربط العهدة بهذا الأصل لأن الشركة مختلفة"
 
+#. module: dm_hr_asset_custody
 msgid "Custody Company"
 msgstr "شركة العهدة"
 
+#. module: dm_hr_asset_custody
 msgid "Asset Company"
 msgstr "شركة الأصل"
