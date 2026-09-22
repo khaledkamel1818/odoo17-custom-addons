@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class DmHrAttendanceLocation(models.Model):
@@ -37,9 +37,9 @@ class DmHrAttendanceLocation(models.Model):
         from odoo.exceptions import ValidationError
         for location in self:
             if not -90 <= location.latitude <= 90 or not -180 <= location.longitude <= 180:
-                raise ValidationError('إحداثيات موقع الحضور غير صحيحة.')
+                raise ValidationError(_('إحداثيات موقع الحضور غير صحيحة.'))
             if location.radius_meters <= 0:
-                raise ValidationError('نطاق السماح يجب أن يكون أكبر من صفر متر.')
+                raise ValidationError(_('نطاق السماح يجب أن يكون أكبر من صفر متر.'))
 
 
 class HrEmployee(models.Model):
