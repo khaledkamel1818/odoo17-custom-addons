@@ -20,7 +20,7 @@ class DmHrServiceRequestTest(TransactionCase):
         date_from = fields.Datetime.now()
         vals = {
             'subject': 'Medical permission',
-            'request_type': 'permission',
+            'request_type_id': self.env.ref('dm_hr_core.service_type_permission').id,
             'employee_id': self.employee.id,
             'date_from': date_from,
             'date_to': date_from + timedelta(hours=2),
@@ -62,17 +62,18 @@ class DmHrServiceRequestTest(TransactionCase):
         self.assertEqual(request.state, 'rejected')
 
     def test_salary_transfer_request_requires_saudi_iban(self):
+        type_salary_transfer = self.env.ref('dm_hr_core.service_type_salary_transfer')
         with self.assertRaises(ValidationError):
             self.ServiceRequest.create({
                 'subject': 'Salary transfer',
-                'request_type': 'salary_transfer_certificate',
+                'request_type_id': type_salary_transfer.id,
                 'employee_id': self.employee.id,
                 'bank_name': 'Test Bank',
                 'iban': 'AE000000000000',
             })
         request = self.ServiceRequest.create({
             'subject': 'Salary transfer',
-            'request_type': 'salary_transfer_certificate',
+            'request_type_id': type_salary_transfer.id,
             'employee_id': self.employee.id,
             'bank_name': 'Test Bank',
             'iban': 'SA0000000000000000000000',
@@ -111,6 +112,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
             'name': 'Permission two-step workflow',
             'company_id': cls.env.company.id,
             'request_type': 'permission',
+            'request_type_id': cls.env.ref('dm_hr_core.service_type_permission').id,
             'allow_self_approval': False,
             'step_ids': [
                 (0, 0, {'sequence': 10, 'name': 'Direct Manager', 'approver_type': 'manager'}),
@@ -120,7 +122,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
         })
         now = fields.Datetime.now()
         cls.request = cls.env['dm.hr.service.request'].create({
-            'subject': 'Flexible workflow request', 'request_type': 'permission',
+            'subject': 'Flexible workflow request', 'request_type_id': cls.env.ref('dm_hr_core.service_type_permission').id,
             'employee_id': cls.employee.id, 'date_from': now,
             'date_to': now + timedelta(hours=1),
         })
@@ -175,6 +177,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
             'name': 'Other request by department',
             'company_id': self.env.company.id,
             'request_type': 'other',
+            'request_type_id': self.env.ref('dm_hr_core.service_type_other').id,
             'step_ids': [(0, 0, {
                 'sequence': 10,
                 'name': 'Department Approval',
@@ -183,7 +186,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
         })
         request = self.env['dm.hr.service.request'].create({
             'subject': 'Department workflow',
-            'request_type': 'other',
+            'request_type_id': self.env.ref('dm_hr_core.service_type_other').id,
             'employee_id': self.employee.id,
         })
         request.with_user(self.employee_user).action_submit()
@@ -221,6 +224,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
             'name': 'Scoped permission policy',
             'company_id': self.env.company.id,
             'request_type': 'permission',
+            'request_type_id': self.env.ref('dm_hr_core.service_type_permission').id,
             'department_id': department.id,
             'priority_filter': '2',
             'escalation_user_id': escalation_user.id,
@@ -236,7 +240,7 @@ class DmHrFlexibleApprovalWorkflowTest(TransactionCase):
         later = fields.Datetime.now() + timedelta(days=14)
         request = self.env['dm.hr.service.request'].create({
             'subject': 'Scoped urgent permission',
-            'request_type': 'permission',
+            'request_type_id': self.env.ref('dm_hr_core.service_type_permission').id,
             'priority': '2',
             'employee_id': self.employee.id,
             'date_from': later,

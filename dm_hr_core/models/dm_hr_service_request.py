@@ -17,30 +17,27 @@ class DmHrServiceRequest(models.Model):
         tracking=True,
     )
     subject = fields.Char(string='موضوع الطلب', required=True, tracking=True)
+    request_type_id = fields.Many2one(
+        'dm.hr.service.request.type',
+        string='نوع الطلب',
+        required=True,
+        tracking=True,
+        default=lambda self: self._default_request_type_id(),
+    )
+    request_type = fields.Selection(
+        selection='_selection_request_type',
+        string='كود نوع الطلب',
+        compute='_compute_request_type',
+        store=True,
+        readonly=True,
+        index=True,
+    )
     request_type_config_id = fields.Many2one(
         'dm.hr.service.request.type',
         string='إعداد نوع الطلب',
-        compute='_compute_request_type_config_id',
+        related='request_type_id',
         store=True,
         readonly=True,
-    )
-    request_type = fields.Selection(
-        [
-            ('permission', 'استئذان'),
-            ('remote_work', 'عمل عن بعد'),
-            ('salary_certificate', 'خطاب تعريف بالراتب'),
-            ('salary_transfer_certificate', 'خطاب تثبيت راتب'),
-            ('experience_certificate', 'شهادة خبرة'),
-            ('document_update', 'تحديث بيانات أو مستندات'),
-            ('overtime', 'طلب ساعات إضافية'),
-            ('business_trip', 'انتداب / مهمة عمل'),
-            ('equipment', 'أدوات أو عهدة'),
-            ('other', 'طلب آخر'),
-        ],
-        string='نوع الطلب',
-        default='permission',
-        required=True,
-        tracking=True,
     )
     employee_id = fields.Many2one(
         'hr.employee',
@@ -264,20 +261,28 @@ class DmHrServiceRequest(models.Model):
             limit=1,
         ).id
 
+    @api.model
+    def _default_request_type_id(self):
+        return self.env['dm.hr.service.request.type'].search([
+            ('code', '=', 'permission'),
+            ('company_id', '=', self.env.company.id),
+        ], limit=1)
+
+    @api.model
+    def _selection_request_type(self):
+        return self.env['dm.hr.service.request.type'].sudo().search([]).mapped(
+            lambda r: (r.code, r.name)
+        )
+
+    @api.depends('request_type_id', 'request_type_id.code')
+    def _compute_request_type(self):
+        for request in self:
+            request.request_type = request.request_type_id.code or False
+
     @api.depends('employee_id.parent_id.user_id')
     def _compute_manager_user_id(self):
         for request in self:
             request.manager_user_id = request.employee_id.parent_id.user_id
-
-    @api.depends('request_type', 'company_id')
-    def _compute_request_type_config_id(self):
-        Type = self.env['dm.hr.service.request.type'].sudo()
-        for request in self:
-            request.request_type_config_id = Type.search([
-                ('code', '=', request.request_type),
-                ('company_id', '=', request.company_id.id),
-                ('active', '=', True),
-            ], limit=1)
 
     @api.depends('date_from', 'date_to')
     def _compute_duration_hours(self):
@@ -410,8 +415,11 @@ class DmHrServiceRequest(models.Model):
             if vals.get('name', '/') == '/':
                 vals['name'] = self.env['ir.sequence'].sudo().next_by_code(
                     'dm.hr.service.request') or '/'
-            if not vals.get('letter_reference') and vals.get('request_type') in ('salary_certificate', 'salary_transfer_certificate'):
-                vals['letter_reference'] = self.env['ir.sequence'].sudo().next_by_code('dm.hr.service.letter') or '/'
+            request_type_id = vals.get('request_type_id')
+            if request_type_id:
+                type_rec = self.env['dm.hr.service.request.type'].sudo().browse(request_type_id)
+                if not vals.get('letter_reference') and type_rec.code in ('salary_certificate', 'salary_transfer_certificate'):
+                    vals['letter_reference'] = self.env['ir.sequence'].sudo().next_by_code('dm.hr.service.letter') or '/'
         requests = super().create(vals_list)
         requests._check_employee_scope()
         return requests
@@ -459,7 +467,7 @@ class DmHrServiceRequest(models.Model):
         base = [
             ('active', '=', True),
             ('company_id', '=', self.company_id.id),
-            ('request_type', 'in', [self.request_type, 'all']),
+            '|', ('apply_to_all_types', '=', True), ('request_type_id', '=', self.request_type_id.id),
         ]
         candidates = Policy.search(base)
         matched = candidates.filtered(lambda policy: self._policy_matches_request(policy))
@@ -506,7 +514,12 @@ class DmHrServiceRequest(models.Model):
 
     def _policy_specificity(self, policy):
         score = 0
-        score += 64 if policy.request_type == self.request_type else 0
+        if policy.request_type_id:
+            score += 64 if policy.request_type_id.code == self.request_type else 0
+        elif policy.request_type == 'all':
+            score += 32
+        elif policy.request_type == 'offboarding' and self.request_type == 'offboarding':
+            score += 64
         score += 48 if policy.branch_id else 0
         score += 12 if policy.sector_id else 0
         score += 24 if policy.department_id else 0
