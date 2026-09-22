@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* dm_hr_workspace
+#   * dm_hr_workspace
 #
 msgid ""
 msgstr ""
@@ -10,9 +10,275 @@ msgstr ""
 "PO-Revision-Date: 2026-08-11 00:00+0000\n"
 "Last-Translator: DM\n"
 "Language-Team: Arabic\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"Language: ar\n"
 
+msgid "DM HR Workspace"
+msgstr "منصة الموارد البشرية"
+
+msgid "Professional HR workspace for employee, manager and HR"
+msgstr "واجهة عمل احترافية للموظف والمدير والموارد البشرية"
+
+msgid "My Workspace"
+msgstr "مساحة العمل الخاصة بي"
+
+msgid "HR Platform"
+msgstr "منصة الموارد البشرية"
+
+msgid "Smart Cards"
+msgstr "بطاقات ذكية"
+
+msgid "Leaves"
+msgstr "الإجازات"
+
+msgid "Attendance"
+msgstr "الحضور"
+
+msgid "Requests"
+msgstr "الطلبات"
+
+msgid "Alerts"
+msgstr "التنبيهات"
+
+msgid "Compliance"
+msgstr "الامتثال"
+
+msgid "Self Service"
+msgstr "الخدمات الذاتية"
+
+msgid "Team Management"
+msgstr "إدارة الفريق والموافقات"
+
+msgid "HR Operations"
+msgstr "عمليات الموارد البشرية"
+
+msgid "My Requests"
+msgstr "طلباتي"
+
+msgid "My Leaves"
+msgstr "إجازاتي"
+
+msgid "My Attendance"
+msgstr "حضوري وانصرافي"
+
+msgid "Approvals"
+msgstr "الموافقات"
+
+msgid "Documents"
+msgstr "المستندات"
+
+msgid "Employees"
+msgstr "الموظفون"
+
+msgid "Contracts"
+msgstr "العقود"
+
+msgid "Shifts"
+msgstr "ورديات العمل"
+
+msgid "Insurance"
+msgstr "التأمين الطبي"
+
+msgid "Allowances"
+msgstr "البدلات"
+
+msgid "Reports"
+msgstr "التقارير والتحليل"
+
+msgid "Settings"
+msgstr "الإعدادات المرنة"
+
+msgid "Approval Policies"
+msgstr "موافقات طلبات الخدمات"
+
+msgid "Leave Approvals"
+msgstr "موافقات الإجازات"
+
+msgid "Service Request"
+msgstr "طلب خدمة"
+
+msgid "Service Requests"
+msgstr "طلبات الخدمات"
+
+msgid "Leave Request"
+msgstr "طلب إجازة"
+
+msgid "Attendance Correction"
+msgstr "تصحيح حضور"
+
+msgid "Financial Request"
+msgstr "طلب مالي"
+
+msgid "Leave Purchase"
+msgstr "شراء إجازة"
+
+msgid "Balance Request"
+msgstr "طلب إضافة رصيد"
+
+msgid "Check In"
+msgstr "تسجيل حضور"
+
+msgid "Check Out"
+msgstr "تسجيل انصراف"
+
+msgid "Present Today"
+msgstr "حاضر اليوم"
+
+msgid "Attendance Records Today"
+msgstr "سجلات حضور اليوم"
+
+msgid "Last Check In"
+msgstr "آخر حضور"
+
+msgid "Last Check Out"
+msgstr "آخر انصراف"
+
+msgid "Hours Today"
+msgstr "ساعات اليوم"
+
+msgid "Pending"
+msgstr "معلق"
+
+msgid "Approved"
+msgstr "معتمد"
+
+msgid "Refused"
+msgstr "مرفوض"
+
+msgid "Waiting Approval"
+msgstr "بانتظار الاعتماد"
+
+msgid "Active Employees"
+msgstr "الموظفون النشطون"
+
+msgid "My Pending Leaves"
+msgstr "إجازاتي المعلقة"
+
+msgid "My Pending Requests"
+msgstr "طلباتي المعلقة"
+
+msgid "Approvals Waiting for You"
+msgstr "موافقات بانتظارك"
+
+msgid "Expiring Documents"
+msgstr "مستندات تنتهي قريبًا"
+
+msgid "Attendance Today"
+msgstr "سجلات حضور اليوم"
+
+msgid "Team Count"
+msgstr "عدد الفريق"
+
+msgid "Active Count"
+msgstr "الموظفون النشطون"
+
+msgid "Present Now"
+msgstr "حاضرون الآن"
+
+msgid "Approved Leaves"
+msgstr "إجازات معتمدة"
+
+msgid "Approved Requests"
+msgstr "طلبات معتمدة"
+
+msgid "Request Permission"
+msgstr "استئذان"
+
+msgid "Letter"
+msgstr "خطاب تعريف"
+
+msgid "Salary Transfer"
+msgstr "تثبيت راتب"
+
+msgid "Other Request"
+msgstr "طلب آخر"
+
+msgid "No employee linked"
+msgstr "لا يوجد موظف مرتبط"
+
+msgid "Link user to employee"
+msgstr "اربط المستخدم بملف الموظف"
+
+msgid "ID/Iqama"
+msgstr "هوية / إقامة"
+
+msgid "Valid"
+msgstr "صالحة"
+
+msgid "Missing or expiring soon"
+msgstr "ناقصة أو تنتهي قريبًا"
+
+msgid "Social Insurance"
+msgstr "التأمينات الاجتماعية"
+
+msgid "Category and number required"
+msgstr "تحتاج فئة ورقم اشتراك"
+
+msgid "Contract"
+msgstr "العقد الوظيفي"
+
+msgid "Active contract found"
+msgstr "يوجد عقد نشط/مسودة"
+
+msgid "No active contract"
+msgstr "لا يوجد عقد نشط"
+
+msgid "Salary Protection"
+msgstr "حماية الأجور"
+
+msgid "Bank and IBAN complete"
+msgstr "بيانات بنكية وتحويل راتب مكتملة"
+
+msgid "Needs bank/IBAN and bank transfer contract"
+msgstr "تحتاج بنك/IBAN وعقد بتحويل بنكي"
+
+msgid "Medical Insurance"
+msgstr "التأمين الطبي"
+
+msgid "Active policy found"
+msgstr "وثيقة نشطة"
+
+msgid "No active policy"
+msgstr "لا توجد وثيقة نشطة"
+
+msgid "Employee Documents"
+msgstr "مستندات الموظف"
+
+msgid "Documents found"
+msgstr "يوجد مستندات"
+
+msgid "Add basic documents"
+msgstr "أضف المستندات الأساسية"
+
+msgid "My Profile"
+msgstr "ملفي الوظيفي"
+
+msgid "Request Leave"
+msgstr "طلب إجازة"
+
+msgid "Permission"
+msgstr "استئذان"
+
+msgid "Salary Certificate"
+msgstr "خطاب تعريف بالراتب"
+
+msgid "Business Trip"
+msgstr "انتداب / مهمة عمل"
+
+msgid "Custody"
+msgstr "العهدة"
+
+msgid "Data Update"
+msgstr "تحديث بيانات أو مستندات"
+
+msgid "Overtime"
+msgstr "طلب ساعات إضافية"
+
+msgid "Work Remotely"
+msgstr "عمل عن بعد"
+
+msgid "Experience Certificate"
+msgstr "شهادة خبرة"

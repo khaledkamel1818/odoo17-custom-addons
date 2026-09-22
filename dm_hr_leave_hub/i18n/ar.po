@@ -1,0 +1,164 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * dm_hr_leave_hub
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 00:00+0000\n"
+"PO-Revision-Date: 2026-08-11 00:00+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "DM HR Leave Hub"
+msgstr "مركز الإجازات الذكي"
+
+msgid "Smart Leave Hub"
+msgstr "مركز الإجازات الذكي"
+
+msgid "Unified Arabic leave interface for balances, allocations and approvals"
+msgstr "واجهة عربية موحدة للإجازات والأرصدة والاعتمادات"
+
+msgid "Leave Hub"
+msgstr "مركز الإجازات"
+
+msgid "Leave Balance Wizard"
+msgstr "إضافة رصيد إجازات للموظفين"
+
+msgid "Leave Annual Allocation Wizard"
+msgstr "توليد رصيد الإجازة السنوية السعودية"
+
+msgid "Employees"
+msgstr "الموظفون"
+
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+msgid "Number of Days"
+msgstr "عدد الأيام"
+
+msgid "Date From"
+msgstr "بداية الصلاحية"
+
+msgid "Date To"
+msgstr "نهاية الصلاحية"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Validate Now"
+msgstr "اعتماد الرصيد مباشرة"
+
+msgid "Year"
+msgstr "السنة"
+
+msgid "Allocation Origin"
+msgstr "مصدر الرصيد"
+
+msgid "Manual HR"
+msgstr "إضافة يدوية من الموارد البشرية"
+
+msgid "Saudi Annual Auto"
+msgstr "استحقاق سنوي سعودي تلقائي"
+
+msgid "Auto Annual Year"
+msgstr "سنة الاستحقاق السنوي"
+
+msgid "Leave"
+msgstr "إجازة"
+
+msgid "Allocation"
+msgstr "الرصيد"
+
+msgid "Allocations"
+msgstr "الأرصدة"
+
+msgid "Balance"
+msgstr "الرصيد"
+
+msgid "Balances"
+msgstr "الأرصدة"
+
+msgid "Taken"
+msgstr "المستخدم"
+
+msgid "Allocated"
+msgstr "المخصص"
+
+msgid "Remaining"
+msgstr "المتبقي"
+
+msgid "Unlimited"
+msgstr "غير محدود"
+
+msgid "Unit"
+msgstr "الوحدة"
+
+msgid "Percentage"
+msgstr "النسبة"
+
+msgid "Hour"
+msgstr "ساعة"
+
+msgid "Day"
+msgstr "يوم"
+
+msgid "New Request"
+msgstr "طلب جديد"
+
+msgid "My Leaves"
+msgstr "إجازاتي"
+
+msgid "Calendar"
+msgstr "تقويم"
+
+msgid "Approvals"
+msgstr "الاعتمادات"
+
+msgid "Allocation Approvals"
+msgstr "اعتمادات الأرصدة"
+
+msgid "Types"
+msgstr "الأنواع"
+
+msgid "Accruals"
+msgstr "الاستحقاقات"
+
+msgid "Reports"
+msgstr "التقارير"
+
+msgid "Manual Balance"
+msgstr "إضافة رصيد يدوي"
+
+msgid "Annual Balance"
+msgstr "الرصيد السنوي"
+
+msgid "Leave Balance Added"
+msgstr "الأرصدة الإجازات المضافة"
+
+msgid "Generated Annual Allocations"
+msgstr "الأرصدة السنوية المولدة"
+
+msgid "No employee linked to user"
+msgstr "لا يوجد موظف مرتبط بالمستخدم"
+
+msgid "No leave type configured"
+msgstr "لم يتم تحديد نوع إجازة"
+
+msgid "Leave balance must be greater than zero"
+msgstr "رصيد الإجازة يجب أن يكون أكبر من صفر"
+
+msgid "End of validity must be after start"
+msgstr "نهاية صلاحية الرصيد يجب أن تكون بعد بداية الصلاحية"
+
+msgid "You do not have permission to add leave balances"
+msgstr "إضافة أرصدة الإجازات متاحة لمسؤول الموارد البشرية فقط"
+
+msgid "You do not have permission to generate annual allocations"
+msgstr "توليد الرصيد السنوي متاح لمسؤول الموارد البشرية فقط"

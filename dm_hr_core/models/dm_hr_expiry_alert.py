@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import date, timedelta
 
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class DmHrExpiryAlert(models.Model):
@@ -13,7 +13,7 @@ class DmHrExpiryAlert(models.Model):
     """
 
     _name = 'dm.hr.expiry.alert'
-    _description = 'Expiry Alert Runner'
+    _description = _('Expiry Alert Runner')
 
     def _cron_run(self):
         """Create mail activities for expiring documents / contracts."""
@@ -36,7 +36,7 @@ class DmHrExpiryAlert(models.Model):
             ('iqama_expiry_date', '>=', date.today()),
         ])
         for employee in employees:
-            self._create_alert(employee, activity_type, 'Iqama / National ID',
+            self._create_alert(employee, activity_type, _('Iqama / National ID'),
                                employee.iqama_expiry_date)
 
         # Expiring contracts
@@ -46,7 +46,7 @@ class DmHrExpiryAlert(models.Model):
             ('date_end', '>=', date.today()),
         ])
         for contract in contracts:
-            self._create_alert(contract.employee_id, activity_type, 'Contract',
+            self._create_alert(contract.employee_id, activity_type, _('Contract'),
                                                                contract.date_end)
 
     @staticmethod
@@ -54,7 +54,7 @@ class DmHrExpiryAlert(models.Model):
         """Schedule an expiry reminder activity, but never create duplicates."""
         if not employee or not expiry_date:
             return
-        summary = '%s expires soon' % label
+        summary = _('%s expires soon') % label
         already_scheduled = employee.activity_ids.filtered(
             lambda a: a.summary == summary
             and a.activity_type_id == activity_type
@@ -65,6 +65,6 @@ class DmHrExpiryAlert(models.Model):
             activity_type_id=activity_type.id,
             date_deadline=expiry_date,
             summary=summary,
-            note='The %s of %s expires on %s.' % (
+            note=_('The %s of %s expires on %s.') % (
                 label, employee.name, expiry_date),
         )

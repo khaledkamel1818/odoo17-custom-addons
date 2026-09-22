@@ -1,0 +1,473 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * dm_hr_offboarding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 00:00+0000\n"
+"PO-Revision-Date: 2026-08-11 00:00+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "DM HR Offboarding"
+msgstr "إنهاء الخدمة وإخلاء الطرف"
+
+msgid "Resignation, termination, clearance, EOS and final settlement"
+msgstr "استقالة، إنهاء، إخلاء طرف، مكافأة نهاية الخدمة والتسوية النهائية"
+
+msgid "Request Type"
+msgstr "نوع إنهاء الخدمة"
+
+msgid "Termination Type"
+msgstr "نوع الإنهاء"
+
+msgid "EOS Rule"
+msgstr "قاعدة مكافأة نهاية الخدمة"
+
+msgid "EOS Rules"
+msgstr "قواعد مكافأة نهاية الخدمة"
+
+msgid "Offboarding Request"
+msgstr "طلب إنهاء خدمة"
+
+msgid "Offboarding Requests"
+msgstr "طلبات إنهاء الخدمة"
+
+msgid "Final Settlement"
+msgstr "التسوية النهائية"
+
+msgid "Final Settlements"
+msgstr "التسويات النهائية"
+
+msgid "Exit Interview"
+msgstr "مقابلة الخروج"
+
+msgid "Exit Interviews"
+msgstr "مقابلات الخروج"
+
+msgid "Clearance Department"
+msgstr "قسم إخلاء الطرف"
+
+msgid "Clearance Departments"
+msgstr "أقسام إخلاء الطرف"
+
+msgid "Clearance Line"
+msgstr "بند إخلاء الطرف"
+
+msgid "Clearance Lines"
+msgstr "بنود إخلاء الطرف"
+
+msgid "Offboarding Approval Item"
+msgstr "خطوة اعتماد إنهاء الخدمة"
+
+msgid "Offboarding Approval Items"
+msgstr "خطوات اعتماد إنهاء الخدمة"
+
+msgid "Employee Transfer"
+msgstr "تنقلات وتغيير وظائف الموظفين"
+
+msgid "Employee Transfers"
+msgstr "تنقلات وتغيير وظائف الموظفين"
+
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+msgid "Last Work Date"
+msgstr "آخر يوم عمل"
+
+msgid "Service Start Date"
+msgstr "بداية الخدمة"
+
+msgid "Notice Period"
+msgstr "فترة الإشعار"
+
+msgid "Employee Status"
+msgstr "حالة الموظف أثناء الإجراء"
+
+msgid "Working"
+msgstr "على رأس العمل"
+
+msgid "Notice"
+msgstr "في فترة الإشعار"
+
+msgid "Clearing"
+msgstr "إخلاء طرف"
+
+msgid "Settled"
+msgstr "تمت التسوية"
+
+msgid "Terminated"
+msgstr "منتهي الخدمة"
+
+msgid "Reason"
+msgstr "سبب الإنهاء"
+
+msgid "Manager Note"
+msgstr "ملاحظات المدير"
+
+msgid "HR Note"
+msgstr "ملاحظات الموارد البشرية"
+
+msgid "Finance Note"
+msgstr "ملاحظات المالية"
+
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+msgid "Cancel Reason"
+msgstr "سبب الإلغاء"
+
+msgid "Current Responsible"
+msgstr "المسؤول الحالي"
+
+msgid "Eligible for End of Service"
+msgstr "مستحق لمكافأة نهاية الخدمة"
+
+msgid "Default Entitlement Ratio"
+msgstr "نسبة الاستحقاق الافتراضية"
+
+msgid "Notice Required"
+msgstr "تتطلب مدة إشعار"
+
+msgid "Notice Days"
+msgstr "أيام الإشعار"
+
+msgid "Requires Clearance"
+msgstr "تتطلب إخلاء طرف"
+
+msgid "Creates Settlement"
+msgstr "تنشئ تسوية نهائية"
+
+msgid "Can Close Contract"
+msgstr "تغلق العقد بعد الإكمال"
+
+msgid "Allow Withdrawal"
+msgstr "السماح بسحب الطلب قبل الاعتماد"
+
+msgid "Archive Employee"
+msgstr "أرشفة الموظف بعد الإكمال"
+
+msgid "Payroll Earning Code"
+msgstr "كود استحقاق الرواتب"
+
+msgid "Payroll Deduction Code"
+msgstr "كود حسم الرواتب"
+
+msgid "First Period Years"
+msgstr "سنوات الشريحة الأولى"
+
+msgid "First Period Month Ratio"
+msgstr "نسبة شهر للشريحة الأولى"
+
+msgid "Later Period Month Ratio"
+msgstr "نسبة شهر لما بعد الشريحة الأولى"
+
+msgid "Resignation No Entitlement Years"
+msgstr "لا استحقاق للاستقالة قبل"
+
+msgid "Resignation One Third Years"
+msgstr "ثلث المكافأة حتى"
+
+msgid "Resignation Two Third Years"
+msgstr "ثلثا المكافأة حتى"
+
+msgid "Include Allowances"
+msgstr "احتساب البدلات ضمن الأجر الأساسي"
+
+msgid "Daily Wage Method"
+msgstr "طريقة احتساب اليوم"
+
+msgid "Round Digits"
+msgstr "خانات التقريب"
+
+msgid "Allow Manual Override"
+msgstr "السماح بالتعديل اليدوي"
+
+msgid "Initiated By"
+msgstr "مصدر الطلب"
+
+msgid "Employee"
+msgstr "الموظف"
+
+msgid "HR"
+msgstr "الموارد البشرية"
+
+msgid "Both"
+msgstr "كلاهما"
+
+msgid "Code"
+msgstr "الكود"
+
+msgid "Sequence"
+msgstr "الترتيب"
+
+msgid "Company"
+msgstr "الشركة"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Note"
+msgstr "ملاحظات"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Mandatory"
+msgstr "إلزامي"
+
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Has Custody"
+msgstr "مرتبط بعهدة"
+
+msgid "Custody"
+msgstr "العهدة"
+
+msgid "Custody Value"
+msgstr "قيمة العهدة/الحسم"
+
+msgid "Received"
+msgstr "تم الاستلام"
+
+msgid "Custody Condition"
+msgstr "حالة العهدة"
+
+msgid "Not Applicable"
+msgstr "لا ينطبق"
+
+msgid "Good"
+msgstr "سليمة"
+
+msgid "Damaged"
+msgstr "تالفة"
+
+msgid "Lost"
+msgstr "مفقودة"
+
+msgid "Deduction Amount"
+msgstr "مبلغ الحسم"
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgid "Override Reason"
+msgstr "سبب الاستثناء"
+
+msgid "Approved By"
+msgstr "اعتمد بواسطة"
+
+msgid "Approved Date"
+msgstr "تاريخ الاعتماد"
+
+msgid "State"
+msgstr "الحالة"
+
+msgid "Pending"
+msgstr "بانتظار"
+
+msgid "Approved"
+msgstr "معتمد"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Waived"
+msgstr "مستثنى"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "Done"
+msgstr "منتهي"
+
+msgid "Paid"
+msgstr "مدفوعة"
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Submitted"
+msgstr "مرسل"
+
+msgid "Manager Approval"
+msgstr "اعتماد المدير"
+
+msgid "HR Review"
+msgstr "مراجعة الموارد البشرية"
+
+msgid "Notice Period"
+msgstr "فترة الإشعار"
+
+msgid "Clearance"
+msgstr "إخلاء الطرف"
+
+msgid "Finance Settlement"
+msgstr "التسوية المالية"
+
+msgid "Final Approval"
+msgstr "الاعتماد النهائي"
+
+msgid "EOS Base Wage"
+msgstr "أجر احتساب المكافأة"
+
+msgid "EOS Manual Override"
+msgstr "تعديل مكافأة نهاية الخدمة يدويًا"
+
+msgid "EOS Manual Amount"
+msgstr "قيمة المكافأة اليدوية"
+
+msgid "EOS Manual Reason"
+msgstr "سبب تعديل المكافأة"
+
+msgid "Completion Executed"
+msgstr "تم تنفيذ الإنهاء"
+
+msgid "Settlement Date"
+msgstr "تاريخ التسوية"
+
+msgid "Earnings Total"
+msgstr "إجمالي المستحقات"
+
+msgid "Deductions Total"
+msgstr "إجمالي الحسميات"
+
+msgid "Net Amount"
+msgstr "الصافي"
+
+msgid "EOS Explanation"
+msgstr "شرح مكافأة نهاية الخدمة"
+
+msgid "Line Type"
+msgstr "نوع البند"
+
+msgid "Earning"
+msgstr "استحقاق"
+
+msgid "Deduction"
+msgstr "حسم"
+
+msgid "Source"
+msgstr "المصدر"
+
+msgid "Salary"
+msgstr "راتب"
+
+msgid "Leave Balance"
+msgstr "رصيد إجازات"
+
+msgid "Overtime"
+msgstr "عمل إضافي"
+
+msgid "Commission"
+msgstr "عمولات"
+
+msgid "Bonus"
+msgstr "مكافآت"
+
+msgid "Allowance"
+msgstr "بدلات/مطالبات"
+
+msgid "Advance Loan"
+msgstr "سلف/قروض"
+
+msgid "Notice"
+msgstr "إشعار"
+
+msgid "Absence"
+msgstr "غياب/تأخير"
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Quantity"
+msgstr "الكمية"
+
+msgid "Price Unit"
+msgstr "السعر"
+
+msgid "Amount"
+msgstr "الإجمالي"
+
+msgid "Payroll Postable"
+msgstr "قابل للترحيل للرواتب"
+
+msgid "Posted to Payroll"
+msgstr "مرحل للرواتب"
+
+msgid "Interview Date"
+msgstr "تاريخ المقابلة"
+
+msgid "Satisfaction"
+msgstr "مستوى الرضا"
+
+msgid "Reason Summary"
+msgstr "ملخص الأسباب"
+
+msgid "Recommendations"
+msgstr "توصيات الموارد البشرية"
+
+msgid "Can Return"
+msgstr "يمكن إعادة التوظيف مستقبلًا"
+
+msgid "Confidential Notes"
+msgstr "ملاحظات سرية"
+
+msgid "Offboarding Employee"
+msgstr "الموظف"
+
+msgid "Offboarding Direct Manager"
+msgstr "المدير المباشر"
+
+msgid "Offboarding HR Officer"
+msgstr "مسؤول الموارد البشرية"
+
+msgid "Offboarding HR Manager"
+msgstr "مدير الموارد البشرية"
+
+msgid "Offboarding Finance Officer"
+msgstr "مسؤول المالية"
+
+msgid "Offboarding Finance Manager"
+msgstr "مدير المالية"
+
+msgid "Offboarding Administrator"
+msgstr "مدير النظام"
+
+msgid "My Requests"
+msgstr "طلباتي"
+
+msgid "Team Requests"
+msgstr "طلبات فريقي"
+
+msgid "All Requests"
+msgstr "جميع الطلبات"
+
+msgid "Settlements"
+msgstr "التسويات النهائية"
+
+msgid "Exit Interviews"
+msgstr "مقابلات الخروج"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Termination Types"
+msgstr "أنواع إنهاء الخدمة"
+
+msgid "EOS Rules"
+msgstr "قواعد مكافأة نهاية الخدمة"
+
+msgid "Clearance Departments"
+msgstr "أقسام إخلاء الطرف"

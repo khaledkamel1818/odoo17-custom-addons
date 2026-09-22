@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * dm_hr_asset_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 00:00+0000\n"
+"PO-Revision-Date: 2026-08-11 00:00+0000\n"
+"Last-Translator: DM\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "DM HR Custody Asset Link"
+msgstr "ربط العهد غير المالية بالأصول المحاسبية"
+
+msgid "Link non-financial employee custody with accounting fixed assets"
+msgstr "ربط العهدة غير المالية للموظف بالأصول الثابتة في المالية"
+
+msgid "Custody"
+msgstr "العهدة"
+
+msgid "Asset"
+msgstr "الأصل المحاسبي"
+
+msgid "Asset Category"
+msgstr "تصنيف الأصل"
+
+msgid "Asset State"
+msgstr "حالة الأصل"
+
+msgid "Asset Value"
+msgstr "قيمة الأصل"
+
+msgid "Asset Residual Value"
+msgstr "القيمة الدفترية المتبقية"
+
+msgid "Asset Currency"
+msgstr "عملة الأصل"
+
+msgid "Code"
+msgstr "الكود"
+
+msgid "Serial Number"
+msgstr "الرقم التسلسلي"
+
+msgid "Custody Type"
+msgstr "نوع العهدة"
+
+msgid "Device"
+msgstr "جهاز"
+
+msgid "Card"
+msgstr "بطاقة"
+
+msgid "Car"
+msgstr "سيارة"
+
+msgid "Tool"
+msgstr "أدوات"
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Delivery Date"
+msgstr "تاريخ التسليم"
+
+msgid "Return Date"
+msgstr "تاريخ الاسترجاع"
+
+msgid "Settlement Notes"
+msgstr "ملاحظات التسوية"
+
+msgid "Delivered"
+msgstr "مسلمة"
+
+msgid "Returned"
+msgstr "مسترجعة"
+
+msgid "Settled"
+msgstr "مسواة"
+
+msgid "Lost/Damaged"
+msgstr "مفقودة/تالفة"
+
+msgid "Open Asset"
+msgstr "فتح الأصل المحاسبي"
+
+msgid "Employee Custodies"
+msgstr "عهد الموظفين"
+
+msgid "Current Custody Employee"
+msgstr "الموظف المستلم حاليًا"
+
+msgid "Custody Count"
+msgstr "عدد العهد"
+
+msgid "Cannot link custody to asset from different company"
+msgstr "لا يمكن ربط العهدة بهذا الأصل لأن الشركة مختلفة"
+
+msgid "Custody Company"
+msgstr "شركة العهدة"
+
+msgid "Asset Company"
+msgstr "شركة الأصل"
