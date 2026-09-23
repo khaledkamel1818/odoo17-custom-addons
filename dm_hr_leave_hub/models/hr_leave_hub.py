@@ -77,7 +77,7 @@ class DmHrLeaveHub(models.AbstractModel):
                 'allocated': allocated,
                 'unlimited': leave_type.requires_allocation == 'no',
                 'unit': _('ساعة') if leave_type.request_unit == 'hour' else _('يوم'),
-                'percentage': max(0, min(100, round(remaining * 100 / allocated))) if allocated > 0 else 100,
+                'percentage': None if leave_type.requires_allocation == 'no' else max(0, min(100, round(remaining * 100 / allocated))) if allocated > 0 else 0,
             })
 
         recent = Leave.search(my_domain, order='request_date_from desc, id desc', limit=7)
