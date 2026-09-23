@@ -244,9 +244,14 @@ class DmHrOffboarding(models.Model):
 
     def _get_eos_rule(self):
         self.ensure_one()
-        return self.env['dm.hr.offboarding.rule'].sudo().search([
+        rule = self.env['dm.hr.offboarding.rule'].sudo().search([
             ('company_id', '=', self.company_id.id), ('active', '=', True)
-        ], limit=1) or self.env['dm.hr.offboarding.rule'].sudo().search([('active', '=', True)], limit=1)
+        ], limit=1)
+        if not rule:
+            rule = self.env['dm.hr.offboarding.rule'].sudo().search([('active', '=', True)], limit=1)
+        if not rule:
+            raise UserError(_('No EOS rule configured. Please configure one in Settings.'))
+        return rule
 
     def _find_approval_policy(self):
         self.ensure_one()
@@ -279,9 +284,21 @@ class DmHrOffboarding(models.Model):
         if step.approver_type == 'manager':
             return self.manager_user_id
         if step.approver_type == 'hr_officer':
-            return self.env.ref('dm_hr_core.group_dm_hr_officer', raise_if_not_found=False).users[:1]
+            group = self.env.ref('dm_hr_core.group_dm_hr_officer', raise_if_not_found=False)
+            if not group:
+                raise UserError(_('HR Officer group not found. Please install dm_hr_core.'))
+            user = group.users[:1]
+            if not user:
+                raise UserError(_('No users assigned to the HR Officer group. Please assign at least one approver.'))
+            return user
         if step.approver_type == 'hr_manager':
-            return self.env.ref('dm_hr_core.group_dm_hr_manager', raise_if_not_found=False).users[:1]
+            group = self.env.ref('dm_hr_core.group_dm_hr_manager', raise_if_not_found=False)
+            if not group:
+                raise UserError(_('HR Manager group not found. Please install dm_hr_core.'))
+            user = group.users[:1]
+            if not user:
+                raise UserError(_('No users assigned to the HR Manager group. Please assign at least one approver.'))
+            return user
         if step.approver_type == 'user':
             return step.user_id
         return self.env['res.users']
@@ -364,8 +381,8 @@ class DmHrOffboarding(models.Model):
                 rec.action_generate_settlement()
             if new_state == 'done':
                 rec._execute_completion()
-            rec.write(vals)
             rec._mark_next_approval_item()
+            rec.write(vals)
             rec.message_post(body=_(msg))
 
     def _mark_next_approval_item(self):

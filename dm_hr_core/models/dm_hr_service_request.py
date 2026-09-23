@@ -263,14 +263,16 @@ class DmHrServiceRequest(models.Model):
 
     @api.model
     def _default_request_type_id(self):
-        return self.env['dm.hr.service.request.type'].search([
+        return self.env['dm.hr.service.request.type'].sudo().search([
             ('code', '=', 'permission'),
             ('company_id', '=', self.env.company.id),
         ], limit=1)
 
     @api.model
     def _selection_request_type(self):
-        return self.env['dm.hr.service.request.type'].sudo().search([]).mapped(
+        return self.env['dm.hr.service.request.type'].sudo().search([
+            ('company_id', 'in', [False] + self.env.companies.ids)
+        ]).mapped(
             lambda r: (r.code, r.name)
         )
 
@@ -360,20 +362,21 @@ class DmHrServiceRequest(models.Model):
 
     @api.constrains('date_from', 'date_to', 'request_type')
     def _check_dates(self):
-        timed_types = {'permission', 'remote_work', 'overtime', 'business_trip'}
         for request in self:
+            config = request.request_type_config_id
+            if not config:
+                continue
             if request.date_from and request.date_to and request.date_to < request.date_from:
                 raise ValidationError(_('تاريخ نهاية الطلب يجب أن يكون بعد تاريخ البداية.'))
-            if request.request_type in timed_types and (not request.date_from or not request.date_to):
+            if config.requires_dates and (not request.date_from or not request.date_to):
                 raise ValidationError(_('هذا النوع من الطلبات يحتاج تاريخ بداية ونهاية.'))
-            if request.request_type == 'salary_transfer_certificate':
-                if not request.bank_name or not request.iban:
-                    raise ValidationError(_('طلب تثبيت الراتب يحتاج اسم البنك ورقم IBAN.'))
-                if request.iban and not request.iban.replace(' ', '').upper().startswith('SA'):
-                    raise ValidationError(_('رقم IBAN السعودي يجب أن يبدأ بـ SA.'))
-            if request.request_type == 'permission':
+            if config.requires_bank_details and (not request.bank_name or not request.iban):
+                raise ValidationError(_('طلب تثبيت الراتب يحتاج اسم البنك ورقم IBAN.'))
+            if config.requires_bank_details and request.iban and not request.iban.replace(' ', '').upper().startswith('SA'):
+                raise ValidationError(_('رقم IBAN السعودي يجب أن يبدأ بـ SA.'))
+            if config.requires_permission_validation:
                 request._check_permission_controls()
-            if request.request_type == 'business_trip' and (not request.trip_type or not request.trip_location or not request.trip_mission):
+            if config.requires_trip_details and (not request.trip_type or not request.trip_location or not request.trip_mission):
                 raise ValidationError(_('طلب الانتداب يحتاج نوع الانتداب والمكان ووصف المهمة.'))
 
     def _check_permission_controls(self):

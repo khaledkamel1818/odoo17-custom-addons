@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class DmHrAttendanceLocation(models.Model):
@@ -34,7 +35,6 @@ class DmHrAttendanceLocation(models.Model):
 
     @api.constrains('latitude', 'longitude', 'radius_meters')
     def _check_coordinates(self):
-        from odoo.exceptions import ValidationError
         for location in self:
             if not -90 <= location.latitude <= 90 or not -180 <= location.longitude <= 180:
                 raise ValidationError(_('إحداثيات موقع الحضور غير صحيحة.'))

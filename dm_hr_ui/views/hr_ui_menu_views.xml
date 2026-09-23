@@ -3,19 +3,23 @@
     <record id="dm_hr_workspace.menu_dm_hr_workspace" model="ir.ui.menu">
         <field name="name">الرئيسية</field>
         <field name="sequence">1</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
 
     <record id="dm_hr_core.menu_dm_hr_personnel_affairs" model="ir.ui.menu">
         <field name="name">شؤون الموظفين</field>
         <field name="sequence">10</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_core.menu_dm_hr_attendance_root" model="ir.ui.menu">
         <field name="name">الوقت والحضور</field>
         <field name="sequence">20</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_core.menu_dm_hr_leaves_root" model="ir.ui.menu">
         <field name="name">الإجازات</field>
         <field name="sequence">30</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_leave_hub.menu_dm_hr_leave_hub" model="ir.ui.menu">
         <field name="name">مركز الإجازات</field>
@@ -25,21 +29,26 @@
     <record id="dm_hr_core.menu_dm_hr_employee_services" model="ir.ui.menu">
         <field name="name">الطلبات والموافقات</field>
         <field name="sequence">40</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_core.menu_dm_hr_employee_finance_root" model="ir.ui.menu">
         <field name="name">الرواتب والطلبات المالية</field>
         <field name="sequence">50</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_offboarding.menu_dm_hr_offboarding_root" model="ir.ui.menu">
         <field name="name">إنهاء الخدمة وإخلاء الطرف</field>
         <field name="sequence">60</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_core.menu_dm_hr_reporting" model="ir.ui.menu">
         <field name="name">التقارير</field>
         <field name="sequence">80</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
     <record id="dm_hr_core.menu_dm_hr_configuration" model="ir.ui.menu">
         <field name="name">الإعدادات</field>
         <field name="sequence">100</field>
+        <field name="parent_id" ref="dm_hr_core.menu_dm_hr_root"/>
     </record>
 </odoo>

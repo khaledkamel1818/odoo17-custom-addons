@@ -67,7 +67,7 @@
         <record id="dm_hr_service_request_type_multi_company_rule" model="ir.rule">
             <field name="name">نوع طلب خدمة الموظفين: متعدد الشركات</field>
             <field name="model_id" ref="model_dm_hr_service_request_type"/>
-            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin'))]"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_officer')), (4, ref('group_dm_hr_manager')), (4, ref('group_dm_hr_admin')), (4, ref('group_dm_hr_employee'))]"/>
             <field name="domain_force">[('company_id', 'in', company_ids)]</field>
         </record>
         <record id="dm_hr_approval_policy_multi_company_rule" model="ir.rule">
@@ -307,6 +307,24 @@
             <field name="model_id" ref="model_dm_hr_leave_balance_request"/>
             <field name="groups" eval="[(4, ref('group_dm_hr_leave_officer'))]"/>
             <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="dm_hr_leave_action_employee_rule" model="ir.rule">
+            <field name="name">إجراءات الإجازات: موظف (سجلاته فقط)</field>
+            <field name="model_id" ref="model_dm_hr_leave_action"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_leave_purchase_employee_rule" model="ir.rule">
+            <field name="name">شراء الإجازات: موظف (سجلاته فقط)</field>
+            <field name="model_id" ref="model_dm_hr_leave_purchase"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="dm_hr_leave_balance_request_employee_rule" model="ir.rule">
+            <field name="name">طلبات أرصدة الإجازات: موظف (سجلاته فقط)</field>
+            <field name="model_id" ref="model_dm_hr_leave_balance_request"/>
+            <field name="groups" eval="[(4, ref('group_dm_hr_employee'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
         </record>
 
     </data>

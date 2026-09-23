@@ -67,7 +67,7 @@ class DmHrShift(models.Model):
             values = {
                 'name': _('وردية: %s') % shift.name,
                 'company_id': shift.company_id.id,
-                'tz': shift.company_id.resource_calendar_id.tz or 'Asia/Riyadh',
+                'tz': getattr(shift.company_id, 'resource_calendar_id', False) and shift.company_id.resource_calendar_id.tz or 'Asia/Riyadh',
                 'attendance_ids': [(5, 0, 0)] + shift._attendance_values(),
             }
             if shift.calendar_id:

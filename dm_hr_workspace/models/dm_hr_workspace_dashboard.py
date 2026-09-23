@@ -535,7 +535,7 @@ class DmHrWorkspaceDashboard(models.AbstractModel):
             ]),
             'without_contract': Employee.search_count(employee_domain + [
                 ('active', '=', True),
-                ('contract_ids', '=', False),
+                ('contract_ids', '=', []),
             ]),
             'missing_bank': Employee.search_count(employee_domain + [
                 ('active', '=', True),

@@ -36,6 +36,7 @@ access_dm_hr_service_request_admin,dm.hr.service.request.admin,model_dm_hr_servi
 access_dm_hr_service_request_payroll_officer,dm.hr.service.request.payroll.officer,model_dm_hr_service_request,dm_hr_core.group_dm_payroll_officer,1,1,0,0
 access_dm_hr_service_request_payroll_manager,dm.hr.service.request.payroll.manager,model_dm_hr_service_request,dm_hr_core.group_dm_payroll_manager,1,1,0,0
 access_dm_hr_service_request_type_officer,dm.hr.service.request.type.officer,model_dm_hr_service_request_type,dm_hr_core.group_dm_hr_officer,1,0,0,0
+access_dm_hr_service_request_type_employee,dm.hr.service.request.type.employee,model_dm_hr_service_request_type,dm_hr_core.group_dm_hr_employee,1,0,0,0
 access_dm_hr_service_request_type_manager,dm.hr.service.request.type.manager,model_dm_hr_service_request_type,dm_hr_core.group_dm_hr_manager,1,1,1,1
 access_dm_hr_approval_policy_officer,dm.hr.approval.policy.officer,model_dm_hr_approval_policy,dm_hr_core.group_dm_hr_officer,1,0,0,0
 access_dm_hr_approval_policy_manager,dm.hr.approval.policy.manager,model_dm_hr_approval_policy,dm_hr_core.group_dm_hr_manager,1,1,1,1

@@ -27,6 +27,7 @@
         'hr_attendance',
         'project',
         'mail',
+        'dm_hr_leave_hub',
     ],
     'data': [
         'security/security.xml',

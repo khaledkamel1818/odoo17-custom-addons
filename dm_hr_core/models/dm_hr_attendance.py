@@ -171,10 +171,10 @@ class DmHrAttendanceCorrection(models.Model):
         for rec in self:
             attendance = rec.attendance_id.sudo()
             if not attendance:
-                base_dt = datetime.combine(rec.request_date, time(hour=8))
+                base_dt = fields.Datetime.to_string(fields.Datetime.context_timestamp(self, datetime.combine(rec.request_date, time(hour=8))))
                 attendance = Attendance.create({
                     'employee_id': rec.employee_id.id,
-                    'check_in': rec.requested_check_in or fields.Datetime.to_string(base_dt),
+                    'check_in': rec.requested_check_in or base_dt,
                 })
                 rec.attendance_id = attendance
             vals = {'dm_attendance_state': 'corrected', 'dm_correction_id': rec.id}

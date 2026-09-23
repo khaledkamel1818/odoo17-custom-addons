@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 from datetime import date
+from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, fields, models
 from odoo.exceptions import AccessError, UserError, ValidationError
@@ -158,9 +159,15 @@ class DmHrLeaveHub(models.AbstractModel):
     def _annual_days_for_employee(self, employee, target_year):
         if not employee.join_date:
             return 0.0
-        anniversary = date(target_year, 1, 1)
-        service_days = (anniversary - employee.join_date).days
-        return 30.0 if service_days >= 5 * 365 else 21.0
+        month = employee.join_date.month
+        day = employee.join_date.day
+        try:
+            anniversary = date(target_year, month, day)
+        except ValueError:
+            anniversary = date(target_year, month, 28)
+        service_delta = relativedelta(anniversary, employee.join_date)
+        service_years = service_delta.years + service_delta.months / 12.0 + service_delta.days / 365.0
+        return 30.0 if service_years >= 5 else 21.0
 
     @api.model
     def generate_saudi_annual_allocations(self, year=None, holiday_status_id=None, employee_ids=None):
