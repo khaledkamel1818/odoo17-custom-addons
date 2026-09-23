@@ -6,7 +6,9 @@ from odoo.tests.common import TransactionCase, tagged
 class TestDmHrUiInstall(TransactionCase):
     def test_core_menus_exist(self):
         for xmlid in [
-            'dm_hr_core.menu_dm_hr_root',
+            'dm_hr_core.menu_dm_hr_employee_portal',
+            'dm_hr_core.menu_dm_hr_operations',
+            'dm_hr_core.menu_dm_hr_admin',
             'dm_hr_workspace.menu_dm_hr_workspace',
             'dm_hr_core.menu_dm_hr_personnel_affairs',
             'dm_hr_core.menu_dm_hr_attendance_root',
@@ -34,12 +36,13 @@ class TestDmHrUiInstall(TransactionCase):
         """The UI module keeps one clear HR navigation tree and removes old duplicates."""
         expected_sequences = {
             'dm_hr_workspace.menu_dm_hr_workspace': 1,
-            'dm_hr_core.menu_dm_hr_personnel_affairs': 10,
+            'dm_hr_core.menu_dm_hr_personnel_affairs': 5,
             'dm_hr_core.menu_dm_hr_attendance_root': 20,
-            'dm_hr_core.menu_dm_hr_leaves_root': 30,
-            'dm_hr_core.menu_dm_hr_employee_services': 40,
-            'dm_hr_core.menu_dm_hr_employee_finance_root': 50,
-            'dm_hr_offboarding.menu_dm_hr_offboarding_root': 60,
+            'dm_hr_core.menu_dm_hr_leaves_root': 22,
+            'dm_hr_core.menu_dm_hr_custody_root': 24,
+            'dm_hr_offboarding.menu_dm_hr_offboarding_root': 26,
+            'dm_hr_core.menu_dm_hr_employee_finance_root': 28,
+            'dm_hr_core.menu_dm_hr_recruitment_needs': 30,
         }
         for xmlid, sequence in expected_sequences.items():
             menu = self.env.ref(xmlid)

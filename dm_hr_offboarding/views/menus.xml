@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_dm_hr_offboarding_root" name="إنهاء الخدمة" parent="dm_hr_core.menu_dm_hr_root" sequence="260" groups="dm_hr_offboarding.group_dm_hr_offboarding_employee,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
+    <menuitem id="menu_dm_hr_offboarding_root" name="إنهاء الخدمة" parent="menu_dm_hr_operations" sequence="26" groups="dm_hr_offboarding.group_dm_hr_offboarding_employee,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
     <menuitem id="menu_dm_hr_offboarding_my" name="طلباتي" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_my" sequence="10"/>
     <menuitem id="menu_dm_hr_offboarding_team" name="طلبات فريقي" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_team" sequence="20" groups="dm_hr_offboarding.group_dm_hr_offboarding_manager,dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>
     <menuitem id="menu_dm_hr_offboarding_all" name="جميع الطلبات" parent="menu_dm_hr_offboarding_root" action="dm_hr_offboarding_action_all" sequence="30" groups="dm_hr_offboarding.group_dm_hr_offboarding_hr_officer"/>

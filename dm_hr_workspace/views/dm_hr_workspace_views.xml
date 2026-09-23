@@ -7,7 +7,7 @@
 
     <menuitem id="menu_dm_hr_workspace"
               name="لوحة الموارد البشرية"
-              parent="dm_hr_core.menu_dm_hr_root"
+              parent="menu_dm_hr_employee_portal"
               action="action_dm_hr_workspace"
               sequence="1"
               groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin,dm_hr_core.group_dm_payroll_officer,dm_hr_core.group_dm_payroll_manager"/>

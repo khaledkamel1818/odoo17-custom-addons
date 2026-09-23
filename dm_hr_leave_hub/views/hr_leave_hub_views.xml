@@ -7,7 +7,7 @@
 
     <menuitem id="menu_dm_hr_leave_hub"
               name="مركز الإجازات"
-              parent="dm_hr_core.menu_dm_hr_root"
+              parent="menu_dm_hr_employee_portal"
               action="action_dm_hr_leave_hub"
               sequence="6"
               groups="dm_hr_core.group_dm_hr_employee,dm_hr_core.group_dm_hr_officer,dm_hr_core.group_dm_hr_manager,dm_hr_core.group_dm_hr_admin"/>

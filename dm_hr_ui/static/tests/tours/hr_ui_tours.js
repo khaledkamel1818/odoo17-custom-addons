@@ -13,7 +13,7 @@ registry.category("web_tour.tours").add("dm_hr_ui_workspace_smoke_tour", {
     steps: () => [
         waitForWebClient,
         {
-            trigger: ".o_app[data-menu-xmlid='dm_hr_core.menu_dm_hr_root'], .o_menu_sections",
+            trigger: ".o_app[data-menu-xmlid='dm_hr_core.menu_dm_hr_employee_portal'], .o_app[data-menu-xmlid='dm_hr_core.menu_dm_hr_operations'], .o_menu_sections",
             run: () => {},
         },
     ],

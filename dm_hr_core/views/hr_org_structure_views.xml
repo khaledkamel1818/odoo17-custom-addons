@@ -63,7 +63,7 @@
 
     <menuitem id="menu_dm_hr_org_chart_root"
               name="الهيكل التنظيمي"
-              parent="menu_dm_hr_root"
+              parent="menu_dm_hr_operations"
               action="dm_hr_org_chart_client_action"
               sequence="12"
               groups="dm_hr_core.group_dm_hr_org_chart_user"/>

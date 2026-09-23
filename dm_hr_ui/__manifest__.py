@@ -14,7 +14,6 @@
         'dm_hr_asset_custody',
     ],
     'data': [
-        'views/hr_ui_menu_views.xml',
         'views/hr_ui_view_inherit.xml',
     ],
     'assets': {
