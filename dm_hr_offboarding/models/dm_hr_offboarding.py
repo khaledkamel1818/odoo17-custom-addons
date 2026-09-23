@@ -348,6 +348,44 @@ class DmHrOffboarding(models.Model):
             })
             rec.message_post(body=_('تم إرسال طلب إنهاء الخدمة للاعتماد.'))
 
+    def _check_can_approve(self):
+        self.ensure_one()
+        user = self.env.user
+        allowed = False
+        if self.state == 'manager_approval':
+            allowed = (
+                user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_officer')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+            )
+        elif self.state == 'hr_review':
+            allowed = (
+                user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_officer')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+            )
+        elif self.state in ('notice_period', 'clearance'):
+            allowed = (
+                user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_officer')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+            )
+        elif self.state == 'finance_settlement':
+            allowed = (
+                user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_finance_officer')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_finance_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+            )
+        elif self.state == 'final_approval':
+            allowed = (
+                user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_finance_manager')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+            )
+        if not allowed:
+            raise AccessError(_('لا تملك صلاحية اعتماد طلب إنهاء الخدمة في مرحلته الحالية.'))
+
     def action_approve(self):
         flow = {
             'manager_approval': ('hr_review', 'تم اعتماد المدير المباشر.'),
@@ -363,6 +401,7 @@ class DmHrOffboarding(models.Model):
                     'لا يمكن اعتماد الطلب في الحالة الحالية: %s.\n\n'
                     'راجع شريط الحالة أعلى الطلب وتأكد من أن الطلب وصل إلى مرحلة اعتمادك.'
                 ) % dict(rec._fields['state'].selection).get(rec.state, rec.state))
+            rec._check_can_approve()
             if rec.state == 'clearance':
                 rec._ensure_clearance_ready()
             if rec.state == 'finance_settlement':
@@ -388,8 +427,21 @@ class DmHrOffboarding(models.Model):
     def _mark_next_approval_item(self):
         for rec in self:
             pending = rec.approval_item_ids.filtered(lambda l: l.state == 'pending')[:1]
-            if pending:
-                pending.action_approve()
+            if not pending:
+                return
+            user = self.env.user
+            step = pending.policy_step_id
+            expected = pending.approver_user_id
+            delegate = pending.delegate_user_id
+            is_authorized = (
+                expected and user.id == expected.id
+                or delegate and user.id == delegate.id
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_admin')
+                or user.has_group('dm_hr_offboarding.group_dm_hr_offboarding_hr_manager')
+            )
+            if not is_authorized:
+                continue
+            pending.action_approve()
 
     def action_reject(self):
         self.write({'state': 'rejected'})
