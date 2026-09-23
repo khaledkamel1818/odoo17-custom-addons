@@ -5,7 +5,7 @@
         <field name="name">dm.hr.service.request.search</field>
         <field name="model">dm.hr.service.request</field>
         <field name="arch" type="xml">
-            <search string="بحث طلبات خدمات الموظفين">
+            <search string="بحث طلبات الخدمات">
                 <field name="name" string="رقم الطلب"/>
                 <field name="subject" string="موضوع الطلب"/>
                 <field name="employee_id"/>
@@ -39,7 +39,7 @@
         <field name="name">dm.hr.service.request.tree</field>
         <field name="model">dm.hr.service.request</field>
         <field name="arch" type="xml">
-            <tree string="طلبات خدمات الموظفين"
+            <tree string="طلبات الخدمات"
                   decoration-info="state == 'submitted'"
                   decoration-warning="state == 'manager_approved'"
                   decoration-success="state == 'approved'"
@@ -110,7 +110,7 @@
         <field name="arch" type="xml">
             <form string="طلب خدمة موظف">
                 <header>
-                    <button name="action_submit" type="object" string="إرسال الطلب"
+                    <button name="action_submit" type="object" string="إرسال"
                             class="btn-primary" invisible="state != 'draft'"/>
                     <button name="action_manager_approve" type="object" string="اعتماد المدير"
                             class="btn-primary" invisible="state != 'submitted' or approval_policy_id"/>
@@ -123,10 +123,10 @@
                             class="btn-secondary" invisible="state not in ('submitted', 'manager_approved')"/>
                     <button name="action_cancel" type="object" string="إلغاء"
                             invisible="state not in ('draft', 'submitted', 'manager_approved')"/>
-                    <button name="action_reset_to_draft" type="object" string="إعادة لمسودة"
-                            invisible="state not in ('rejected', 'cancelled')"/>
-                    <button name="action_print_request_pdf" type="object" string="طباعة PDF"
-                            invisible="state == 'draft'"/>
+                     <button name="action_reset_to_draft" type="object" string="إعادة إلى مسودة"
+                             invisible="state not in ('rejected', 'cancelled')"/>
+                     <button name="action_print_request_pdf" type="object" string="طباعة"
+                             invisible="state == 'draft'"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="draft,submitted,manager_approved,approved"/>
                 </header>

@@ -205,7 +205,7 @@ class DmHrServiceRequest(models.Model):
         readonly=True,
     )
     approval_route_preview = fields.Text(
-        string='مسار الموافقة المتوقع',
+        string='مسار الاعتماد المتوقع',
         compute='_compute_approval_preview',
         readonly=True,
     )
@@ -467,7 +467,7 @@ class DmHrServiceRequest(models.Model):
         base = [
             ('active', '=', True),
             ('company_id', '=', self.company_id.id),
-            '|', ('apply_to_all_types', '=', True), ('request_type_id', '=', self.request_type_id.id),
+            '|', ('apply_to_all_types', '=', True), ('request_type', '=', self.request_type_id.code),
         ]
         candidates = Policy.search(base)
         matched = candidates.filtered(lambda policy: self._policy_matches_request(policy))

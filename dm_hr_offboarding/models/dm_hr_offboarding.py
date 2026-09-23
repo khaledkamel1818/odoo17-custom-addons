@@ -132,7 +132,7 @@ class DmHrOffboarding(models.Model):
         ('draft', 'مسودة'),
         ('submitted', 'مرسل'),
         ('manager_approval', 'اعتماد المدير'),
-        ('hr_review', 'مراجعة HR'),
+        ('hr_review', 'مراجعة الموارد البشرية'),
         ('notice_period', 'فترة الإشعار'),
         ('clearance', 'إخلاء الطرف'),
         ('finance_settlement', 'التسوية المالية'),

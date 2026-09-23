@@ -143,7 +143,7 @@ class DmHrLeavePurchase(models.Model):
     section_id = fields.Many2one('hr.department', related='employee_id.dm_section_id', store=True, readonly=True)
     manager_id = fields.Many2one('hr.employee', related='employee_id.parent_id', store=True, readonly=True)
     state = fields.Selection([
-        ('draft', 'مسودة'), ('manager', 'المدير'), ('hr', 'HR'), ('finance', 'المالية'),
+        ('draft', 'مسودة'), ('manager', 'المدير'), ('hr', 'اعتماد الموارد البشرية'), ('finance', 'اعتماد المالية'),
         ('approved', 'معتمد'), ('rejected', 'مرفوض')
     ], default='draft', tracking=True)
 
@@ -274,7 +274,7 @@ class DmHrEmployeeFinancialRequest(models.Model):
     section_id = fields.Many2one('hr.department', related='employee_id.dm_section_id', store=True, readonly=True)
     manager_id = fields.Many2one('hr.employee', related='employee_id.parent_id', store=True, readonly=True)
     state = fields.Selection([
-        ('draft', 'مسودة'), ('manager', 'المدير'), ('hr', 'HR'), ('finance', 'المالية'),
+        ('draft', 'مسودة'), ('manager', 'المدير'), ('hr', 'اعتماد الموارد البشرية'), ('finance', 'اعتماد المالية'),
         ('approved', 'معتمد ومجدول'), ('settled', 'مسوى'), ('rejected', 'مرفوض'), ('cancelled', 'ملغي')
     ], default='draft', tracking=True)
 

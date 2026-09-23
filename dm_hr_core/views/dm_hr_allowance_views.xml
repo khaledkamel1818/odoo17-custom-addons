@@ -29,7 +29,7 @@
                     <div class="oe_title">
                         <label for="name" string="نوع البدل"/>
                         <h1><field name="name"/></h1>
-                        <field name="code" placeholder="الرمز مثل HOUSING"/>
+                        <field name="code" placeholder="مثال: سكن"/>
                     </div>
                     <div class="dm_hr_panel">
                     <group string="إعدادات الاحتساب">

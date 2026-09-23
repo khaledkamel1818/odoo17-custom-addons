@@ -104,10 +104,10 @@
         <field name="name">dm.hr.attendance.correction.form</field>
         <field name="model">dm.hr.attendance.correction</field>
         <field name="arch" type="xml">
-            <form string="طلب تصحيح حضور">
+            <form string="تصحيحات الحضور">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','hr')"/>
                     <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected','cancelled')"/>
                     <button name="action_cancel" type="object" string="إلغاء" invisible="state in ('approved','rejected','cancelled')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>

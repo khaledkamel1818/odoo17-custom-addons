@@ -46,7 +46,7 @@
             <form string="إجراء إجازة">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','hr')"/>
                     <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>
                 </header>
@@ -110,7 +110,7 @@
             <form string="شراء إجازة">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
                     <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,finance,approved"/>
                 </header>
@@ -215,7 +215,7 @@
             <form string="طلب مالي للموظف">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','hr','finance')"/>
                     <button name="action_mark_settled" type="object" string="تسوية مبكرة" invisible="state != 'approved'"/>
                     <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','settled','rejected','cancelled')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,finance,approved,settled"/>

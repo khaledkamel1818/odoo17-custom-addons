@@ -690,7 +690,7 @@ msgstr "الرمز"
 
 #. module: dm_hr_core
 msgid "Code e.g. HOUSING"
-msgstr "الرمز مثل HOUSING"
+msgstr "مثال: سكن"
 
 #. module: dm_hr_core
 msgid "Sequence"

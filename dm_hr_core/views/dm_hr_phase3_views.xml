@@ -22,7 +22,7 @@
             <form string="مباشرة العمل">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','hr')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','hr')"/>
                     <button name="action_reject" type="object" string="رفض" class="btn-secondary" invisible="state in ('approved','rejected')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,hr,approved"/>
                 </header>
@@ -71,7 +71,7 @@
                 <field name="employee_id"/>
                 <field name="branch_id"/>
                 <field name="department_level_id"/>
-                <filter name="pending" string="قيد الموافقة" domain="[('state','in',('manager','hr'))]"/>
+                <filter name="pending" string="قيد الاعتماد" domain="[('state','in',('manager','hr'))]"/>
                 <filter name="group_state" string="الحالة" context="{'group_by':'state'}"/>
                 <filter name="group_department" string="الإدارة" context="{'group_by':'department_level_id'}"/>
             </search>
@@ -108,7 +108,7 @@
             <form string="نقل/تغيير وظيفة">
                 <header>
                     <button name="action_submit" type="object" string="إرسال" class="btn-primary" invisible="state != 'draft'"/>
-                    <button name="action_approve" type="object" string="موافقة" class="btn-primary" invisible="state not in ('manager','department_manager','hr')"/>
+                    <button name="action_approve" type="object" string="اعتماد" class="btn-primary" invisible="state not in ('manager','department_manager','hr')"/>
                     <button name="action_reject" type="object" string="رفض" invisible="state in ('approved','rejected')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,manager,department_manager,hr,approved"/>
                 </header>
@@ -180,7 +180,7 @@
                     <button name="action_deliver" type="object" string="تسليم" class="btn-primary" invisible="state != 'draft'"/>
                     <button name="action_return" type="object" string="استرجاع" class="btn-primary" invisible="state != 'delivered'"/>
                     <button name="action_settle" type="object" string="تسوية" invisible="state not in ('returned','lost')"/>
-                    <button name="action_lost" type="object" string="مفقود/تالف" invisible="state not in ('delivered','returned')"/>
+                    <button name="action_lost" type="object" string="مفقود أو تالف" invisible="state not in ('delivered','returned')"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,delivered,returned,settled"/>
                 </header>
                 <sheet>
